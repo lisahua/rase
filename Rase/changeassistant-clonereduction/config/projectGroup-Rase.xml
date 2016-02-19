@@ -1,0 +1,5035 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<list>
+	<projectGroup id = "1">
+		<src>source</src>
+		<leftProjectName>jfreechart-0324</leftProjectName>
+		<rightProjectName>jfreechart-0424</rightProjectName>
+		<leftClassName1>org.jfree.chart.renderer.AbstractRenderer</leftClassName1>
+		<leftClassName2>org.jfree.chart.renderer.AbstractRenderer</leftClassName2>
+		<leftFilePath1>org/jfree/chart/renderer/AbstractRenderer</leftFilePath1>
+		<leftFilePath2>org/jfree/chart/renderer/AbstractRenderer</leftFilePath2>
+		<leftMethodName1>lookupSeriesOutlinePaint(int)</leftMethodName1>
+		<leftMethodName2>lookupSeriesOutlinePaint(int)</leftMethodName2>
+		<rightGroup>	
+	<projectMethod id = "1">
+		<className1>
+	org.jfree.chart.renderer.AbstractRenderer	
+		</className1>
+		<className2>
+	org.jfree.chart.renderer.AbstractRenderer		
+		</className2>
+		<filePath1>
+	org/jfree/chart/renderer/AbstractRenderer
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/renderer/AbstractRenderer
+		</filePath2>
+		<methodName1>
+	lookupSeriesFillPaint(int)	
+		</methodName1>
+		<methodName2>
+	lookupSeriesFillPaint(int)	
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "2">
+		<className1>
+	org.jfree.chart.renderer.AbstractRenderer	
+		</className1>
+		<className2>
+	org.jfree.chart.renderer.AbstractRenderer		
+		</className2>
+		<filePath1>
+	org/jfree/chart/renderer/AbstractRenderer
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/renderer/AbstractRenderer
+		</filePath2>
+		<methodName1>
+	lookupSeriesShape(int)	
+		</methodName1>
+		<methodName2>
+	lookupSeriesShape(int)	
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "3">
+		<className1>
+	org.jfree.chart.renderer.AbstractRenderer
+		</className1>
+		<className2>
+	org.jfree.chart.renderer.AbstractRenderer	
+		</className2>
+		<filePath1>
+	org/jfree/chart/renderer/AbstractRenderer	
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/renderer/AbstractRenderer		
+		</filePath2>
+		<methodName1>
+	lookupSeriesStroke(int)
+		</methodName1>
+		<methodName2>
+	lookupSeriesStroke(int)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "4">
+		<className1>
+	org.jfree.chart.renderer.AbstractRenderer
+		</className1>
+		<className2>
+	org.jfree.chart.renderer.AbstractRenderer	
+		</className2>
+		<filePath1>
+	org/jfree/chart/renderer/AbstractRenderer	
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/renderer/AbstractRenderer		
+		</filePath2>
+		<methodName1>
+	lookupSeriesOutlineStroke(int)	
+		</methodName1>
+		<methodName2>
+	lookupSeriesOutlineStroke(int)	
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "5">
+		<className1>
+	org.jfree.chart.renderer.AbstractRenderer
+		</className1>
+		<className2>
+	org.jfree.chart.renderer.AbstractRenderer	
+		</className2>
+		<filePath1>
+	org/jfree/chart/renderer/AbstractRenderer	
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/renderer/AbstractRenderer		
+		</filePath2>
+		<methodName1>
+	lookupSeriesPaint(int)
+		</methodName1>
+		<methodName2>
+	lookupSeriesPaint(int)	
+		</methodName2>
+	</projectMethod>				
+		</rightGroup>
+<delta>
+	-7
+</delta>
+<extractMethod>
+	<![CDATA[
+public abstract class TemplateClass<T0> {
+  public T0 extractMethod(  int series,  boolean v1,  T0 v2,  AbstractRenderer inst){
+    T0 v0=m0(series,inst);
+    if (v0 == null && v1) {
+      DrawingSupplier supplier=inst.getDrawingSupplier();
+      if (supplier != null) {
+        v0=m1(supplier);
+        m2(series,v0,inst);
+      }
+    }
+    if (v0 == null) {
+      v0=v2;
+    }
+    return v0;
+  }
+  public abstract T0 m1(  DrawingSupplier supplier);
+  public abstract T0 m0(  int series,  AbstractRenderer inst);
+  public abstract void m2(  int series,  T0 v0,  AbstractRenderer inst);
+}
+public class ConcreteTemplateClass0 extends TemplateClass<Paint> {
+  public Paint m1(  DrawingSupplier supplier){
+    return supplier.getNextOutlinePaint();
+  }
+  public Paint m0(  int series,  AbstractRenderer inst){
+    return inst.getSeriesOutlinePaint(series);
+  }
+  public void m2(  int series,  Paint v0,  AbstractRenderer inst){
+    inst.setSeriesOutlinePaint(series,v0,false);
+  }
+}
+public class ConcreteTemplateClass1 extends TemplateClass<Paint> {
+  public Paint m1(  DrawingSupplier supplier){
+    return supplier.getNextFillPaint();
+  }
+  public Paint m0(  int series,  AbstractRenderer inst){
+    return inst.getSeriesFillPaint(series);
+  }
+  public void m2(  int series,  Paint v0,  AbstractRenderer inst){
+    inst.setSeriesFillPaint(series,v0,false);
+  }
+}
+public class ConcreteTemplateClass2 extends TemplateClass<Paint> {
+  public Paint m1(  DrawingSupplier supplier){
+    return supplier.getNextPaint();
+  }
+  public Paint m0(  int series,  AbstractRenderer inst){
+    return inst.getSeriesPaint(series);
+  }
+  public void m2(  int series,  Paint v0,  AbstractRenderer inst){
+    inst.setSeriesPaint(series,v0,false);
+  }
+}
+public class ConcreteTemplateClass3 extends TemplateClass<Shape> {
+  public Shape m1(  DrawingSupplier supplier){
+    return supplier.getNextShape();
+  }
+  public Shape m0(  int series,  AbstractRenderer inst){
+    return inst.getSeriesShape(series);
+  }
+  public void m2(  int series,  Shape v0,  AbstractRenderer inst){
+    inst.setSeriesShape(series,v0,false);
+  }
+}
+public class ConcreteTemplateClass4 extends TemplateClass<Stroke> {
+  public Stroke m1(  DrawingSupplier supplier){
+    return supplier.getNextStroke();
+  }
+  public Stroke m0(  int series,  AbstractRenderer inst){
+    return inst.getSeriesStroke(series);
+  }
+  public void m2(  int series,  Stroke v0,  AbstractRenderer inst){
+    inst.setSeriesStroke(series,v0,false);
+  }
+}
+public class ConcreteTemplateClass5 extends TemplateClass<Stroke> {
+  public Stroke m1(  DrawingSupplier supplier){
+    return supplier.getNextOutlineStroke();
+  }
+  public Stroke m0(  int series,  AbstractRenderer inst){
+    return inst.getSeriesOutlineStroke(series);
+  }
+  public void m2(  int series,  Stroke v0,  AbstractRenderer inst){
+    inst.setSeriesOutlineStroke(series,v0,false);
+  }
+}
+	]]>
+</extractMethod>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+/**
+     * Returns the paint used to outline an item drawn by the renderer.
+     *
+     * @param series  the series (zero-based index).
+     *
+     * @return The paint (never <code>null</code>).
+     * 
+     * @since 1.0.6
+     */
+public Paint lookupSeriesOutlinePaint(int series) {
+  return new ConcreteTemplateClass0().extractMethod(series,autoPopulateSeriesOutlinePaint,baseOutlinePaint,this);
+}
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+/**
+     * Returns the paint used to fill an item drawn by the renderer.
+     *
+     * @param series  the series (zero-based index).
+     *
+     * @return The paint (never <code>null</code>).
+     * 
+     * @since 1.0.6
+     */
+public Paint lookupSeriesFillPaint(int series) {
+  return new ConcreteTemplateClass1().extractMethod(series,autoPopulateSeriesFillPaint,baseFillPaint,this);
+}
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+/**
+     * Returns the paint used to fill an item drawn by the renderer.
+     *
+     * @param series  the series index (zero-based).
+     *
+     * @return The paint (never <code>null</code>).
+     * 
+     * @since 1.0.6
+     */
+public Paint lookupSeriesPaint(int series) {
+  return new ConcreteTemplateClass2().extractMethod(series,autoPopulateSeriesPaint,basePaint,this);
+}
+		]]>	
+	</modifiedMethod>
+	<modifiedMethod id = "4">
+		<![CDATA[
+/**
+     * Returns a shape used to represent the items in a series.
+     *
+     * @param series  the series (zero-based index).
+     *
+     * @return The shape (never <code>null</code>).
+     * 
+     * @since 1.0.6
+     */
+public Shape lookupSeriesShape(int series) {
+  return new ConcreteTemplateClass3().extractMethod(series,autoPopulateSeriesShape,baseShape,this);
+}
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "5">
+		<![CDATA[
+/**
+     * Returns the stroke used to draw the items in a series.
+     *
+     * @param series  the series (zero-based index).
+     *
+     * @return The stroke (never <code>null</code>).
+     * 
+     * @since 1.0.6
+     */
+public Stroke lookupSeriesStroke(int series) {
+  return new ConcreteTemplateClass4().extractMethod(series,autoPopulateSeriesStroke,baseStroke,this);
+}
+		]]>		
+	</modifiedMethod>
+	<modifiedMethod id = "6">
+		<![CDATA[
+/**
+     * Returns the stroke used to outline the items in a series.
+     *
+     * @param series  the series (zero-based index).
+     *
+     * @return The stroke (never <code>null</code>).
+     * 
+     * @since 1.0.6
+     */
+public Stroke lookupSeriesOutlineStroke(int series) {
+  return new ConcreteTemplateClass5().extractMethod(series,autoPopulateSeriesOutlineStroke,baseOutlineStroke,this);
+}
+	]]>
+	</modifiedMethod>
+</modifiedMethods>		
+	</projectGroup>
+	<projectGroup id = "2">
+		<src>source</src>
+		<leftProjectName>jfreechart-0724</leftProjectName>
+		<rightProjectName>jfreechart-0824</rightProjectName>
+		<leftClassName1>org.jfree.chart.plot.CombinedRangeXYPlot</leftClassName1>
+		<leftClassName2>org.jfree.chart.plot.CombinedRangeXYPlot</leftClassName2>
+		<leftFilePath1>org/jfree/chart/plot/CombinedRangeXYPlot</leftFilePath1>
+		<leftFilePath2>org/jfree/chart/plot/CombinedRangeXYPlot</leftFilePath2>
+		<leftMethodName1>getSubplots()</leftMethodName1>
+		<leftMethodName2>getSubplots()</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.jfree.chart.plot.CombinedDomainCategoryPlot
+		</className1>
+		<className2>
+	org.jfree.chart.plot.CombinedDomainCategoryPlot	
+		</className2>
+		<filePath1>
+	org/jfree/chart/plot/CombinedDomainCategoryPlot
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/plot/CombinedDomainCategoryPlot
+		</filePath2>
+		<methodName1>
+	getSubplots()	
+		</methodName1>
+		<methodName2>
+	getSubplots()
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "2">
+		<className1>
+	org.jfree.chart.plot.CombinedRangeCategoryPlot
+		</className1>
+		<className2>
+	org.jfree.chart.plot.CombinedRangeCategoryPlot
+		</className2>
+		<filePath1>
+	org/jfree/chart/plot/CombinedRangeCategoryPlot
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/plot/CombinedRangeCategoryPlot
+		</filePath2>
+		<methodName1>
+	getSubplots()
+		</methodName1>
+		<methodName2>
+	getSubplots()
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "3">
+		<className1>
+	org.jfree.chart.plot.CombinedDomainXYPlot
+		</className1>
+		<className2>
+	org.jfree.chart.plot.CombinedDomainXYPlot
+		</className2>
+		<filePath1>
+	org/jfree/chart/plot/CombinedDomainXYPlot
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/plot/CombinedDomainXYPlot
+		</filePath2>
+		<methodName1>
+	getSubplots()
+		</methodName1>
+		<methodName2>
+	getSubplots()
+		</methodName2>		
+	</projectMethod>		
+		</rightGroup>
+<delta>
+	-10
+</delta>
+<extractMethod>
+	<![CDATA[
+protected List extractMethod(){
+  if (subplots != null) {
+    return Collections.unmodifiableList(subplots);
+  }
+ else {
+    return Collections.EMPTY_LIST;
+  }
+}
+	]]>		
+</extractMethod>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+/**
+     * Returns the list of subplots.  The returned list may be empty, but is
+     * never <code>null</code>.
+     *
+     * @return An unmodifiable list of subplots.
+     */
+public List getSubplots() {
+  return extractMethod();
+}
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+/**
+     * Returns the list of subplots.  The returned list may be empty, but is
+     * never <code>null</code>.
+     *
+     * @return An unmodifiable list of subplots.
+     */
+public List getSubplots() {
+  return extractMethod();
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+/**
+     * Returns the list of subplots.  The returned list may be empty, but is
+     * never <code>null</code>.
+     *
+     * @return An unmodifiable list of subplots.
+     */
+public List getSubplots() {
+  return extractMethod();
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "4">
+		<![CDATA[
+/**
+     * Returns the list of subplots.  The returned list may be empty, but is
+     * never <code>null</code>.
+     *
+     * @return An unmodifiable list of subplots.
+     */
+public List getSubplots() {
+  return extractMethod();
+}		
+		]]>
+	</modifiedMethod>		
+</modifiedMethods>	
+	</projectGroup>
+	<projectGroup id = "3">
+		<src>source</src>
+		<leftProjectName>jfreechart-1124</leftProjectName>
+		<rightProjectName>jfreechart-1224</rightProjectName>
+		<leftClassName1>org.jfree.chart.renderer.category.BarRenderer</leftClassName1>
+		<leftClassName2>org.jfree.chart.renderer.category.BarRenderer</leftClassName2>
+		<leftFilePath1>org/jfree/chart/renderer/category/BarRenderer</leftFilePath1>
+		<leftFilePath2>org/jfree/chart/renderer/category/BarRenderer</leftFilePath2>
+		<leftMethodName1>getLegendItem(int, int)</leftMethodName1>
+		<leftMethodName2>getLegendItem(int, int)</leftMethodName2>
+		<rightGroup>	
+	<projectMethod id = "1">
+		<className1>
+	org.jfree.chart.renderer.category.AreaRenderer
+		</className1>
+		<className2>
+	org.jfree.chart.renderer.category.AreaRenderer
+		</className2>
+		<filePath1>
+	org/jfree/chart/renderer/category/AreaRenderer
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/renderer/category/AreaRenderer
+		</filePath2>
+		<methodName1>
+	getLegendItem(int, int)
+		</methodName1>
+		<methodName2>
+	getLegendItem(int, int)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "2">
+		<className1>
+	org.jfree.chart.renderer.category.BoxAndWhiskerRenderer
+		</className1>
+		<className2>
+	org.jfree.chart.renderer.category.BoxAndWhiskerRenderer
+		</className2>
+		<filePath1>
+	org/jfree/chart/renderer/category/BoxAndWhiskerRenderer
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/renderer/category/BoxAndWhiskerRenderer
+		</filePath2>
+		<methodName1>
+	getLegendItem(int, int)
+		</methodName1>
+		<methodName2>
+	getLegendItem(int, int)
+		</methodName2>
+	</projectMethod>	
+		</rightGroup>
+	</projectGroup>	
+	<projectGroup id = "4">
+		<src>source</src>
+		<leftProjectName>elasticsearch-020</leftProjectName>
+		<rightProjectName>elasticsearch-090</rightProjectName>
+		<leftClassName1>org.elasticsearch.index.mapper.internal.TTLFieldMapper.TypeParser</leftClassName1>
+		<leftClassName2>org.elasticsearch.index.mapper.internal.TTLFieldMapper.TypeParser</leftClassName2>
+		<leftFilePath1>org/elasticsearch/index/mapper/internal/TTLFieldMapper</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/index/mapper/internal/TTLFieldMapper</leftFilePath2>
+		<leftMethodName1>
+				<![CDATA[
+			parse(String, Map<String,Object>, ParserContext)
+				]]>
+		</leftMethodName1>
+		<leftMethodName2>
+				<![CDATA[
+			parse(String, Map<String,Object>, ParserContext)
+				]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.index.mapper.internal.IndexFieldMapper.TypeParser 
+		</className1>
+		<className2>
+	org.elasticsearch.index.mapper.internal.IndexFieldMapper.TypeParser 
+		</className2>
+		<filePath1>
+	org/elasticsearch/index/mapper/internal/IndexFieldMapper
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/index/mapper/internal/IndexFieldMapper
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+				parse(String, Map<String,Object>, ParserContext)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+				parse(String, Map<String,Object>, ParserContext)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.index.mapper.internal.TimestampFieldMapper.TypeParser 
+		</className1>
+		<className2>
+	org.elasticsearch.index.mapper.internal.TimestampFieldMapper.TypeParser 
+		</className2>
+		<filePath1>
+	org/elasticsearch/index/mapper/internal/TimestampFieldMapper
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/index/mapper/internal/TimestampFieldMapper
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+				parse(String, Map<String,Object>, ParserContext)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+				parse(String, Map<String,Object>, ParserContext)
+			]]>
+		</methodName2>
+	</projectMethod>
+		</rightGroup>
+<delta>
+	-1
+</delta>
+<extractMethod>
+	<![CDATA[
+public class TemplateClass {
+  public static void extractMethod(  Object fieldNode,  Builder builder){
+{
+      EnabledAttributeMapper v0=org.elasticsearch.common.xcontent.support.XContentMapValues.nodeBooleanValue(fieldNode) ? EnabledAttributeMapper.ENABLED : EnabledAttributeMapper.DISABLED;
+      builder.enabled(v0);
+    }
+  }
+}
+	]]>		
+</extractMethod>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+@Override
+        public Mapper.Builder parse(String name, Map<String, Object> node, ParserContext parserContext) throws MapperParsingException {
+  TTLFieldMapper.Builder builder=new TTLFieldMapper.Builder();
+  parseField(builder,builder.name,node,parserContext);
+  for (  Map.Entry<String,Object> entry : node.entrySet()) {
+    String fieldName=Strings.toUnderscoreCase(entry.getKey());
+    Object fieldNode=entry.getValue();
+    if (fieldName.equals("enabled"))     TemplateClass.extractMethod(fieldNode,builder);
+ else     if (fieldName.equals("default")) {
+      TimeValue ttlTimeValue=nodeTimeValue(fieldNode,null);
+      if (ttlTimeValue != null) {
+        builder.defaultTTL(ttlTimeValue.millis());
+      }
+    }
+  }
+  return builder;
+}
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+@Override
+        public Mapper.Builder parse(String name, Map<String, Object> node, ParserContext parserContext) throws MapperParsingException {
+  IndexFieldMapper.Builder builder=MapperBuilders.index();
+  parseField(builder,builder.name,node,parserContext);
+  for (  Map.Entry<String,Object> entry : node.entrySet()) {
+    String fieldName=Strings.toUnderscoreCase(entry.getKey());
+    Object fieldNode=entry.getValue();
+    if (fieldName.equals("enabled"))     TemplateClass.extractMethod(fieldNode,builder);
+  }
+  return builder;
+}
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+@Override
+        public Mapper.Builder parse(String name, Map<String, Object> node, ParserContext parserContext) throws MapperParsingException {
+  TimestampFieldMapper.Builder builder=timestamp();
+  parseField(builder,builder.name,node,parserContext);
+  for (  Map.Entry<String,Object> entry : node.entrySet()) {
+    String fieldName=Strings.toUnderscoreCase(entry.getKey());
+    Object fieldNode=entry.getValue();
+    if (fieldName.equals("enabled"))     TemplateClass.extractMethod(fieldNode,builder);
+ else     if (fieldName.equals("path")) {
+      builder.path(fieldNode.toString());
+    }
+ else     if (fieldName.equals("format")) {
+      builder.dateTimeFormatter(parseDateTimeFormatter(builder.name(),fieldNode.toString()));
+    }
+  }
+  return builder;
+}	
+		]]>
+	</modifiedMethod>	
+</modifiedMethods>
+	</projectGroup>
+	<projectGroup id = "5">
+		<src>source</src>
+		<leftProjectName>jfreechart-1324</leftProjectName>
+		<rightProjectName>jfreechart-1424</rightProjectName>
+		<leftClassName1>org.jfree.chart.ChartFactory</leftClassName1>
+		<leftClassName2>org.jfree.chart.ChartFactory</leftClassName2>
+		<leftFilePath1>org/jfree/chart/ChartFactory</leftFilePath1>
+		<leftFilePath2>org/jfree/chart/ChartFactory</leftFilePath2>
+		<leftMethodName1>createBarChart(String, String, String, CategoryDataset, PlotOrientation, boolean, boolean, boolean)</leftMethodName1>
+		<leftMethodName2>createBarChart(String, String, String, CategoryDataset, PlotOrientation, boolean, boolean, boolean)</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.jfree.chart.ChartFactory
+		</className1>
+		<className2>
+	org.jfree.chart.ChartFactory
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartFactory
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartFactory
+		</filePath2>
+		<methodName1>
+	createMultiplePieChart3D(String, CategoryDataset, TableOrder, boolean, boolean, boolean)
+		</methodName1>
+		<methodName2>
+	createMultiplePieChart3D(String, CategoryDataset, TableOrder, boolean, boolean, boolean)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "2">
+		<className1>
+	org.jfree.chart.ChartFactory
+		</className1>
+		<className2>
+	org.jfree.chart.ChartFactory
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartFactory
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartFactory
+		</filePath2>
+		<methodName1>
+	createXYAreaChart(String, String, String, XYDataset, PlotOrientation, boolean, boolean, boolean)
+		</methodName1>
+		<methodName2>
+	createXYAreaChart(String, String, String, XYDataset, PlotOrientation, boolean, boolean, boolean)
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "3">
+		<className1>
+	org.jfree.chart.ChartFactory
+		</className1>
+		<className2>
+	org.jfree.chart.ChartFactory
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartFactory
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartFactory
+		</filePath2>
+		<methodName1>
+	createXYBarChart(String, String, boolean, String, IntervalXYDataset, PlotOrientation, boolean, boolean, boolean)
+		</methodName1>
+		<methodName2>
+	createXYBarChart(String, String, boolean, String, IntervalXYDataset, PlotOrientation, boolean, boolean, boolean)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "4">
+		<className1>
+	org.jfree.chart.ChartFactory
+		</className1>
+		<className2>
+	org.jfree.chart.ChartFactory
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartFactory
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartFactory
+		</filePath2>
+		<methodName1>
+	createStackedXYAreaChart(String, String, String, TableXYDataset, PlotOrientation, boolean, boolean, boolean)
+		</methodName1>
+		<methodName2>
+	createStackedXYAreaChart(String, String, String, TableXYDataset, PlotOrientation, boolean, boolean, boolean)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "5">
+		<className1>
+	org.jfree.chart.ChartFactory
+		</className1>
+		<className2>
+	org.jfree.chart.ChartFactory
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartFactory
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartFactory
+		</filePath2>
+		<methodName1>
+	createAreaChart(String, String, String, CategoryDataset, PlotOrientation, boolean, boolean, boolean)
+		</methodName1>
+		<methodName2>
+	createAreaChart(String, String, String, CategoryDataset, PlotOrientation, boolean, boolean, boolean)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "6">
+		<className1>
+	org.jfree.chart.ChartFactory
+		</className1>
+		<className2>
+	org.jfree.chart.ChartFactory
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartFactory
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartFactory
+		</filePath2>
+		<methodName1>
+	createWaterfallChart(String, String, String, CategoryDataset, PlotOrientation, boolean, boolean, boolean)
+		</methodName1>
+		<methodName2>
+	createWaterfallChart(String, String, String, CategoryDataset, PlotOrientation, boolean, boolean, boolean)
+		</methodName2>
+	</projectMethod>		
+		</rightGroup>
+<delta>
+	-6
+</delta>
+<extractMethod>
+	<![CDATA[
+public abstract class TemplateClass<T0> {
+  public static JFreeChart extractMethod(  T0 plot,  String title,  boolean legend,  ChartTheme currentTheme){
+    JFreeChart chart=new JFreeChart(title,JFreeChart.DEFAULT_TITLE_FONT,plot,legend);
+    currentTheme.apply(chart);
+    return chart;
+  }
+}
+public class ConcreteTemplateClass0 extends TemplateClass<CategoryPlot> {
+}
+public class ConcreteTemplateClass1 extends TemplateClass<MultiplePiePlot> {
+}
+public class ConcreteTemplateClass2 extends TemplateClass<XYPlot> {
+}
+	]]>		
+</extractMethod>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+/**
+     * Creates a bar chart.  The chart object returned by this method uses a
+     * {@link CategoryPlot} instance as the plot, with a {@link CategoryAxis}
+     * for the domain axis, a {@link NumberAxis} as the range axis, and a
+     * {@link BarRenderer} as the renderer.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param categoryAxisLabel  the label for the category axis
+     *                           (<code>null</code> permitted).
+     * @param valueAxisLabel  the label for the value axis
+     *                        (<code>null</code> permitted).
+     * @param dataset  the dataset for the chart (<code>null</code> permitted).
+     * @param orientation  the plot orientation (horizontal or vertical)
+     *                     (<code>null</code> not permitted).
+     * @param legend  a flag specifying whether or not a legend is required.
+     * @param tooltips  configure chart to generate tool tips?
+     * @param urls  configure chart to generate URLs?
+     *
+     * @return A bar chart.
+     */
+public static JFreeChart createBarChart(String title,
+                                            String categoryAxisLabel,
+                                            String valueAxisLabel,
+                                            CategoryDataset dataset,
+                                            PlotOrientation orientation,
+                                            boolean legend,
+                                            boolean tooltips,
+                                            boolean urls) {
+  if (orientation == null) {
+    throw new IllegalArgumentException("Null 'orientation' argument.");
+  }
+  CategoryAxis categoryAxis=new CategoryAxis(categoryAxisLabel);
+  ValueAxis valueAxis=new NumberAxis(valueAxisLabel);
+  BarRenderer renderer=new BarRenderer();
+  if (orientation == PlotOrientation.HORIZONTAL) {
+    ItemLabelPosition position1=new ItemLabelPosition(ItemLabelAnchor.OUTSIDE3,TextAnchor.CENTER_LEFT);
+    renderer.setBasePositiveItemLabelPosition(position1);
+    ItemLabelPosition position2=new ItemLabelPosition(ItemLabelAnchor.OUTSIDE9,TextAnchor.CENTER_RIGHT);
+    renderer.setBaseNegativeItemLabelPosition(position2);
+  }
+ else   if (orientation == PlotOrientation.VERTICAL) {
+    ItemLabelPosition position1=new ItemLabelPosition(ItemLabelAnchor.OUTSIDE12,TextAnchor.BOTTOM_CENTER);
+    renderer.setBasePositiveItemLabelPosition(position1);
+    ItemLabelPosition position2=new ItemLabelPosition(ItemLabelAnchor.OUTSIDE6,TextAnchor.TOP_CENTER);
+    renderer.setBaseNegativeItemLabelPosition(position2);
+  }
+  if (tooltips) {
+    renderer.setBaseToolTipGenerator(new StandardCategoryToolTipGenerator());
+  }
+  if (urls) {
+    renderer.setBaseURLGenerator(new StandardCategoryURLGenerator());
+  }
+  CategoryPlot plot=new CategoryPlot(dataset,categoryAxis,valueAxis,renderer);
+  plot.setOrientation(orientation);
+  return new ConcreteTemplateClass0().extractMethod(plot,title,legend,currentTheme);
+}
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+/**
+     * Creates a chart that displays multiple pie plots.  The chart object
+     * returned by this method uses a {@link MultiplePiePlot} instance as the
+     * plot.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param dataset  the dataset (<code>null</code> permitted).
+     * @param order  the order that the data is extracted (by row or by column)
+     *               (<code>null</code> not permitted).
+     * @param legend  include a legend?
+     * @param tooltips  generate tooltips?
+     * @param urls  generate URLs?
+     *
+     * @return A chart.
+     */
+public static JFreeChart createMultiplePieChart3D(String title,
+                                                      CategoryDataset dataset,
+                                                      TableOrder order,
+                                                      boolean legend,
+                                                      boolean tooltips,
+                                                      boolean urls) {
+  if (order == null) {
+    throw new IllegalArgumentException("Null 'order' argument.");
+  }
+  MultiplePiePlot plot=new MultiplePiePlot(dataset);
+  plot.setDataExtractOrder(order);
+  plot.setBackgroundPaint(null);
+  plot.setOutlineStroke(null);
+  JFreeChart pieChart=new JFreeChart(new PiePlot3D(null));
+  TextTitle seriesTitle=new TextTitle("Series Title",new Font("SansSerif",Font.BOLD,12));
+  seriesTitle.setPosition(RectangleEdge.BOTTOM);
+  pieChart.setTitle(seriesTitle);
+  pieChart.removeLegend();
+  pieChart.setBackgroundPaint(null);
+  plot.setPieChart(pieChart);
+  if (tooltips) {
+    PieToolTipGenerator tooltipGenerator=new StandardPieToolTipGenerator();
+    PiePlot pp=(PiePlot)plot.getPieChart().getPlot();
+    pp.setToolTipGenerator(tooltipGenerator);
+  }
+  if (urls) {
+    PieURLGenerator urlGenerator=new StandardPieURLGenerator();
+    PiePlot pp=(PiePlot)plot.getPieChart().getPlot();
+    pp.setURLGenerator(urlGenerator);
+  }
+  return new ConcreteTemplateClass1().extractMethod(plot,title,legend,currentTheme);
+}	
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+/**
+     * Creates an area chart using an {@link XYDataset}.
+     * <P>
+     * The chart object returned by this method uses an {@link XYPlot} instance
+     * as the plot, with a {@link NumberAxis} for the domain axis, a
+     * {@link NumberAxis} as the range axis, and a {@link XYAreaRenderer} as
+     * the renderer.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param xAxisLabel  a label for the X-axis (<code>null</code> permitted).
+     * @param yAxisLabel  a label for the Y-axis (<code>null</code> permitted).
+     * @param dataset  the dataset for the chart (<code>null</code> permitted).
+     * @param orientation  the plot orientation (horizontal or vertical)
+     *                     (<code>null</code> NOT permitted).
+     * @param legend  a flag specifying whether or not a legend is required.
+     * @param tooltips  configure chart to generate tool tips?
+     * @param urls  configure chart to generate URLs?
+     *
+     * @return An XY area chart.
+     */
+public static JFreeChart createXYAreaChart(String title,
+                                               String xAxisLabel,
+                                               String yAxisLabel,
+                                               XYDataset dataset,
+                                               PlotOrientation orientation,
+                                               boolean legend,
+                                               boolean tooltips,
+                                               boolean urls) {
+  if (orientation == null) {
+    throw new IllegalArgumentException("Null 'orientation' argument.");
+  }
+  NumberAxis xAxis=new NumberAxis(xAxisLabel);
+  xAxis.setAutoRangeIncludesZero(false);
+  NumberAxis yAxis=new NumberAxis(yAxisLabel);
+  XYPlot plot=new XYPlot(dataset,xAxis,yAxis,null);
+  plot.setOrientation(orientation);
+  plot.setForegroundAlpha(0.5f);
+  XYToolTipGenerator tipGenerator=null;
+  if (tooltips) {
+    tipGenerator=new StandardXYToolTipGenerator();
+  }
+  XYURLGenerator urlGenerator=null;
+  if (urls) {
+    urlGenerator=new StandardXYURLGenerator();
+  }
+  plot.setRenderer(new XYAreaRenderer(XYAreaRenderer.AREA,tipGenerator,urlGenerator));
+  return new ConcreteTemplateClass2().extractMethod(plot,title,legend,currentTheme);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "4">
+		<![CDATA[
+/**
+     * Creates and returns a default instance of an XY bar chart.
+     * <P>
+     * The chart object returned by this method uses an {@link XYPlot} instance
+     * as the plot, with a {@link DateAxis} for the domain axis, a
+     * {@link NumberAxis} as the range axis, and a {@link XYBarRenderer} as the
+     * renderer.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param xAxisLabel  a label for the X-axis (<code>null</code> permitted).
+     * @param dateAxis  make the domain axis display dates?
+     * @param yAxisLabel  a label for the Y-axis (<code>null</code> permitted).
+     * @param dataset  the dataset for the chart (<code>null</code> permitted).
+     * @param orientation  the orientation (horizontal or vertical)
+     *                     (<code>null</code> NOT permitted).
+     * @param legend  a flag specifying whether or not a legend is required.
+     * @param tooltips  configure chart to generate tool tips?
+     * @param urls  configure chart to generate URLs?
+     *
+     * @return An XY bar chart.
+     */
+public static JFreeChart createXYBarChart(String title,
+                                              String xAxisLabel,
+                                              boolean dateAxis,
+                                              String yAxisLabel,
+                                              IntervalXYDataset dataset,
+                                              PlotOrientation orientation,
+                                              boolean legend,
+                                              boolean tooltips,
+                                              boolean urls) {
+  if (orientation == null) {
+    throw new IllegalArgumentException("Null 'orientation' argument.");
+  }
+  ValueAxis domainAxis=null;
+  if (dateAxis) {
+    domainAxis=new DateAxis(xAxisLabel);
+  }
+ else {
+    NumberAxis axis=new NumberAxis(xAxisLabel);
+    axis.setAutoRangeIncludesZero(false);
+    domainAxis=axis;
+  }
+  ValueAxis valueAxis=new NumberAxis(yAxisLabel);
+  XYBarRenderer renderer=new XYBarRenderer();
+  if (tooltips) {
+    XYToolTipGenerator tt;
+    if (dateAxis) {
+      tt=StandardXYToolTipGenerator.getTimeSeriesInstance();
+    }
+ else {
+      tt=new StandardXYToolTipGenerator();
+    }
+    renderer.setBaseToolTipGenerator(tt);
+  }
+  if (urls) {
+    renderer.setBaseURLGenerator(new StandardXYURLGenerator());
+  }
+  XYPlot plot=new XYPlot(dataset,domainAxis,valueAxis,renderer);
+  plot.setOrientation(orientation);
+  return new ConcreteTemplateClass2().extractMethod(plot,title,legend,currentTheme);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "5">
+		<![CDATA[
+/**
+     * Creates a stacked XY area plot.  The chart object returned by this
+     * method uses an {@link XYPlot} instance as the plot, with a
+     * {@link NumberAxis} for the domain axis, a {@link NumberAxis} as the
+     * range axis, and a {@link StackedXYAreaRenderer2} as the renderer.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param xAxisLabel  a label for the X-axis (<code>null</code> permitted).
+     * @param yAxisLabel  a label for the Y-axis (<code>null</code> permitted).
+     * @param dataset  the dataset for the chart (<code>null</code> permitted).
+     * @param orientation  the plot orientation (horizontal or vertical)
+     *                     (<code>null</code> NOT permitted).
+     * @param legend  a flag specifying whether or not a legend is required.
+     * @param tooltips  configure chart to generate tool tips?
+     * @param urls  configure chart to generate URLs?
+     *
+     * @return A stacked XY area chart.
+     */
+public static JFreeChart createStackedXYAreaChart(String title,
+                                                    String xAxisLabel,
+                                                    String yAxisLabel,
+                                                    TableXYDataset dataset,
+                                                    PlotOrientation orientation,
+                                                    boolean legend,
+                                                    boolean tooltips,
+                                                    boolean urls) {
+  if (orientation == null) {
+    throw new IllegalArgumentException("Null 'orientation' argument.");
+  }
+  NumberAxis xAxis=new NumberAxis(xAxisLabel);
+  xAxis.setAutoRangeIncludesZero(false);
+  xAxis.setLowerMargin(0.0);
+  xAxis.setUpperMargin(0.0);
+  NumberAxis yAxis=new NumberAxis(yAxisLabel);
+  XYToolTipGenerator toolTipGenerator=null;
+  if (tooltips) {
+    toolTipGenerator=new StandardXYToolTipGenerator();
+  }
+  XYURLGenerator urlGenerator=null;
+  if (urls) {
+    urlGenerator=new StandardXYURLGenerator();
+  }
+  StackedXYAreaRenderer2 renderer=new StackedXYAreaRenderer2(toolTipGenerator,urlGenerator);
+  renderer.setOutline(true);
+  XYPlot plot=new XYPlot(dataset,xAxis,yAxis,renderer);
+  plot.setOrientation(orientation);
+  plot.setRangeAxis(yAxis);
+  return new ConcreteTemplateClass2().extractMethod(plot,title,legend,currentTheme);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "6">
+		<![CDATA[
+/**
+     * Creates an area chart with default settings.  The chart object returned
+     * by this method uses a {@link CategoryPlot} instance as the plot, with a
+     * {@link CategoryAxis} for the domain axis, a {@link NumberAxis} as the
+     * range axis, and an {@link AreaRenderer} as the renderer.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param categoryAxisLabel  the label for the category axis
+     *                           (<code>null</code> permitted).
+     * @param valueAxisLabel  the label for the value axis (<code>null</code>
+     *                        permitted).
+     * @param dataset  the dataset for the chart (<code>null</code> permitted).
+     * @param orientation  the plot orientation (<code>null</code> not
+     *                     permitted).
+     * @param legend  a flag specifying whether or not a legend is required.
+     * @param tooltips  configure chart to generate tool tips?
+     * @param urls  configure chart to generate URLs?
+     *
+     * @return An area chart.
+     */
+public static JFreeChart createAreaChart(String title,
+                                             String categoryAxisLabel,
+                                             String valueAxisLabel,
+                                             CategoryDataset dataset,
+                                             PlotOrientation orientation,
+                                             boolean legend,
+                                             boolean tooltips,
+                                             boolean urls) {
+  if (orientation == null) {
+    throw new IllegalArgumentException("Null 'orientation' argument.");
+  }
+  CategoryAxis categoryAxis=new CategoryAxis(categoryAxisLabel);
+  categoryAxis.setCategoryMargin(0.0);
+  ValueAxis valueAxis=new NumberAxis(valueAxisLabel);
+  AreaRenderer renderer=new AreaRenderer();
+  if (tooltips) {
+    renderer.setBaseToolTipGenerator(new StandardCategoryToolTipGenerator());
+  }
+  if (urls) {
+    renderer.setBaseURLGenerator(new StandardCategoryURLGenerator());
+  }
+  CategoryPlot plot=new CategoryPlot(dataset,categoryAxis,valueAxis,renderer);
+  plot.setOrientation(orientation);
+  return new ConcreteTemplateClass0().extractMethod(plot,title,legend,currentTheme);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "7">
+		<![CDATA[
+/**
+     * Creates a waterfall chart.  The chart object returned by this method
+     * uses a {@link CategoryPlot} instance as the plot, with a
+     * {@link CategoryAxis} for the domain axis, a {@link NumberAxis} as the
+     * range axis, and a {@link WaterfallBarRenderer} as the renderer.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param categoryAxisLabel  the label for the category axis
+     *                           (<code>null</code> permitted).
+     * @param valueAxisLabel  the label for the value axis (<code>null</code>
+     *                        permitted).
+     * @param dataset  the dataset for the chart (<code>null</code> permitted).
+     * @param orientation  the plot orientation (horizontal or vertical)
+     *                     (<code>null</code> NOT permitted).
+     * @param legend  a flag specifying whether or not a legend is required.
+     * @param tooltips  configure chart to generate tool tips?
+     * @param urls  configure chart to generate URLs?
+     *
+     * @return A waterfall chart.
+     */
+public static JFreeChart createWaterfallChart(String title,
+                                                  String categoryAxisLabel,
+                                                  String valueAxisLabel,
+                                                  CategoryDataset dataset,
+                                                  PlotOrientation orientation,
+                                                  boolean legend,
+                                                  boolean tooltips,
+                                                  boolean urls) {
+  if (orientation == null) {
+    throw new IllegalArgumentException("Null 'orientation' argument.");
+  }
+  CategoryAxis categoryAxis=new CategoryAxis(categoryAxisLabel);
+  categoryAxis.setCategoryMargin(0.0);
+  ValueAxis valueAxis=new NumberAxis(valueAxisLabel);
+  WaterfallBarRenderer renderer=new WaterfallBarRenderer();
+  if (orientation == PlotOrientation.HORIZONTAL) {
+    ItemLabelPosition position=new ItemLabelPosition(ItemLabelAnchor.CENTER,TextAnchor.CENTER,TextAnchor.CENTER,Math.PI / 2.0);
+    renderer.setBasePositiveItemLabelPosition(position);
+    renderer.setBaseNegativeItemLabelPosition(position);
+  }
+ else   if (orientation == PlotOrientation.VERTICAL) {
+    ItemLabelPosition position=new ItemLabelPosition(ItemLabelAnchor.CENTER,TextAnchor.CENTER,TextAnchor.CENTER,0.0);
+    renderer.setBasePositiveItemLabelPosition(position);
+    renderer.setBaseNegativeItemLabelPosition(position);
+  }
+  if (tooltips) {
+    StandardCategoryToolTipGenerator generator=new StandardCategoryToolTipGenerator();
+    renderer.setBaseToolTipGenerator(generator);
+  }
+  if (urls) {
+    renderer.setBaseURLGenerator(new StandardCategoryURLGenerator());
+  }
+  CategoryPlot plot=new CategoryPlot(dataset,categoryAxis,valueAxis,renderer);
+  plot.clearRangeMarkers();
+  Marker baseline=new ValueMarker(0.0);
+  baseline.setPaint(Color.black);
+  plot.addRangeMarker(baseline,Layer.FOREGROUND);
+  plot.setOrientation(orientation);
+  return new ConcreteTemplateClass0().extractMethod(plot,title,legend,currentTheme);
+}		
+		]]>
+	</modifiedMethod>
+</modifiedMethods>		
+	</projectGroup>
+	<projectGroup id = "6">
+		<src>source</src>
+		<leftProjectName>jfreechart-1324</leftProjectName>
+		<rightProjectName>jfreechart-1424</rightProjectName>
+		<leftClassName1>org.jfree.chart.ChartFactory</leftClassName1>
+		<leftClassName2>org.jfree.chart.ChartFactory</leftClassName2>
+		<leftFilePath1>org/jfree/chart/ChartFactory</leftFilePath1>
+		<leftFilePath2>org/jfree/chart/ChartFactory</leftFilePath2>
+		<leftMethodName1>createPieChart3D(String, PieDataset, boolean, boolean, boolean)</leftMethodName1>
+		<leftMethodName2>createPieChart3D(String, PieDataset, boolean, boolean, boolean)</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.jfree.chart.ChartFactory
+		</className1>
+		<className2>
+	org.jfree.chart.ChartFactory	
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartFactory
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartFactory
+		</filePath2>
+		<methodName1>
+	createPieChart3D(String, PieDataset, boolean, boolean, Locale)
+		</methodName1>
+		<methodName2>
+	createPieChart3D(String, PieDataset, boolean, boolean, Locale)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "2">
+		<className1>
+	org.jfree.chart.ChartFactory
+		</className1>
+		<className2>
+	org.jfree.chart.ChartFactory	
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartFactory
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartFactory
+		</filePath2>
+		<methodName1>
+	createPieChart(String, PieDataset, boolean, boolean, Locale)
+		</methodName1>
+		<methodName2>
+	createPieChart(String, PieDataset, boolean, boolean, Locale)
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "3">
+		<className1>
+	org.jfree.chart.ChartFactory
+		</className1>
+		<className2>
+	org.jfree.chart.ChartFactory	
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartFactory
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartFactory
+		</filePath2>
+		<methodName1>
+	createBoxAndWhiskerChart(String, String, String, BoxAndWhiskerXYDataset, boolean)
+		</methodName1>
+		<methodName2>
+	createBoxAndWhiskerChart(String, String, String, BoxAndWhiskerXYDataset, boolean)
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "4">
+		<className1>
+	org.jfree.chart.ChartFactory
+		</className1>
+		<className2>
+	org.jfree.chart.ChartFactory	
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartFactory
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartFactory
+		</filePath2>
+		<methodName1>
+	createBoxAndWhiskerChart(String, String, String, BoxAndWhiskerCategoryDataset, boolean)
+		</methodName1>
+		<methodName2>
+	createBoxAndWhiskerChart(String, String, String, BoxAndWhiskerCategoryDataset, boolean)
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "5">
+		<className1>
+	org.jfree.chart.ChartFactory
+		</className1>
+		<className2>
+	org.jfree.chart.ChartFactory	
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartFactory
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartFactory
+		</filePath2>
+		<methodName1>
+	createPieChart(String, PieDataset, boolean, boolean, boolean)
+		</methodName1>
+		<methodName2>
+	createPieChart(String, PieDataset, boolean, boolean, boolean)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "6">
+		<className1>
+	org.jfree.chart.ChartFactory
+		</className1>
+		<className2>
+	org.jfree.chart.ChartFactory	
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartFactory
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartFactory
+		</filePath2>
+		<methodName1>
+	createRingChart(String, PieDataset, boolean, boolean, boolean)
+		</methodName1>
+		<methodName2>
+	createRingChart(String, PieDataset, boolean, boolean, boolean)
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "7">
+		<className1>
+	org.jfree.chart.ChartFactory
+		</className1>
+		<className2>
+	org.jfree.chart.ChartFactory	
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartFactory
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartFactory
+		</filePath2>
+		<methodName1>
+	createRingChart(String, PieDataset, boolean, boolean, Locale)
+		</methodName1>
+		<methodName2>
+	createRingChart(String, PieDataset, boolean, boolean, Locale)
+		</methodName2>
+	</projectMethod>		
+		</rightGroup>
+<delta>
+	-6
+</delta>
+<extractMethod>
+	<![CDATA[
+public abstract class TemplateClass<T0> {
+  public static JFreeChart extractMethod(  String title,  boolean legend,  T0 plot,  ChartTheme currentTheme){
+    JFreeChart chart=new JFreeChart(title,JFreeChart.DEFAULT_TITLE_FONT,plot,legend);
+    currentTheme.apply(chart);
+    return chart;
+  }
+}
+public class ConcreteTemplateClass0 extends TemplateClass<PiePlot3D> {
+}
+public class ConcreteTemplateClass2 extends TemplateClass<PiePlot> {
+}
+public class ConcreteTemplateClass3 extends TemplateClass<XYPlot> {
+}
+public class ConcreteTemplateClass4 extends TemplateClass<CategoryPlot> {
+}
+public class ConcreteTemplateClass6 extends TemplateClass<RingPlot> {
+}
+	]]>		
+</extractMethod>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+/**
+     * Creates a 3D pie chart using the specified dataset.  The chart object
+     * returned by this method uses a {@link PiePlot3D} instance as the
+     * plot.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param dataset  the dataset for the chart (<code>null</code> permitted).
+     * @param legend  a flag specifying whether or not a legend is required.
+     * @param tooltips  configure chart to generate tool tips?
+     * @param urls  configure chart to generate URLs?
+     *
+     * @return A pie chart.
+     */
+public static JFreeChart createPieChart3D(String title,
+                                              PieDataset dataset,
+                                              boolean legend,
+                                              boolean tooltips,
+                                              boolean urls) {
+  PiePlot3D plot=new PiePlot3D(dataset);
+  plot.setInsets(new RectangleInsets(0.0,5.0,5.0,5.0));
+  if (tooltips) {
+    plot.setToolTipGenerator(new StandardPieToolTipGenerator());
+  }
+  if (urls) {
+    plot.setURLGenerator(new StandardPieURLGenerator());
+  }
+  return new ConcreteTemplateClass0().extractMethod(title,legend,plot,currentTheme);
+}
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+/**
+     * Creates a 3D pie chart using the specified dataset.  The chart object
+     * returned by this method uses a {@link PiePlot3D} instance as the
+     * plot.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param dataset  the dataset for the chart (<code>null</code> permitted).
+     * @param legend  a flag specifying whether or not a legend is required.
+     * @param tooltips  configure chart to generate tool tips?
+     * @param locale  the locale (<code>null</code> not permitted).
+     *
+     * @return A pie chart.
+     *
+     * @since 1.0.7
+     */
+public static JFreeChart createPieChart3D(String title, PieDataset dataset,
+            boolean legend, boolean tooltips, Locale locale) {
+  PiePlot3D plot=new PiePlot3D(dataset);
+  plot.setInsets(new RectangleInsets(0.0,5.0,5.0,5.0));
+  if (tooltips) {
+    plot.setToolTipGenerator(new StandardPieToolTipGenerator(locale));
+  }
+  return new ConcreteTemplateClass0().extractMethod(title,legend,plot,currentTheme);
+}	
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+/**
+     * Creates a pie chart with default settings.
+     * <P>
+     * The chart object returned by this method uses a {@link PiePlot} instance
+     * as the plot.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param dataset  the dataset for the chart (<code>null</code> permitted).
+     * @param legend  a flag specifying whether or not a legend is required.
+     * @param tooltips  configure chart to generate tool tips?
+     * @param locale  the locale (<code>null</code> not permitted).
+     *
+     * @return A pie chart.
+     *
+     * @since 1.0.7
+     */
+public static JFreeChart createPieChart(String title, PieDataset dataset,
+            boolean legend, boolean tooltips, Locale locale) {
+  PiePlot plot=new PiePlot(dataset);
+  plot.setLabelGenerator(new StandardPieSectionLabelGenerator(locale));
+  plot.setInsets(new RectangleInsets(0.0,5.0,5.0,5.0));
+  if (tooltips) {
+    plot.setToolTipGenerator(new StandardPieToolTipGenerator(locale));
+  }
+  return new ConcreteTemplateClass2().extractMethod(title,legend,plot,currentTheme);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "4">
+		<![CDATA[
+/**
+     * Creates and returns a default instance of a box and whisker chart.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param timeAxisLabel  a label for the time axis (<code>null</code>
+     *                       permitted).
+     * @param valueAxisLabel  a label for the value axis (<code>null</code>
+     *                        permitted).
+     * @param dataset  the dataset for the chart (<code>null</code> permitted).
+     * @param legend  a flag specifying whether or not a legend is required.
+     *
+     * @return A box and whisker chart.
+     */
+public static JFreeChart createBoxAndWhiskerChart(String title,
+                                                 String timeAxisLabel,
+                                                 String valueAxisLabel,
+                                                 BoxAndWhiskerXYDataset dataset,
+                                                 boolean legend) {
+  ValueAxis timeAxis=new DateAxis(timeAxisLabel);
+  NumberAxis valueAxis=new NumberAxis(valueAxisLabel);
+  valueAxis.setAutoRangeIncludesZero(false);
+  XYBoxAndWhiskerRenderer renderer=new XYBoxAndWhiskerRenderer(10.0);
+  XYPlot plot=new XYPlot(dataset,timeAxis,valueAxis,renderer);
+  return new ConcreteTemplateClass3().extractMethod(title,legend,plot,currentTheme);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "5">
+		<![CDATA[
+/**
+     * Creates and returns a default instance of a box and whisker chart
+     * based on data from a {@link BoxAndWhiskerCategoryDataset}.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param categoryAxisLabel  a label for the category axis
+     *     (<code>null</code> permitted).
+     * @param valueAxisLabel  a label for the value axis (<code>null</code>
+     *     permitted).
+     * @param dataset  the dataset for the chart (<code>null</code> permitted).
+     * @param legend  a flag specifying whether or not a legend is required.
+     *
+     * @return A box and whisker chart.
+     *
+     * @since 1.0.4
+     */
+public static JFreeChart createBoxAndWhiskerChart(String title,
+            String categoryAxisLabel, String valueAxisLabel,
+            BoxAndWhiskerCategoryDataset dataset, boolean legend) {
+  CategoryAxis categoryAxis=new CategoryAxis(categoryAxisLabel);
+  NumberAxis valueAxis=new NumberAxis(valueAxisLabel);
+  valueAxis.setAutoRangeIncludesZero(false);
+  BoxAndWhiskerRenderer renderer=new BoxAndWhiskerRenderer();
+  renderer.setBaseToolTipGenerator(new BoxAndWhiskerToolTipGenerator());
+  CategoryPlot plot=new CategoryPlot(dataset,categoryAxis,valueAxis,renderer);
+  return new ConcreteTemplateClass4().extractMethod(title,legend,plot,currentTheme);
+}	
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "6">
+		<![CDATA[
+/**
+     * Creates a pie chart with default settings.
+     * <P>
+     * The chart object returned by this method uses a {@link PiePlot} instance
+     * as the plot.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param dataset  the dataset for the chart (<code>null</code> permitted).
+     * @param legend  a flag specifying whether or not a legend is required.
+     * @param tooltips  configure chart to generate tool tips?
+     * @param urls  configure chart to generate URLs?
+     *
+     * @return A pie chart.
+     */
+public static JFreeChart createPieChart(String title,
+                                            PieDataset dataset,
+                                            boolean legend,
+                                            boolean tooltips,
+                                            boolean urls) {
+  PiePlot plot=new PiePlot(dataset);
+  plot.setLabelGenerator(new StandardPieSectionLabelGenerator());
+  plot.setInsets(new RectangleInsets(0.0,5.0,5.0,5.0));
+  if (tooltips) {
+    plot.setToolTipGenerator(new StandardPieToolTipGenerator());
+  }
+  if (urls) {
+    plot.setURLGenerator(new StandardPieURLGenerator());
+  }
+  return new ConcreteTemplateClass2().extractMethod(title,legend,plot,currentTheme);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "7">
+		<![CDATA[
+/**
+     * Creates a ring chart with default settings.
+     * <P>
+     * The chart object returned by this method uses a {@link RingPlot}
+     * instance as the plot.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param dataset  the dataset for the chart (<code>null</code> permitted).
+     * @param legend  a flag specifying whether or not a legend is required.
+     * @param tooltips  configure chart to generate tool tips?
+     * @param urls  configure chart to generate URLs?
+     *
+     * @return A ring chart.
+     */
+public static JFreeChart createRingChart(String title,
+                                             PieDataset dataset,
+                                             boolean legend,
+                                             boolean tooltips,
+                                             boolean urls) {
+  RingPlot plot=new RingPlot(dataset);
+  plot.setLabelGenerator(new StandardPieSectionLabelGenerator());
+  plot.setInsets(new RectangleInsets(0.0,5.0,5.0,5.0));
+  if (tooltips) {
+    plot.setToolTipGenerator(new StandardPieToolTipGenerator());
+  }
+  if (urls) {
+    plot.setURLGenerator(new StandardPieURLGenerator());
+  }
+  return new ConcreteTemplateClass6().extractMethod(title,legend,plot,currentTheme);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "8">
+		<![CDATA[
+/**
+     * Creates a ring chart with default settings.
+     * <P>
+     * The chart object returned by this method uses a {@link RingPlot}
+     * instance as the plot.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param dataset  the dataset for the chart (<code>null</code> permitted).
+     * @param legend  a flag specifying whether or not a legend is required.
+     * @param tooltips  configure chart to generate tool tips?
+     * @param locale  the locale (<code>null</code> not permitted).
+     *
+     * @return A ring chart.
+     *
+     * @since 1.0.7
+     */
+public static JFreeChart createRingChart(String title, PieDataset dataset,
+            boolean legend, boolean tooltips, Locale locale) {
+  RingPlot plot=new RingPlot(dataset);
+  plot.setLabelGenerator(new StandardPieSectionLabelGenerator(locale));
+  plot.setInsets(new RectangleInsets(0.0,5.0,5.0,5.0));
+  if (tooltips) {
+    plot.setToolTipGenerator(new StandardPieToolTipGenerator(locale));
+  }
+  return new ConcreteTemplateClass6().extractMethod(title,legend,plot,currentTheme);
+}		
+		]]>
+	</modifiedMethod>
+</modifiedMethods>
+	</projectGroup>
+	<projectGroup id = "7">
+		<src>source</src>
+		<leftProjectName>jfreechart-1324</leftProjectName>
+		<rightProjectName>jfreechart-1424</rightProjectName>
+		<leftClassName1>org.jfree.chart.plot.CombinedDomainXYPlot</leftClassName1>
+		<leftClassName2>org.jfree.chart.plot.CombinedDomainXYPlot</leftClassName2>
+		<leftFilePath1>org/jfree/chart/plot/CombinedDomainXYPlot</leftFilePath1>
+		<leftFilePath2>org/jfree/chart/plot/CombinedDomainXYPlot</leftFilePath2>
+		<leftMethodName1>calculateAxisSpace(Graphics2D, Rectangle2D)</leftMethodName1>
+		<leftMethodName2>calculateAxisSpace(Graphics2D, Rectangle2D)</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.jfree.chart.plot.CombinedRangeXYPlot
+		</className1>
+		<className2>
+	org.jfree.chart.plot.CombinedRangeXYPlot
+		</className2>
+		<filePath1>
+	org/jfree/chart/plot/CombinedRangeXYPlot
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/plot/CombinedRangeXYPlot
+		</filePath2>
+		<methodName1>
+	calculateAxisSpace(Graphics2D, Rectangle2D)
+		</methodName1>
+		<methodName2>
+	calculateAxisSpace(Graphics2D, Rectangle2D)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "2">
+		<className1>
+	org.jfree.chart.plot.CombinedDomainCategoryPlot
+		</className1>
+		<className2>
+	org.jfree.chart.plot.CombinedDomainCategoryPlot
+		</className2>
+		<filePath1>
+	org/jfree/chart/plot/CombinedDomainCategoryPlot
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/plot/CombinedDomainCategoryPlot
+		</filePath2>
+		<methodName1>
+	calculateAxisSpace(Graphics2D, Rectangle2D)
+		</methodName1>
+		<methodName2>
+	calculateAxisSpace(Graphics2D, Rectangle2D)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "3">
+		<className1>
+	org.jfree.chart.plot.CombinedRangeCategoryPlot
+		</className1>
+		<className2>
+	org.jfree.chart.plot.CombinedRangeCategoryPlot
+		</className2>
+		<filePath1>
+	org/jfree/chart/plot/CombinedRangeCategoryPlot
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/plot/CombinedRangeCategoryPlot
+		</filePath2>
+		<methodName1>
+	calculateAxisSpace(Graphics2D, Rectangle2D)
+		</methodName1>
+		<methodName2>
+	calculateAxisSpace(Graphics2D, Rectangle2D)
+		</methodName2>
+	</projectMethod>		
+		</rightGroup>
+	</projectGroup>	
+	<projectGroup id = "8">
+		<src>source</src>
+		<leftProjectName>jfreechart-1724</leftProjectName>
+		<rightProjectName>jfreechart-1824</rightProjectName>
+		<leftClassName1>org.jfree.chart.ChartPanel</leftClassName1>
+		<leftClassName2>org.jfree.chart.ChartPanel</leftClassName2>
+		<leftFilePath1>org/jfree/chart/plot/ChartPanel</leftFilePath1>
+		<leftFilePath2>org/jfree/chart/plot/ChartPanel</leftFilePath2>
+		<leftMethodName1>zoomInRange(double, double)</leftMethodName1>
+		<leftMethodName2>zoomInRange(double, double)</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.jfree.chart.ChartPanel
+		</className1>
+		<className2>
+	org.jfree.chart.ChartPanel
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartPanel
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartPanel
+		</filePath2>
+		<methodName1>
+	zoomOutRange(double, double)
+		</methodName1>
+		<methodName2>
+	zoomOutRange(double, double)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "2">
+		<className1>
+	org.jfree.chart.ChartPanel
+		</className1>
+		<className2>
+	org.jfree.chart.ChartPanel
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartPanel
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartPanel
+		</filePath2>
+		<methodName1>
+	zoomOutDomain(double, double)
+		</methodName1>
+		<methodName2>
+	zoomOutDomain(double, double)
+		</methodName2>
+	</projectMethod>
+		</rightGroup>
+<delta>
+	-4
+</delta>
+<extractMethod>
+	<![CDATA[
+public abstract class TemplateClass {
+  public void extractMethod(  double x,  double y,  ChartRenderingInfo info,  boolean zoomAroundAnchor,  double v0,  JFreeChart chart,  ChartPanel inst){
+    Plot plot=chart.getPlot();
+    if (plot instanceof Zoomable) {
+      boolean savedNotify=plot.isNotify();
+      plot.setNotify(false);
+      Zoomable z=(Zoomable)plot;
+      m0(z,v0,info,x,y,zoomAroundAnchor,inst);
+      plot.setNotify(savedNotify);
+    }
+  }
+  public abstract void m0(  Zoomable z,  double v0,  ChartRenderingInfo info,  double x,  double y,  boolean zoomAroundAnchor,  ChartPanel inst);
+}
+public class ConcreteTemplateClass0 extends TemplateClass {
+  public void m0(  Zoomable z,  double v0,  ChartRenderingInfo info,  double x,  double y,  boolean zoomAroundAnchor,  ChartPanel inst){
+    z.zoomRangeAxes(v0,info.getPlotInfo(),inst.translateScreenToJava2D(new Point((int)x,(int)y)),zoomAroundAnchor);
+  }
+}
+public class ConcreteTemplateClass2 extends TemplateClass {
+  public void m0(  Zoomable z,  double v0,  ChartRenderingInfo info,  double x,  double y,  boolean zoomAroundAnchor,  ChartPanel inst){
+    z.zoomDomainAxes(v0,info.getPlotInfo(),inst.translateScreenToJava2D(new Point((int)x,(int)y)),zoomAroundAnchor);
+  }
+}
+	]]>		
+</extractMethod>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+/**
+     * Decreases the length of the range axis, centered about the given
+     * coordinate on the screen.  The length of the range axis is reduced by
+     * the value of {@link #getZoomInFactor()}.
+     *
+     * @param x  the x-coordinate (in screen coordinates).
+     * @param y  the y coordinate (in screen coordinates).
+     */
+public void zoomInRange(double x, double y) {
+  new ConcreteTemplateClass0().extractMethod(x,y,info,zoomAroundAnchor,zoomInFactor,chart,this);
+}
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+/**
+     * Increases the length the range axis, centered about the given
+     * coordinate on the screen.  The length of the range axis is increased
+     * by the value of {@link #getZoomOutFactor()}.
+     *
+     * @param x  the x coordinate (in screen coordinates).
+     * @param y  the y-coordinate (in screen coordinates).
+     */
+public void zoomOutRange(double x, double y) {
+  new ConcreteTemplateClass0().extractMethod(x,y,info,zoomAroundAnchor,zoomOutFactor,chart,this);
+}	
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+/**
+     * Increases the length of the domain axis, centered about the given
+     * coordinate on the screen.  The length of the domain axis is increased
+     * by the value of {@link #getZoomOutFactor()}.
+     *
+     * @param x  the x coordinate (in screen coordinates).
+     * @param y  the y-coordinate (in screen coordinates).
+     */
+public void zoomOutDomain(double x, double y) {
+  new ConcreteTemplateClass2().extractMethod(x,y,info,zoomAroundAnchor,zoomOutFactor,chart,this);
+}		
+		]]>
+	</modifiedMethod>	
+	</modifiedMethods>	
+	</projectGroup>	
+	<projectGroup id = "9">
+		<src>source</src>
+		<leftProjectName>jfreechart-1724</leftProjectName>
+		<rightProjectName>jfreechart-1824</rightProjectName>
+		<leftClassName1>org.jfree.chart.renderer.category.LevelRenderer</leftClassName1>
+		<leftClassName2>org.jfree.chart.renderer.category.LevelRenderer</leftClassName2>
+		<leftFilePath1>org/jfree/chart/renderer/category/LevelRenderer</leftFilePath1>
+		<leftFilePath2>org/jfree/chart/renderer/category/LevelRenderer</leftFilePath2>
+		<leftMethodName1>drawItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, CategoryDataset, int, int, int)</leftMethodName1>
+		<leftMethodName2>drawItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, CategoryDataset, int, int, int)</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.jfree.chart.renderer.category.BarRenderer
+		</className1>
+		<className2>
+	org.jfree.chart.renderer.category.BarRenderer
+		</className2>
+		<filePath1>
+	org/jfree/chart/renderer/category/BarRenderer
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/renderer/category/BarRenderer
+		</filePath2>
+		<methodName1>
+	drawItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, CategoryDataset, int, int, int)
+		</methodName1>
+		<methodName2>
+	drawItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, CategoryDataset, int, int, int)
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.jfree.chart.renderer.category.LineAndShapeRenderer
+		</className1>
+		<className2>
+	org.jfree.chart.renderer.category.LineAndShapeRenderer
+		</className2>
+		<filePath1>
+	org/jfree/chart/renderer/category/LineAndShapeRenderer
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/renderer/category/LineAndShapeRenderer
+		</filePath2>
+		<methodName1>
+	drawItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, CategoryDataset, int, int, int)
+		</methodName1>
+		<methodName2>
+	drawItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, CategoryDataset, int, int, int)
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "3">
+		<className1>
+	org.jfree.chart.renderer.category.ScatterRenderer
+		</className1>
+		<className2>
+	org.jfree.chart.renderer.category.ScatterRenderer
+		</className2>
+		<filePath1>
+	org/jfree/chart/renderer/category/ScatterRenderer
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/renderer/category/ScatterRenderer
+		</filePath2>
+		<methodName1>
+	drawItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, CategoryDataset, int, int, int)
+		</methodName1>
+		<methodName2>
+	drawItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, CategoryDataset, int, int, int)
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "4">
+		<className1>
+	org.jfree.chart.renderer.category.StatisticalBarRenderer
+		</className1>
+		<className2>
+	org.jfree.chart.renderer.category.StatisticalBarRenderer
+		</className2>
+		<filePath1>
+	org/jfree/chart/renderer/category/StatisticalBarRenderer
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/renderer/category/StatisticalBarRenderer
+		</filePath2>
+		<methodName1>
+	drawItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, CategoryDataset, int, int, int)
+		</methodName1>
+		<methodName2>
+	drawItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, CategoryDataset, int, int, int)
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+<delta>
+	18
+</delta>
+<RetObj>
+	<![CDATA[
+public enum Flag{RETURN, FALLTHRU};
+public class RetObj {
+  public Flag flag;
+  public int visibleRow;
+  public RetObj(Flag flag,int visibleRow){
+    this.flag = flag;
+    this.visibleRow = visibleRow;
+  }
+}
+	]]>
+</RetObj>
+<extractMethod>
+	<![CDATA[
+protected RetObj extractMethod(int row,CategoryItemRendererState state){
+  int visibleRow=state.getVisibleSeriesIndex(row);
+  if (visibleRow < 0) {
+    return new RetObj(Flag.RETURN,0);
+  }
+  return new RetObj(Flag.FALLTHRU,visibleRow);
+}
+	]]>		
+</extractMethod>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+/**
+     * Draws the bar for a single (series, category) data item.
+     *
+     * @param g2  the graphics device.
+     * @param state  the renderer state.
+     * @param dataArea  the data area.
+     * @param plot  the plot.
+     * @param domainAxis  the domain axis.
+     * @param rangeAxis  the range axis.
+     * @param dataset  the dataset.
+     * @param row  the row index (zero-based).
+     * @param column  the column index (zero-based).
+     * @param pass  the pass index.
+     */
+public void drawItem(Graphics2D g2, CategoryItemRendererState state,
+            Rectangle2D dataArea, CategoryPlot plot, CategoryAxis domainAxis,
+            ValueAxis rangeAxis, CategoryDataset dataset, int row, int column,
+            int pass) {
+  RetObj retObj=extractMethod(row,state);
+  if (retObj.flag.equals(Flag.RETURN))   return;
+  int visibleRow=retObj.visibleRow;
+  Number dataValue=dataset.getValue(row,column);
+  if (dataValue == null) {
+    return;
+  }
+  double value=dataValue.doubleValue();
+  PlotOrientation orientation=plot.getOrientation();
+  double barW0=calculateBarW0(plot,orientation,dataArea,domainAxis,state,visibleRow,column);
+  RectangleEdge edge=plot.getRangeAxisEdge();
+  double barL=rangeAxis.valueToJava2D(value,dataArea,edge);
+  Line2D line=null;
+  double x=0.0;
+  double y=0.0;
+  if (orientation == PlotOrientation.HORIZONTAL) {
+    x=barL;
+    y=barW0 + state.getBarWidth() / 2.0;
+    line=new Line2D.Double(barL,barW0,barL,barW0 + state.getBarWidth());
+  }
+ else {
+    x=barW0 + state.getBarWidth() / 2.0;
+    y=barL;
+    line=new Line2D.Double(barW0,barL,barW0 + state.getBarWidth(),barL);
+  }
+  Stroke itemStroke=getItemStroke(row,column);
+  Paint itemPaint=getItemPaint(row,column);
+  g2.setStroke(itemStroke);
+  g2.setPaint(itemPaint);
+  g2.draw(line);
+  CategoryItemLabelGenerator generator=getItemLabelGenerator(row,column);
+  if (generator != null && isItemLabelVisible(row,column)) {
+    drawItemLabel(g2,orientation,dataset,row,column,x,y,(value < 0.0));
+  }
+  int datasetIndex=plot.indexOf(dataset);
+  updateCrosshairValues(state.getCrosshairState(),dataset.getRowKey(row),dataset.getColumnKey(column),value,datasetIndex,barW0,barL,orientation);
+  EntityCollection entities=state.getEntityCollection();
+  if (entities != null) {
+    addItemEntity(entities,dataset,row,column,line.getBounds());
+  }
+}
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+/**
+     * Draws the bar for a single (series, category) data item.
+     *
+     * @param g2  the graphics device.
+     * @param state  the renderer state.
+     * @param dataArea  the data area.
+     * @param plot  the plot.
+     * @param domainAxis  the domain axis.
+     * @param rangeAxis  the range axis.
+     * @param dataset  the dataset.
+     * @param row  the row index (zero-based).
+     * @param column  the column index (zero-based).
+     * @param pass  the pass index.
+     */
+public void drawItem(Graphics2D g2,
+                         CategoryItemRendererState state,
+                         Rectangle2D dataArea,
+                         CategoryPlot plot,
+                         CategoryAxis domainAxis,
+                         ValueAxis rangeAxis,
+                         CategoryDataset dataset,
+                         int row,
+                         int column,
+                         int pass) {
+  RetObj retObj=extractMethod(row,state);
+  if (retObj.flag.equals(Flag.RETURN))   return;
+  int visibleRow=retObj.visibleRow;
+  Number dataValue=dataset.getValue(row,column);
+  if (dataValue == null) {
+    return;
+  }
+  final double value=dataValue.doubleValue();
+  PlotOrientation orientation=plot.getOrientation();
+  double barW0=calculateBarW0(plot,orientation,dataArea,domainAxis,state,visibleRow,column);
+  double[] barL0L1=calculateBarL0L1(value);
+  if (barL0L1 == null) {
+    return;
+  }
+  RectangleEdge edge=plot.getRangeAxisEdge();
+  double transL0=rangeAxis.valueToJava2D(barL0L1[0],dataArea,edge);
+  double transL1=rangeAxis.valueToJava2D(barL0L1[1],dataArea,edge);
+  boolean positive=(value >= this.base);
+  boolean inverted=rangeAxis.isInverted();
+  double barL0=Math.min(transL0,transL1);
+  double barLength=Math.abs(transL1 - transL0);
+  double barLengthAdj=0.0;
+  if (barLength > 0.0 && barLength < getMinimumBarLength()) {
+    barLengthAdj=getMinimumBarLength() - barLength;
+  }
+  double barL0Adj=0.0;
+  RectangleEdge barBase;
+  if (orientation == PlotOrientation.HORIZONTAL) {
+    if (positive && inverted || !positive && !inverted) {
+      barL0Adj=barLengthAdj;
+      barBase=RectangleEdge.RIGHT;
+    }
+ else {
+      barBase=RectangleEdge.LEFT;
+    }
+  }
+ else {
+    if (positive && !inverted || !positive && inverted) {
+      barL0Adj=barLengthAdj;
+      barBase=RectangleEdge.BOTTOM;
+    }
+ else {
+      barBase=RectangleEdge.TOP;
+    }
+  }
+  Rectangle2D bar=null;
+  if (orientation == PlotOrientation.HORIZONTAL) {
+    bar=new Rectangle2D.Double(barL0 - barL0Adj,barW0,barLength + barLengthAdj,state.getBarWidth());
+  }
+ else {
+    bar=new Rectangle2D.Double(barW0,barL0 - barL0Adj,state.getBarWidth(),barLength + barLengthAdj);
+  }
+  if (getShadowsVisible()) {
+    this.barPainter.paintBarShadow(g2,this,row,column,bar,barBase,true);
+  }
+  this.barPainter.paintBar(g2,this,row,column,bar,barBase);
+  CategoryItemLabelGenerator generator=getItemLabelGenerator(row,column);
+  if (generator != null && isItemLabelVisible(row,column)) {
+    drawItemLabel(g2,dataset,row,column,plot,generator,bar,(value < 0.0));
+  }
+  int datasetIndex=plot.indexOf(dataset);
+  updateCrosshairValues(state.getCrosshairState(),dataset.getRowKey(row),dataset.getColumnKey(column),value,datasetIndex,barW0,barL0,orientation);
+  EntityCollection entities=state.getEntityCollection();
+  if (entities != null) {
+    addItemEntity(entities,dataset,row,column,bar);
+  }
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+/**
+     * Draw a single data item.
+     *
+     * @param g2  the graphics device.
+     * @param state  the renderer state.
+     * @param dataArea  the area in which the data is drawn.
+     * @param plot  the plot.
+     * @param domainAxis  the domain axis.
+     * @param rangeAxis  the range axis.
+     * @param dataset  the dataset.
+     * @param row  the row index (zero-based).
+     * @param column  the column index (zero-based).
+     * @param pass  the pass index.
+     */
+public void drawItem(Graphics2D g2, CategoryItemRendererState state,
+            Rectangle2D dataArea, CategoryPlot plot, CategoryAxis domainAxis,
+            ValueAxis rangeAxis, CategoryDataset dataset, int row, int column,
+            int pass) {
+  if (!getItemVisible(row,column)) {
+    return;
+  }
+  if (!getItemLineVisible(row,column) && !getItemShapeVisible(row,column)) {
+    return;
+  }
+  Number v=dataset.getValue(row,column);
+  if (v == null) {
+    return;
+  }
+  RetObj retObj=extractMethod(row,state);
+  if (retObj.flag.equals(Flag.RETURN))   return;
+  int visibleRow=retObj.visibleRow;
+  int visibleRowCount=state.getVisibleSeriesCount();
+  PlotOrientation orientation=plot.getOrientation();
+  double x1;
+  if (this.useSeriesOffset) {
+    x1=domainAxis.getCategorySeriesMiddle(column,dataset.getColumnCount(),visibleRow,visibleRowCount,this.itemMargin,dataArea,plot.getDomainAxisEdge());
+  }
+ else {
+    x1=domainAxis.getCategoryMiddle(column,getColumnCount(),dataArea,plot.getDomainAxisEdge());
+  }
+  double value=v.doubleValue();
+  double y1=rangeAxis.valueToJava2D(value,dataArea,plot.getRangeAxisEdge());
+  if (pass == 0 && getItemLineVisible(row,column)) {
+    if (column != 0) {
+      Number previousValue=dataset.getValue(row,column - 1);
+      if (previousValue != null) {
+        double previous=previousValue.doubleValue();
+        double x0;
+        if (this.useSeriesOffset) {
+          x0=domainAxis.getCategorySeriesMiddle(column - 1,dataset.getColumnCount(),visibleRow,visibleRowCount,this.itemMargin,dataArea,plot.getDomainAxisEdge());
+        }
+ else {
+          x0=domainAxis.getCategoryMiddle(column - 1,getColumnCount(),dataArea,plot.getDomainAxisEdge());
+        }
+        double y0=rangeAxis.valueToJava2D(previous,dataArea,plot.getRangeAxisEdge());
+        Line2D line=null;
+        if (orientation == PlotOrientation.HORIZONTAL) {
+          line=new Line2D.Double(y0,x0,y1,x1);
+        }
+ else         if (orientation == PlotOrientation.VERTICAL) {
+          line=new Line2D.Double(x0,y0,x1,y1);
+        }
+        g2.setPaint(getItemPaint(row,column));
+        g2.setStroke(getItemStroke(row,column));
+        g2.draw(line);
+      }
+    }
+  }
+  if (pass == 1) {
+    Shape shape=getItemShape(row,column);
+    if (orientation == PlotOrientation.HORIZONTAL) {
+      shape=ShapeUtilities.createTranslatedShape(shape,y1,x1);
+    }
+ else     if (orientation == PlotOrientation.VERTICAL) {
+      shape=ShapeUtilities.createTranslatedShape(shape,x1,y1);
+    }
+    if (getItemShapeVisible(row,column)) {
+      if (getItemShapeFilled(row,column)) {
+        if (this.useFillPaint) {
+          g2.setPaint(getItemFillPaint(row,column));
+        }
+ else {
+          g2.setPaint(getItemPaint(row,column));
+        }
+        g2.fill(shape);
+      }
+      if (this.drawOutlines) {
+        if (this.useOutlinePaint) {
+          g2.setPaint(getItemOutlinePaint(row,column));
+        }
+ else {
+          g2.setPaint(getItemPaint(row,column));
+        }
+        g2.setStroke(getItemOutlineStroke(row,column));
+        g2.draw(shape);
+      }
+    }
+    if (isItemLabelVisible(row,column)) {
+      if (orientation == PlotOrientation.HORIZONTAL) {
+        drawItemLabel(g2,orientation,dataset,row,column,y1,x1,(value < 0.0));
+      }
+ else       if (orientation == PlotOrientation.VERTICAL) {
+        drawItemLabel(g2,orientation,dataset,row,column,x1,y1,(value < 0.0));
+      }
+    }
+    int datasetIndex=plot.indexOf(dataset);
+    updateCrosshairValues(state.getCrosshairState(),dataset.getRowKey(row),dataset.getColumnKey(column),value,datasetIndex,x1,y1,orientation);
+    EntityCollection entities=state.getEntityCollection();
+    if (entities != null) {
+      addItemEntity(entities,dataset,row,column,shape);
+    }
+  }
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "4">
+		<![CDATA[
+/**
+     * Draw a single data item.
+     *
+     * @param g2  the graphics device.
+     * @param state  the renderer state.
+     * @param dataArea  the area in which the data is drawn.
+     * @param plot  the plot.
+     * @param domainAxis  the domain axis.
+     * @param rangeAxis  the range axis.
+     * @param dataset  the dataset.
+     * @param row  the row index (zero-based).
+     * @param column  the column index (zero-based).
+     * @param pass  the pass index.
+     */
+public void drawItem(Graphics2D g2, CategoryItemRendererState state,
+            Rectangle2D dataArea, CategoryPlot plot, CategoryAxis domainAxis,
+            ValueAxis rangeAxis, CategoryDataset dataset, int row, int column,
+            int pass) {
+  if (!getItemVisible(row,column)) {
+    return;
+  }
+  RetObj retObj=extractMethod(row,state);
+  if (retObj.flag.equals(Flag.RETURN))   return;
+  int visibleRow=retObj.visibleRow;
+  int visibleRowCount=state.getVisibleSeriesCount();
+  PlotOrientation orientation=plot.getOrientation();
+  MultiValueCategoryDataset d=(MultiValueCategoryDataset)dataset;
+  List values=d.getValues(row,column);
+  if (values == null) {
+    return;
+  }
+  int valueCount=values.size();
+  for (int i=0; i < valueCount; i++) {
+    double x1;
+    if (this.useSeriesOffset) {
+      x1=domainAxis.getCategorySeriesMiddle(column,dataset.getColumnCount(),visibleRow,visibleRowCount,this.itemMargin,dataArea,plot.getDomainAxisEdge());
+    }
+ else {
+      x1=domainAxis.getCategoryMiddle(column,getColumnCount(),dataArea,plot.getDomainAxisEdge());
+    }
+    Number n=(Number)values.get(i);
+    double value=n.doubleValue();
+    double y1=rangeAxis.valueToJava2D(value,dataArea,plot.getRangeAxisEdge());
+    Shape shape=getItemShape(row,column);
+    if (orientation == PlotOrientation.HORIZONTAL) {
+      shape=ShapeUtilities.createTranslatedShape(shape,y1,x1);
+    }
+ else     if (orientation == PlotOrientation.VERTICAL) {
+      shape=ShapeUtilities.createTranslatedShape(shape,x1,y1);
+    }
+    if (getItemShapeFilled(row,column)) {
+      if (this.useFillPaint) {
+        g2.setPaint(getItemFillPaint(row,column));
+      }
+ else {
+        g2.setPaint(getItemPaint(row,column));
+      }
+      g2.fill(shape);
+    }
+    if (this.drawOutlines) {
+      if (this.useOutlinePaint) {
+        g2.setPaint(getItemOutlinePaint(row,column));
+      }
+ else {
+        g2.setPaint(getItemPaint(row,column));
+      }
+      g2.setStroke(getItemOutlineStroke(row,column));
+      g2.draw(shape);
+    }
+  }
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "5">
+		<![CDATA[
+/**
+     * Draws the bar with its standard deviation line range for a single
+     * (series, category) data item.
+     *
+     * @param g2  the graphics device.
+     * @param state  the renderer state.
+     * @param dataArea  the data area.
+     * @param plot  the plot.
+     * @param domainAxis  the domain axis.
+     * @param rangeAxis  the range axis.
+     * @param data  the data.
+     * @param row  the row index (zero-based).
+     * @param column  the column index (zero-based).
+     * @param pass  the pass index.
+     */
+public void drawItem(Graphics2D g2,
+                         CategoryItemRendererState state,
+                         Rectangle2D dataArea,
+                         CategoryPlot plot,
+                         CategoryAxis domainAxis,
+                         ValueAxis rangeAxis,
+                         CategoryDataset data,
+                         int row,
+                         int column,
+                         int pass) {
+  RetObj retObj=extractMethod(row,state);
+  if (retObj.flag.equals(Flag.RETURN))   return;
+  int visibleRow=retObj.visibleRow;
+  if (!(data instanceof StatisticalCategoryDataset)) {
+    throw new IllegalArgumentException("Requires StatisticalCategoryDataset.");
+  }
+  StatisticalCategoryDataset statData=(StatisticalCategoryDataset)data;
+  PlotOrientation orientation=plot.getOrientation();
+  if (orientation == PlotOrientation.HORIZONTAL) {
+    drawHorizontalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,visibleRow,row,column);
+  }
+ else   if (orientation == PlotOrientation.VERTICAL) {
+    drawVerticalItem(g2,state,dataArea,plot,domainAxis,rangeAxis,statData,visibleRow,row,column);
+  }
+}		
+		]]>
+	</modifiedMethod>
+</modifiedMethods>	
+	</projectGroup>
+	<projectGroup id = "10">
+		<src>source</src>
+		<leftProjectName>elasticsearch-020</leftProjectName>
+		<rightProjectName>elasticsearch-090</rightProjectName>
+		<leftClassName1>org.elasticsearch.action.get.MultiGetItemResponse</leftClassName1>
+		<leftClassName2>org.elasticsearch.action.get.MultiGetItemResponse</leftClassName2>
+		<leftFilePath1>org/elasticsearch/action/get/MultiGetItemResponse</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/action/get/MultiGetItemResponse</leftFilePath2>
+		<leftMethodName1>getId()</leftMethodName1>
+		<leftMethodName2>getId()</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.action.get.MultiGetItemResponse
+		</className1>
+		<className2>
+	org.elasticsearch.action.get.MultiGetItemResponse
+		</className2>
+		<filePath1>
+	org/elasticsearch/action/get/MultiGetItemResponse
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/action/get/MultiGetItemResponse
+		</filePath2>
+		<methodName1>
+	getIndex()
+		</methodName1>
+		<methodName2>
+	getIndex()
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.action.get.MultiGetItemResponse
+		</className1>
+		<className2>
+	org.elasticsearch.action.get.MultiGetItemResponse
+		</className2>
+		<filePath1>
+	org/elasticsearch/action/get/MultiGetItemResponse
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/action/get/MultiGetItemResponse
+		</filePath2>
+		<methodName1>
+	getType()
+		</methodName1>
+		<methodName2>
+	getType()
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	<delta>
+	14
+	</delta>
+	<extractMethod>
+		<![CDATA[
+public abstract class TemplateClass {
+  public String extractMethod(  Failure failure,  GetResponse response){
+    if (failure != null) {
+      return m0(failure);
+    }
+    return m1(response);
+  }
+  public abstract String m1(  GetResponse response);
+  public abstract String m0(  Failure failure);
+}
+public class ConcreteTemplateClass0 extends TemplateClass {
+  public String m1(  GetResponse response){
+    return response.getId();
+  }
+  public String m0(  Failure failure){
+    return failure.getId();
+  }
+}
+public class ConcreteTemplateClass1 extends TemplateClass {
+  public String m1(  GetResponse response){
+    return response.getIndex();
+  }
+  public String m0(  Failure failure){
+    return failure.getIndex();
+  }
+}
+public class ConcreteTemplateClass2 extends TemplateClass {
+  public String m1(  GetResponse response){
+    return response.getType();
+  }
+  public String m0(  Failure failure){
+    return failure.getType();
+  }
+}	
+		]]>
+	</extractMethod>
+	<modifiedMethods>
+		<modifiedMethod id = "1">
+			<![CDATA[
+/**
+     * The id of the document.
+     */
+public String getId() {
+  return new ConcreteTemplateClass0().extractMethod(failure,response);
+}			
+			]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+			<![CDATA[
+/**
+     * The index name of the document.
+     */
+public String getIndex() {
+  return new ConcreteTemplateClass1().extractMethod(failure,response);
+}		
+			]]>
+		</modifiedMethod>
+		<modifiedMethod id = "3">
+			<![CDATA[
+/**
+     * The type of the document.
+     */
+public String getType() {
+  return new ConcreteTemplateClass2().extractMethod(failure,response);
+}			
+			]]>
+		</modifiedMethod>
+	</modifiedMethods>
+	</projectGroup>
+	<projectGroup id = "11">
+	<src>source</src>
+		<leftProjectName>jfreechart-1924</leftProjectName>
+		<rightProjectName>jfreechart-2024</rightProjectName>
+		<leftClassName1>org.jfree.chart.axis.NumberAxis</leftClassName1>
+		<leftClassName2>org.jfree.chart.axis.NumberAxis</leftClassName2>
+		<leftFilePath1>org/jfree/chart/axis/NumberAxis</leftFilePath1>
+		<leftFilePath2>org/jfree/chart/axis/NumberAxis</leftFilePath2>
+		<leftMethodName1>draw(Graphics2D, double, Rectangle2D, Rectangle2D, RectangleEdge, PlotRenderingInfo)</leftMethodName1>
+		<leftMethodName2>draw(Graphics2D, double, Rectangle2D, Rectangle2D, RectangleEdge, PlotRenderingInfo)</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.jfree.chart.axis.CategoryAxis
+		</className1>
+		<className2>
+	org.jfree.chart.axis.CategoryAxis
+		</className2>
+		<filePath1>
+	org/jfree/chart/axis/CategoryAxis
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/axis/CategoryAxis
+		</filePath2>
+		<methodName1>
+	draw(Graphics2D, double, Rectangle2D, Rectangle2D, RectangleEdge, PlotRenderingInfo)
+		</methodName1>
+		<methodName2>
+	draw(Graphics2D, double, Rectangle2D, Rectangle2D, RectangleEdge, PlotRenderingInfo)
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.jfree.chart.axis.LogAxis
+		</className1>
+		<className2>
+	org.jfree.chart.axis.LogAxis
+		</className2>
+		<filePath1>
+	org/jfree/chart/axis/LogAxis
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/axis/LogAxis
+		</filePath2>
+		<methodName1>
+	draw(Graphics2D, double, Rectangle2D, Rectangle2D, RectangleEdge, PlotRenderingInfo)
+		</methodName1>
+		<methodName2>
+	draw(Graphics2D, double, Rectangle2D, Rectangle2D, RectangleEdge, PlotRenderingInfo)
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "3">
+		<className1>
+	org.jfree.chart.axis.DateAxis
+		</className1>
+		<className2>
+	org.jfree.chart.axis.DateAxis
+		</className2>
+		<filePath1>
+	org/jfree/chart/axis/DateAxis
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/axis/DateAxis
+		</filePath2>
+		<methodName1>
+	draw(Graphics2D, double, Rectangle2D, Rectangle2D, RectangleEdge, PlotRenderingInfo)
+		</methodName1>
+		<methodName2>
+	draw(Graphics2D, double, Rectangle2D, Rectangle2D, RectangleEdge, PlotRenderingInfo)
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	<delta>
+	-4
+	</delta>
+	<extractMethod>
+		<![CDATA[
+protected AxisState extractMethod(Rectangle2D dataArea,PlotRenderingInfo plotState,Rectangle2D plotArea,AxisState state,Graphics2D g2,RectangleEdge edge,double cursor){
+  state=drawLabel(getLabel(),g2,plotArea,dataArea,edge,state,plotState);
+  createAndAddEntity(cursor,state,dataArea,edge,plotState);
+  return state;
+}	
+		]]>
+	</extractMethod>
+	<modifiedMethods>
+	<modifiedMethod id = "1">
+	<![CDATA[
+/**
+     * Draws the axis on a Java 2D graphics device (such as the screen or a
+     * printer).
+     *
+     * @param g2  the graphics device (<code>null</code> not permitted).
+     * @param cursor  the cursor location.
+     * @param plotArea  the area within which the axes and data should be drawn
+     *                  (<code>null</code> not permitted).
+     * @param dataArea  the area within which the data should be drawn
+     *                  (<code>null</code> not permitted).
+     * @param edge  the location of the axis (<code>null</code> not permitted).
+     * @param plotState  collects information about the plot
+     *                   (<code>null</code> permitted).
+     *
+     * @return The axis state (never <code>null</code>).
+     */
+public AxisState draw(Graphics2D g2, double cursor, Rectangle2D plotArea,
+            Rectangle2D dataArea, RectangleEdge edge,
+            PlotRenderingInfo plotState) {
+  AxisState state=null;
+  if (!isVisible()) {
+    state=new AxisState(cursor);
+    List ticks=refreshTicks(g2,state,dataArea,edge);
+    state.setTicks(ticks);
+    return state;
+  }
+  state=drawTickMarksAndLabels(g2,cursor,plotArea,dataArea,edge,plotState);
+  return extractMethod(dataArea,plotState,plotArea,state,g2,edge,cursor);
+}	
+	]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+	<![CDATA[
+/**
+     * Draws the axis on a Java 2D graphics device (such as the screen or a
+     * printer).
+     *
+     * @param g2  the graphics device (<code>null</code> not permitted).
+     * @param cursor  the cursor location.
+     * @param plotArea  the area within which the axis should be drawn
+     *                  (<code>null</code> not permitted).
+     * @param dataArea  the area within which the plot is being drawn
+     *                  (<code>null</code> not permitted).
+     * @param edge  the location of the axis (<code>null</code> not permitted).
+     * @param plotState  collects information about the plot
+     *                   (<code>null</code> permitted).
+     *
+     * @return The axis state (never <code>null</code>).
+     */
+public AxisState draw(Graphics2D g2, double cursor, Rectangle2D plotArea,
+            Rectangle2D dataArea, RectangleEdge edge,
+            PlotRenderingInfo plotState) {
+  if (!isVisible()) {
+    return new AxisState(cursor);
+  }
+  if (isAxisLineVisible()) {
+    drawAxisLine(g2,cursor,dataArea,edge);
+  }
+  AxisState state=new AxisState(cursor);
+  state=drawCategoryLabels(g2,plotArea,dataArea,edge,state,plotState);
+  return extractMethod(dataArea,plotState,plotArea,state,g2,edge,cursor);
+}	
+	]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+	<![CDATA[
+/**
+     * Draws the axis on a Java 2D graphics device (such as the screen or a
+     * printer).
+     *
+     * @param g2  the graphics device (<code>null</code> not permitted).
+     * @param cursor  the cursor location (determines where to draw the axis).
+     * @param plotArea  the area within which the axes and plot should be drawn.
+     * @param dataArea  the area within which the data should be drawn.
+     * @param edge  the axis location (<code>null</code> not permitted).
+     * @param plotState  collects information about the plot
+     *                   (<code>null</code> permitted).
+     *
+     * @return The axis state (never <code>null</code>).
+     */
+public AxisState draw(Graphics2D g2, double cursor, Rectangle2D plotArea,
+            Rectangle2D dataArea, RectangleEdge edge,
+            PlotRenderingInfo plotState) {
+  AxisState state=null;
+  if (!isVisible()) {
+    state=new AxisState(cursor);
+    List ticks=refreshTicks(g2,state,dataArea,edge);
+    state.setTicks(ticks);
+    return state;
+  }
+  state=drawTickMarksAndLabels(g2,cursor,plotArea,dataArea,edge,plotState);
+  return extractMethod(dataArea,plotState,plotArea,state,g2,edge,cursor);
+}	
+	]]>
+	</modifiedMethod>
+	<modifiedMethod id = "4">
+	<![CDATA[
+/**
+     * Draws the axis on a Java 2D graphics device (such as the screen or a
+     * printer).
+     *
+     * @param g2  the graphics device (<code>null</code> not permitted).
+     * @param cursor  the cursor location.
+     * @param plotArea  the area within which the axes and data should be
+     *                  drawn (<code>null</code> not permitted).
+     * @param dataArea  the area within which the data should be drawn
+     *                  (<code>null</code> not permitted).
+     * @param edge  the location of the axis (<code>null</code> not permitted).
+     * @param plotState  collects information about the plot
+     *                   (<code>null</code> permitted).
+     *
+     * @return The axis state (never <code>null</code>).
+     */
+public AxisState draw(Graphics2D g2, double cursor, Rectangle2D plotArea,
+            Rectangle2D dataArea, RectangleEdge edge,
+            PlotRenderingInfo plotState) {
+  if (!isVisible()) {
+    AxisState state=new AxisState(cursor);
+    List ticks=refreshTicks(g2,state,dataArea,edge);
+    state.setTicks(ticks);
+    return state;
+  }
+  AxisState state=drawTickMarksAndLabels(g2,cursor,plotArea,dataArea,edge,plotState);
+  return extractMethod(dataArea,plotState,plotArea,state,g2,edge,cursor);
+}	
+	]]>
+	</modifiedMethod>
+	</modifiedMethods>
+	</projectGroup>
+	<projectGroup id = "12">
+		<src>source</src>
+		<leftProjectName>elasticsearch-123</leftProjectName>
+		<rightProjectName>elasticsearch-130</rightProjectName>
+		<leftClassName1>org.elasticsearch.search.aggregations.bucket.significant.GlobalOrdinalsSignificantTermsAggregator.WithHash</leftClassName1>
+		<leftClassName2>org.elasticsearch.search.aggregations.bucket.significant.GlobalOrdinalsSignificantTermsAggregator.WithHash</leftClassName2>
+		<leftFilePath1>org/elasticsearch/search/aggregations/bucket/significant/GlobalOrdinalsSignificantTermsAggregator</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/search/aggregations/bucket/significant/GlobalOrdinalsSignificantTermsAggregator</leftFilePath2>
+		<leftMethodName1>collect(int, long)</leftMethodName1>
+		<leftMethodName2>collect(int, long)</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.search.aggregations.bucket.terms.GlobalOrdinalsStringTermsAggregator.WithHash
+		</className1>
+		<className2>
+	org.elasticsearch.search.aggregations.bucket.terms.GlobalOrdinalsStringTermsAggregator.WithHash
+		</className2>
+		<filePath1>
+	org/elasticsearch/search/aggregations/bucket/terms/GlobalOrdinalsStringTermsAggregator
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/search/aggregations/bucket/terms/GlobalOrdinalsStringTermsAggregator
+		</filePath2>
+		<methodName1>
+	collect(int, long)
+		</methodName1>
+		<methodName2>
+	collect(int, long)
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.search.aggregations.bucket.terms.GlobalOrdinalsStringTermsAggregator
+		</className1>
+		<className2>
+	org.elasticsearch.search.aggregations.bucket.terms.GlobalOrdinalsStringTermsAggregator
+		</className2>
+		<filePath1>
+	org/elasticsearch/search/aggregations/bucket/terms/GlobalOrdinalsStringTermsAggregator
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/search/aggregations/bucket/terms/GlobalOrdinalsStringTermsAggregator
+		</filePath2>
+		<methodName1>
+	collect(int, long)
+		</methodName1>
+		<methodName2>
+	collect(int, long)
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	</projectGroup>
+	<projectGroup id = "13">
+		<src>source</src>
+		<leftProjectName>elasticsearch-020</leftProjectName>
+		<rightProjectName>elasticsearch-090</rightProjectName>
+		<leftClassName1>org.elasticsearch.search.SearchService</leftClassName1>
+		<leftClassName2>org.elasticsearch.search.SearchService</leftClassName2>
+		<leftFilePath1>org/elasticsearch/search/SearchService</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/search/SearchService</leftFilePath2>
+		<leftMethodName1>
+			<![CDATA[
+		executeQueryPhase(ShardSearchRequest)
+			]]>
+		</leftMethodName1>
+		<leftMethodName2>
+			<![CDATA[
+		executeQueryPhase(ShardSearchRequest)
+			]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.search.SearchService
+		</className1>
+		<className2>
+	org.elasticsearch.search.SearchService
+		</className2>
+		<filePath1>
+	org/elasticsearch/search/SearchService
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/search/SearchService
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		executeDfsPhase(ShardSearchRequest)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		executeDfsPhase(ShardSearchRequest)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.search.SearchService
+		</className1>
+		<className2>
+	org.elasticsearch.search.SearchService
+		</className2>
+		<filePath1>
+	org/elasticsearch/search/SearchService
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/search/SearchService
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		executeFetchPhase(ShardSearchRequest)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		executeFetchPhase(ShardSearchRequest)
+			]]>
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	<delta>
+		3
+	</delta>
+	<extractMethod>
+		<![CDATA[
+private SearchContext extractMethod(ShardSearchRequest request){
+  SearchContext context=createAndPutContext(request);
+  return context;
+}	
+		]]>
+	</extractMethod>
+	<modifiedMethods>
+		<modifiedMethod id = "1">
+			<![CDATA[
+public QuerySearchResult executeQueryPhase(ShardSearchRequest request) throws ElasticSearchException {
+  SearchContext context=extractMethod(request);
+  try {
+    context.indexShard().searchService().onPreQueryPhase(context);
+    long time=System.nanoTime();
+    contextProcessing(context);
+    queryPhase.execute(context);
+    if (context.searchType() == SearchType.COUNT) {
+      freeContext(context.id());
+    }
+ else {
+      contextProcessedSuccessfully(context);
+    }
+    context.indexShard().searchService().onQueryPhase(context,System.nanoTime() - time);
+    return context.queryResult();
+  }
+ catch (  RuntimeException e) {
+    context.indexShard().searchService().onFailedQueryPhase(context);
+    logger.trace("Query phase failed",e);
+    freeContext(context);
+    throw e;
+  }
+ finally {
+    cleanContext(context);
+  }
+}		
+			]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+			<![CDATA[
+public DfsSearchResult executeDfsPhase(ShardSearchRequest request) throws ElasticSearchException {
+  SearchContext context=extractMethod(request);
+  try {
+    contextProcessing(context);
+    dfsPhase.execute(context);
+    contextProcessedSuccessfully(context);
+    return context.dfsResult();
+  }
+ catch (  RuntimeException e) {
+    logger.trace("Dfs phase failed",e);
+    freeContext(context);
+    throw e;
+  }
+ finally {
+    cleanContext(context);
+  }
+}			
+			]]>	
+		</modifiedMethod>
+		<modifiedMethod id = "3">
+			<![CDATA[
+public QueryFetchSearchResult executeFetchPhase(ShardSearchRequest request) throws ElasticSearchException {
+  SearchContext context=extractMethod(request);
+  contextProcessing(context);
+  try {
+    context.indexShard().searchService().onPreQueryPhase(context);
+    long time=System.nanoTime();
+    try {
+      queryPhase.execute(context);
+    }
+ catch (    RuntimeException e) {
+      context.indexShard().searchService().onFailedQueryPhase(context);
+      throw e;
+    }
+    long time2=System.nanoTime();
+    context.indexShard().searchService().onQueryPhase(context,time2 - time);
+    context.indexShard().searchService().onPreFetchPhase(context);
+    try {
+      shortcutDocIdsToLoad(context);
+      fetchPhase.execute(context);
+      if (context.scroll() == null) {
+        freeContext(context.id());
+      }
+ else {
+        contextProcessedSuccessfully(context);
+      }
+    }
+ catch (    RuntimeException e) {
+      context.indexShard().searchService().onFailedFetchPhase(context);
+      throw e;
+    }
+    context.indexShard().searchService().onFetchPhase(context,System.nanoTime() - time2);
+    return new QueryFetchSearchResult(context.queryResult(),context.fetchResult());
+  }
+ catch (  RuntimeException e) {
+    logger.trace("Fetch phase failed",e);
+    freeContext(context);
+    throw e;
+  }
+ finally {
+    cleanContext(context);
+  }
+}			
+			]]>
+		</modifiedMethod>
+	</modifiedMethods>
+	</projectGroup>
+	<projectGroup id = "14">
+		<src>source</src>
+		<leftProjectName>elasticsearch-110</leftProjectName>
+		<rightProjectName>elasticsearch-120</rightProjectName>
+		<leftClassName1>org.elasticsearch.common.util.BigArrays</leftClassName1>
+		<leftClassName2>org.elasticsearch.common.util.BigArrays</leftClassName2>
+		<leftFilePath1>org/elasticsearch/common/util/BigArrays</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/common/util/BigArrays</leftFilePath2>
+		<leftMethodName1>
+			<![CDATA[
+		newFloatArray(long, boolean)
+			]]>
+		</leftMethodName1>
+		<leftMethodName2>
+			<![CDATA[
+		newFloatArray(long, boolean)
+			]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.common.util.BigArrays
+		</className1>
+		<className2>
+	org.elasticsearch.common.util.BigArrays
+		</className2>
+		<filePath1>
+	org/elasticsearch/common/util/BigArrays
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/common/util/BigArrays
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		newByteArray(long, boolean)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		newByteArray(long, boolean)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "3">
+		<className1>
+	org.elasticsearch.common.util.BigArrays
+		</className1>
+		<className2>
+	org.elasticsearch.common.util.BigArrays
+		</className2>
+		<filePath1>
+	org/elasticsearch/common/util/BigArrays
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/common/util/BigArrays
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		 newDoubleArray(long, boolean)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		 newDoubleArray(long, boolean)
+			]]>
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	</projectGroup>
+	<projectGroup id = "15">
+		<src>source</src>
+		<leftProjectName>elasticsearch-110</leftProjectName>
+		<rightProjectName>elasticsearch-120</rightProjectName>
+		<leftClassName1>org.elasticsearch.search.aggregations.bucket.geogrid.GeoHashGridAggregator</leftClassName1>
+		<leftClassName2>org.elasticsearch.search.aggregations.bucket.geogrid.GeoHashGridAggregator</leftClassName2>
+		<leftFilePath1>org/elasticsearch/aggregations/bucket/geogrid/GeoHashGridAggregator</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/aggregations/bucket/geogrid/GeoHashGridAggregator</leftFilePath2>
+		<leftMethodName1>
+			<![CDATA[
+		collect(int, long)
+			]]>
+		</leftMethodName1>
+		<leftMethodName2>
+			<![CDATA[
+		collect(int, long)
+			]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.search.aggregations.bucket.terms.LongTermsAggregator
+		</className1>
+		<className2>
+	org.elasticsearch.search.aggregations.bucket.terms.LongTermsAggregator
+		</className2>
+		<filePath1>
+	org/elasticsearch/aggregations/terms/LongTermsAggregator
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/aggregations/terms/LongTermsAggregator
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		collect(int, long)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		collect(int, long)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.search.aggregations.bucket.terms.DoubleTermsAggregator
+		</className1>
+		<className2>
+	org.elasticsearch.search.aggregations.bucket.terms.DoubleTermsAggregator
+		</className2>
+		<filePath1>
+	org/elasticsearch/aggregations/terms/DoubleTermsAggregator
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/aggregations/terms/DoubleTermsAggregator
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		collect(int, long)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		collect(int, long)
+			]]>
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+<delta>
+	-10
+</delta>
+<extractMethod>
+	<![CDATA[
+	protected void extractMethod(long v0,int doc){
+  long bucketOrdinal=bucketOrds.add(v0);
+  if (bucketOrdinal < 0) {
+    bucketOrdinal=-1 - bucketOrdinal;
+    collectExistingBucket(doc,bucketOrdinal);
+  }
+ else {
+    collectBucket(doc,bucketOrdinal);
+  }
+}
+	]]>
+</extractMethod>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+@Override
+    public void collect(int doc, long owningBucketOrdinal) throws IOException {
+  assert owningBucketOrdinal == 0;
+  final int valuesCount=values.setDocument(doc);
+  for (int i=0; i < valuesCount; ++i) {
+    final long val=values.nextValue();
+    extractMethod(val,doc);
+  }
+}		
+		]]>
+	</modifiedMethod>		
+	<modifiedMethod id = "2">
+		<![CDATA[
+@Override
+    public void collect(int doc, long owningBucketOrdinal) throws IOException {
+  assert owningBucketOrdinal == 0;
+  final int valuesCount=values.setDocument(doc);
+  for (int i=0; i < valuesCount; ++i) {
+    final long val=values.nextValue();
+    extractMethod(val,doc);
+  }
+}	
+		]]>
+	</modifiedMethod>
+	<modifiedMethod	 id = "3">
+		<![CDATA[
+@Override
+    public void collect(int doc, long owningBucketOrdinal) throws IOException {
+  assert owningBucketOrdinal == 0;
+  final int valuesCount=values.setDocument(doc);
+  for (int i=0; i < valuesCount; ++i) {
+    final double val=values.nextValue();
+    final long bits=Double.doubleToRawLongBits(val);
+    extractMethod(bits,doc);
+  }
+}		
+		]]>
+	</modifiedMethod>
+</modifiedMethods>
+	</projectGroup>
+	<projectGroup id = "16">
+	<src>source</src>
+		<leftProjectName>elasticsearch-110</leftProjectName>
+		<rightProjectName>elasticsearch-120</rightProjectName>
+		<leftClassName1>org.elasticsearch.common.util.BigArrays</leftClassName1>
+		<leftClassName2>org.elasticsearch.common.util.BigArrays</leftClassName2>
+		<leftFilePath1>org/elasticsearch/common/util/BigArrays</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/common/util/BigArrays</leftFilePath2>
+		<leftMethodName1>
+			<![CDATA[
+		resize(DoubleArray, long)
+			]]>
+		</leftMethodName1>
+		<leftMethodName2>
+			<![CDATA[
+		resize(DoubleArray, long)
+			]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.common.util.BigArrays  
+		</className1>
+		<className2>
+	org.elasticsearch.common.util.BigArrays  
+		</className2>
+		<filePath1>
+	org/elasticsearch/common/util/BigArrays
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/common/util/BigArrays
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		resize(IntArray, long)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		resize(IntArray, long)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "3">
+		<className1>
+	org.elasticsearch.common.util.BigArrays
+		</className1>
+		<className2>
+	org.elasticsearch.common.util.BigArrays
+		</className2>
+		<filePath1>
+	org/elasticsearch/common/util/BigArrays
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/common/util/BigArrays
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		resize(LongArray, long)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		resize(LongArray, long)
+			]]>
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	</projectGroup>
+	<projectGroup id = "17">
+	<src>source</src>
+		<leftProjectName>elasticsearch-090</leftProjectName>
+		<rightProjectName>elasticsearch-100</rightProjectName>
+		<leftClassName1>org.elasticsearch.index.refresh.RefreshStats</leftClassName1>
+		<leftClassName2>org.elasticsearch.index.refresh.RefreshStats</leftClassName2>
+		<leftFilePath1>org/elasticsearch/index/refresh/RefreshStats</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/index/refresh/RefreshStats</leftFilePath2>
+		<leftMethodName1>
+			<![CDATA[
+		toXContent(XContentBuilder, Params)
+			]]>
+		</leftMethodName1>
+		<leftMethodName2>
+			<![CDATA[
+		toXContent(XContentBuilder, Params)
+			]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.index.warmer.WarmerStats
+		</className1>
+		<className2>
+	org.elasticsearch.index.warmer.WarmerStats
+		</className2>
+		<filePath1>
+	org/elasticsearch/index/warmer/WarmerStats
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/index/warmer/WarmerStats
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		toXContent(XContentBuilder, Params)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		toXContent(XContentBuilder, Params)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.index.flush.FlushStats
+		</className1>
+		<className2>
+	org.elasticsearch.index.flush.FlushStats
+		</className2>
+		<filePath1>
+	org/elasticsearch/index/flush/FlushStats
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/index/flush/FlushStats
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		toXContent(XContentBuilder, Params)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		toXContent(XContentBuilder, Params)
+			]]>
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	<delta>
+	-3
+	</delta>
+<extractMethod>
+	<![CDATA[
+public class TemplateClass {
+  public static XContentBuilder extractMethod(  XContentBuilder builder,  long totalTimeInMillis,  long total){
+    builder.field(Fields.TOTAL,total);
+    builder.timeValueField(Fields.TOTAL_TIME_IN_MILLIS,Fields.TOTAL_TIME,totalTimeInMillis);
+    builder.endObject();
+    return builder;
+  }
+}	
+	]]>
+</extractMethod>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+@Override
+    public XContentBuilder toXContent(XContentBuilder builder, Params params) throws IOException {
+  builder.startObject(Fields.REFRESH);
+  return TemplateClass.extractMethod(builder,totalTimeInMillis,total);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+@Override
+    public XContentBuilder toXContent(XContentBuilder builder, Params params) throws IOException {
+  builder.startObject(Fields.WARMER);
+  builder.field(Fields.CURRENT,current);
+  return TemplateClass.extractMethod(builder,totalTimeInMillis,total);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+@Override
+    public XContentBuilder toXContent(XContentBuilder builder, Params params) throws IOException {
+  builder.startObject(Fields.FLUSH);
+  return TemplateClass.extractMethod(builder,totalTimeInMillis,total);
+}		
+		]]>
+	</modifiedMethod>
+</modifiedMethods>	
+	</projectGroup>
+	<projectGroup id = "18">
+	<src>source</src>
+		<leftProjectName>elasticsearch-090</leftProjectName>
+		<rightProjectName>elasticsearch-100</rightProjectName>
+		<leftClassName1>org.elasticsearch.action.search.type.TransportSearchScrollScanAction.AsyncAction</leftClassName1>
+		<leftClassName2>org.elasticsearch.action.search.type.TransportSearchScrollScanAction.AsyncAction</leftClassName2>
+		<leftFilePath1>org/elasticsearch/action/search/type/TransportSearchScrollScanAction</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/action/search/type/TransportSearchScrollScanAction</leftFilePath2>
+		<leftMethodName1>
+			<![CDATA[
+		buildShardFailures()
+			]]>
+		</leftMethodName1>
+		<leftMethodName2>
+			<![CDATA[
+		buildShardFailures()
+			]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.action.search.type.TransportSearchScrollQueryAndFetchAction.AsyncAction
+		</className1>
+		<className2>
+	org.elasticsearch.action.search.type.TransportSearchScrollQueryAndFetchAction.AsyncAction
+		</className2>
+		<filePath1>
+	org/elasticsearch/action/search/type/TransportSearchScrollQueryAndFetchAction
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/action/search/type/TransportSearchScrollQueryAndFetchAction
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		buildShardFailures()
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		buildShardFailures()
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.action.search.type.TransportSearchScrollQueryThenFetchAction.AsyncAction
+		</className1>
+		<className2>
+	org.elasticsearch.action.search.type.TransportSearchScrollQueryThenFetchAction.AsyncAction
+		</className2>
+		<filePath1>
+	org/elasticsearch/action/search/type/TransportSearchScrollQueryThenFetchAction
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/action/search/type/TransportSearchScrollQueryThenFetchAction
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		buildShardFailures()
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		buildShardFailures()
+			]]>
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	<delta>
+	-11
+	</delta>
+	<extractMethod>
+		<![CDATA[
+public class TemplateClass {
+  public static ShardSearchFailure[] extractMethod(  AtomicArray<ShardSearchFailure> shardFailures){
+    if (shardFailures == null) {
+      return ShardSearchFailure.EMPTY_ARRAY;
+    }
+    List<AtomicArray.Entry<ShardSearchFailure>> entries=shardFailures.asList();
+    ShardSearchFailure[] failures=new ShardSearchFailure[entries.size()];
+    for (int i=0; i < failures.length; i++) {
+      failures[i]=entries.get(i).value;
+    }
+    return failures;
+  }
+}	
+		]]>
+	</extractMethod>
+	<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+protected final ShardSearchFailure[] buildShardFailures() {
+  return TemplateClass.extractMethod(shardFailures);
+}	
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+protected final ShardSearchFailure[] buildShardFailures() {
+  return TemplateClass.extractMethod(shardFailures);
+}	
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+protected final ShardSearchFailure[] buildShardFailures() {
+  return TemplateClass.extractMethod(shardFailures);
+}	
+		]]>
+	</modifiedMethod>
+	</modifiedMethods>
+	</projectGroup>
+	<projectGroup id = "19">
+	<src>source</src>
+		<leftProjectName>elasticsearch-090</leftProjectName>
+		<rightProjectName>elasticsearch-100</rightProjectName>
+		<leftClassName1>org.elasticsearch.action.bulk.BulkItemResponse</leftClassName1>
+		<leftClassName2>org.elasticsearch.action.bulk.BulkItemResponse</leftClassName2>
+		<leftFilePath1>org/elasticsearch/action/bulk/BulkItemResponse</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/action/bulk/BulkItemResponse</leftFilePath2>
+		<leftMethodName1>
+			<![CDATA[
+		getId()
+			]]>
+		</leftMethodName1>
+		<leftMethodName2>
+			<![CDATA[
+		getId()
+			]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.action.bulk.BulkItemResponse
+		</className1>
+		<className2>
+	org.elasticsearch.action.bulk.BulkItemResponse
+		</className2>
+		<filePath1>
+	org/elasticsearch/action/bulk/BulkItemResponse
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/action/bulk/BulkItemResponse
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		getIndex()
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		getIndex()
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.action.bulk.BulkItemResponse
+		</className1>
+		<className2>
+	org.elasticsearch.action.bulk.BulkItemResponse
+		</className2>
+		<filePath1>
+	org/elasticsearch/action/bulk/BulkItemResponse
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/action/bulk/BulkItemResponse
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		getType()
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		getType()
+			]]>
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	<delta>
+	6
+	</delta>
+	<extractMethod>
+		<![CDATA[
+public abstract class TemplateClass {
+  public String extractMethod(  Failure failure,  ActionResponse response){
+    if (failure != null) {
+      return m3(failure);
+    }
+    if (response instanceof IndexResponse) {
+      return m2(response);
+    }
+ else     if (response instanceof DeleteResponse) {
+      return m1(response);
+    }
+ else     if (response instanceof UpdateResponse) {
+      return m0(response);
+    }
+    return null;
+  }
+  public abstract String m1(  ActionResponse response);
+  public abstract String m0(  ActionResponse response);
+  public abstract String m2(  ActionResponse response);
+  public abstract String m3(  Failure failure);
+}
+public class ConcreteTemplateClass0 extends TemplateClass {
+  public String m1(  ActionResponse response){
+    return ((DeleteResponse)response).getId();
+  }
+  public String m0(  ActionResponse response){
+    return ((UpdateResponse)response).getId();
+  }
+  public String m2(  ActionResponse response){
+    return ((IndexResponse)response).getId();
+  }
+  public String m3(  Failure failure){
+    return failure.getId();
+  }
+}
+public class ConcreteTemplateClass1 extends TemplateClass {
+  public String m1(  ActionResponse response){
+    return ((DeleteResponse)response).getIndex();
+  }
+  public String m0(  ActionResponse response){
+    return ((UpdateResponse)response).getIndex();
+  }
+  public String m2(  ActionResponse response){
+    return ((IndexResponse)response).getIndex();
+  }
+  public String m3(  Failure failure){
+    return failure.getIndex();
+  }
+}
+public class ConcreteTemplateClass2 extends TemplateClass {
+  public String m1(  ActionResponse response){
+    return ((DeleteResponse)response).getType();
+  }
+  public String m0(  ActionResponse response){
+    return ((UpdateResponse)response).getType();
+  }
+  public String m2(  ActionResponse response){
+    return ((IndexResponse)response).getType();
+  }
+  public String m3(  Failure failure){
+    return failure.getType();
+  }
+}	
+		]]>
+	</extractMethod>
+	<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+/**
+     * The id of the action.
+     */
+public String getId() {
+  return new ConcreteTemplateClass0().extractMethod(failure,response);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+/**
+     * The index name of the action.
+     */
+public String getIndex() {
+  return new ConcreteTemplateClass1().extractMethod(failure,response);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+/**
+     * The type of the action.
+     */
+public String getType() {
+  return new ConcreteTemplateClass2().extractMethod(failure,response);
+}		
+		]]>
+	</modifiedMethod>
+	</modifiedMethods>
+	</projectGroup>
+	<projectGroup id = "20">
+	<src>source</src>
+		<leftProjectName>elasticsearch-090</leftProjectName>
+		<rightProjectName>elasticsearch-100</rightProjectName>
+		<leftClassName1>org.elasticsearch.indices.InternalIndicesLifecycle</leftClassName1>
+		<leftClassName2>org.elasticsearch.indices.InternalIndicesLifecycle</leftClassName2>
+		<leftFilePath1>org/elasticsearch/indices/InternalIndicesLifecycle</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/indices/InternalIndicesLifecycle</leftFilePath2>
+		<leftMethodName1>
+			<![CDATA[
+		beforeIndexCreated(Index)
+			]]>
+		</leftMethodName1>
+		<leftMethodName2>
+			<![CDATA[
+		beforeIndexCreated(Index)
+			]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.indices.InternalIndicesLifecycle
+		</className1>
+		<className2>
+	org.elasticsearch.indices.InternalIndicesLifecycle
+		</className2>
+		<filePath1>
+	org/elasticsearch/indices/InternalIndicesLifecycle
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/indices/InternalIndicesLifecycle
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		afterIndexShardCreated(IndexShard)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		afterIndexShardCreated(IndexShard)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.indices.InternalIndicesLifecycle
+		</className1>
+		<className2>
+	org.elasticsearch.indices.InternalIndicesLifecycle
+		</className2>
+		<filePath1>
+	org/elasticsearch/indices/InternalIndicesLifecycle
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/indices/InternalIndicesLifecycle
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		afterIndexClosed(Index)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		afterIndexClosed(Index)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "3">
+		<className1>
+	org.elasticsearch.indices.InternalIndicesLifecycle
+		</className1>
+		<className2>
+	org.elasticsearch.indices.InternalIndicesLifecycle
+		</className2>
+		<filePath1>
+	org/elasticsearch/indices/InternalIndicesLifecycle
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/indices/InternalIndicesLifecycle
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		afterIndexShardStarted(IndexShard)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		afterIndexShardStarted(IndexShard)
+			]]>
+		</methodName2>
+	</projectMethod>
+	</rightGroup>	
+	</projectGroup>
+	<projectGroup id = "21">
+		<src>source</src>
+		<leftProjectName>elasticsearch-090</leftProjectName>
+		<rightProjectName>elasticsearch-100</rightProjectName>
+		<leftClassName1>org.elasticsearch.common.component.Lifecycle</leftClassName1>
+		<leftClassName2>org.elasticsearch.common.component.Lifecycle</leftClassName2>
+		<leftFilePath1>org/elasticsearch/common/component/Lifecycle</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/common/component/Lifecycle</leftFilePath2>
+		<leftMethodName1>
+			<![CDATA[
+		canMoveToStarted() 
+			]]>
+		</leftMethodName1>
+		<leftMethodName2>
+			<![CDATA[
+		canMoveToStarted() 
+			]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.common.component.Lifecycle
+		</className1>
+		<className2>
+	org.elasticsearch.common.component.Lifecycle
+		</className2>
+		<filePath1>
+	org/elasticsearch/common/component/Lifecycle
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/common/component/Lifecycle
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		moveToStopped()
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		moveToStopped()
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.common.component.Lifecycle
+		</className1>
+		<className2>
+	org.elasticsearch.common.component.Lifecycle
+		</className2>
+		<filePath1>
+	org/elasticsearch/common/component/Lifecycle
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/common/component/Lifecycle
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		moveToStarted()
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		moveToStarted()
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "3">
+		<className1>
+	org.elasticsearch.common.component.Lifecycle
+		</className1>
+		<className2>
+	org.elasticsearch.common.component.Lifecycle
+		</className2>
+		<filePath1>
+	org/elasticsearch/common/component/Lifecycle
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/common/component/Lifecycle
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		canMoveToStopped()
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		canMoveToStopped()
+			]]>
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	</projectGroup>
+	<projectGroup id = "22">
+		<src>source</src>
+		<leftProjectName>elasticsearch-090</leftProjectName>
+		<rightProjectName>elasticsearch-100</rightProjectName>
+		<leftClassName1>org.elasticsearch.index.query.WildcardQueryBuilder</leftClassName1>
+		<leftClassName2>org.elasticsearch.index.query.WildcardQueryBuilder</leftClassName2>
+		<leftFilePath1>org/elasticsearch/index/query/WildcardQueryBuilder</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/index/query/WildcardQueryBuilder</leftFilePath2>
+		<leftMethodName1>
+			<![CDATA[
+		doXContent(XContentBuilder, Params)
+			]]>
+		</leftMethodName1>
+		<leftMethodName2>
+			<![CDATA[
+		doXContent(XContentBuilder, Params)
+			]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.index.query.PrefixQueryBuilder
+		</className1>
+		<className2>
+	org.elasticsearch.index.query.PrefixQueryBuilder
+		</className2>
+		<filePath1>
+	org/elasticsearch/index/query/PrefixQueryBuilder
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/index/query/PrefixQueryBuilder
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		doXContent(XContentBuilder, Params)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		doXContent(XContentBuilder, Params)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.index.query.RegexpQueryBuilder
+		</className1>
+		<className2>
+	org.elasticsearch.index.query.RegexpQueryBuilder
+		</className2>
+		<filePath1>
+	org/elasticsearch/index/query/RegexpQueryBuilder
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/index/query/RegexpQueryBuilder
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		doXContent(XContentBuilder, Params)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		doXContent(XContentBuilder, Params)
+			]]>
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	</projectGroup>
+	<projectGroup id = "23">
+		<src>source</src>
+		<leftProjectName>elasticsearch-090</leftProjectName>
+		<rightProjectName>elasticsearch-100</rightProjectName>
+		<leftClassName1>org.elasticsearch.index.search.stats.SearchStats.Stats</leftClassName1>
+		<leftClassName2>org.elasticsearch.index.search.stats.SearchStats.Stats</leftClassName2>
+		<leftFilePath1>org/elasticsearch/index/search/stats/SearchStats</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/index/search/stats/SearchStats</leftFilePath2>
+		<leftMethodName1>
+			<![CDATA[
+		toXContent(XContentBuilder, Params)
+			]]>
+		</leftMethodName1>
+		<leftMethodName2>
+			<![CDATA[
+		toXContent(XContentBuilder, Params)
+			]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.transport.TransportStats
+		</className1>
+		<className2>
+	org.elasticsearch.transport.TransportStats
+		</className2>
+		<filePath1>
+	org/elasticsearch/transport/TransportStats
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/transport/TransportStats
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		toXContent(XContentBuilder, Params)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		toXContent(XContentBuilder, Params)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.index.indexing.IndexingStats.Stats 
+		</className1>
+		<className2>
+	org.elasticsearch.index.indexing.IndexingStats.Stats 
+		</className2>
+		<filePath1>
+	org/elasticsearch/index/indexing/IndexingStats
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/index/indexing/IndexingStats
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		toXContent(XContentBuilder, Params)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		toXContent(XContentBuilder, Params)
+			]]>
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	</projectGroup>
+	<projectGroup id = "24">
+		<src>source</src>
+		<leftProjectName>elasticsearch-090</leftProjectName>
+		<rightProjectName>elasticsearch-100</rightProjectName>
+		<leftClassName1>org.elasticsearch.search.facet.histogram.ValueScriptHistogramFacetExecutor</leftClassName1>
+		<leftClassName2>org.elasticsearch.search.facet.histogram.ValueScriptHistogramFacetExecutor</leftClassName2>
+		<leftFilePath1>org/elasticsearch/search/facet/histogram/ValueScriptHistogramFacetExecutor</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/search/facet/histogram/ValueScriptHistogramFacetExecutor</leftFilePath2>
+		<leftMethodName1>
+			<![CDATA[
+		buildFacet(String)
+			]]>
+		</leftMethodName1>
+		<leftMethodName2>
+			<![CDATA[
+		buildFacet(String)
+			]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.search.facet.histogram.ScriptHistogramFacetExecutor
+		</className1>
+		<className2>
+	org.elasticsearch.search.facet.histogram.ScriptHistogramFacetExecutor
+		</className2>
+		<filePath1>
+	org/elasticsearch/search/facet/histogram/ScriptHistogramFacetExecutor
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/search/facet/histogram/ScriptHistogramFacetExecutor
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		buildFacet(String)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		buildFacet(String)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.search.facet.histogram.ValueHistogramFacetExecutor
+		</className1>
+		<className2>
+	org.elasticsearch.search.facet.histogram.ValueHistogramFacetExecutor
+		</className2>
+		<filePath1>
+	org/elasticsearch/search/facet/histogram/ValueHistogramFacetExecutor
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/search/facet/histogram/ValueHistogramFacetExecutor
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		buildFacet(String)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		buildFacet(String)
+			]]>
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	<delta>
+	-1
+	</delta>
+	<RetObj>
+		<![CDATA[
+public class RetObj {
+  public InternalFullHistogramFacet ret;
+  public values values;
+  public RetObj(InternalFullHistogramFacet ret,values values){
+    this.ret = ret;
+    this.values = values;
+  }
+}	
+		]]>
+	</RetObj>
+	<extractMethod>
+		<![CDATA[
+protected RetObj extractMethod(Object[] values,String facetName){
+  List<InternalFullHistogramFacet.FullEntry> entries1=new ArrayList<InternalFullHistogramFacet.FullEntry>(entries.v().size());
+  final boolean[] states=entries.v().allocated;
+  final Object[] values=entries.v().values;
+  for (int i=0; i < states.length; i++) {
+    if (states[i]) {
+      InternalFullHistogramFacet.FullEntry value=(InternalFullHistogramFacet.FullEntry)values[i];
+      entries1.add(value);
+    }
+  }
+  entries.release();
+  return new RetObj(new InternalFullHistogramFacet(facetName,comparatorType,entries1),values);
+}	
+		]]>
+	</extractMethod>
+	<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+@Override
+    public InternalFacet buildFacet(String facetName) {
+  RetObj retObj=extractMethod(values,facetName);
+  ret=retObj.ret;
+  values values=retObj.values;
+  return null;
+}
+		]]>	
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+@Override
+    public InternalFacet buildFacet(String facetName) {
+  RetObj retObj=extractMethod(values,facetName);
+  ret=retObj.ret;
+  values values=retObj.values;
+  return null;
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+@Override
+    public InternalFacet buildFacet(String facetName) {
+  RetObj retObj=extractMethod(values,facetName);
+  ret=retObj.ret;
+  values values=retObj.values;
+  return null;
+}	
+		]]>
+	</modifiedMethod>
+	</modifiedMethods>
+	</projectGroup>
+	<projectGroup id = "25">
+		<src>source</src>
+		<leftProjectName>elasticsearch-090</leftProjectName>
+		<rightProjectName>elasticsearch-100</rightProjectName>
+		<leftClassName1>org.elasticsearch.action.count.CountRequest</leftClassName1>
+		<leftClassName2>org.elasticsearch.action.count.CountRequest</leftClassName2>
+		<leftFilePath1>org/elasticsearch/action/count/CountRequest</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/action/count/CountRequest</leftFilePath2>
+		<leftMethodName1>
+			<![CDATA[
+		readFrom(StreamInput)
+			]]>
+		</leftMethodName1>
+		<leftMethodName2>
+			<![CDATA[
+		readFrom(StreamInput)
+			]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.action.admin.indices.validate.query.ValidateQueryRequest
+		</className1>
+		<className2>
+	org.elasticsearch.action.admin.indices.validate.query.ValidateQueryRequest
+		</className2>
+		<filePath1>
+	org/elasticsearch/action/admin/indices/validate/query/ValidateQueryRequest
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/action/admin/indices/validate/query/ValidateQueryRequest
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		readFrom(StreamInput)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		readFrom(StreamInput)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.action.deletebyquery.DeleteByQueryRequest
+		</className1>
+		<className2>
+	org.elasticsearch.action.deletebyquery.DeleteByQueryRequest
+		</className2>
+		<filePath1>
+	org/elasticsearch/action/deletebyquery/DeleteByQueryRequest
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/action/deletebyquery/DeleteByQueryRequest
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		readFrom(StreamInput)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		readFrom(StreamInput)
+			]]>
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	<delta>
+	14
+	</delta>
+	<RetObj>
+		<![CDATA[
+public class RetObj {
+  public boolean sourceUnsafe;
+  public BytesReference source;
+  public RetObj(boolean sourceUnsafe,BytesReference source){
+    this.sourceUnsafe = sourceUnsafe;
+    this.source = source;
+  }
+}	
+		]]>
+	</RetObj>
+	<extractMethod>
+		<![CDATA[
+public class TemplateClass {
+  public static RetObj extractMethod(  StreamInput in){
+    boolean sourceUnsafe=false;
+    BytesReference source=in.readBytesReference();
+    return new RetObj(sourceUnsafe,source);
+  }
+}		
+		]]>
+	</extractMethod>
+	<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+@Override
+    public void readFrom(StreamInput in) throws IOException {
+  super.readFrom(in);
+  minScore=in.readFloat();
+  routing=in.readOptionalString();
+  preference=in.readOptionalString();
+  RetObj retObj=TemplateClass.extractMethod(in);
+  sourceUnsafe=retObj.sourceUnsafe;
+  source=retObj.source;
+  types=in.readStringArray();
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+@Override
+    public void readFrom(StreamInput in) throws IOException {
+  super.readFrom(in);
+  RetObj retObj=TemplateClass.extractMethod(in);
+  sourceUnsafe=retObj.sourceUnsafe;
+  source=retObj.source;
+  int typesSize=in.readVInt();
+  if (typesSize > 0) {
+    types=new String[typesSize];
+    for (int i=0; i < typesSize; i++) {
+      types[i]=in.readString();
+    }
+  }
+  explain=in.readBoolean();
+}		
+		]]>	
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+public void readFrom(StreamInput in) throws IOException {
+  super.readFrom(in);
+  RetObj retObj=TemplateClass.extractMethod(in);
+  sourceUnsafe=retObj.sourceUnsafe;
+  source=retObj.source;
+  routing=in.readOptionalString();
+  types=in.readStringArray();
+}	
+		]]>
+	</modifiedMethod>
+	</modifiedMethods>
+	</projectGroup>
+	<projectGroup id = "26">
+	<src>source</src>
+		<leftProjectName>elasticsearch-090</leftProjectName>
+		<rightProjectName>elasticsearch-100</rightProjectName>
+		<leftClassName1>org.elasticsearch.index.fielddata.fieldcomparator.DoubleValuesComparatorSource</leftClassName1>
+		<leftClassName2>org.elasticsearch.index.fielddata.fieldcomparator.DoubleValuesComparatorSource</leftClassName2>
+		<leftFilePath1>org/elasticsearch/index/fielddata/fieldcomparator/DoubleValuesComparatorSource</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/index/fielddata/fieldcomparator/DoubleValuesComparatorSource</leftFilePath2>
+		<leftMethodName1>
+			<![CDATA[
+		newComparator(String, int, int, boolean)
+			]]>
+		</leftMethodName1>
+		<leftMethodName2>
+			<![CDATA[
+		newComparator(String, int, int, boolean)
+			]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.index.fielddata.fieldcomparator.LongValuesComparatorSource
+		</className1>
+		<className2>
+	org.elasticsearch.index.fielddata.fieldcomparator.LongValuesComparatorSource
+		</className2>
+		<filePath1>
+	org/elasticsearch/index/fielddata/fieldcomparator/DoubleValuesComparatorSource
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/index/fielddata/fieldcomparator/DoubleValuesComparatorSource
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		newComparator(String, int, int, boolean)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		newComparator(String, int, int, boolean)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.index.fielddata.fieldcomparator.FloatValuesComparatorSource
+		</className1>
+		<className2>
+	org.elasticsearch.index.fielddata.fieldcomparator.FloatValuesComparatorSource
+		</className2>
+		<filePath1>
+	org/elasticsearch/index/fielddata/fieldcomparator/FloatValuesComparatorSource
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/index/fielddata/fieldcomparator/DoubleValuesComparatorSource
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		newComparator(String, int, int, boolean)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		newComparator(String, int, int, boolean)
+			]]>
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	</projectGroup>
+	<projectGroup id = "27">
+	<src>source</src>
+		<leftProjectName>elasticsearch-090</leftProjectName>
+		<rightProjectName>elasticsearch-100</rightProjectName>
+		<leftClassName1>org.elasticsearch.index.mapper.core.AbstractFieldMapper.Builder</leftClassName1>
+		<leftClassName2>org.elasticsearch.index.mapper.core.AbstractFieldMapper.Builder</leftClassName2>
+		<leftFilePath1>org/elasticsearch/index/mapper/core/AbstractFieldMapper</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/index/mapper/core/AbstractFieldMapper</leftFilePath2>
+		<leftMethodName1>
+			<![CDATA[
+		storeTermVectors(boolean)
+			]]>
+		</leftMethodName1>
+		<leftMethodName2>
+			<![CDATA[
+		storeTermVectors(boolean)
+			]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.index.mapper.core.AbstractFieldMapper.Builder
+		</className1>
+		<className2>
+	org.elasticsearch.index.mapper.core.AbstractFieldMapper.Builder
+		</className2>
+		<filePath1>
+	org/elasticsearch/index/mapper/core/AbstractFieldMapper
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/index/mapper/core/AbstractFieldMapper
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		storeTermVectorPositions(boolean)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		storeTermVectorPositions(boolean)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.index.mapper.core.AbstractFieldMapper.Builder
+		</className1>
+		<className2>
+	org.elasticsearch.index.mapper.core.AbstractFieldMapper.Builder
+		</className2>
+		<filePath1>
+	org/elasticsearch/index/mapper/core/AbstractFieldMapper
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/index/mapper/core/AbstractFieldMapper
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		storeTermVectorOffsets(boolean)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		storeTermVectorOffsets(boolean)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "3">
+		<className1>
+	org.elasticsearch.index.mapper.core.AbstractFieldMapper.Builder
+		</className1>
+		<className2>
+	org.elasticsearch.index.mapper.core.AbstractFieldMapper.Builder
+		</className2>
+		<filePath1>
+	org/elasticsearch/index/mapper/core/AbstractFieldMapper
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/index/mapper/core/AbstractFieldMapper
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		storeTermVectorPayloads(boolean)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		storeTermVectorPayloads(boolean)
+			]]>
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	<delta>
+	-4
+	</delta>
+	<extractMethod>
+		<![CDATA[
+private void extractMethod(boolean v0){
+  if (v0) {
+    fieldType.setStoreTermVectors(v0);
+  }
+}	
+		]]>
+	</extractMethod>
+	<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+public T storeTermVectors(boolean termVectors) {
+  extractMethod(termVectors);
+  return builder;
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+public T storeTermVectorPositions(boolean termVectorPositions) {
+  extractMethod(termVectorPositions);
+  this.fieldType.setStoreTermVectorPositions(termVectorPositions);
+  return builder;
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+public T storeTermVectorOffsets(boolean termVectorOffsets) {
+  extractMethod(termVectorOffsets);
+  this.fieldType.setStoreTermVectorOffsets(termVectorOffsets);
+  return builder;
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "4">
+		<![CDATA[
+public T storeTermVectorPayloads(boolean termVectorPayloads) {
+  extractMethod(termVectorPayloads);
+  this.fieldType.setStoreTermVectorPayloads(termVectorPayloads);
+  return builder;
+}		
+		]]>
+	</modifiedMethod>
+	</modifiedMethods>
+	</projectGroup>
+<projectGroup id = "28">
+	<src>source</src>
+		<leftProjectName>elasticsearch-020</leftProjectName>
+		<rightProjectName>elasticsearch-090</rightProjectName>
+		<leftClassName1>org.elasticsearch.search.facet.terms.longs.InternalLongTermsFacet</leftClassName1>
+		<leftClassName2>org.elasticsearch.search.facet.terms.longs.InternalLongTermsFacet</leftClassName2>
+		<leftFilePath1>org/elasticsearch/search/facet/terms/longs/InternalLongTermsFacet</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/search/facet/terms/longs/InternalLongTermsFacet</leftFilePath2>
+		<leftMethodName1>
+			<![CDATA[
+		getOtherCount()
+			]]>
+		</leftMethodName1>
+		<leftMethodName2>
+			<![CDATA[
+		getOtherCount()
+			]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.search.facet.terms.strings.InternalStringTermsFacet
+		</className1>
+		<className2>
+	org.elasticsearch.search.facet.terms.strings.InternalStringTermsFacet
+		</className2>
+		<filePath1>
+	org/elasticsearch/search/facet/terms/strings/InternalStringTermsFacet
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/search/facet/terms/strings/InternalStringTermsFacet
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		getOtherCount()
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		getOtherCount()
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.search.facet.terms.doubles.InternalDoubleTermsFacet
+		</className1>
+		<className2>
+	org.elasticsearch.search.facet.terms.doubles.InternalDoubleTermsFacet
+		</className2>
+		<filePath1>
+	org/elasticsearch/search/facet/terms/doubles/InternalDoubleTermsFacet
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/search/facet/terms/doubles/InternalDoubleTermsFacet
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		getOtherCount()
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		getOtherCount()
+			]]>
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	<delta>
+	0
+	</delta>
+	<extractMethod>
+		<![CDATA[
+public abstract class TemplateClass<T0> {
+  public long extractMethod(  T0 entries,  long total){
+    long other=total;
+    for (    Entry entry : entries) {
+      other-=entry.getCount();
+    }
+    return other;
+  }
+}
+public class ConcreteTemplateClass0 extends TemplateClass<Collection<LongEntry>> {
+}
+public class ConcreteTemplateClass1 extends TemplateClass<Collection<TermEntry>> {
+}
+public class ConcreteTemplateClass2 extends TemplateClass<Collection<DoubleEntry>> {
+}	
+		]]>
+	</extractMethod>
+	<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+@Override
+    public long getOtherCount() {
+  return new ConcreteTemplateClass0().extractMethod(entries,total);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+@Override
+    public long getOtherCount() {
+  return new ConcreteTemplateClass1().extractMethod(entries,total);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+@Override
+    public long getOtherCount() {
+  return new ConcreteTemplateClass2().extractMethod(entries,total);
+}		
+		]]>
+	</modifiedMethod>
+	</modifiedMethods>
+	</projectGroup>	
+	<projectGroup id = "29">
+	<src>source</src>
+		<leftProjectName>elasticsearch-020</leftProjectName>
+		<rightProjectName>elasticsearch-090</rightProjectName>
+		<leftClassName1>org.elasticsearch.rest.action.admin.indices.stats.RestIndicesStatsAction.RestDocsStatsHandler</leftClassName1>
+		<leftClassName2>org.elasticsearch.rest.action.admin.indices.stats.RestIndicesStatsAction.RestDocsStatsHandler</leftClassName2>
+		<leftFilePath1>org/elasticsearch/rest/action/admin/indices/stats/RestIndicesStatsAction</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/rest/action/admin/indices/stats/RestIndicesStatsAction</leftFilePath2>
+		<leftMethodName1>
+			<![CDATA[
+		handleRequest(RestRequest, RestChannel)
+			]]>
+		</leftMethodName1>
+		<leftMethodName2>
+			<![CDATA[
+		handleRequest(RestRequest, RestChannel)
+			]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.rest.action.admin.indices.stats.RestIndicesStatsAction.RestWarmerStatsHandler
+		</className1>
+		<className2>
+	org.elasticsearch.rest.action.admin.indices.stats.RestIndicesStatsAction.RestWarmerStatsHandler
+		</className2>
+		<filePath1>
+	org/elasticsearch/rest/action/admin/indices/stats/RestIndicesStatsAction
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/rest/action/admin/indices/stats/RestIndicesStatsAction
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		handleRequest(RestRequest, RestChannel)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		handleRequest(RestRequest, RestChannel)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.rest.action.admin.indices.stats.RestIndicesStatsAction.RestMergeStatsHandler
+		</className1>
+		<className2>
+	org.elasticsearch.rest.action.admin.indices.stats.RestIndicesStatsAction.RestMergeStatsHandler
+		</className2>
+		<filePath1>
+	org/elasticsearch/rest/action/admin/indices/stats/RestIndicesStatsAction
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/rest/action/admin/indices/stats/RestIndicesStatsAction
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		handleRequest(RestRequest, RestChannel)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		handleRequest(RestRequest, RestChannel)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "3">
+		<className1>
+	org.elasticsearch.rest.action.admin.indices.stats.RestIndicesStatsAction.RestSearchStatsHandler
+		</className1>
+		<className2>
+	org.elasticsearch.rest.action.admin.indices.stats.RestIndicesStatsAction.RestSearchStatsHandler
+		</className2>
+		<filePath1>
+	org/elasticsearch/rest/action/admin/indices/stats/RestIndicesStatsAction
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/rest/action/admin/indices/stats/RestIndicesStatsAction
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		handleRequest(RestRequest, RestChannel)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		handleRequest(RestRequest, RestChannel)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "4">
+		<className1>
+	org.elasticsearch.rest.action.admin.indices.stats.RestIndicesStatsAction.RestIndexingStatsHandler
+		</className1>
+		<className2>
+	org.elasticsearch.rest.action.admin.indices.stats.RestIndicesStatsAction.RestIndexingStatsHandler
+		</className2>
+		<filePath1>
+	org/elasticsearch/rest/action/admin/indices/stats/RestIndicesStatsAction
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/rest/action/admin/indices/stats/RestIndicesStatsAction
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		handleRequest(RestRequest, RestChannel)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		handleRequest(RestRequest, RestChannel)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "5">
+		<className1>
+	org.elasticsearch.rest.action.admin.indices.stats.RestIndicesStatsAction.RestStoreStatsHandler
+		</className1>
+		<className2>
+	org.elasticsearch.rest.action.admin.indices.stats.RestIndicesStatsAction.RestStoreStatsHandler
+		</className2>
+		<filePath1>
+	org/elasticsearch/rest/action/admin/indices/stats/RestIndicesStatsAction
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/rest/action/admin/indices/stats/RestIndicesStatsAction
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		handleRequest(RestRequest, RestChannel)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		handleRequest(RestRequest, RestChannel)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "6">
+		<className1>
+	org.elasticsearch.rest.action.admin.indices.stats.RestIndicesStatsAction.RestRefreshStatsHandler 
+		</className1>
+		<className2>
+	org.elasticsearch.rest.action.admin.indices.stats.RestIndicesStatsAction.RestRefreshStatsHandler 
+		</className2>
+		<filePath1>
+	org/elasticsearch/rest/action/admin/indices/stats/RestIndicesStatsAction
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/rest/action/admin/indices/stats/RestIndicesStatsAction
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		handleRequest(RestRequest, RestChannel)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		handleRequest(RestRequest, RestChannel)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "7">
+		<className1>
+	org.elasticsearch.rest.action.admin.indices.stats.RestIndicesStatsAction.RestFlushStatsHandler
+		</className1>
+		<className2>
+	org.elasticsearch.rest.action.admin.indices.stats.RestIndicesStatsAction.RestFlushStatsHandler
+		</className2>
+		<filePath1>
+	org/elasticsearch/rest/action/admin/indices/stats/RestIndicesStatsAction
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/rest/action/admin/indices/stats/RestIndicesStatsAction
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		handleRequest(RestRequest, RestChannel)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		handleRequest(RestRequest, RestChannel)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "8">
+		<className1>
+	org.elasticsearch.rest.action.admin.indices.stats.RestIndicesStatsAction.RestGetStatsHandler
+		</className1>
+		<className2>
+	org.elasticsearch.rest.action.admin.indices.stats.RestIndicesStatsAction.RestGetStatsHandler
+		</className2>
+		<filePath1>
+	org/elasticsearch/rest/action/admin/indices/stats/RestIndicesStatsAction
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/rest/action/admin/indices/stats/RestIndicesStatsAction
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		handleRequest(RestRequest, RestChannel)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		handleRequest(RestRequest, RestChannel)
+			]]>
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	<delta>
+	-149
+	</delta>
+	<extractMethod>
+		<![CDATA[
+public class TemplateClass {
+  public static void extractMethod(  IndicesStatsRequest indicesStatsRequest){
+    client.admin().indices().stats(indicesStatsRequest,new ActionListener<IndicesStatsResponse>(){
+      public void onResponse(      IndicesStatsResponse response){
+        try {
+          XContentBuilder builder=RestXContentBuilder.restContentBuilder(request);
+          builder.startObject();
+          builder.field("ok",true);
+          org.elasticsearch.rest.action.support.RestActions.buildBroadcastShardsHeader(builder,response);
+          response.toXContent(builder,request);
+          builder.endObject();
+          channel.sendResponse(new XContentRestResponse(request,OK,builder));
+        }
+ catch (        Throwable e) {
+          onFailure(e);
+        }
+      }
+      public void onFailure(      Throwable e){
+        try {
+          channel.sendResponse(new XContentThrowableRestResponse(request,e));
+        }
+ catch (        IOException e1) {
+          logger.error("Failed to send failure response",e1);
+        }
+      }
+    }
+);
+  }
+}	
+		]]>
+	</extractMethod>
+	<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+@Override
+        public void handleRequest(final RestRequest request, final RestChannel channel) {
+  IndicesStatsRequest indicesStatsRequest=new IndicesStatsRequest();
+  indicesStatsRequest.listenerThreaded(false);
+  indicesStatsRequest.clear().docs(true);
+  indicesStatsRequest.indices(splitIndices(request.param("index")));
+  indicesStatsRequest.types(splitTypes(request.param("types")));
+  TemplateClass.extractMethod(indicesStatsRequest);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+@Override
+        public void handleRequest(final RestRequest request, final RestChannel channel) {
+  IndicesStatsRequest indicesStatsRequest=new IndicesStatsRequest();
+  indicesStatsRequest.listenerThreaded(false);
+  indicesStatsRequest.clear().warmer(true);
+  indicesStatsRequest.indices(splitIndices(request.param("index")));
+  indicesStatsRequest.types(splitTypes(request.param("types")));
+  TemplateClass.extractMethod(indicesStatsRequest);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+@Override
+        public void handleRequest(final RestRequest request, final RestChannel channel) {
+  IndicesStatsRequest indicesStatsRequest=new IndicesStatsRequest();
+  indicesStatsRequest.listenerThreaded(false);
+  indicesStatsRequest.clear().merge(true);
+  indicesStatsRequest.indices(splitIndices(request.param("index")));
+  indicesStatsRequest.types(splitTypes(request.param("types")));
+  TemplateClass.extractMethod(indicesStatsRequest);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "4">
+		<![CDATA[
+@Override
+        public void handleRequest(final RestRequest request, final RestChannel channel) {
+  IndicesStatsRequest indicesStatsRequest=new IndicesStatsRequest();
+  indicesStatsRequest.listenerThreaded(false);
+  indicesStatsRequest.clear().search(true);
+  indicesStatsRequest.indices(splitIndices(request.param("index")));
+  if (request.hasParam("groups")) {
+    indicesStatsRequest.groups(Strings.splitStringByCommaToArray(request.param("groups")));
+  }
+ else   if (request.hasParam("searchGroupsStats1")) {
+    indicesStatsRequest.groups(Strings.splitStringByCommaToArray(request.param("searchGroupsStats1")));
+  }
+ else   if (request.hasParam("searchGroupsStats2")) {
+    indicesStatsRequest.groups(Strings.splitStringByCommaToArray(request.param("searchGroupsStats2")));
+  }
+  TemplateClass.extractMethod(indicesStatsRequest);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "5">
+		<![CDATA[
+@Override
+        public void handleRequest(final RestRequest request, final RestChannel channel) {
+  IndicesStatsRequest indicesStatsRequest=new IndicesStatsRequest();
+  indicesStatsRequest.listenerThreaded(false);
+  indicesStatsRequest.clear().indexing(true);
+  indicesStatsRequest.indices(splitIndices(request.param("index")));
+  if (request.hasParam("types")) {
+    indicesStatsRequest.types(splitTypes(request.param("types")));
+  }
+ else   if (request.hasParam("indexingTypes1")) {
+    indicesStatsRequest.types(splitTypes(request.param("indexingTypes1")));
+  }
+ else   if (request.hasParam("indexingTypes2")) {
+    indicesStatsRequest.types(splitTypes(request.param("indexingTypes2")));
+  }
+  TemplateClass.extractMethod(indicesStatsRequest);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "6">
+		<![CDATA[
+@Override
+        public void handleRequest(final RestRequest request, final RestChannel channel) {
+  IndicesStatsRequest indicesStatsRequest=new IndicesStatsRequest();
+  indicesStatsRequest.listenerThreaded(false);
+  indicesStatsRequest.clear().store(true);
+  indicesStatsRequest.indices(splitIndices(request.param("index")));
+  indicesStatsRequest.types(splitTypes(request.param("types")));
+  TemplateClass.extractMethod(indicesStatsRequest);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "7">
+		<![CDATA[
+@Override
+        public void handleRequest(final RestRequest request, final RestChannel channel) {
+  IndicesStatsRequest indicesStatsRequest=new IndicesStatsRequest();
+  indicesStatsRequest.listenerThreaded(false);
+  indicesStatsRequest.clear().refresh(true);
+  indicesStatsRequest.indices(splitIndices(request.param("index")));
+  indicesStatsRequest.types(splitTypes(request.param("types")));
+  TemplateClass.extractMethod(indicesStatsRequest);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "8">
+		<![CDATA[
+@Override
+        public void handleRequest(final RestRequest request, final RestChannel channel) {
+  IndicesStatsRequest indicesStatsRequest=new IndicesStatsRequest();
+  indicesStatsRequest.listenerThreaded(false);
+  indicesStatsRequest.clear().flush(true);
+  indicesStatsRequest.indices(splitIndices(request.param("index")));
+  indicesStatsRequest.types(splitTypes(request.param("types")));
+  TemplateClass.extractMethod(indicesStatsRequest);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "9">
+		<![CDATA[
+@Override
+        public void handleRequest(final RestRequest request, final RestChannel channel) {
+  IndicesStatsRequest indicesStatsRequest=new IndicesStatsRequest();
+  indicesStatsRequest.listenerThreaded(false);
+  indicesStatsRequest.clear().get(true);
+  indicesStatsRequest.indices(splitIndices(request.param("index")));
+  TemplateClass.extractMethod(indicesStatsRequest);
+}		
+		]]>
+	</modifiedMethod>
+	</modifiedMethods>
+	</projectGroup>	
+<projectGroup id = "30">
+	<src>source</src>
+		<leftProjectName>elasticsearch-020</leftProjectName>
+		<rightProjectName>elasticsearch-090</rightProjectName>
+		<leftClassName1>org.elasticsearch.search.facet.termsstats.doubles.InternalTermsStatsDoubleFacet.DoubleEntry</leftClassName1>
+		<leftClassName2>org.elasticsearch.search.facet.termsstats.doubles.InternalTermsStatsDoubleFacet.DoubleEntry</leftClassName2>
+		<leftFilePath1>org/elasticsearch/search/facet/termsstats/doubles/InternalTermsStatsDoubleFacet</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/search/facet/termsstats/doubles/InternalTermsStatsDoubleFacet</leftFilePath2>
+		<leftMethodName1>
+			<![CDATA[
+		getMean()
+			]]>
+		</leftMethodName1>
+		<leftMethodName2>
+			<![CDATA[
+		getMean()
+			]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.search.facet.termsstats.longs.InternalTermsStatsLongFacet.LongEntry
+		</className1>
+		<className2>
+	org.elasticsearch.search.facet.termsstats.longs.InternalTermsStatsLongFacet.LongEntry
+		</className2>
+		<filePath1>
+	org/elasticsearch/search/facet/termsstats/longs/InternalTermsStatsLongFacet
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/search/facet/termsstats/longs/InternalTermsStatsLongFacet
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		getMean()
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		getMean()
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.search.facet.statistical.InternalStatisticalFacet
+		</className1>
+		<className2>
+	org.elasticsearch.search.facet.statistical.InternalStatisticalFacet
+		</className2>
+		<filePath1>
+	org/elasticsearch/search/facet/statistical/InternalStatisticalFacet
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/search/facet/statistical/InternalStatisticalFacet
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		getMean()
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		getMean()
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "3">
+		<className1>
+	org.elasticsearch.search.facet.termsstats.strings.InternalTermsStatsStringFacet.StringEntry
+		</className1>
+		<className2>
+	org.elasticsearch.search.facet.termsstats.strings.InternalTermsStatsStringFacet.StringEntry
+		</className2>
+		<filePath1>
+	org/elasticsearch/search/facet/termsstats/strings/InternalTermsStatsStringFacet
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/search/facet/termsstats/strings/InternalTermsStatsStringFacet
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		getMean()
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		getMean()
+			]]>
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	<delta>
+	-6
+	</delta>
+	<extractMethod>
+		<![CDATA[
+public class TemplateClass {
+  public static double extractMethod(  long v0,  double total){
+    if (v0 == 0) {
+      return 0;
+    }
+    return total / v0;
+  }
+}	
+		]]>
+	</extractMethod>
+	<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+@Override
+        public double getMean() {
+  return TemplateClass.extractMethod(totalCount,total);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+@Override
+        public double getMean() {
+  return TemplateClass.extractMethod(totalCount,total);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+@Override
+        public double getMean() {
+  return TemplateClass.extractMethod(totalCount,total);
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "4">
+		<![CDATA[
+@Override
+    public double getMean() {
+  return TemplateClass.extractMethod(count,total);
+}		
+		]]>
+	</modifiedMethod>
+	</modifiedMethods>
+	</projectGroup>	
+</list>	
+
+

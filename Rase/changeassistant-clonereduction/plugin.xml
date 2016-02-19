@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IProject"
+            id="changeassistant.clonereduction.contribution1">
+         <menu
+               label="Sydit"
+               path="additions"
+               id="changeassistant.menu1">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               label="Lase with Clone Reduction"
+               class="changeassistant.clonereduction.popup.actions.NewAction"
+               menubarPath="changeassistant.menu1/group1"
+               enablesFor="multiple"
+               id="changeassistant.clonereduction">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

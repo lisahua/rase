@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<list>
+	<projectGroup id = "5"> <!--Group 14 in SWT-->
+	  <projectMethod id = "1">
+	      <src>Eclipse SWT/win32</src>
+		  <oldProjectName>13515-win32</oldProjectName>
+		  <newProjectName>13516-win32</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.ExpandBar</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.ExpandBar</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/ExpandBar</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/ExpandBar</newFilePath>
+		  <oldMethodName>WM_KEYDOWN(int, int)</oldMethodName>
+		  <newMethodName>WM_KEYDOWN(int, int)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "2">
+	      <src>Eclipse SWT/win32</src>
+		  <oldProjectName>13515-win32</oldProjectName>
+		  <newProjectName>13516-win32</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.ExpandBar</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.ExpandBar</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/ExpandBar</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/ExpandBar</newFilePath>
+		  <oldMethodName>WM_LBUTTONUP(int, int)</oldMethodName>
+		  <newMethodName>WM_LBUTTONUP(int, int)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "3">
+	      <src>Eclipse SWT/emulated/expand</src>
+		  <oldProjectName>13520-emulated</oldProjectName>
+		  <newProjectName>13521-emulated</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.ExpandBar</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.ExpandBar</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/ExpandBar</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/ExpandBar</newFilePath>
+		  <oldMethodName>onKeyDown(Event)</oldMethodName>
+		  <newMethodName>onKeyDown(Event)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "4">
+	      <src>Eclipse SWT/emulated/expand</src>
+		  <oldProjectName>13520-emulated</oldProjectName>
+		  <newProjectName>13521-emulated</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.ExpandBar</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.ExpandBar</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/ExpandBar</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/ExpandBar</newFilePath>
+		  <oldMethodName>onMouseUp(Event)</oldMethodName>
+		  <newMethodName>onMouseUp(Event)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "5">
+	      <src>Eclipse SWT/gtk</src>
+		  <oldProjectName>13524-gtk</oldProjectName>
+		  <newProjectName>13525-gtk</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.ExpandBar</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.ExpandBar</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/ExpandBar</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/ExpandBar</newFilePath>
+		  <oldMethodName>gtk_button_release_event(int, int)</oldMethodName>
+		  <newMethodName>gtk_button_release_event(int, int)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "6">
+	      <src>Eclipse SWT/gtk</src>
+		  <oldProjectName>13524-gtk</oldProjectName>
+		  <newProjectName>13525-gtk</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.ExpandBar</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.ExpandBar</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/ExpandBar</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/ExpandBar</newFilePath>
+		  <oldMethodName>gtk_key_press_event(int, int)</oldMethodName>
+		  <newMethodName>gtk_key_press_event(int, int)</newMethodName>
+	  </projectMethod>
+	  <candidateProjects>
+		<candidateProject id = "1">13515-gtk</candidateProject>
+		<candidateProject id = "2">13515-win32</candidateProject>
+		<candidateProject id = "3">13515-photon</candidateProject>
+		<!--<candidateProject id = "4">13515-carbon</candidateProject>
+		<candidateProject id = "5">13515-motif</candidateProject>
+		<candidateProject id = "6">13515-emulated</candidateProject>-->
+	  </candidateProjects>
+	</projectGroup>
+	<projectGroup id = "14"> <!--Group 17 in SWT-->
+	  <projectMethod id = "1">
+	      <src>Eclipse SWT Drag and Drop/motif</src>
+		  <oldProjectName>14502-motif</oldProjectName>
+		  <newProjectName>14503-motif</newProjectName>
+		  <oldClassName>org.eclipse.swt.dnd.DropTarget</oldClassName>
+		  <newClassName>org.eclipse.swt.dnd.DropTarget</newClassName>
+		  <oldFilePath>org/eclipse/swt/dnd/DropTarget</oldFilePath>
+		  <newFilePath>org/eclipse/swt/dnd/DropTarget</newFilePath>
+		  <oldMethodName>DropTarget(Control, int)</oldMethodName>
+		  <newMethodName>DropTarget(Control, int)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "2">
+	      <src>Eclipse SWT Drag and Drop/gtk</src>
+		  <oldProjectName>14503-gtk</oldProjectName>
+		  <newProjectName>14504-gtk</newProjectName>
+		  <oldClassName>org.eclipse.swt.dnd.DragSource</oldClassName>
+		  <newClassName>org.eclipse.swt.dnd.DragSource</newClassName>
+		  <oldFilePath>org/eclipse/swt/dnd/DragSource</oldFilePath>
+		  <newFilePath>org/eclipse/swt/dnd/DragSource</newFilePath>
+		  <oldMethodName>DragSource(Control, int)</oldMethodName>
+		  <newMethodName>DragSource(Control, int)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "3">
+	      <src>Eclipse SWT Drag and Drop/win32</src>
+		  <oldProjectName>14504-win32</oldProjectName>
+		  <newProjectName>14505-win32</newProjectName>
+		  <oldClassName>org.eclipse.swt.dnd.DragSource</oldClassName>
+		  <newClassName>org.eclipse.swt.dnd.DragSource</newClassName>
+		  <oldFilePath>org/eclipse/swt/dnd/DragSource</oldFilePath>
+		  <newFilePath>org/eclipse/swt/dnd/DragSource</newFilePath>
+		  <oldMethodName>DragSource(Control, int)</oldMethodName>
+		  <newMethodName>DragSource(Control, int)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "4">
+	      <src>Eclipse SWT Drag and Drop/carbon</src>
+		  <oldProjectName>14505-carbon</oldProjectName>
+		  <newProjectName>14506-carbon</newProjectName>
+		  <oldClassName>org.eclipse.swt.dnd.DragSource</oldClassName>
+		  <newClassName>org.eclipse.swt.dnd.DragSource</newClassName>
+		  <oldFilePath>org/eclipse/swt/dnd/DragSource</oldFilePath>
+		  <newFilePath>org/eclipse/swt/dnd/DragSource</newFilePath>
+		  <oldMethodName>DragSource(Control, int)</oldMethodName>
+		  <newMethodName>DragSource(Control, int)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "5">
+	      <src>Eclipse SWT Drag and Drop/photon</src>
+		  <oldProjectName>14506-photon</oldProjectName>
+		  <newProjectName>14507-photon</newProjectName>
+		  <oldClassName>org.eclipse.swt.dnd.DropTarget</oldClassName>
+		  <newClassName>org.eclipse.swt.dnd.DropTarget</newClassName>
+		  <oldFilePath>org/eclipse/swt/dnd/DropTarget</oldFilePath>
+		  <newFilePath>org/eclipse/swt/dnd/DropTarget</newFilePath>
+		  <oldMethodName>DropTarget(Control, int)</oldMethodName>
+		  <newMethodName>DropTarget(Control, int)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "6">
+	      <src>Eclipse SWT Drag and Drop/emulated</src>
+		  <oldProjectName>14507-emulated</oldProjectName>
+		  <newProjectName>14508-emulated</newProjectName>
+		  <oldClassName>org.eclipse.swt.dnd.DropTarget</oldClassName>
+		  <newClassName>org.eclipse.swt.dnd.DropTarget</newClassName>
+		  <oldFilePath>org/eclipse/swt/dnd/DropTarget</oldFilePath>
+		  <newFilePath>org/eclipse/swt/dnd/DropTarget</newFilePath>
+		  <oldMethodName>DropTarget(Control, int)</oldMethodName>
+		  <newMethodName>DropTarget(Control, int)</newMethodName>
+	  </projectMethod>
+	  <candidateProjects>
+		<candidateProject id = "1">14502-gtk</candidateProject>
+		<candidateProject id = "2">14502-win32</candidateProject>
+		<!--<candidateProject id = "3">14502-photon</candidateProject>
+		<candidateProject id = "4">14502-carbon</candidateProject>-->
+		<candidateProject id = "3">14506-photon</candidateProject>
+		<candidateProject id = "4">14505-carbon</candidateProject>
+		<candidateProject id = "1">14507-emulated</candidateProject>
+		<candidateProject id = "5">14502-motif</candidateProject>
+		<!--<candidateProject id = "6">14502-emulated</candidateProject>-->
+	  </candidateProjects>
+   </projectGroup>
+   <projectGroup id = "20"> <!--Group 52 in SWT-->
+	  <projectMethod id = "1">
+	      <src>Eclipse SWT/carbon</src>
+		  <oldProjectName>11456-carbon</oldProjectName>
+		  <newProjectName>11457-carbon</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.Control</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.Control</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/Control</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/Control</newFilePath>
+		  <oldMethodName>fixFocus(Control)</oldMethodName>
+		  <newMethodName>fixFocus(Control)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "2">
+	      <src>Eclipse SWT/gtk</src>
+		  <oldProjectName>11457-gtk</oldProjectName>
+		  <newProjectName>11458-gtk</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.Control</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.Control</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/Control</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/Control</newFilePath>
+		  <oldMethodName>fixFocus(Control)</oldMethodName>
+		  <newMethodName>fixFocus(Control)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "3">
+		  <src>Eclipse SWT/motif</src>
+		  <oldProjectName>11457-motif</oldProjectName>
+		  <newProjectName>11458-motif</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.Control</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.Control</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/Control</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/Control</newFilePath>
+		  <oldMethodName>fixFocus(Control)</oldMethodName>
+		  <newMethodName>fixFocus(Control)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "4">
+		  <src>Eclipse SWT/win32</src>
+		  <oldProjectName>11457-win32</oldProjectName>
+		  <newProjectName>11458-win32</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.Control</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.Control</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/Control</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/Control</newFilePath>
+		  <oldMethodName>fixFocus(Control)</oldMethodName>
+		  <newMethodName>fixFocus(Control)</newMethodName>
+	  </projectMethod>
+	  <candidateProjects>
+		<candidateProject id = "1">11456-gtk</candidateProject>
+		<candidateProject id = "2">11456-win32</candidateProject>
+		<!--<candidateProject id = "3">11457-photon</candidateProject>-->
+		<candidateProject id = "4">11456-carbon</candidateProject>
+		<candidateProject id = "5">11456-motif</candidateProject>
+		<!--<candidateProject id = "6">11457-emulated</candidateProject>-->
+	  </candidateProjects>
+   </projectGroup>
+   <projectGroup id = "22"> <!--Group 33 in SWT-->
+	  <projectMethod id = "1">
+	      <src>Eclipse SWT/win32</src>
+		  <oldProjectName>9673-win32</oldProjectName>
+		  <newProjectName>9674-win32</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.TableItem</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.TableItem</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/TableItem</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/TableItem</newFilePath>
+		  <oldMethodName>getBackground(int)</oldMethodName>
+		  <newMethodName>getBackground(int)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "2">
+	      <src>Eclipse SWT/win32</src>
+		  <oldProjectName>9673-win32</oldProjectName>
+		  <newProjectName>9674-win32</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.TableItem</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.TableItem</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/TableItem</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/TableItem</newFilePath>
+		  <oldMethodName>getFont(int)</oldMethodName>
+		  <newMethodName>getFont(int)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "3">
+	      <src>Eclipse SWT/win32</src>
+		  <oldProjectName>9673-win32</oldProjectName>
+		  <newProjectName>9674-win32</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.TableItem</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.TableItem</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/TableItem</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/TableItem</newFilePath>
+		  <oldMethodName>getForeground(int)</oldMethodName>
+		  <newMethodName>getForeground(int)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "4">
+	      <src>Eclipse SWT/carbon</src>
+		  <oldProjectName>9674-carbon</oldProjectName>
+		  <newProjectName>9675-carbon</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.TableItem</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.TableItem</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/TableItem</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/TableItem</newFilePath>
+		  <oldMethodName>getBackground(int)</oldMethodName>
+		  <newMethodName>getBackground(int)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "5">
+	      <src>Eclipse SWT/carbon</src>
+		  <oldProjectName>9674-carbon</oldProjectName>
+		  <newProjectName>9675-carbon</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.TableItem</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.TableItem</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/TableItem</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/TableItem</newFilePath>
+		  <oldMethodName>getFont(int)</oldMethodName>
+		  <newMethodName>getFont(int)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "6">
+	      <src>Eclipse SWT/carbon</src>
+		  <oldProjectName>9674-carbon</oldProjectName>
+		  <newProjectName>9675-carbon</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.TableItem</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.TableItem</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/TableItem</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/TableItem</newFilePath>
+		  <oldMethodName>getForeground(int)</oldMethodName>
+		  <newMethodName>getForeground(int)</newMethodName>
+	  </projectMethod>
+	  <candidateProjects>
+		<!--<candidateProject id = "1">9673-gtk</candidateProject>-->
+		<candidateProject id = "2">9673-win32</candidateProject>
+		<!--<candidateProject id = "3">9673-photon</candidateProject>-->
+		<candidateProject id = "4">9674-carbon</candidateProject>
+		<!--<candidateProject id = "5">9673-motif</candidateProject>
+		<candidateProject id = "6">9673-emulated</candidateProject>-->
+	  </candidateProjects>
+	</projectGroup>	 
+   <projectGroup id = "25"> <!--Group 44 in SWT-->
+	  <projectMethod id = "1">
+	      <src>Eclipse SWT/win32</src>
+		  <oldProjectName>10771-win32</oldProjectName>
+		  <newProjectName>10772-win32</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.Spinner</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.Spinner</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/Spinner</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/Spinner</newFilePath>
+		  <oldMethodName>verifyText(String, int, int, Event)</oldMethodName>
+		  <newMethodName>verifyText(String, int, int, Event)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "2">
+	      <src>Eclipse SWT/carbon</src>
+		  <oldProjectName>10779-carbon</oldProjectName>
+		  <newProjectName>10780-carbon</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.Spinner</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.Spinner</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/Spinner</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/Spinner</newFilePath>
+		  <oldMethodName>verifyText(String, int, int, Event)</oldMethodName>
+		  <newMethodName>verifyText(String, int, int, Event)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "3">
+	      <src>Eclipse SWT/gtk</src>
+		  <oldProjectName>10785-gtk</oldProjectName>
+		  <newProjectName>10786-gtk</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.Spinner</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.Spinner</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/Spinner</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/Spinner</newFilePath>
+		  <oldMethodName>verifyText(String, int, int)</oldMethodName>
+		  <newMethodName>verifyText(String, int, int)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "4">
+	      <src>Eclipse SWT/motif</src>
+		  <oldProjectName>10788-motif</oldProjectName>
+		  <newProjectName>10789-motif</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.Spinner</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.Spinner</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/Spinner</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/Spinner</newFilePath>
+		  <oldMethodName>XmNmodifyVerifyCallback(int, int, int)</oldMethodName>
+		  <newMethodName>XmNmodifyVerifyCallback(int, int, int)</newMethodName>
+	  </projectMethod>
+	  <candidateProjects>
+		<candidateProject id = "1">10779-gtk</candidateProject>
+		<candidateProject id = "2">10771-win32</candidateProject>
+		<!--<candidateProject id = "3">10779-photon</candidateProject>-->
+		<candidateProject id = "4">10779-carbon</candidateProject>
+		<candidateProject id = "5">10779-motif</candidateProject>
+		<!--<candidateProject id = "6">10779-emulated</candidateProject>-->
+	  </candidateProjects>
+   </projectGroup>	
+   <projectGroup id = "26"> <!--Group 49 in SWT-->
+	  <projectMethod id = "1">
+	      <src>Eclipse SWT/win32</src>
+		  <oldProjectName>11283-win32</oldProjectName>
+		  <newProjectName>11284-win32</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.Shell</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.Shell</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/Shell</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/Shell</newFilePath>
+		  <oldMethodName>Shell(Display, Shell, int, int)</oldMethodName>
+		  <newMethodName>Shell(Display, Shell, int, int)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "2">
+	      <src>Eclipse SWT/gtk</src>
+		  <oldProjectName>11284-gtk</oldProjectName>
+		  <newProjectName>11285-gtk</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.Shell</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.Shell</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/Shell</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/Shell</newFilePath>
+		  <oldMethodName>Shell(Display, Shell, int, int)</oldMethodName>
+		  <newMethodName>Shell(Display, Shell, int, int)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "3">
+	      <src>Eclipse SWT/motif</src>
+		  <oldProjectName>11286-motif</oldProjectName>
+		  <newProjectName>11287-motif</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.Shell</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.Shell</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/Shell</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/Shell</newFilePath>
+		  <oldMethodName>Shell(Display, Shell, int, int)</oldMethodName>
+		  <newMethodName>Shell(Display, Shell, int, int)</newMethodName>
+	  </projectMethod>
+	  <projectMethod id = "4">
+	      <src>Eclipse SWT/photon</src>
+		  <oldProjectName>11286-photon</oldProjectName>
+		  <newProjectName>11287-photon</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.Shell</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.Shell</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/Shell</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/Shell</newFilePath>
+		  <oldMethodName>Shell(Display, Shell, int, int)</oldMethodName>
+		  <newMethodName>Shell(Display, Shell, int, int)</newMethodName>
+	  </projectMethod> 
+	  <projectMethod id = "5">
+	      <src>Eclipse SWT/carbon</src>
+		  <oldProjectName>11287-carbon</oldProjectName>
+		  <newProjectName>11288-carbon</newProjectName>
+		  <oldClassName>org.eclipse.swt.widgets.Shell</oldClassName>
+		  <newClassName>org.eclipse.swt.widgets.Shell</newClassName>
+		  <oldFilePath>org/eclipse/swt/widgets/Shell</oldFilePath>
+		  <newFilePath>org/eclipse/swt/widgets/Shell</newFilePath>
+		  <oldMethodName>Shell(Display, Shell, int, int)</oldMethodName>
+		  <newMethodName>Shell(Display, Shell, int, int)</newMethodName>
+	  </projectMethod>   
+	  <candidateProjects>
+		<candidateProject id = "1">11284-gtk</candidateProject>
+		<candidateProject id = "2">11283-win32</candidateProject>
+		<candidateProject id = "3">11286-photon</candidateProject>
+		<candidateProject id = "4">11287-carbon</candidateProject>
+		<candidateProject id = "5">11284-motif</candidateProject>
+		<!--<candidateProject id = "6">11284-emulated</candidateProject>-->
+	  </candidateProjects>   
+   </projectGroup>	       	     	   
+</list>

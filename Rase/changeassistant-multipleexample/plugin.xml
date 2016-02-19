@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IProject"
+            id="changeassistant.multipleexample.contribution1">
+         <menu
+               label="Sydit"
+               path="additions"
+               id="changeassistant.menu1">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               label="Enhanced Change Assistant"
+               class="changeassistant.multipleexample.popup.actions.NewAction"
+               menubarPath="changeassistant.menu1/group1"
+               enablesFor="multiple"
+               id="changeassistant.multipleexample.newAction">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

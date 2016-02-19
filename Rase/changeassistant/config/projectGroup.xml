@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<list>
+	<projectGroup id = "1">
+		<src>core</src>
+		<leftProjectName>org.eclipse.debug.core_v20060123</leftProjectName>
+		<rightProjectName>org.eclipse.debug.core_v20060227</rightProjectName>
+		<leftClassName1>org.eclipse.debug.internal.core.LaunchManager.LaunchesNotifier</leftClassName1>
+		<leftClassName2>org.eclipse.debug.internal.core.LaunchManager.LaunchesNotifier</leftClassName2>
+		<leftFilePath1>org/eclipse/debug/internal/core/LaunchManager</leftFilePath1>
+		<leftFilePath2>org/eclipse/debug/internal/core/LaunchManager</leftFilePath2>
+		<leftMethodName1>notify(ILaunch[], int)</leftMethodName1>
+		<leftMethodName2>notify(ILaunch[], int)</leftMethodName2>
+		<rightGroup>	
+	<projectMethod id = "1">
+		<className1>
+	org.eclipse.debug.internal.core.LaunchManager.LaunchNotifier	
+		</className1>
+		<className2>
+	org.eclipse.debug.internal.core.LaunchManager.LaunchNotifier		
+		</className2>
+		<filePath1>
+	org/eclipse/debug/internal/core/LaunchManager
+		</filePath1>
+		<filePath2>
+	org/eclipse/debug/internal/core/LaunchManager
+		</filePath2>
+		<methodName1>
+	notify(ILaunch, int)	
+		</methodName1>
+		<methodName2>
+	notify(ILaunch, int)	
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "2">
+		<className1>
+	org.eclipse.debug.internal.core.LaunchManager.ConfigurationNotifier	
+		</className1>
+		<className2>
+	org.eclipse.debug.internal.core.LaunchManager.ConfigurationNotifier		
+		</className2>
+		<filePath1>
+	org/eclipse/debug/internal/core/LaunchManager
+		</filePath1>
+		<filePath2>
+	org/eclipse/debug/internal/core/LaunchManager
+		</filePath2>
+		<methodName1>
+	notify(ILaunchConfiguration, int)	
+		</methodName1>
+		<methodName2>
+	notify(ILaunchConfiguration, int)	
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "3">
+		<className1>
+	org.eclipse.debug.internal.core.BreakpointManager.BreakpointNotifier
+		</className1>
+		<className2>
+	org.eclipse.debug.internal.core.BreakpointManager.BreakpointNotifier	
+		</className2>
+		<filePath1>
+	org/eclipse/debug/internal/core/BreakpointManager	
+		</filePath1>
+		<filePath2>
+	org/eclipse/debug/internal/core/BreakpointManager		
+		</filePath2>
+		<methodName1>
+	notify(IBreakpoint[], IMarkerDelta[], int)
+		</methodName1>
+		<methodName2>
+	notify(IBreakpoint[], IMarkerDelta[], int)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "4">
+		<className1>
+	 org.eclipse.debug.internal.core.BreakpointManager.BreakpointManagerNotifier	
+		</className1>
+		<className2>
+	 org.eclipse.debug.internal.core.BreakpointManager.BreakpointManagerNotifier
+		</className2>
+		<filePath1>
+	org/eclipse/debug/internal/core/BreakpointManager	
+		</filePath1>
+		<filePath2>
+	org/eclipse/debug/internal/core/BreakpointManager		
+		</filePath2>
+		<methodName1>
+	notify(boolean)	
+		</methodName1>
+		<methodName2>
+	notify(boolean)	
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "5">
+		<className1>
+	 org.eclipse.debug.internal.core.BreakpointManager.BreakpointsNotifier	
+		</className1>
+		<className2>
+	 org.eclipse.debug.internal.core.BreakpointManager.BreakpointsNotifier
+		</className2>
+		<filePath1>
+	org/eclipse/debug/internal/core/BreakpointManager	
+		</filePath1>
+		<filePath2>
+	org/eclipse/debug/internal/core/BreakpointManager		
+		</filePath2>
+		<methodName1>
+	notify(IBreakpoint[], IMarkerDelta[], int)
+		</methodName1>
+		<methodName2>
+	notify(IBreakpoint[], IMarkerDelta[], int)	
+		</methodName2>
+	</projectMethod>		
+	<projectMethod id = "6">
+		<className1>
+	 org.eclipse.debug.internal.core.ExpressionManager.ExpressionNotifier	
+		</className1>
+		<className2>
+	 org.eclipse.debug.internal.core.ExpressionManager.ExpressionNotifier	
+		</className2>
+		<filePath1>
+	org/eclipse/debug/internal/core/ExpressionManager	
+		</filePath1>
+		<filePath2>
+	org/eclipse/debug/internal/core/ExpressionManager		
+		</filePath2>
+		<methodName1>
+	notify(IExpression[], int)
+		</methodName1>
+		<methodName2>
+	notify(IExpression[], int)	
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "7">
+		<className1>
+	 org.eclipse.debug.internal.core.ExpressionManager.ExpressionsNotifier	
+		</className1>
+		<className2>
+	 org.eclipse.debug.internal.core.ExpressionManager.ExpressionsNotifier	
+		</className2>
+		<filePath1>
+	org/eclipse/debug/internal/core/ExpressionManager	
+		</filePath1>
+		<filePath2>
+	org/eclipse/debug/internal/core/ExpressionManager		
+		</filePath2>
+		<methodName1>
+	notify(IExpression[], int)
+		</methodName1>
+		<methodName2>
+	notify(IExpression[], int)	
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "8">
+		<className1>
+	 org.eclipse.debug.internal.core.MemoryBlockManager.MemoryBlockNotifier	
+		</className1>
+		<className2>
+	 org.eclipse.debug.internal.core.MemoryBlockManager.MemoryBlockNotifier	
+		</className2>
+		<filePath1>
+	org/eclipse/debug/internal/core/MemoryBlockManager	
+		</filePath1>
+		<filePath2>
+	org/eclipse/debug/internal/core/MemoryBlockManager		
+		</filePath2>
+		<methodName1>
+	notify(IMemoryBlock[], int)
+		</methodName1>
+		<methodName2>
+	notify(IMemoryBlock[], int)
+		</methodName2>
+	</projectMethod>		
+		</rightGroup>
+	</projectGroup>
+	<projectGroup id = "2">
+		<src>core</src>
+		<leftProjectName>org.eclipse.debug.core_v20080303</leftProjectName>
+		<rightProjectName>org.eclipse.debug.core_v20080407</rightProjectName>
+		<leftClassName1>org.eclipse.debug.internal.core.commands.DisconnectCommand</leftClassName1>
+		<leftClassName2>org.eclipse.debug.internal.core.commands.DisconnectCommand</leftClassName2>
+		<leftFilePath1>org/eclipse/debug/internal/core/commands/DisconnectCommand</leftFilePath1>
+		<leftFilePath2>org/eclipse/debug/internal/core/commands/DisconnectCommand</leftFilePath2>
+		<leftMethodName1>getTarget(Object)</leftMethodName1>
+		<leftMethodName2>getTarget(Object)</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.eclipse.debug.internal.core.commands.DropToFrameCommand
+		</className1>
+		<className2>
+	org.eclipse.debug.internal.core.commands.DropToFrameCommand	
+		</className2>
+		<filePath1>
+	org/eclipse/debug/internal/core/commands/DropToFrameCommand
+		</filePath1>
+		<filePath2>
+	org/eclipse/debug/internal/core/commands/DropToFrameCommand
+		</filePath2>
+		<methodName1>
+	getTarget(Object)	
+		</methodName1>
+		<methodName2>
+	getTarget(Object)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "2">
+		<className1>
+	org.eclipse.debug.internal.core.commands.TerminateCommand
+		</className1>
+		<className2>
+	org.eclipse.debug.internal.core.commands.TerminateCommand
+		</className2>
+		<filePath1>
+	org/eclipse/debug/internal/core/commands/TerminateCommand
+		</filePath1>
+		<filePath2>
+	org/eclipse/debug/internal/core/commands/TerminateCommand
+		</filePath2>
+		<methodName1>
+	getTarget(Object)
+		</methodName1>
+		<methodName2>
+	getTarget(Object)	
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "3">
+		<className1>
+	org.eclipse.debug.internal.core.commands.StepCommand
+		</className1>
+		<className2>
+	org.eclipse.debug.internal.core.commands.StepCommand
+		</className2>
+		<filePath1>
+	org/eclipse/debug/internal/core/commands/StepCommand
+		</filePath1>
+		<filePath2>
+	org/eclipse/debug/internal/core/commands/StepCommand
+		</filePath2>
+		<methodName1>
+	getTarget(Object)
+		</methodName1>
+		<methodName2>
+	getTarget(Object)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "4">
+		<className1>
+	org.eclipse.debug.internal.core.commands.SuspendCommand
+		</className1>
+		<className2>
+	org.eclipse.debug.internal.core.commands.SuspendCommand
+		</className2>
+		<filePath1>
+	org/eclipse/debug/internal/core/commands/SuspendCommand	
+		</filePath1>
+		<filePath2>
+	org/eclipse/debug/internal/core/commands/SuspendCommand	
+		</filePath2>
+		<methodName1>
+	getTarget(Object)
+		</methodName1>
+		<methodName2>
+	getTarget(Object)
+		</methodName2>
+	</projectMethod>		
+		</rightGroup>
+	</projectGroup>
+	<projectGroup id = "3">
+		<src>compare</src>
+		<leftProjectName>org.eclipse.compare_v20061002</leftProjectName>
+		<rightProjectName>org.eclipse.compare_v20061016</rightProjectName>
+		<leftClassName1>org.eclipse.compare.internal.patch.Diff</leftClassName1>
+		<leftClassName2>org.eclipse.compare.internal.patch.Diff</leftClassName2>
+		<leftFilePath1>org/eclipse/compare/internal/patch/Diff</leftFilePath1>
+		<leftFilePath2>org/eclipse/compare/internal/patch/Diff</leftFilePath2>
+		<leftMethodName1>getImageDescriptor(Object)</leftMethodName1>
+		<leftMethodName2>getImageDescriptor(Object)</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.eclipse.compare.internal.patch.PatcherCompareEditorInput.PatcherCompareEditorDecorator
+		</className1>
+		<className2>
+	org.eclipse.compare.internal.patch.PatcherCompareEditorInput.PatcherCompareEditorDecorator	
+		</className2>
+		<filePath1>
+	org/eclipse/compare/internal/patch/PatcherCompareEditorInput
+		</filePath1>
+		<filePath2>
+	org/eclipse/compare/internal/patch/PatcherCompareEditorInput
+		</filePath2>
+		<methodName1>
+	decorateImage(Image, Object)
+		</methodName1>
+		<methodName2>
+	decorateImage(Image, Object)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "2">
+		<className1>
+	org.eclipse.compare.internal.patch.Patcher
+		</className1>
+		<className2>
+	org.eclipse.compare.internal.patch.Patcher
+		</className2>
+		<filePath1>
+	org/eclipse/compare/internal/patch/Patcher
+		</filePath1>
+		<filePath2>
+	org/eclipse/compare/internal/patch/Patcher
+		</filePath2>
+		<methodName1>
+	applyAll(IProgressMonitor, Shell, String)
+		</methodName1>
+		<methodName2>
+	applyAll(IProgressMonitor, Shell, String)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "3">
+		<className1>
+	org.eclipse.compare.internal.patch.PreviewPatchLabelDecorator
+		</className1>
+		<className2>
+	org.eclipse.compare.internal.patch.PreviewPatchLabelDecorator
+		</className2>
+		<filePath1>
+	org/eclipse/compare/internal/patch/PreviewPatchLabelDecorator
+		</filePath1>
+		<filePath2>
+	org/eclipse/compare/internal/patch/PreviewPatchLabelDecorator
+		</filePath2>
+		<methodName1>
+	decorateImage(Image, Object)
+		</methodName1>
+		<methodName2>
+	decorateImage(Image, Object)
+		</methodName2>
+	</projectMethod>	
+		</rightGroup>
+	</projectGroup>
+<!--	
+	<projectGroup id = "4">
+		<src>compare</src>
+		<leftProjectName>org.eclipse.compare_v20061120</leftProjectName>
+		<rightProjectName>org.eclipse.compare_v20061204</rightProjectName>
+		<leftClassName1>org.eclipse.compare.CompareEditorInput</leftClassName1>
+		<leftClassName2>org.eclipse.compare.CompareEditorInput</leftClassName2>
+		<leftFilePath1>org/eclipse/compare/CompareEditorInput</leftFilePath1>
+		<leftFilePath2>org/eclipse/compare/CompareEditorInput</leftFilePath2>
+		<leftMethodName1>addCompareInputChangeListener(ICompareInput, ICompareInputChangeListener)</leftMethodName1>
+		<leftMethodName2>addCompareInputChangeListener(ICompareInput, ICompareInputChangeListener)</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.eclipse.compare.CompareEditorInput
+		</className1>
+		<className2>
+	org.eclipse.compare.CompareEditorInput	
+		</className2>
+		<filePath1>
+	org/eclipse/compare/CompareEditorInput
+		</filePath1>
+		<filePath2>
+	org/eclipse/compare/CompareEditorInput
+		</filePath2>
+		<methodName1>
+	removeCompareInputChangeListener(ICompareInput, ICompareInputChangeListener)
+		</methodName1>
+		<methodName2>
+	removeCompareInputChangeListener(ICompareInput, ICompareInputChangeListener)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "2">
+		<className1>
+	org.eclipse.compare.CompareEditorInput
+		</className1>
+		<className2>
+	org.eclipse.compare.CompareEditorInput
+		</className2>
+		<filePath1>
+	org/eclipse/compare/CompareEditorInput
+		</filePath1>
+		<filePath2>
+	org/eclipse/compare/CompareEditorInput
+		</filePath2>
+		<methodName1>
+	run(boolean, boolean, IRunnableWithProgress)
+		</methodName1>
+		<methodName2>
+	run(boolean, boolean, IRunnableWithProgress)
+		</methodName2>
+	</projectMethod>		
+		</rightGroup>
+	</projectGroup>
+-->	
+	<projectGroup id = "5">
+		<src>compare</src>
+		<leftProjectName>org.eclipse.compare_v20070416</leftProjectName>
+		<rightProjectName>org.eclipse.compare_v20070430</rightProjectName>
+		<leftClassName1>org.eclipse.compare.CompareEditorInput</leftClassName1>
+		<leftClassName2>org.eclipse.compare.CompareEditorInput</leftClassName2>
+		<leftFilePath1>org/eclipse/compare/CompareEditorInput</leftFilePath1>
+		<leftFilePath2>org/eclipse/compare/CompareEditorInput</leftFilePath2>
+		<leftMethodName1>runAsynchronously(IRunnableWithProgress)</leftMethodName1>
+		<leftMethodName2>runAsynchronously(IRunnableWithProgress)</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.eclipse.compare.CompareEditorInput
+		</className1>
+		<className2>
+	org.eclipse.compare.CompareEditorInput	
+		</className2>
+		<filePath1>
+	org/eclipse/compare/CompareEditorInput
+		</filePath1>
+		<filePath2>
+	org/eclipse/compare/CompareEditorInput
+		</filePath2>
+		<methodName1>
+	run(boolean, boolean, IRunnableWithProgress)
+		</methodName1>
+		<methodName2>
+	run(boolean, boolean, IRunnableWithProgress)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "2">
+		<className1>
+	org.eclipse.compare.CompareEditorInput
+		</className1>
+		<className2>
+	org.eclipse.compare.CompareEditorInput
+		</className2>
+		<filePath1>
+	org/eclipse/compare/CompareEditorInput
+		</filePath1>
+		<filePath2>
+	org/eclipse/compare/CompareEditorInput
+		</filePath2>
+		<methodName1>
+	registerContextMenu(MenuManager, ISelectionProvider)
+		</methodName1>
+		<methodName2>
+	registerContextMenu(MenuManager, ISelectionProvider)
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "3">
+		<className1>
+	org.eclipse.compare.CompareEditorInput
+		</className1>
+		<className2>
+	org.eclipse.compare.CompareEditorInput
+		</className2>
+		<filePath1>
+	org/eclipse/compare/CompareEditorInput
+		</filePath1>
+		<filePath2>
+	org/eclipse/compare/CompareEditorInput
+		</filePath2>
+		<methodName1>
+	setStatusMessage(String)
+		</methodName1>
+		<methodName2>
+	setStatusMessage(String)
+		</methodName2>
+	</projectMethod>		
+		</rightGroup>
+	</projectGroup>
+	<projectGroup id = "6">
+		<src>compare</src>
+		<leftProjectName>org.eclipse.compare_v20070914</leftProjectName>
+		<rightProjectName>org.eclipse.compare_v20070924</rightProjectName>
+		<leftClassName1>org.eclipse.compare.contentmergeviewer.TextMergeViewer</leftClassName1>
+		<leftClassName2>org.eclipse.compare.contentmergeviewer.TextMergeViewer</leftClassName2>
+		<leftFilePath1>org/eclipse/compare/contentmergeviewer/TextMergeViewer</leftFilePath1>
+		<leftFilePath2>org/eclipse/compare/contentmergeviewer/TextMergeViewer</leftFilePath2>
+		<leftMethodName1>getDiffNumber(Diff)</leftMethodName1>
+		<leftMethodName2>getDiffNumber(Diff)</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</className1>
+		<className2>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer	
+		</className2>
+		<filePath1>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</filePath1>
+		<filePath2>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</filePath2>
+		<methodName1>
+	paintSides(GC, MergeSourceViewer, Canvas, boolean)
+		</methodName1>
+		<methodName2>
+	paintSides(GC, MergeSourceViewer, Canvas, boolean)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "2">
+		<className1>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</className1>
+		<className2>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</className2>
+		<filePath1>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</filePath1>
+		<filePath2>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</filePath2>
+		<methodName1>
+	paintCenter(Canvas, GC)
+		</methodName1>
+		<methodName2>
+	paintCenter(Canvas, GC)
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "3">
+		<className1>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</className1>
+		<className2>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</className2>
+		<filePath1>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</filePath1>
+		<filePath2>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</filePath2>
+		<methodName1>
+	handleMouseInSides(Canvas, MergeSourceViewer, int)
+		</methodName1>
+		<methodName2>
+	handleMouseInSides(Canvas, MergeSourceViewer, int)
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "4">
+		<className1>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</className1>
+		<className2>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</className2>
+		<filePath1>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</filePath1>
+		<filePath2>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</filePath2>
+		<methodName1>
+	getDiffUnderMouse(Canvas, int, int, Rectangle)
+		</methodName1>
+		<methodName2>
+	getDiffUnderMouse(Canvas, int, int, Rectangle)
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "5">
+		<className1>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</className1>
+		<className2>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</className2>
+		<filePath1>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</filePath1>
+		<filePath2>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</filePath2>
+		<methodName1>
+	updateResolveStatus()
+		</methodName1>
+		<methodName2>
+	updateResolveStatus()
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "">
+		<className1>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</className1>
+		<className2>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</className2>
+		<filePath1>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</filePath1>
+		<filePath2>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</filePath2>
+		<methodName1>
+	updateAllDiffBackgrounds(Display)
+		</methodName1>
+		<methodName2>
+	updateAllDiffBackgrounds(Display)
+		</methodName2>
+	</projectMethod>		
+		</rightGroup>
+	</projectGroup>
+	<projectGroup id = "7">
+		<src>src</src>
+		<leftProjectName>org.eclipse.core.runtime_v20060317</leftProjectName>
+		<rightProjectName>org.eclipse.core.runtime_v20060411</rightProjectName>
+		<leftClassName1>org.eclipse.core.internal.runtime.InternalPlatform</leftClassName1>
+		<leftClassName2>org.eclipse.core.internal.runtime.InternalPlatform</leftClassName2>
+		<leftFilePath1>org/eclipse/core/internal/runtime/InternalPlatform</leftFilePath1>
+		<leftFilePath2>org/eclipse/core/internal/runtime/InternalPlatform</leftFilePath2>
+		<leftMethodName1>getPreferencesService()</leftMethodName1>
+		<leftMethodName2>getPreferencesService()</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.eclipse.core.internal.runtime.InternalPlatform
+		</className1>
+		<className2>
+	org.eclipse.core.internal.runtime.InternalPlatform
+		</className2>
+		<filePath1>
+	org/eclipse/core/internal/runtime/InternalPlatform
+		</filePath1>
+		<filePath2>
+	org/eclipse/core/internal/runtime/InternalPlatform
+		</filePath2>
+		<methodName1>
+	getProduct()
+		</methodName1>
+		<methodName2>
+	getProduct()
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "2">
+		<className1>
+	org.eclipse.core.internal.runtime.InternalPlatform
+		</className1>
+		<className2>
+	org.eclipse.core.internal.runtime.InternalPlatform
+		</className2>
+		<filePath1>
+	org/eclipse/core/internal/runtime/InternalPlatform
+		</filePath1>
+		<filePath2>
+	org/eclipse/core/internal/runtime/InternalPlatform
+		</filePath2>
+		<methodName1>
+	getBundleAdmin()
+		</methodName1>
+		<methodName2>
+	getBundleAdmin()
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "3">
+		<className1>
+	org.eclipse.core.internal.runtime.InternalPlatform
+		</className1>
+		<className2>
+	org.eclipse.core.internal.runtime.InternalPlatform
+		</className2>
+		<filePath1>
+	org/eclipse/core/internal/runtime/InternalPlatform
+		</filePath1>
+		<filePath2>
+	org/eclipse/core/internal/runtime/InternalPlatform
+		</filePath2>
+		<methodName1>
+	getContentTypeManager()
+		</methodName1>
+		<methodName2>
+	getContentTypeManager()
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "4">
+		<className1>
+	org.eclipse.core.internal.runtime.InternalPlatform
+		</className1>
+		<className2>
+	org.eclipse.core.internal.runtime.InternalPlatform
+		</className2>
+		<filePath1>
+	org/eclipse/core/internal/runtime/InternalPlatform
+		</filePath1>
+		<filePath2>
+	org/eclipse/core/internal/runtime/InternalPlatform
+		</filePath2>
+		<methodName1>
+	getEnvironmentInfoService()
+		</methodName1>
+		<methodName2>
+	getEnvironmentInfoService()
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "5">
+		<className1>
+	org.eclipse.core.internal.runtime.InternalPlatform
+		</className1>
+		<className2>
+	org.eclipse.core.internal.runtime.InternalPlatform
+		</className2>
+		<filePath1>
+	org/eclipse/core/internal/runtime/InternalPlatform
+		</filePath1>
+		<filePath2>
+	org/eclipse/core/internal/runtime/InternalPlatform
+		</filePath2>
+		<methodName1>
+	getFrameworkLog()
+		</methodName1>
+		<methodName2>
+	getFrameworkLog()
+		</methodName2>
+	</projectMethod>	
+		</rightGroup>
+	</projectGroup>
+<!--	
+	<projectGroup id = "8">
+		<src>src</src>
+		<leftProjectName>org.eclipse.core.runtime_v20060411</leftProjectName>
+		<rightProjectName>org.eclipse.core.runtime_v20060510</rightProjectName>
+		<leftClassName1>org.eclipse.core.runtime.Platform</leftClassName1>
+		<leftClassName2>org.eclipse.core.runtime.Platform</leftClassName2>
+		<leftFilePath1>org/eclipse/core/runtime/Platform</leftFilePath1>
+		<leftFilePath2>org/eclipse/core/runtime/Platform</leftFilePath2>
+		<leftMethodName1>flushAuthorizationInfo(URL, String, String)</leftMethodName1>
+		<leftMethodName2>flushAuthorizationInfo(URL, String, String)</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.eclipse.core.runtime.Platform
+		</className1>
+		<className2>
+	org.eclipse.core.runtime.Platform
+		</className2>
+		<filePath1>
+	org/eclipse/core/runtime/Platform
+		</filePath1>
+		<filePath2>
+	org/eclipse/core/runtime/Platform
+		</filePath2>
+		<methodName1>
+	addAuthorizationInfo(URL, String, String, Map)
+		</methodName1>
+		<methodName2>
+	addAuthorizationInfo(URL, String, String, Map)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "2">
+		<className1>
+	org.eclipse.core.runtime.Platform
+		</className1>
+		<className2>
+	org.eclipse.core.runtime.Platform
+		</className2>
+		<filePath1>
+	org/eclipse/core/runtime/Platform
+		</filePath1>
+		<filePath2>
+	org/eclipse/core/runtime/Platform
+		</filePath2>
+		<methodName1>
+	addProtectionSpace(URL, String)
+		</methodName1>
+		<methodName2>
+	addProtectionSpace(URL, String)
+		</methodName2>
+	</projectMethod>		
+	<projectMethod id = "3">
+		<className1>
+	org.eclipse.core.runtime.Platform
+		</className1>
+		<className2>
+	org.eclipse.core.runtime.Platform
+		</className2>
+		<filePath1>
+	org/eclipse/core/runtime/Platform
+		</filePath1>
+		<filePath2>
+	org/eclipse/core/runtime/Platform
+		</filePath2>
+		<methodName1>
+	getAuthorizationInfo(URL, String, String)
+		</methodName1>
+		<methodName2>
+	getAuthorizationInfo(URL, String, String)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "4">
+		<className1>
+	org.eclipse.core.runtime.Platform
+		</className1>
+		<className2>
+	org.eclipse.core.runtime.Platform
+		</className2>
+		<filePath1>
+	org/eclipse/core/runtime/Platform
+		</filePath1>
+		<filePath2>
+	org/eclipse/core/runtime/Platform
+		</filePath2>
+		<methodName1>
+	getProtectionSpace(URL)
+		</methodName1>
+		<methodName2>
+	getProtectionSpace(URL)
+		</methodName2>
+	</projectMethod>		
+		</rightGroup>
+	</projectGroup>
+-->	
+</list>	
+
+

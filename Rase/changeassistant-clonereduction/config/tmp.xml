@@ -1,0 +1,1742 @@
+<list>	
+	<projectGroup id = "1">
+		<src>source</src>
+		<leftProjectName>jfreechart-0324</leftProjectName>
+		<rightProjectName>jfreechart-0424</rightProjectName>
+		<leftClassName1>org.jfree.chart.renderer.AbstractRenderer</leftClassName1>
+		<leftClassName2>org.jfree.chart.renderer.AbstractRenderer</leftClassName2>
+		<leftFilePath1>org/jfree/chart/renderer/AbstractRenderer</leftFilePath1>
+		<leftFilePath2>org/jfree/chart/renderer/AbstractRenderer</leftFilePath2>
+		<leftMethodName1>lookupSeriesOutlinePaint(int)</leftMethodName1>
+		<leftMethodName2>lookupSeriesOutlinePaint(int)</leftMethodName2>
+		<rightGroup>	
+	<projectMethod id = "1">
+		<className1>
+	org.jfree.chart.renderer.AbstractRenderer	
+		</className1>
+		<className2>
+	org.jfree.chart.renderer.AbstractRenderer		
+		</className2>
+		<filePath1>
+	org/jfree/chart/renderer/AbstractRenderer
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/renderer/AbstractRenderer
+		</filePath2>
+		<methodName1>
+	lookupSeriesFillPaint(int)	
+		</methodName1>
+		<methodName2>
+	lookupSeriesFillPaint(int)	
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "2">
+		<className1>
+	org.jfree.chart.renderer.AbstractRenderer	
+		</className1>
+		<className2>
+	org.jfree.chart.renderer.AbstractRenderer		
+		</className2>
+		<filePath1>
+	org/jfree/chart/renderer/AbstractRenderer
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/renderer/AbstractRenderer
+		</filePath2>
+		<methodName1>
+	lookupSeriesShape(int)	
+		</methodName1>
+		<methodName2>
+	lookupSeriesShape(int)	
+		</methodName2>
+	</projectMethod>			
+		</rightGroup>
+	<extractMethod>
+	<![CDATA[
+public abstract class TemplateClass<T0> {
+  public T0 extractMethod(  int series,  boolean v1,  T0 v2,  AbstractRenderer inst){
+    T0 v0=m0(series,inst);
+    if (v0 == null && v1) {
+      DrawingSupplier supplier=inst.getDrawingSupplier();
+      if (supplier != null) {
+        v0=m1(supplier);
+        m2(series,v0,inst);
+      }
+    }
+    if (v0 == null) {
+      v0=v2;
+    }
+    return v0;
+  }
+  public abstract T0 m1(  DrawingSupplier supplier);
+  public abstract T0 m0(  int series,  AbstractRenderer inst);
+  public abstract void m2(  int series,  T0 v0,  AbstractRenderer inst);
+}
+public class ConcreteTemplateClass0 extends TemplateClass<Paint> {
+  public Paint m1(  DrawingSupplier supplier){
+    return supplier.getNextOutlinePaint();
+  }
+  public Paint m0(  int series,  AbstractRenderer inst){
+    return inst.getSeriesOutlinePaint(series);
+  }
+  public void m2(  int series,  Paint v0,  AbstractRenderer inst){
+    inst.setSeriesOutlinePaint(series,v0,false);
+  }
+}
+public class ConcreteTemplateClass1 extends TemplateClass<Paint> {
+  public Paint m1(  DrawingSupplier supplier){
+    return supplier.getNextFillPaint();
+  }
+  public Paint m0(  int series,  AbstractRenderer inst){
+    return inst.getSeriesFillPaint(series);
+  }
+  public void m2(  int series,  Paint v0,  AbstractRenderer inst){
+    inst.setSeriesFillPaint(series,v0,false);
+  }
+}
+public class ConcreteTemplateClass2 extends TemplateClass<Shape> {
+  public Shape m1(  DrawingSupplier supplier){
+    return supplier.getNextShape();
+  }
+  public Shape m0(  int series,  AbstractRenderer inst){
+    return inst.getSeriesShape(series);
+  }
+  public void m2(  int series,  Shape v0,  AbstractRenderer inst){
+    inst.setSeriesShape(series,v0,false);
+  }
+}
+	]]>
+	</extractMethod>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+/**
+     * Returns the paint used to outline an item drawn by the renderer.
+     *
+     * @param series  the series (zero-based index).
+     *
+     * @return The paint (never <code>null</code>).
+     * 
+     * @since 1.0.6
+     */
+public Paint lookupSeriesOutlinePaint(int series) {
+  return new ConcreteTemplateClass0().extractMethod(series,autoPopulateSeriesOutlinePaint,baseOutlinePaint,this);
+}
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+/**
+     * Returns the paint used to fill an item drawn by the renderer.
+     *
+     * @param series  the series (zero-based index).
+     *
+     * @return The paint (never <code>null</code>).
+     * 
+     * @since 1.0.6
+     */
+public Paint lookupSeriesFillPaint(int series) {
+  return new ConcreteTemplateClass1().extractMethod(series,autoPopulateSeriesFillPaint,baseFillPaint,this);
+}
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+/**
+     * Returns a shape used to represent the items in a series.
+     *
+     * @param series  the series (zero-based index).
+     *
+     * @return The shape (never <code>null</code>).
+     * 
+     * @since 1.0.6
+     */
+public Shape lookupSeriesShape(int series) {
+  return new ConcreteTemplateClass2().extractMethod(series,autoPopulateSeriesShape,baseShape,this);
+}
+		]]>
+	</modifiedMethod>
+</modifiedMethods>	
+	</projectGroup>
+
+	<projectGroup id = "2">
+		<src>source</src>
+		<leftProjectName>jfreechart-0724</leftProjectName>
+		<rightProjectName>jfreechart-0824</rightProjectName>
+		<leftClassName1>org.jfree.chart.plot.CombinedRangeXYPlot</leftClassName1>
+		<leftClassName2>org.jfree.chart.plot.CombinedRangeXYPlot</leftClassName2>
+		<leftFilePath1>org/jfree/chart/plot/CombinedRangeXYPlot</leftFilePath1>
+		<leftFilePath2>org/jfree/chart/plot/CombinedRangeXYPlot</leftFilePath2>
+		<leftMethodName1>getSubplots()</leftMethodName1>
+		<leftMethodName2>getSubplots()</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.jfree.chart.plot.CombinedDomainCategoryPlot
+		</className1>
+		<className2>
+	org.jfree.chart.plot.CombinedDomainCategoryPlot	
+		</className2>
+		<filePath1>
+	org/jfree/chart/plot/CombinedDomainCategoryPlot
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/plot/CombinedDomainCategoryPlot
+		</filePath2>
+		<methodName1>
+	getSubplots()	
+		</methodName1>
+		<methodName2>
+	getSubplots()
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "2">
+		<className1>
+	org.jfree.chart.plot.CombinedRangeCategoryPlot
+		</className1>
+		<className2>
+	org.jfree.chart.plot.CombinedRangeCategoryPlot
+		</className2>
+		<filePath1>
+	org/jfree/chart/plot/CombinedRangeCategoryPlot
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/plot/CombinedRangeCategoryPlot
+		</filePath2>
+		<methodName1>
+	getSubplots()
+		</methodName1>
+		<methodName2>
+	getSubplots()
+		</methodName2>
+	</projectMethod>	
+		</rightGroup>
+	<extractMethod>
+	<![CDATA[
+protected List extractMethod(){
+  if (subplots != null) {
+    return Collections.unmodifiableList(subplots);
+  }
+ else {
+    return Collections.EMPTY_LIST;
+  }
+}
+	]]>		
+</extractMethod>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+/**
+     * Returns the list of subplots.  The returned list may be empty, but is
+     * never <code>null</code>.
+     *
+     * @return An unmodifiable list of subplots.
+     */
+public List getSubplots() {
+  return extractMethod();
+}
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+/**
+     * Returns the list of subplots.  The returned list may be empty, but is
+     * never <code>null</code>.
+     *
+     * @return An unmodifiable list of subplots.
+     */
+public List getSubplots() {
+  return extractMethod();
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+/**
+     * Returns the list of subplots.  The returned list may be empty, but is
+     * never <code>null</code>.
+     *
+     * @return An unmodifiable list of subplots.
+     */
+public List getSubplots() {
+  return extractMethod();
+}
+		]]>
+	</modifiedMethod>
+</modifiedMethods>	
+	</projectGroup>
+
+	<projectGroup id = "4">
+		<src>source</src>
+		<leftProjectName>elasticsearch-020</leftProjectName>
+		<rightProjectName>elasticsearch-090</rightProjectName>
+		<leftClassName1>org.elasticsearch.index.mapper.internal.TTLFieldMapper.TypeParser</leftClassName1>
+		<leftClassName2>org.elasticsearch.index.mapper.internal.TTLFieldMapper.TypeParser</leftClassName2>
+		<leftFilePath1>org/elasticsearch/index/mapper/internal/TTLFieldMapper</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/index/mapper/internal/TTLFieldMapper</leftFilePath2>
+		<leftMethodName1>
+				<![CDATA[
+			parse(String, Map<String,Object>, ParserContext)
+				]]>
+		</leftMethodName1>
+		<leftMethodName2>
+				<![CDATA[
+			parse(String, Map<String,Object>, ParserContext)
+				]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.index.mapper.internal.IndexFieldMapper.TypeParser 
+		</className1>
+		<className2>
+	org.elasticsearch.index.mapper.internal.IndexFieldMapper.TypeParser 
+		</className2>
+		<filePath1>
+	org/elasticsearch/index/mapper/internal/IndexFieldMapper
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/index/mapper/internal/IndexFieldMapper
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+				parse(String, Map<String,Object>, ParserContext)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+				parse(String, Map<String,Object>, ParserContext)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.index.mapper.internal.TimestampFieldMapper.TypeParser 
+		</className1>
+		<className2>
+	org.elasticsearch.index.mapper.internal.TimestampFieldMapper.TypeParser 
+		</className2>
+		<filePath1>
+	org/elasticsearch/index/mapper/internal/TimestampFieldMapper
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/index/mapper/internal/TimestampFieldMapper
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+				parse(String, Map<String,Object>, ParserContext)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+				parse(String, Map<String,Object>, ParserContext)
+			]]>
+		</methodName2>
+	</projectMethod>
+		</rightGroup>	
+<extractMethod>
+	<![CDATA[
+public class TemplateClass {
+  public static void extractMethod(  Object fieldNode,  Builder builder){
+{
+      EnabledAttributeMapper v0=org.elasticsearch.common.xcontent.support.XContentMapValues.nodeBooleanValue(fieldNode) ? EnabledAttributeMapper.ENABLED : EnabledAttributeMapper.DISABLED;
+      builder.enabled(v0);
+    }
+  }
+}
+	]]>		
+</extractMethod>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+@Override
+        public Mapper.Builder parse(String name, Map<String, Object> node, ParserContext parserContext) throws MapperParsingException {
+  TTLFieldMapper.Builder builder=new TTLFieldMapper.Builder();
+  parseField(builder,builder.name,node,parserContext);
+  for (  Map.Entry<String,Object> entry : node.entrySet()) {
+    String fieldName=Strings.toUnderscoreCase(entry.getKey());
+    Object fieldNode=entry.getValue();
+    if (fieldName.equals("enabled"))     TemplateClass.extractMethod(fieldNode,builder);
+ else     if (fieldName.equals("default")) {
+      TimeValue ttlTimeValue=nodeTimeValue(fieldNode,null);
+      if (ttlTimeValue != null) {
+        builder.defaultTTL(ttlTimeValue.millis());
+      }
+    }
+  }
+  return builder;
+}
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+@Override
+        public Mapper.Builder parse(String name, Map<String, Object> node, ParserContext parserContext) throws MapperParsingException {
+  IndexFieldMapper.Builder builder=MapperBuilders.index();
+  parseField(builder,builder.name,node,parserContext);
+  for (  Map.Entry<String,Object> entry : node.entrySet()) {
+    String fieldName=Strings.toUnderscoreCase(entry.getKey());
+    Object fieldNode=entry.getValue();
+    if (fieldName.equals("enabled"))     TemplateClass.extractMethod(fieldNode,builder);
+  }
+  return builder;
+}
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+@Override
+        public Mapper.Builder parse(String name, Map<String, Object> node, ParserContext parserContext) throws MapperParsingException {
+  TimestampFieldMapper.Builder builder=timestamp();
+  parseField(builder,builder.name,node,parserContext);
+  for (  Map.Entry<String,Object> entry : node.entrySet()) {
+    String fieldName=Strings.toUnderscoreCase(entry.getKey());
+    Object fieldNode=entry.getValue();
+    if (fieldName.equals("enabled"))     TemplateClass.extractMethod(fieldNode,builder);
+ else     if (fieldName.equals("path")) {
+      builder.path(fieldNode.toString());
+    }
+ else     if (fieldName.equals("format")) {
+      builder.dateTimeFormatter(parseDateTimeFormatter(builder.name(),fieldNode.toString()));
+    }
+  }
+  return builder;
+}	
+		]]>
+	</modifiedMethod>	
+</modifiedMethods>			
+	</projectGroup>	
+	<projectGroup id = "5">
+		<src>source</src>
+		<leftProjectName>jfreechart-1324</leftProjectName>
+		<rightProjectName>jfreechart-1424</rightProjectName>
+		<leftClassName1>org.jfree.chart.ChartFactory</leftClassName1>
+		<leftClassName2>org.jfree.chart.ChartFactory</leftClassName2>
+		<leftFilePath1>org/jfree/chart/ChartFactory</leftFilePath1>
+		<leftFilePath2>org/jfree/chart/ChartFactory</leftFilePath2>
+		<leftMethodName1>createBarChart(String, String, String, CategoryDataset, PlotOrientation, boolean, boolean, boolean)</leftMethodName1>
+		<leftMethodName2>createBarChart(String, String, String, CategoryDataset, PlotOrientation, boolean, boolean, boolean)</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.jfree.chart.ChartFactory
+		</className1>
+		<className2>
+	org.jfree.chart.ChartFactory
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartFactory
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartFactory
+		</filePath2>
+		<methodName1>
+	createMultiplePieChart3D(String, CategoryDataset, TableOrder, boolean, boolean, boolean)
+		</methodName1>
+		<methodName2>
+	createMultiplePieChart3D(String, CategoryDataset, TableOrder, boolean, boolean, boolean)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "2">
+		<className1>
+	org.jfree.chart.ChartFactory
+		</className1>
+		<className2>
+	org.jfree.chart.ChartFactory
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartFactory
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartFactory
+		</filePath2>
+		<methodName1>
+	createXYAreaChart(String, String, String, XYDataset, PlotOrientation, boolean, boolean, boolean)
+		</methodName1>
+		<methodName2>
+	createXYAreaChart(String, String, String, XYDataset, PlotOrientation, boolean, boolean, boolean)
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+<extractMethod>
+	<![CDATA[
+public abstract class TemplateClass<T0> {
+  public static JFreeChart extractMethod(  T0 plot,  String title,  boolean legend,  ChartTheme currentTheme){
+    JFreeChart chart=new JFreeChart(title,JFreeChart.DEFAULT_TITLE_FONT,plot,legend);
+    currentTheme.apply(chart);
+    return chart;
+  }
+}
+public class ConcreteTemplateClass0 extends TemplateClass<CategoryPlot> {
+}
+public class ConcreteTemplateClass1 extends TemplateClass<MultiplePiePlot> {
+}
+public class ConcreteTemplateClass2 extends TemplateClass<XYPlot> {
+}
+	]]>		
+</extractMethod>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+/**
+     * Creates a bar chart.  The chart object returned by this method uses a
+     * {@link CategoryPlot} instance as the plot, with a {@link CategoryAxis}
+     * for the domain axis, a {@link NumberAxis} as the range axis, and a
+     * {@link BarRenderer} as the renderer.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param categoryAxisLabel  the label for the category axis
+     *                           (<code>null</code> permitted).
+     * @param valueAxisLabel  the label for the value axis
+     *                        (<code>null</code> permitted).
+     * @param dataset  the dataset for the chart (<code>null</code> permitted).
+     * @param orientation  the plot orientation (horizontal or vertical)
+     *                     (<code>null</code> not permitted).
+     * @param legend  a flag specifying whether or not a legend is required.
+     * @param tooltips  configure chart to generate tool tips?
+     * @param urls  configure chart to generate URLs?
+     *
+     * @return A bar chart.
+     */
+public static JFreeChart createBarChart(String title,
+                                            String categoryAxisLabel,
+                                            String valueAxisLabel,
+                                            CategoryDataset dataset,
+                                            PlotOrientation orientation,
+                                            boolean legend,
+                                            boolean tooltips,
+                                            boolean urls) {
+  if (orientation == null) {
+    throw new IllegalArgumentException("Null 'orientation' argument.");
+  }
+  CategoryAxis categoryAxis=new CategoryAxis(categoryAxisLabel);
+  ValueAxis valueAxis=new NumberAxis(valueAxisLabel);
+  BarRenderer renderer=new BarRenderer();
+  if (orientation == PlotOrientation.HORIZONTAL) {
+    ItemLabelPosition position1=new ItemLabelPosition(ItemLabelAnchor.OUTSIDE3,TextAnchor.CENTER_LEFT);
+    renderer.setBasePositiveItemLabelPosition(position1);
+    ItemLabelPosition position2=new ItemLabelPosition(ItemLabelAnchor.OUTSIDE9,TextAnchor.CENTER_RIGHT);
+    renderer.setBaseNegativeItemLabelPosition(position2);
+  }
+ else   if (orientation == PlotOrientation.VERTICAL) {
+    ItemLabelPosition position1=new ItemLabelPosition(ItemLabelAnchor.OUTSIDE12,TextAnchor.BOTTOM_CENTER);
+    renderer.setBasePositiveItemLabelPosition(position1);
+    ItemLabelPosition position2=new ItemLabelPosition(ItemLabelAnchor.OUTSIDE6,TextAnchor.TOP_CENTER);
+    renderer.setBaseNegativeItemLabelPosition(position2);
+  }
+  if (tooltips) {
+    renderer.setBaseToolTipGenerator(new StandardCategoryToolTipGenerator());
+  }
+  if (urls) {
+    renderer.setBaseURLGenerator(new StandardCategoryURLGenerator());
+  }
+  CategoryPlot plot=new CategoryPlot(dataset,categoryAxis,valueAxis,renderer);
+  plot.setOrientation(orientation);
+  return new ConcreteTemplateClass0().extractMethod(plot,title,legend,currentTheme);
+}
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+/**
+     * Creates a chart that displays multiple pie plots.  The chart object
+     * returned by this method uses a {@link MultiplePiePlot} instance as the
+     * plot.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param dataset  the dataset (<code>null</code> permitted).
+     * @param order  the order that the data is extracted (by row or by column)
+     *               (<code>null</code> not permitted).
+     * @param legend  include a legend?
+     * @param tooltips  generate tooltips?
+     * @param urls  generate URLs?
+     *
+     * @return A chart.
+     */
+public static JFreeChart createMultiplePieChart3D(String title,
+                                                      CategoryDataset dataset,
+                                                      TableOrder order,
+                                                      boolean legend,
+                                                      boolean tooltips,
+                                                      boolean urls) {
+  if (order == null) {
+    throw new IllegalArgumentException("Null 'order' argument.");
+  }
+  MultiplePiePlot plot=new MultiplePiePlot(dataset);
+  plot.setDataExtractOrder(order);
+  plot.setBackgroundPaint(null);
+  plot.setOutlineStroke(null);
+  JFreeChart pieChart=new JFreeChart(new PiePlot3D(null));
+  TextTitle seriesTitle=new TextTitle("Series Title",new Font("SansSerif",Font.BOLD,12));
+  seriesTitle.setPosition(RectangleEdge.BOTTOM);
+  pieChart.setTitle(seriesTitle);
+  pieChart.removeLegend();
+  pieChart.setBackgroundPaint(null);
+  plot.setPieChart(pieChart);
+  if (tooltips) {
+    PieToolTipGenerator tooltipGenerator=new StandardPieToolTipGenerator();
+    PiePlot pp=(PiePlot)plot.getPieChart().getPlot();
+    pp.setToolTipGenerator(tooltipGenerator);
+  }
+  if (urls) {
+    PieURLGenerator urlGenerator=new StandardPieURLGenerator();
+    PiePlot pp=(PiePlot)plot.getPieChart().getPlot();
+    pp.setURLGenerator(urlGenerator);
+  }
+  return new ConcreteTemplateClass1().extractMethod(plot,title,legend,currentTheme);
+}	
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+/**
+     * Creates an area chart using an {@link XYDataset}.
+     * <P>
+     * The chart object returned by this method uses an {@link XYPlot} instance
+     * as the plot, with a {@link NumberAxis} for the domain axis, a
+     * {@link NumberAxis} as the range axis, and a {@link XYAreaRenderer} as
+     * the renderer.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param xAxisLabel  a label for the X-axis (<code>null</code> permitted).
+     * @param yAxisLabel  a label for the Y-axis (<code>null</code> permitted).
+     * @param dataset  the dataset for the chart (<code>null</code> permitted).
+     * @param orientation  the plot orientation (horizontal or vertical)
+     *                     (<code>null</code> NOT permitted).
+     * @param legend  a flag specifying whether or not a legend is required.
+     * @param tooltips  configure chart to generate tool tips?
+     * @param urls  configure chart to generate URLs?
+     *
+     * @return An XY area chart.
+     */
+public static JFreeChart createXYAreaChart(String title,
+                                               String xAxisLabel,
+                                               String yAxisLabel,
+                                               XYDataset dataset,
+                                               PlotOrientation orientation,
+                                               boolean legend,
+                                               boolean tooltips,
+                                               boolean urls) {
+  if (orientation == null) {
+    throw new IllegalArgumentException("Null 'orientation' argument.");
+  }
+  NumberAxis xAxis=new NumberAxis(xAxisLabel);
+  xAxis.setAutoRangeIncludesZero(false);
+  NumberAxis yAxis=new NumberAxis(yAxisLabel);
+  XYPlot plot=new XYPlot(dataset,xAxis,yAxis,null);
+  plot.setOrientation(orientation);
+  plot.setForegroundAlpha(0.5f);
+  XYToolTipGenerator tipGenerator=null;
+  if (tooltips) {
+    tipGenerator=new StandardXYToolTipGenerator();
+  }
+  XYURLGenerator urlGenerator=null;
+  if (urls) {
+    urlGenerator=new StandardXYURLGenerator();
+  }
+  plot.setRenderer(new XYAreaRenderer(XYAreaRenderer.AREA,tipGenerator,urlGenerator));
+  return new ConcreteTemplateClass2().extractMethod(plot,title,legend,currentTheme);
+}		
+		]]>
+	</modifiedMethod>
+	</modifiedMethods>	
+	</projectGroup>
+	
+	<projectGroup id = "6">
+		<src>source</src>
+		<leftProjectName>jfreechart-1324</leftProjectName>
+		<rightProjectName>jfreechart-1424</rightProjectName>
+		<leftClassName1>org.jfree.chart.ChartFactory</leftClassName1>
+		<leftClassName2>org.jfree.chart.ChartFactory</leftClassName2>
+		<leftFilePath1>org/jfree/chart/ChartFactory</leftFilePath1>
+		<leftFilePath2>org/jfree/chart/ChartFactory</leftFilePath2>
+		<leftMethodName1>createPieChart3D(String, PieDataset, boolean, boolean, boolean)</leftMethodName1>
+		<leftMethodName2>createPieChart3D(String, PieDataset, boolean, boolean, boolean)</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.jfree.chart.ChartFactory
+		</className1>
+		<className2>
+	org.jfree.chart.ChartFactory	
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartFactory
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartFactory
+		</filePath2>
+		<methodName1>
+	createPieChart3D(String, PieDataset, boolean, boolean, Locale)
+		</methodName1>
+		<methodName2>
+	createPieChart3D(String, PieDataset, boolean, boolean, Locale)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "2">
+		<className1>
+	org.jfree.chart.ChartFactory
+		</className1>
+		<className2>
+	org.jfree.chart.ChartFactory	
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartFactory
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartFactory
+		</filePath2>
+		<methodName1>
+	createPieChart(String, PieDataset, boolean, boolean, Locale)
+		</methodName1>
+		<methodName2>
+	createPieChart(String, PieDataset, boolean, boolean, Locale)
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	<extractMethod>
+	<![CDATA[
+public abstract class TemplateClass<T0> {
+  public static JFreeChart extractMethod(  String title,  boolean legend,  T0 plot,  ChartTheme currentTheme){
+    JFreeChart chart=new JFreeChart(title,JFreeChart.DEFAULT_TITLE_FONT,plot,legend);
+    currentTheme.apply(chart);
+    return chart;
+  }
+}
+public class ConcreteTemplateClass0 extends TemplateClass<PiePlot3D> {
+}
+public class ConcreteTemplateClass2 extends TemplateClass<PiePlot> {
+}
+	]]>		
+</extractMethod>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+/**
+     * Creates a 3D pie chart using the specified dataset.  The chart object
+     * returned by this method uses a {@link PiePlot3D} instance as the
+     * plot.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param dataset  the dataset for the chart (<code>null</code> permitted).
+     * @param legend  a flag specifying whether or not a legend is required.
+     * @param tooltips  configure chart to generate tool tips?
+     * @param urls  configure chart to generate URLs?
+     *
+     * @return A pie chart.
+     */
+public static JFreeChart createPieChart3D(String title,
+                                              PieDataset dataset,
+                                              boolean legend,
+                                              boolean tooltips,
+                                              boolean urls) {
+  PiePlot3D plot=new PiePlot3D(dataset);
+  plot.setInsets(new RectangleInsets(0.0,5.0,5.0,5.0));
+  if (tooltips) {
+    plot.setToolTipGenerator(new StandardPieToolTipGenerator());
+  }
+  if (urls) {
+    plot.setURLGenerator(new StandardPieURLGenerator());
+  }
+  return new ConcreteTemplateClass0().extractMethod(title,legend,plot,currentTheme);
+}
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+/**
+     * Creates a 3D pie chart using the specified dataset.  The chart object
+     * returned by this method uses a {@link PiePlot3D} instance as the
+     * plot.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param dataset  the dataset for the chart (<code>null</code> permitted).
+     * @param legend  a flag specifying whether or not a legend is required.
+     * @param tooltips  configure chart to generate tool tips?
+     * @param locale  the locale (<code>null</code> not permitted).
+     *
+     * @return A pie chart.
+     *
+     * @since 1.0.7
+     */
+public static JFreeChart createPieChart3D(String title, PieDataset dataset,
+            boolean legend, boolean tooltips, Locale locale) {
+  PiePlot3D plot=new PiePlot3D(dataset);
+  plot.setInsets(new RectangleInsets(0.0,5.0,5.0,5.0));
+  if (tooltips) {
+    plot.setToolTipGenerator(new StandardPieToolTipGenerator(locale));
+  }
+  return new ConcreteTemplateClass0().extractMethod(title,legend,plot,currentTheme);
+}	
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+/**
+     * Creates a pie chart with default settings.
+     * <P>
+     * The chart object returned by this method uses a {@link PiePlot} instance
+     * as the plot.
+     *
+     * @param title  the chart title (<code>null</code> permitted).
+     * @param dataset  the dataset for the chart (<code>null</code> permitted).
+     * @param legend  a flag specifying whether or not a legend is required.
+     * @param tooltips  configure chart to generate tool tips?
+     * @param locale  the locale (<code>null</code> not permitted).
+     *
+     * @return A pie chart.
+     *
+     * @since 1.0.7
+     */
+public static JFreeChart createPieChart(String title, PieDataset dataset,
+            boolean legend, boolean tooltips, Locale locale) {
+  PiePlot plot=new PiePlot(dataset);
+  plot.setLabelGenerator(new StandardPieSectionLabelGenerator(locale));
+  plot.setInsets(new RectangleInsets(0.0,5.0,5.0,5.0));
+  if (tooltips) {
+    plot.setToolTipGenerator(new StandardPieToolTipGenerator(locale));
+  }
+  return new ConcreteTemplateClass2().extractMethod(title,legend,plot,currentTheme);
+}		
+		]]>
+	</modifiedMethod>
+	</modifiedMethods>
+	</projectGroup>
+	
+	<projectGroup id = "8">
+		<src>source</src>
+		<leftProjectName>jfreechart-1724</leftProjectName>
+		<rightProjectName>jfreechart-1824</rightProjectName>
+		<leftClassName1>org.jfree.chart.ChartPanel</leftClassName1>
+		<leftClassName2>org.jfree.chart.ChartPanel</leftClassName2>
+		<leftFilePath1>org/jfree/chart/plot/ChartPanel</leftFilePath1>
+		<leftFilePath2>org/jfree/chart/plot/ChartPanel</leftFilePath2>
+		<leftMethodName1>zoomInRange(double, double)</leftMethodName1>
+		<leftMethodName2>zoomInRange(double, double)</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.jfree.chart.ChartPanel
+		</className1>
+		<className2>
+	org.jfree.chart.ChartPanel
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartPanel
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartPanel
+		</filePath2>
+		<methodName1>
+	zoomOutRange(double, double)
+		</methodName1>
+		<methodName2>
+	zoomOutRange(double, double)
+		</methodName2>
+	</projectMethod>	
+	<projectMethod id = "2">
+		<className1>
+	org.jfree.chart.ChartPanel
+		</className1>
+		<className2>
+	org.jfree.chart.ChartPanel
+		</className2>
+		<filePath1>
+	org/jfree/chart/ChartPanel
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/ChartPanel
+		</filePath2>
+		<methodName1>
+	zoomOutDomain(double, double)
+		</methodName1>
+		<methodName2>
+	zoomOutDomain(double, double)
+		</methodName2>
+	</projectMethod>
+		</rightGroup>
+<extractMethod>
+	<![CDATA[
+public abstract class TemplateClass {
+  public void extractMethod(  double x,  double y,  ChartRenderingInfo info,  boolean zoomAroundAnchor,  double v0,  JFreeChart chart,  ChartPanel inst){
+    Plot plot=chart.getPlot();
+    if (plot instanceof Zoomable) {
+      boolean savedNotify=plot.isNotify();
+      plot.setNotify(false);
+      Zoomable z=(Zoomable)plot;
+      m0(z,v0,info,x,y,zoomAroundAnchor,inst);
+      plot.setNotify(savedNotify);
+    }
+  }
+  public abstract void m0(  Zoomable z,  double v0,  ChartRenderingInfo info,  double x,  double y,  boolean zoomAroundAnchor,  ChartPanel inst);
+}
+public class ConcreteTemplateClass0 extends TemplateClass {
+  public void m0(  Zoomable z,  double v0,  ChartRenderingInfo info,  double x,  double y,  boolean zoomAroundAnchor,  ChartPanel inst){
+    z.zoomRangeAxes(v0,info.getPlotInfo(),inst.translateScreenToJava2D(new Point((int)x,(int)y)),zoomAroundAnchor);
+  }
+}
+public class ConcreteTemplateClass2 extends TemplateClass {
+  public void m0(  Zoomable z,  double v0,  ChartRenderingInfo info,  double x,  double y,  boolean zoomAroundAnchor,  ChartPanel inst){
+    z.zoomDomainAxes(v0,info.getPlotInfo(),inst.translateScreenToJava2D(new Point((int)x,(int)y)),zoomAroundAnchor);
+  }
+}
+	]]>		
+</extractMethod>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+/**
+     * Decreases the length of the range axis, centered about the given
+     * coordinate on the screen.  The length of the range axis is reduced by
+     * the value of {@link #getZoomInFactor()}.
+     *
+     * @param x  the x-coordinate (in screen coordinates).
+     * @param y  the y coordinate (in screen coordinates).
+     */
+public void zoomInRange(double x, double y) {
+  new ConcreteTemplateClass0().extractMethod(x,y,info,zoomAroundAnchor,zoomInFactor,chart,this);
+}
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+/**
+     * Increases the length the range axis, centered about the given
+     * coordinate on the screen.  The length of the range axis is increased
+     * by the value of {@link #getZoomOutFactor()}.
+     *
+     * @param x  the x coordinate (in screen coordinates).
+     * @param y  the y-coordinate (in screen coordinates).
+     */
+public void zoomOutRange(double x, double y) {
+  new ConcreteTemplateClass0().extractMethod(x,y,info,zoomAroundAnchor,zoomOutFactor,chart,this);
+}	
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+/**
+     * Increases the length of the domain axis, centered about the given
+     * coordinate on the screen.  The length of the domain axis is increased
+     * by the value of {@link #getZoomOutFactor()}.
+     *
+     * @param x  the x coordinate (in screen coordinates).
+     * @param y  the y-coordinate (in screen coordinates).
+     */
+public void zoomOutDomain(double x, double y) {
+  new ConcreteTemplateClass2().extractMethod(x,y,info,zoomAroundAnchor,zoomOutFactor,chart,this);
+}		
+		]]>
+	</modifiedMethod>	
+	</modifiedMethods>	
+	</projectGroup>		
+	<projectGroup id = "9">
+		<src>source</src>
+		<leftProjectName>jfreechart-1724</leftProjectName>
+		<rightProjectName>jfreechart-1824</rightProjectName>
+		<leftClassName1>org.jfree.chart.renderer.category.LevelRenderer</leftClassName1>
+		<leftClassName2>org.jfree.chart.renderer.category.LevelRenderer</leftClassName2>
+		<leftFilePath1>org/jfree/chart/renderer/category/LevelRenderer</leftFilePath1>
+		<leftFilePath2>org/jfree/chart/renderer/category/LevelRenderer</leftFilePath2>
+		<leftMethodName1>drawItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, CategoryDataset, int, int, int)</leftMethodName1>
+		<leftMethodName2>drawItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, CategoryDataset, int, int, int)</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.jfree.chart.renderer.category.BarRenderer
+		</className1>
+		<className2>
+	org.jfree.chart.renderer.category.BarRenderer
+		</className2>
+		<filePath1>
+	org/jfree/chart/renderer/category/BarRenderer
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/renderer/category/BarRenderer
+		</filePath2>
+		<methodName1>
+	drawItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, CategoryDataset, int, int, int)
+		</methodName1>
+		<methodName2>
+	drawItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, CategoryDataset, int, int, int)
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.jfree.chart.renderer.category.LineAndShapeRenderer
+		</className1>
+		<className2>
+	org.jfree.chart.renderer.category.LineAndShapeRenderer
+		</className2>
+		<filePath1>
+	org/jfree/chart/renderer/category/LineAndShapeRenderer
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/renderer/category/LineAndShapeRenderer
+		</filePath2>
+		<methodName1>
+	drawItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, CategoryDataset, int, int, int)
+		</methodName1>
+		<methodName2>
+	drawItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, CategoryDataset, int, int, int)
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "3">
+		<className1>
+	org.jfree.chart.renderer.category.ScatterRenderer
+		</className1>
+		<className2>
+	org.jfree.chart.renderer.category.ScatterRenderer
+		</className2>
+		<filePath1>
+	org/jfree/chart/renderer/category/ScatterRenderer
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/renderer/category/ScatterRenderer
+		</filePath2>
+		<methodName1>
+	drawItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, CategoryDataset, int, int, int)
+		</methodName1>
+		<methodName2>
+	drawItem(Graphics2D, CategoryItemRendererState, Rectangle2D, CategoryPlot, CategoryAxis, ValueAxis, CategoryDataset, int, int, int)
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+<RetObj>
+	<![CDATA[
+public enum Flag{RETURN, FALLTHRU};
+public class RetObj {
+  public Flag flag;
+  public int visibleRow;
+  public RetObj(Flag flag,int visibleRow){
+    this.flag = flag;
+    this.visibleRow = visibleRow;
+  }
+}
+	]]>
+</RetObj>
+<extractMethod>
+	<![CDATA[
+protected RetObj extractMethod(int row,CategoryItemRendererState state){
+  int visibleRow=state.getVisibleSeriesIndex(row);
+  if (visibleRow < 0) {
+    return new RetObj(Flag.RETURN,0);
+  }
+  return new RetObj(Flag.FALLTHRU,visibleRow);
+}
+	]]>		
+</extractMethod>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+/**
+     * Draws the bar for a single (series, category) data item.
+     *
+     * @param g2  the graphics device.
+     * @param state  the renderer state.
+     * @param dataArea  the data area.
+     * @param plot  the plot.
+     * @param domainAxis  the domain axis.
+     * @param rangeAxis  the range axis.
+     * @param dataset  the dataset.
+     * @param row  the row index (zero-based).
+     * @param column  the column index (zero-based).
+     * @param pass  the pass index.
+     */
+public void drawItem(Graphics2D g2, CategoryItemRendererState state,
+            Rectangle2D dataArea, CategoryPlot plot, CategoryAxis domainAxis,
+            ValueAxis rangeAxis, CategoryDataset dataset, int row, int column,
+            int pass) {
+  RetObj retObj=extractMethod(row,state);
+  if (retObj.flag.equals(Flag.RETURN))   return;
+  int visibleRow=retObj.visibleRow;
+  Number dataValue=dataset.getValue(row,column);
+  if (dataValue == null) {
+    return;
+  }
+  double value=dataValue.doubleValue();
+  PlotOrientation orientation=plot.getOrientation();
+  double barW0=calculateBarW0(plot,orientation,dataArea,domainAxis,state,visibleRow,column);
+  RectangleEdge edge=plot.getRangeAxisEdge();
+  double barL=rangeAxis.valueToJava2D(value,dataArea,edge);
+  Line2D line=null;
+  double x=0.0;
+  double y=0.0;
+  if (orientation == PlotOrientation.HORIZONTAL) {
+    x=barL;
+    y=barW0 + state.getBarWidth() / 2.0;
+    line=new Line2D.Double(barL,barW0,barL,barW0 + state.getBarWidth());
+  }
+ else {
+    x=barW0 + state.getBarWidth() / 2.0;
+    y=barL;
+    line=new Line2D.Double(barW0,barL,barW0 + state.getBarWidth(),barL);
+  }
+  Stroke itemStroke=getItemStroke(row,column);
+  Paint itemPaint=getItemPaint(row,column);
+  g2.setStroke(itemStroke);
+  g2.setPaint(itemPaint);
+  g2.draw(line);
+  CategoryItemLabelGenerator generator=getItemLabelGenerator(row,column);
+  if (generator != null && isItemLabelVisible(row,column)) {
+    drawItemLabel(g2,orientation,dataset,row,column,x,y,(value < 0.0));
+  }
+  int datasetIndex=plot.indexOf(dataset);
+  updateCrosshairValues(state.getCrosshairState(),dataset.getRowKey(row),dataset.getColumnKey(column),value,datasetIndex,barW0,barL,orientation);
+  EntityCollection entities=state.getEntityCollection();
+  if (entities != null) {
+    addItemEntity(entities,dataset,row,column,line.getBounds());
+  }
+}
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+		<![CDATA[
+/**
+     * Draws the bar for a single (series, category) data item.
+     *
+     * @param g2  the graphics device.
+     * @param state  the renderer state.
+     * @param dataArea  the data area.
+     * @param plot  the plot.
+     * @param domainAxis  the domain axis.
+     * @param rangeAxis  the range axis.
+     * @param dataset  the dataset.
+     * @param row  the row index (zero-based).
+     * @param column  the column index (zero-based).
+     * @param pass  the pass index.
+     */
+public void drawItem(Graphics2D g2,
+                         CategoryItemRendererState state,
+                         Rectangle2D dataArea,
+                         CategoryPlot plot,
+                         CategoryAxis domainAxis,
+                         ValueAxis rangeAxis,
+                         CategoryDataset dataset,
+                         int row,
+                         int column,
+                         int pass) {
+  RetObj retObj=extractMethod(row,state);
+  if (retObj.flag.equals(Flag.RETURN))   return;
+  int visibleRow=retObj.visibleRow;
+  Number dataValue=dataset.getValue(row,column);
+  if (dataValue == null) {
+    return;
+  }
+  final double value=dataValue.doubleValue();
+  PlotOrientation orientation=plot.getOrientation();
+  double barW0=calculateBarW0(plot,orientation,dataArea,domainAxis,state,visibleRow,column);
+  double[] barL0L1=calculateBarL0L1(value);
+  if (barL0L1 == null) {
+    return;
+  }
+  RectangleEdge edge=plot.getRangeAxisEdge();
+  double transL0=rangeAxis.valueToJava2D(barL0L1[0],dataArea,edge);
+  double transL1=rangeAxis.valueToJava2D(barL0L1[1],dataArea,edge);
+  boolean positive=(value >= this.base);
+  boolean inverted=rangeAxis.isInverted();
+  double barL0=Math.min(transL0,transL1);
+  double barLength=Math.abs(transL1 - transL0);
+  double barLengthAdj=0.0;
+  if (barLength > 0.0 && barLength < getMinimumBarLength()) {
+    barLengthAdj=getMinimumBarLength() - barLength;
+  }
+  double barL0Adj=0.0;
+  RectangleEdge barBase;
+  if (orientation == PlotOrientation.HORIZONTAL) {
+    if (positive && inverted || !positive && !inverted) {
+      barL0Adj=barLengthAdj;
+      barBase=RectangleEdge.RIGHT;
+    }
+ else {
+      barBase=RectangleEdge.LEFT;
+    }
+  }
+ else {
+    if (positive && !inverted || !positive && inverted) {
+      barL0Adj=barLengthAdj;
+      barBase=RectangleEdge.BOTTOM;
+    }
+ else {
+      barBase=RectangleEdge.TOP;
+    }
+  }
+  Rectangle2D bar=null;
+  if (orientation == PlotOrientation.HORIZONTAL) {
+    bar=new Rectangle2D.Double(barL0 - barL0Adj,barW0,barLength + barLengthAdj,state.getBarWidth());
+  }
+ else {
+    bar=new Rectangle2D.Double(barW0,barL0 - barL0Adj,state.getBarWidth(),barLength + barLengthAdj);
+  }
+  if (getShadowsVisible()) {
+    this.barPainter.paintBarShadow(g2,this,row,column,bar,barBase,true);
+  }
+  this.barPainter.paintBar(g2,this,row,column,bar,barBase);
+  CategoryItemLabelGenerator generator=getItemLabelGenerator(row,column);
+  if (generator != null && isItemLabelVisible(row,column)) {
+    drawItemLabel(g2,dataset,row,column,plot,generator,bar,(value < 0.0));
+  }
+  int datasetIndex=plot.indexOf(dataset);
+  updateCrosshairValues(state.getCrosshairState(),dataset.getRowKey(row),dataset.getColumnKey(column),value,datasetIndex,barW0,barL0,orientation);
+  EntityCollection entities=state.getEntityCollection();
+  if (entities != null) {
+    addItemEntity(entities,dataset,row,column,bar);
+  }
+}		
+		]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+		<![CDATA[
+/**
+     * Draw a single data item.
+     *
+     * @param g2  the graphics device.
+     * @param state  the renderer state.
+     * @param dataArea  the area in which the data is drawn.
+     * @param plot  the plot.
+     * @param domainAxis  the domain axis.
+     * @param rangeAxis  the range axis.
+     * @param dataset  the dataset.
+     * @param row  the row index (zero-based).
+     * @param column  the column index (zero-based).
+     * @param pass  the pass index.
+     */
+public void drawItem(Graphics2D g2, CategoryItemRendererState state,
+            Rectangle2D dataArea, CategoryPlot plot, CategoryAxis domainAxis,
+            ValueAxis rangeAxis, CategoryDataset dataset, int row, int column,
+            int pass) {
+  if (!getItemVisible(row,column)) {
+    return;
+  }
+  if (!getItemLineVisible(row,column) && !getItemShapeVisible(row,column)) {
+    return;
+  }
+  Number v=dataset.getValue(row,column);
+  if (v == null) {
+    return;
+  }
+  RetObj retObj=extractMethod(row,state);
+  if (retObj.flag.equals(Flag.RETURN))   return;
+  int visibleRow=retObj.visibleRow;
+  int visibleRowCount=state.getVisibleSeriesCount();
+  PlotOrientation orientation=plot.getOrientation();
+  double x1;
+  if (this.useSeriesOffset) {
+    x1=domainAxis.getCategorySeriesMiddle(column,dataset.getColumnCount(),visibleRow,visibleRowCount,this.itemMargin,dataArea,plot.getDomainAxisEdge());
+  }
+ else {
+    x1=domainAxis.getCategoryMiddle(column,getColumnCount(),dataArea,plot.getDomainAxisEdge());
+  }
+  double value=v.doubleValue();
+  double y1=rangeAxis.valueToJava2D(value,dataArea,plot.getRangeAxisEdge());
+  if (pass == 0 && getItemLineVisible(row,column)) {
+    if (column != 0) {
+      Number previousValue=dataset.getValue(row,column - 1);
+      if (previousValue != null) {
+        double previous=previousValue.doubleValue();
+        double x0;
+        if (this.useSeriesOffset) {
+          x0=domainAxis.getCategorySeriesMiddle(column - 1,dataset.getColumnCount(),visibleRow,visibleRowCount,this.itemMargin,dataArea,plot.getDomainAxisEdge());
+        }
+ else {
+          x0=domainAxis.getCategoryMiddle(column - 1,getColumnCount(),dataArea,plot.getDomainAxisEdge());
+        }
+        double y0=rangeAxis.valueToJava2D(previous,dataArea,plot.getRangeAxisEdge());
+        Line2D line=null;
+        if (orientation == PlotOrientation.HORIZONTAL) {
+          line=new Line2D.Double(y0,x0,y1,x1);
+        }
+ else         if (orientation == PlotOrientation.VERTICAL) {
+          line=new Line2D.Double(x0,y0,x1,y1);
+        }
+        g2.setPaint(getItemPaint(row,column));
+        g2.setStroke(getItemStroke(row,column));
+        g2.draw(line);
+      }
+    }
+  }
+  if (pass == 1) {
+    Shape shape=getItemShape(row,column);
+    if (orientation == PlotOrientation.HORIZONTAL) {
+      shape=ShapeUtilities.createTranslatedShape(shape,y1,x1);
+    }
+ else     if (orientation == PlotOrientation.VERTICAL) {
+      shape=ShapeUtilities.createTranslatedShape(shape,x1,y1);
+    }
+    if (getItemShapeVisible(row,column)) {
+      if (getItemShapeFilled(row,column)) {
+        if (this.useFillPaint) {
+          g2.setPaint(getItemFillPaint(row,column));
+        }
+ else {
+          g2.setPaint(getItemPaint(row,column));
+        }
+        g2.fill(shape);
+      }
+      if (this.drawOutlines) {
+        if (this.useOutlinePaint) {
+          g2.setPaint(getItemOutlinePaint(row,column));
+        }
+ else {
+          g2.setPaint(getItemPaint(row,column));
+        }
+        g2.setStroke(getItemOutlineStroke(row,column));
+        g2.draw(shape);
+      }
+    }
+    if (isItemLabelVisible(row,column)) {
+      if (orientation == PlotOrientation.HORIZONTAL) {
+        drawItemLabel(g2,orientation,dataset,row,column,y1,x1,(value < 0.0));
+      }
+ else       if (orientation == PlotOrientation.VERTICAL) {
+        drawItemLabel(g2,orientation,dataset,row,column,x1,y1,(value < 0.0));
+      }
+    }
+    int datasetIndex=plot.indexOf(dataset);
+    updateCrosshairValues(state.getCrosshairState(),dataset.getRowKey(row),dataset.getColumnKey(column),value,datasetIndex,x1,y1,orientation);
+    EntityCollection entities=state.getEntityCollection();
+    if (entities != null) {
+      addItemEntity(entities,dataset,row,column,shape);
+    }
+  }
+}		
+		]]>
+	</modifiedMethod>
+	</modifiedMethods>
+	</projectGroup>
+	
+	<projectGroup id = "10">
+		<src>source</src>
+		<leftProjectName>elasticsearch-020</leftProjectName>
+		<rightProjectName>elasticsearch-090</rightProjectName>
+		<leftClassName1>org.elasticsearch.action.get.MultiGetItemResponse</leftClassName1>
+		<leftClassName2>org.elasticsearch.action.get.MultiGetItemResponse</leftClassName2>
+		<leftFilePath1>org/elasticsearch/action/get/MultiGetItemResponse</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/action/get/MultiGetItemResponse</leftFilePath2>
+		<leftMethodName1>getId()</leftMethodName1>
+		<leftMethodName2>getId()</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.action.get.MultiGetItemResponse
+		</className1>
+		<className2>
+	org.elasticsearch.action.get.MultiGetItemResponse
+		</className2>
+		<filePath1>
+	org/elasticsearch/action/get/MultiGetItemResponse
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/action/get/MultiGetItemResponse
+		</filePath2>
+		<methodName1>
+	getIndex()
+		</methodName1>
+		<methodName2>
+	getIndex()
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.action.get.MultiGetItemResponse
+		</className1>
+		<className2>
+	org.elasticsearch.action.get.MultiGetItemResponse
+		</className2>
+		<filePath1>
+	org/elasticsearch/action/get/MultiGetItemResponse
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/action/get/MultiGetItemResponse
+		</filePath2>
+		<methodName1>
+	getType()
+		</methodName1>
+		<methodName2>
+	getType()
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	<extractMethod>
+		<![CDATA[
+public abstract class TemplateClass {
+  public String extractMethod(  Failure failure,  GetResponse response){
+    if (failure != null) {
+      return m0(failure);
+    }
+    return m1(response);
+  }
+  public abstract String m1(  GetResponse response);
+  public abstract String m0(  Failure failure);
+}
+public class ConcreteTemplateClass0 extends TemplateClass {
+  public String m1(  GetResponse response){
+    return response.getId();
+  }
+  public String m0(  Failure failure){
+    return failure.getId();
+  }
+}
+public class ConcreteTemplateClass1 extends TemplateClass {
+  public String m1(  GetResponse response){
+    return response.getIndex();
+  }
+  public String m0(  Failure failure){
+    return failure.getIndex();
+  }
+}
+public class ConcreteTemplateClass2 extends TemplateClass {
+  public String m1(  GetResponse response){
+    return response.getType();
+  }
+  public String m0(  Failure failure){
+    return failure.getType();
+  }
+}	
+		]]>
+	</extractMethod>
+	<modifiedMethods>
+		<modifiedMethod id = "1">
+			<![CDATA[
+/**
+     * The id of the document.
+     */
+public String getId() {
+  return new ConcreteTemplateClass0().extractMethod(failure,response);
+}			
+			]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+			<![CDATA[
+/**
+     * The index name of the document.
+     */
+public String getIndex() {
+  return new ConcreteTemplateClass1().extractMethod(failure,response);
+}		
+			]]>
+		</modifiedMethod>
+		<modifiedMethod id = "3">
+			<![CDATA[
+/**
+     * The type of the document.
+     */
+public String getType() {
+  return new ConcreteTemplateClass2().extractMethod(failure,response);
+}			
+			]]>
+		</modifiedMethod>
+	</modifiedMethods>
+	</projectGroup>
+	
+	<projectGroup id = "11">
+	<src>source</src>
+		<leftProjectName>jfreechart-1924</leftProjectName>
+		<rightProjectName>jfreechart-2024</rightProjectName>
+		<leftClassName1>org.jfree.chart.axis.NumberAxis</leftClassName1>
+		<leftClassName2>org.jfree.chart.axis.NumberAxis</leftClassName2>
+		<leftFilePath1>org/jfree/chart/axis/NumberAxis</leftFilePath1>
+		<leftFilePath2>org/jfree/chart/axis/NumberAxis</leftFilePath2>
+		<leftMethodName1>draw(Graphics2D, double, Rectangle2D, Rectangle2D, RectangleEdge, PlotRenderingInfo)</leftMethodName1>
+		<leftMethodName2>draw(Graphics2D, double, Rectangle2D, Rectangle2D, RectangleEdge, PlotRenderingInfo)</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.jfree.chart.axis.CategoryAxis
+		</className1>
+		<className2>
+	org.jfree.chart.axis.CategoryAxis
+		</className2>
+		<filePath1>
+	org/jfree/chart/axis/CategoryAxis
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/axis/CategoryAxis
+		</filePath2>
+		<methodName1>
+	draw(Graphics2D, double, Rectangle2D, Rectangle2D, RectangleEdge, PlotRenderingInfo)
+		</methodName1>
+		<methodName2>
+	draw(Graphics2D, double, Rectangle2D, Rectangle2D, RectangleEdge, PlotRenderingInfo)
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.jfree.chart.axis.LogAxis
+		</className1>
+		<className2>
+	org.jfree.chart.axis.LogAxis
+		</className2>
+		<filePath1>
+	org/jfree/chart/axis/LogAxis
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/axis/LogAxis
+		</filePath2>
+		<methodName1>
+	draw(Graphics2D, double, Rectangle2D, Rectangle2D, RectangleEdge, PlotRenderingInfo)
+		</methodName1>
+		<methodName2>
+	draw(Graphics2D, double, Rectangle2D, Rectangle2D, RectangleEdge, PlotRenderingInfo)
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "3">
+		<className1>
+	org.jfree.chart.axis.DateAxis
+		</className1>
+		<className2>
+	org.jfree.chart.axis.DateAxis
+		</className2>
+		<filePath1>
+	org/jfree/chart/axis/DateAxis
+		</filePath1>
+		<filePath2>
+	org/jfree/chart/axis/DateAxis
+		</filePath2>
+		<methodName1>
+	draw(Graphics2D, double, Rectangle2D, Rectangle2D, RectangleEdge, PlotRenderingInfo)
+		</methodName1>
+		<methodName2>
+	draw(Graphics2D, double, Rectangle2D, Rectangle2D, RectangleEdge, PlotRenderingInfo)
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+	<delta>
+	-4
+	</delta>
+	<extractMethod>
+		<![CDATA[
+protected AxisState extractMethod(Rectangle2D dataArea,PlotRenderingInfo plotState,Rectangle2D plotArea,AxisState state,Graphics2D g2,RectangleEdge edge,double cursor){
+  state=drawLabel(getLabel(),g2,plotArea,dataArea,edge,state,plotState);
+  createAndAddEntity(cursor,state,dataArea,edge,plotState);
+  return state;
+}	
+		]]>
+	</extractMethod>
+	<modifiedMethods>
+	<modifiedMethod id = "1">
+	<![CDATA[
+/**
+     * Draws the axis on a Java 2D graphics device (such as the screen or a
+     * printer).
+     *
+     * @param g2  the graphics device (<code>null</code> not permitted).
+     * @param cursor  the cursor location.
+     * @param plotArea  the area within which the axes and data should be drawn
+     *                  (<code>null</code> not permitted).
+     * @param dataArea  the area within which the data should be drawn
+     *                  (<code>null</code> not permitted).
+     * @param edge  the location of the axis (<code>null</code> not permitted).
+     * @param plotState  collects information about the plot
+     *                   (<code>null</code> permitted).
+     *
+     * @return The axis state (never <code>null</code>).
+     */
+public AxisState draw(Graphics2D g2, double cursor, Rectangle2D plotArea,
+            Rectangle2D dataArea, RectangleEdge edge,
+            PlotRenderingInfo plotState) {
+  AxisState state=null;
+  if (!isVisible()) {
+    state=new AxisState(cursor);
+    List ticks=refreshTicks(g2,state,dataArea,edge);
+    state.setTicks(ticks);
+    return state;
+  }
+  state=drawTickMarksAndLabels(g2,cursor,plotArea,dataArea,edge,plotState);
+  return extractMethod(dataArea,plotState,plotArea,state,g2,edge,cursor);
+}	
+	]]>
+	</modifiedMethod>
+	<modifiedMethod id = "2">
+	<![CDATA[
+/**
+     * Draws the axis on a Java 2D graphics device (such as the screen or a
+     * printer).
+     *
+     * @param g2  the graphics device (<code>null</code> not permitted).
+     * @param cursor  the cursor location.
+     * @param plotArea  the area within which the axis should be drawn
+     *                  (<code>null</code> not permitted).
+     * @param dataArea  the area within which the plot is being drawn
+     *                  (<code>null</code> not permitted).
+     * @param edge  the location of the axis (<code>null</code> not permitted).
+     * @param plotState  collects information about the plot
+     *                   (<code>null</code> permitted).
+     *
+     * @return The axis state (never <code>null</code>).
+     */
+public AxisState draw(Graphics2D g2, double cursor, Rectangle2D plotArea,
+            Rectangle2D dataArea, RectangleEdge edge,
+            PlotRenderingInfo plotState) {
+  if (!isVisible()) {
+    return new AxisState(cursor);
+  }
+  if (isAxisLineVisible()) {
+    drawAxisLine(g2,cursor,dataArea,edge);
+  }
+  AxisState state=new AxisState(cursor);
+  state=drawCategoryLabels(g2,plotArea,dataArea,edge,state,plotState);
+  return extractMethod(dataArea,plotState,plotArea,state,g2,edge,cursor);
+}	
+	]]>
+	</modifiedMethod>
+	<modifiedMethod id = "3">
+	<![CDATA[
+/**
+     * Draws the axis on a Java 2D graphics device (such as the screen or a
+     * printer).
+     *
+     * @param g2  the graphics device (<code>null</code> not permitted).
+     * @param cursor  the cursor location (determines where to draw the axis).
+     * @param plotArea  the area within which the axes and plot should be drawn.
+     * @param dataArea  the area within which the data should be drawn.
+     * @param edge  the axis location (<code>null</code> not permitted).
+     * @param plotState  collects information about the plot
+     *                   (<code>null</code> permitted).
+     *
+     * @return The axis state (never <code>null</code>).
+     */
+public AxisState draw(Graphics2D g2, double cursor, Rectangle2D plotArea,
+            Rectangle2D dataArea, RectangleEdge edge,
+            PlotRenderingInfo plotState) {
+  AxisState state=null;
+  if (!isVisible()) {
+    state=new AxisState(cursor);
+    List ticks=refreshTicks(g2,state,dataArea,edge);
+    state.setTicks(ticks);
+    return state;
+  }
+  state=drawTickMarksAndLabels(g2,cursor,plotArea,dataArea,edge,plotState);
+  return extractMethod(dataArea,plotState,plotArea,state,g2,edge,cursor);
+}	
+	]]>
+	</modifiedMethod>
+	</modifiedMethods>
+	</projectGroup>
+	
+	<projectGroup id = "15">
+		<src>source</src>
+		<leftProjectName>elasticsearch-110</leftProjectName>
+		<rightProjectName>elasticsearch-120</rightProjectName>
+		<leftClassName1>org.elasticsearch.search.aggregations.bucket.geogrid.GeoHashGridAggregator</leftClassName1>
+		<leftClassName2>org.elasticsearch.search.aggregations.bucket.geogrid.GeoHashGridAggregator</leftClassName2>
+		<leftFilePath1>org/elasticsearch/aggregations/bucket/geogrid/GeoHashGridAggregator</leftFilePath1>
+		<leftFilePath2>org/elasticsearch/aggregations/bucket/geogrid/GeoHashGridAggregator</leftFilePath2>
+		<leftMethodName1>
+			<![CDATA[
+		collect(int, long)
+			]]>
+		</leftMethodName1>
+		<leftMethodName2>
+			<![CDATA[
+		collect(int, long)
+			]]>
+		</leftMethodName2>
+		<rightGroup>
+	<projectMethod id = "1">
+		<className1>
+	org.elasticsearch.search.aggregations.bucket.terms.LongTermsAggregator
+		</className1>
+		<className2>
+	org.elasticsearch.search.aggregations.bucket.terms.LongTermsAggregator
+		</className2>
+		<filePath1>
+	org/elasticsearch/aggregations/terms/LongTermsAggregator
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/aggregations/terms/LongTermsAggregator
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		collect(int, long)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		collect(int, long)
+			]]>
+		</methodName2>
+	</projectMethod>
+	<projectMethod id = "2">
+		<className1>
+	org.elasticsearch.search.aggregations.bucket.terms.DoubleTermsAggregator
+		</className1>
+		<className2>
+	org.elasticsearch.search.aggregations.bucket.terms.DoubleTermsAggregator
+		</className2>
+		<filePath1>
+	org/elasticsearch/aggregations/terms/DoubleTermsAggregator
+		</filePath1>
+		<filePath2>
+	org/elasticsearch/aggregations/terms/DoubleTermsAggregator
+		</filePath2>
+		<methodName1>
+			<![CDATA[
+		collect(int, long)
+			]]>
+		</methodName1>
+		<methodName2>
+			<![CDATA[
+		collect(int, long)
+			]]>
+		</methodName2>
+	</projectMethod>
+	</rightGroup>
+<extractMethod>
+	<![CDATA[
+	protected void extractMethod(long v0,int doc){
+  long bucketOrdinal=bucketOrds.add(v0);
+  if (bucketOrdinal < 0) {
+    bucketOrdinal=-1 - bucketOrdinal;
+    collectExistingBucket(doc,bucketOrdinal);
+  }
+ else {
+    collectBucket(doc,bucketOrdinal);
+  }
+}
+	]]>
+</extractMethod>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+		<![CDATA[
+@Override
+    public void collect(int doc, long owningBucketOrdinal) throws IOException {
+  assert owningBucketOrdinal == 0;
+  final int valuesCount=values.setDocument(doc);
+  for (int i=0; i < valuesCount; ++i) {
+    final long val=values.nextValue();
+    extractMethod(val,doc);
+  }
+}		
+		]]>
+	</modifiedMethod>		
+	<modifiedMethod id = "2">
+		<![CDATA[
+@Override
+    public void collect(int doc, long owningBucketOrdinal) throws IOException {
+  assert owningBucketOrdinal == 0;
+  final int valuesCount=values.setDocument(doc);
+  for (int i=0; i < valuesCount; ++i) {
+    final long val=values.nextValue();
+    extractMethod(val,doc);
+  }
+}	
+		]]>
+	</modifiedMethod>
+	<modifiedMethod	 id = "3">
+		<![CDATA[
+@Override
+    public void collect(int doc, long owningBucketOrdinal) throws IOException {
+  assert owningBucketOrdinal == 0;
+  final int valuesCount=values.setDocument(doc);
+  for (int i=0; i < valuesCount; ++i) {
+    final double val=values.nextValue();
+    final long bits=Double.doubleToRawLongBits(val);
+    extractMethod(bits,doc);
+  }
+}		
+		]]>
+	</modifiedMethod>
+</modifiedMethods>
+	</projectGroup>
+</list>	

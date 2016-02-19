@@ -1,0 +1,6901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<list>
+	<projectPair id = "1">
+		<src>
+		compare
+		</src>
+		<leftProjectName>
+		org.eclipse.compare_v20060605
+		</leftProjectName>
+		<rightProjectName>
+		org.eclipse.compare_v20060917
+		</rightProjectName>
+		<leftClassName1>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</leftClassName1>
+		<leftClassName2>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</leftClassName2>
+		<rightClassName1>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer.Diff
+		</rightClassName1>
+		<rightClassName2>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer.Diff
+		</rightClassName2>
+		<leftFilePath1>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</leftFilePath1>
+		<leftFilePath2>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</leftFilePath2>
+		<rightFilePath1>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</rightFilePath1>
+		<rightFilePath2>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</rightFilePath2>
+		<leftMethodName1>
+		getNewRange(char, Object)
+		</leftMethodName1>
+		<leftMethodName2>
+		getNewRange(char, Object)
+		</leftMethodName2>
+		<rightMethodName1>
+		getPosition(char)
+		</rightMethodName1>
+		<rightMethodName2>
+		getPosition(char)
+		</rightMethodName2>
+<costs>
+ 	59_18
+                </costs>
+<extractMethod>
+	<![CDATA[
+private RetObj extractMethod(char type,Position u1,Position u2,Position u0){
+switch (type) {
+case ANCESTOR_CONTRIBUTOR:
+    return new RetObj(Flag.RETURN,u0);
+case LEFT_CONTRIBUTOR:
+  return new RetObj(Flag.RETURN,u1);
+case RIGHT_CONTRIBUTOR:
+return new RetObj(Flag.RETURN,u2);
+}
+return new RetObj(Flag.FALLTHRU,null);
+}
+	]]>
+</extractMethod>
+<RetObj>
+	<![CDATA[
+public enum Flag{RETURN, FALLTHRU};
+public class RetObj {
+  public Flag flag;
+  public Position ret;
+  public RetObj(Flag flag,Position ret){
+    this.flag = flag;
+    this.ret = ret;
+  }
+}
+	]]>
+</RetObj>
+        <modifiedMethods>
+	      <modifiedMethod id = "1">
+                <![CDATA[
+Position getPosition(char type) {
+  RetObj retObj=extractMethod(type,fLeftPos,fRightPos,fAncestorPos);
+  if (retObj.flag.equals(Flag.RETURN))   return retObj.retVal;
+  return null;
+}
+                ]]>
+            </modifiedMethod>
+<modifiedMethod id = "2">
+                <![CDATA[
+private Position getNewRange(char type, Object input) {
+  RetObj retObj=extractMethod(type,(Position)fNewLeftRanges.get(input),(Position)fNewRightRanges.get(input),(Position)fNewAncestorRanges.get(input));
+  if (retObj.flag.equals(Flag.RETURN))   return retObj.retVal;
+  return null;
+}
+                ]]>
+            </modifiedMethod>
+        </modifiedMethods>
+	</projectPair>
+	<projectPair id = "2">
+		<src>
+		compare
+		</src>
+		<leftProjectName>
+		org.eclipse.compare_v20060918
+		</leftProjectName>
+		<rightProjectName>
+		org.eclipse.compare_v20061016
+		</rightProjectName>
+		<leftClassName1>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer.ContributorInfo
+		</leftClassName1>
+		<leftClassName2>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer.ContributorInfo
+		</leftClassName2>
+		<rightClassName1>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer.ContributorInfo
+		</rightClassName1>
+		<rightClassName2>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer.ContributorInfo
+		</rightClassName2>
+		<leftFilePath1>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</leftFilePath1>
+		<leftFilePath2>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</leftFilePath2>
+		<rightFilePath1>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</rightFilePath1>
+		<rightFilePath2>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</rightFilePath2>
+		<leftMethodName1>
+	elementMoved(Object, Object)
+		</leftMethodName1>
+		<leftMethodName2>
+	elementMoved(Object, Object)
+		</leftMethodName2>
+		<rightMethodName1>
+	elementDeleted(Object)
+		</rightMethodName1>
+		<rightMethodName2>
+	elementDeleted(Object)
+		</rightMethodName2>
+                <costs>
+ 	7_10
+                </costs>
+		<extractMethod>
+            <![CDATA[
+private void extractMethod(Object v0){
+  IEditorInput input=getDocumentKey();
+  if (input != null && input.equals(v0)) {
+    resetDocument();
+  }
+}
+            ]]>
+		</extractMethod>
+		<modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+public void elementDeleted(Object element) {
+  extractMethod(element);
+}
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+public void elementMoved(Object originalElement, Object movedElement) {
+  extractMethod(originalElement);
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "3">
+		<src>
+		compare
+		</src>
+		<leftProjectName>
+		org.eclipse.compare_v20060918
+		</leftProjectName>
+		<rightProjectName>
+		org.eclipse.compare_v20061016
+		</rightProjectName>
+		<leftClassName1>
+	org.eclipse.compare.internal.patch.PreviewPatchPage2
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.compare.internal.patch.PreviewPatchPage2
+		</leftClassName2>
+		<rightClassName1>
+	org.eclipse.compare.internal.patch.PreviewPatchPage
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.compare.internal.patch.PreviewPatchPage	
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/compare/internal/patch/PreviewPatchPage2
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/compare/internal/patch/PreviewPatchPage2
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/compare/internal/patch/PreviewPatchPage
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/compare/internal/patch/PreviewPatchPage
+		</rightFilePath2>
+		<leftMethodName1>
+	guess(WorkspacePatcher, IProgressMonitor, int)
+		</leftMethodName1>
+		<leftMethodName2>
+	guess(WorkspacePatcher, IProgressMonitor, int)
+		</leftMethodName2>
+		<rightMethodName1>
+	guess(WorkspacePatcher, IProgressMonitor, int)
+		</rightMethodName1>
+		<rightMethodName2>
+	guess(WorkspacePatcher, IProgressMonitor, int)
+		</rightMethodName2>
+		<costs>
+ 	7_2
+                </costs>
+        <modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+private int guess(WorkspacePatcher patcher,IProgressMonitor pm,int strip){
+  Diff[] diffs=patcher.getDiffs();
+  if (diffs == null || diffs.length <= 0) {
+    return -1;
+  }
+  IFile[] files=new IFile[diffs.length];
+  int work=0;
+  for (int i=0; i < diffs.length; i++) {
+    Diff diff=diffs[i];
+    if (diff == null) {
+      continue;
+    }
+    if (diff.getDiffType() != Differencer.ADDITION) {
+      IPath p=diff.fOldPath;
+      if (strip > 0 && strip < p.segmentCount()) {
+        p=p.removeFirstSegments(strip);
+      }
+      IFile file=existsInSelection(p);
+      if (file != null) {
+        files[i]=file;
+        work+=diff.fHunks.size();
+      }
+    }
+  }
+  int[] fuzzRef=new int[1];
+  String format=PatchMessages.PreviewPatchPage_GuessFuzzProgress_format;
+  pm.beginTask(PatchMessages.PreviewPatchPage_GuessFuzzProgress_text,work);
+  try {
+    int fuzz=0;
+    for (int i=0; i < diffs.length; i++) {
+      Diff d=diffs[i];
+      IFile file=files[i];
+      if (d != null && file != null) {
+        List lines=patcher.load(file,false);
+        String name=d.getPath().lastSegment();
+        Iterator iter=d.fHunks.iterator();
+        int shift=0;
+        for (int hcnt=1; iter.hasNext(); hcnt++) {
+          pm.subTask(MessageFormat.format(format,new String[]{name,Integer.toString(hcnt)}));
+          Hunk h=(Hunk)iter.next();
+          shift=patcher.calculateFuzz(h,lines,shift,pm,fuzzRef);
+          int f=fuzzRef[0];
+          if (f == -1) {
+            return -1;
+          }
+          if (f > fuzz) {
+            fuzz=f;
+          }
+          pm.worked(1);
+        }
+      }
+    }
+    return fuzz;
+  }
+  finally {
+    pm.done();
+  }
+}
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+private int guess(WorkspacePatcher patcher,IProgressMonitor pm,int strip){
+  Diff[] diffs=patcher.getDiffs();
+  if (diffs == null || diffs.length <= 0) {
+    return -1;
+  }
+  IFile[] files=new IFile[diffs.length];
+  int work=0;
+  for (int i=0; i < diffs.length; i++) {
+    Diff diff=diffs[i];
+    if (diff == null) {
+      continue;
+    }
+    if (diff.getDiffType() != Differencer.ADDITION) {
+      IPath p=diff.fOldPath;
+      if (strip > 0 && strip < p.segmentCount()) {
+        p=p.removeFirstSegments(strip);
+      }
+      IFile file=existsInSelection(p);
+      if (file != null) {
+        files[i]=file;
+        work+=diff.fHunks.size();
+      }
+    }
+  }
+  int[] fuzzRef=new int[1];
+  String format=PatchMessages.PreviewPatchPage_GuessFuzzProgress_format;
+  pm.beginTask(PatchMessages.PreviewPatchPage_GuessFuzzProgress_text,work);
+  try {
+    int fuzz=0;
+    for (int i=0; i < diffs.length; i++) {
+      Diff d=diffs[i];
+      IFile file=files[i];
+      if (d != null && file != null) {
+        List lines=patcher.load(file,false);
+        String name=d.getPath().lastSegment();
+        Iterator iter=d.fHunks.iterator();
+        int shift=0;
+        for (int hcnt=1; iter.hasNext(); hcnt++) {
+          pm.subTask(MessageFormat.format(format,new String[]{name,Integer.toString(hcnt)}));
+          Hunk h=(Hunk)iter.next();
+          shift=patcher.calculateFuzz(h,lines,shift,pm,fuzzRef);
+          int f=fuzzRef[0];
+          if (f == -1) {
+            return -1;
+          }
+          if (f > fuzz) {
+            fuzz=f;
+          }
+          pm.worked(1);
+        }
+      }
+    }
+    return fuzz;
+  }
+  finally {
+    pm.done();
+  }
+}
+              ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "4">
+		<src>
+		compare
+		</src>
+		<leftProjectName>
+		org.eclipse.compare_v20060918
+		</leftProjectName>
+		<rightProjectName>
+		org.eclipse.compare_v20061016
+		</rightProjectName>
+		<leftClassName1>
+	org.eclipse.compare.contentmergeviewer.ContentMergeViewer
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.compare.contentmergeviewer.ContentMergeViewer
+		</leftClassName2>
+		<rightClassName1>
+	org.eclipse.compare.contentmergeviewer.ContentMergeViewer.SaveAction
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.compare.contentmergeviewer.ContentMergeViewer.SaveAction	
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/compare/contentmergeviewer/ContentMergeViewer
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/compare/contentmergeviewer/ContentMergeViewer
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/compare/contentmergeviewer/ContentMergeViewer
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/compare/contentmergeviewer/ContentMergeViewer
+		</rightFilePath2>
+		<leftMethodName1>
+	flush(IProgressMonitor)
+		</leftMethodName1>
+		<leftMethodName2>
+	flush(IProgressMonitor)
+		</leftMethodName2>
+		<rightMethodName1>
+	run()
+		</rightMethodName1>
+		<rightMethodName2>
+	run()
+		</rightMethodName2>
+		<costs>
+ 	14_4
+                </costs>
+<extractMethod>
+	<![CDATA[
+private void extractMethod(null u1){
+  flushContent(getInput(),u1);
+}
+	]]>
+</extractMethod>
+		<modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+public void run() {
+  extractMethod(null);
+}                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+/* (non-Javadoc)
+	 * @see org.eclipse.compare.contentmergeviewer.IFlushable#flush(org.eclipse.core.runtime.IProgressMonitor)
+	 */
+public void flush(IProgressMonitor monitor) {
+  extractMethod(monitor);
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "5">
+		<src>compare</src>
+		<leftProjectName> org.eclipse.compare_v20061016 </leftProjectName>
+		<rightProjectName>org.eclipse.compare_v20061120</rightProjectName>
+		<leftClassName1>
+	org.eclipse.compare.contentmergeviewer.ContentMergeViewer
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.compare.contentmergeviewer.ContentMergeViewer
+		</leftClassName2>
+		<rightClassName1>
+	org.eclipse.compare.contentmergeviewer.ContentMergeViewer
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.compare.contentmergeviewer.ContentMergeViewer	
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/compare/contentmergeviewer/ContentMergeViewer
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/compare/contentmergeviewer/ContentMergeViewer
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/compare/contentmergeviewer/ContentMergeViewer
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/compare/contentmergeviewer/ContentMergeViewer
+		</rightFilePath2>
+		<leftMethodName1>
+	setLeftDirty(boolean)
+		</leftMethodName1>
+		<leftMethodName2>
+	setLeftDirty(boolean)
+		</leftMethodName2>
+		<rightMethodName1>
+	setRightDirty(boolean)
+		</rightMethodName1>
+		<rightMethodName2>
+	setRightDirty(boolean)
+		</rightMethodName2>
+        <modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+/** 
+ * Sets the dirty state of the right side of this viewer.
+ * If the new value differs from the old
+ * all registered listener are notified with
+ * a <code>PropertyChangeEvent</code> with the
+ * property name <code>CompareEditorInput.DIRTY_STATE</code>.
+ * @param dirty the state of the right side dirty flag
+ */
+protected void setRightDirty(boolean dirty){
+  if (isRightDirty() != dirty) {
+    if ((!isRightDirty() && !isLeftDirty()) || (u$_3_PrefixExpression_MethodInvocation_ && u$_4_PrefixExpression_MethodInvocation_)) {
+      fireDirtyState(dirty);
+    }
+    fRightSaveAction.setEnabled(dirty);
+  }
+}
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+/** 
+ * Sets the dirty state of the left side of this viewer.
+ * If the new value differs from the old
+ * all registered listener are notified with
+ * a <code>PropertyChangeEvent</code> with the
+ * property name <code>CompareEditorInput.DIRTY_STATE</code>.
+ * @param dirty the state of the left side dirty flag
+ */
+protected void setLeftDirty(boolean dirty){
+  if (isLeftDirty() != dirty) {
+    if ((!isRightDirty() && !isLeftDirty()) || (u$_3_PrefixExpression_MethodInvocation_ && u$_4_PrefixExpression_MethodInvocation_)) {
+      fireDirtyState(dirty);
+    }
+    fLeftSaveAction.setEnabled(dirty);
+  }
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "6">
+		<src>compare</src>
+		<leftProjectName> org.eclipse.compare_v20061120 </leftProjectName>
+		<rightProjectName>org.eclipse.compare_v20061218</rightProjectName>
+		<leftClassName1>
+	org.eclipse.compare.CompareEditorInput
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.compare.CompareEditorInput
+		</leftClassName2>
+		<rightClassName1>
+	org.eclipse.compare.CompareEditorInput
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.compare.CompareEditorInput	
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/compare/CompareEditorInput
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/compare/CompareEditorInput
+		</leftFilePath2>
+		<rightFilePath1>	
+	org/eclipse/compare/CompareEditorInput
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/compare/CompareEditorInput
+		</rightFilePath2>
+		<leftMethodName1>
+	addCompareInputChangeListener(ICompareInput, ICompareInputChangeListener)
+		</leftMethodName1>
+		<leftMethodName2>
+	addCompareInputChangeListener(ICompareInput, ICompareInputChangeListener)
+		</leftMethodName2>
+		<rightMethodName1>
+	removeCompareInputChangeListener(ICompareInput, ICompareInputChangeListener)
+		</rightMethodName1>
+		<rightMethodName2>
+	removeCompareInputChangeListener(ICompareInput, ICompareInputChangeListener)
+		</rightMethodName2>
+<costs>
+ 	22_6
+                </costs>
+<extractMethod>
+	<![CDATA[
+public abstract class TemplateClass {
+  public void extractMethod(  ICompareInputChangeListener listener,  ICompareInput input,  ICompareContainer fContainer){
+    m0(fContainer,input,listener);
+  }
+  public abstract void m0(  ICompareContainer fContainer,  ICompareInput input,  ICompareInputChangeListener listener);
+}
+public class ConcreteTemplateClass0 extends TemplateClass {
+  public void m0(  ICompareContainer fContainer,  ICompareInput input,  ICompareInputChangeListener listener){
+    fContainer.removeCompareInputChangeListener(input,listener);
+  }
+}
+public class ConcreteTemplateClass1 extends TemplateClass {
+  public void m0(  ICompareContainer fContainer,  ICompareInput input,  ICompareInputChangeListener listener){
+    fContainer.addCompareInputChangeListener(input,listener);
+  }
+}
+	]]>
+</extractMethod>
+        <modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+/* (non-Javadoc)
+	 * @see org.eclipse.compare.ICompareContainer#removeCompareInputChangeListener(org.eclipse.compare.structuremergeviewer.ICompareInput, org.eclipse.compare.structuremergeviewer.ICompareInputChangeListener)
+	 */
+public void removeCompareInputChangeListener(ICompareInput input,
+			ICompareInputChangeListener listener) {
+  new ConcreteTemplateClass0().extractMethod(listener,input,fContainer);
+}
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+/* (non-Javadoc)
+	 * @see org.eclipse.compare.ICompareContainer#addCompareInputChangeListener(org.eclipse.compare.structuremergeviewer.ICompareInput, org.eclipse.compare.structuremergeviewer.ICompareInputChangeListener)
+	 */
+public void addCompareInputChangeListener(ICompareInput input,
+			ICompareInputChangeListener listener) {
+  new ConcreteTemplateClass1().extractMethod(listener,input,fContainer);
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "7">
+		<src>compare</src>
+		<leftProjectName> org.eclipse.compare_v20061120 </leftProjectName>
+		<rightProjectName>org.eclipse.compare_v20061218</rightProjectName>
+		<leftClassName1>
+	org.eclipse.compare.internal.CompareUIPlugin
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.compare.internal.CompareUIPlugin
+		</leftClassName2>
+		<rightClassName1>
+	org.eclipse.compare.internal.CompareUIPlugin
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.compare.internal.CompareUIPlugin	
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/compare/internal/CompareUIPlugin
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/compare/internal/CompareUIPlugin
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/compare/internal/CompareUIPlugin
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/compare/internal/CompareUIPlugin
+		</rightFilePath2>
+		<leftMethodName1>
+	openCompareEditor(CompareEditorInput, IWorkbenchPage, IReusableEditor)
+		</leftMethodName1>
+		<leftMethodName2>
+	openCompareEditor(CompareEditorInput, IWorkbenchPage, IReusableEditor)
+		</leftMethodName2>
+		<rightMethodName1>
+	openCompareDialog(CompareEditorInput)
+		</rightMethodName1>
+		<rightMethodName2>
+	openCompareDialog(CompareEditorInput)
+		</rightMethodName2>
+        <modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+/** 
+ * Performs the comparison described by the given input and opens a
+ * compare editor on the result.
+ * @param input the input on which to open the compare editor
+ * @param page the workbench page on which to create a new compare editor
+ * @param editor if not null the input is opened in this editor
+ * @see CompareEditorInput
+ */
+public void openCompareEditor(final CompareEditorInput input,final IWorkbenchPage page,final IReusableEditor editor){
+  if (input.canRunAsJob()) {
+  }
+ else {
+    if (compareResultOK(input,null)) {
+      internalOpenEditor(input,page,editor);
+    }
+  }
+}
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+/** 
+ * Performs the comparison described by the given input and opens a
+ * compare dialog on the result.
+ * @param input the input on which to open the compare editor
+ * @see CompareEditorInput
+ */
+public void openCompareDialog(final CompareEditorInput input){
+  if (input.canRunAsJob()) {
+  }
+ else {
+    if (compareResultOK(input,null)) {
+      internalOpenDialog(input);
+    }
+  }
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "8">
+		<src>compare</src>
+		<leftProjectName> org.eclipse.compare_v20061120 </leftProjectName>
+		<rightProjectName>org.eclipse.compare_v20061218</rightProjectName>
+		<leftClassName1>
+	org.eclipse.compare.CompareEditorInput
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.compare.CompareEditorInput
+		</leftClassName2>
+		<rightClassName1>
+	org.eclipse.compare.CompareEditorInput
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.compare.CompareEditorInput	
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/compare/CompareEditorInput
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/compare/CompareEditorInput
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/compare/CompareEditorInput
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/compare/CompareEditorInput
+		</rightFilePath2>
+		<leftMethodName1>
+	getActionBars()
+		</leftMethodName1>
+		<leftMethodName2>
+	getActionBars()
+		</leftMethodName2>
+		<rightMethodName1>
+	getServiceLocator()
+		</rightMethodName1>
+		<rightMethodName2>
+	getServiceLocator()
+		</rightMethodName2>
+        <costs>29_10</costs>
+<extractMethod>
+	<![CDATA[
+public abstract class TemplateClass<T0> {
+  public T0 extractMethod(  Splitter fComposite,  ICompareContainer fContainer,  boolean fContainerProvided){
+    T0 v0=m0(fContainer);
+    if (v0 == null && !fContainerProvided) {
+      return m2(fComposite);
+    }
+    return v0;
+  }
+  public abstract T0 m0(  ICompareContainer fContainer);
+  public abstract T0 m2(  Splitter fComposite);
+}
+public class ConcreteTemplateClass0 extends TemplateClass<IServiceLocator> {
+  public IServiceLocator m0(  ICompareContainer fContainer){
+    return fContainer.getServiceLocator();
+  }
+  public IServiceLocator m2(  Splitter fComposite){
+    return Utilities.findSite(fComposite);
+  }
+}
+public class ConcreteTemplateClass1 extends TemplateClass<IActionBars> {
+  public IActionBars m0(  ICompareContainer fContainer){
+    return fContainer.getActionBars();
+  }
+  public IActionBars m2(  Splitter fComposite){
+    return Utilities.findActionBars(fComposite);
+  }
+}
+	]]>
+</extractMethod>
+        <modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+/* (non-Javadoc)
+	 * @see org.eclipse.compare.ICompareContainer#getServiceLocator()
+	 */
+public IServiceLocator getServiceLocator() {
+  return new ConcreteTemplateClass0().extractMethod(fComposite,fContainer,fContainerProvided);
+}
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+/* (non-Javadoc)
+	 * @see org.eclipse.compare.ICompareContainer#getActionBars()
+	 */
+public IActionBars getActionBars() {
+  return new ConcreteTemplateClass1().extractMethod(fComposite,fContainer,fContainerProvided);
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	
+	<projectPair id = "9">
+		<src>compare</src>
+		<leftProjectName> org.eclipse.compare_v20070115 </leftProjectName>
+		<rightProjectName>org.eclipse.compare_v20070226</rightProjectName>
+		<leftClassName1>
+	org.eclipse.compare.internal.patch.Patcher
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.compare.internal.patch.Patcher
+		</leftClassName2>
+		<rightClassName1>
+	org.eclipse.compare.internal.patch.WorkspacePatcher
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.compare.internal.patch.WorkspacePatcher	
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/compare/internal/patch/Patcher
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/compare/internal/patch/Patcher
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/compare/internal/patch/WorkspacePatcher
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/compare/internal/patch/WorkspacePatcher
+		</rightFilePath2>
+		<leftMethodName1>
+	applyAll(IProgressMonitor, Shell, String)
+		</leftMethodName1>
+		<leftMethodName2>
+	applyAll(IProgressMonitor, Shell, String)
+		</leftMethodName2>
+		<rightMethodName1>
+	applyAll(IProgressMonitor, Shell, String)
+		</rightMethodName1>
+		<rightMethodName2>
+	applyAll(IProgressMonitor, Shell, String)
+		</rightMethodName2>
+<costs>
+ 	55_20
+                </costs>
+	<extractMethod>
+	<![CDATA[
+protected int extractMethod(IFile file,IProgressMonitor pm,List failed,int type,FileDiff diff,int WORK_UNIT,int workTicks){
+switch (type) {
+case Differencer.ADDITION:
+    List result=apply(diff,file,true,failed);
+  if (result != null) {
+    store(createString(isPreserveLineDelimeters(),result),file,new SubProgressMonitor(pm,workTicks));
+  }
+workTicks-=WORK_UNIT;
+break;
+case Differencer.DELETION:
+file.delete(true,true,new SubProgressMonitor(pm,workTicks));
+workTicks-=WORK_UNIT;
+break;
+case Differencer.CHANGE:
+result=apply(diff,file,false,failed);
+if (result != null) {
+store(createString(isPreserveLineDelimeters(),result),file,new SubProgressMonitor(pm,workTicks));
+}
+workTicks-=WORK_UNIT;
+break;
+}
+return workTicks;
+}
+	]]>
+	</extractMethod>
+        <modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+public void applyAll(IProgressMonitor pm, Shell shell, String title) throws CoreException {
+  if (!fIsWorkspacePatch) {
+    super.applyAll(pm,shell,title);
+  }
+ else {
+    final int WORK_UNIT=10;
+    List list=new ArrayList();
+    for (int j=0; j < fDiffProjects.length; j++) {
+      DiffProject diffProject=fDiffProjects[j];
+      if (diffProject.getProject().isAccessible()) {
+        list.addAll(Arrays.asList(getTargetFiles(diffProject)));
+      }
+    }
+    if (!Utilities.validateResources(list,shell,title)) {
+      return;
+    }
+    FileDiff[] diffs=getDiffs();
+    if (pm != null) {
+      String message=PatchMessages.Patcher_Task_message;
+      pm.beginTask(message,diffs.length * WORK_UNIT);
+    }
+    for (int i=0; i < diffs.length; i++) {
+      int workTicks=WORK_UNIT;
+      FileDiff diff=diffs[i];
+      if (isAccessible(diff)) {
+        IFile file=getTargetFile(diff);
+        IPath path=file.getProjectRelativePath();
+        if (pm != null) {
+          pm.subTask(path.toString());
+        }
+        createPath(file.getProject(),path);
+        List failed=new ArrayList();
+        int type=diff.getDiffType(isReversed());
+        workTicks=extractMethod(file,pm,failed,type,diff,WORK_UNIT,workTicks);
+        if (isGenerateRejectFile() && failed.size() > 0) {
+          IPath pp=null;
+          if (path.segmentCount() > 1) {
+            pp=path.removeLastSegments(1);
+            pp=pp.append(path.lastSegment() + REJECT_FILE_EXTENSION);
+          }
+ else {
+            pp=new Path(path.lastSegment() + REJECT_FILE_EXTENSION);
+          }
+          file=createPath(file.getProject(),pp);
+          if (file != null) {
+            store(getRejected(failed),file,pm);
+            try {
+              IMarker marker=file.createMarker(MARKER_TYPE);
+              marker.setAttribute(IMarker.MESSAGE,PatchMessages.Patcher_Marker_message);
+              marker.setAttribute(IMarker.PRIORITY,IMarker.PRIORITY_HIGH);
+            }
+ catch (            CoreException ex) {
+            }
+          }
+        }
+      }
+      if (pm != null) {
+        if (pm.isCanceled()) {
+          break;
+        }
+        if (workTicks > 0) {
+          pm.worked(workTicks);
+        }
+      }
+    }
+  }
+}         
+		]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+public void applyAll(IProgressMonitor pm, Shell shell, String title) throws CoreException {
+  final int WORK_UNIT=10;
+  int i;
+  IFile singleFile=null;
+  IContainer container=null;
+  if (fTarget instanceof IContainer) {
+    container=(IContainer)fTarget;
+  }
+ else   if (fTarget instanceof IFile) {
+    singleFile=(IFile)fTarget;
+    container=singleFile.getParent();
+  }
+ else {
+    Assert.isTrue(false);
+  }
+  List list=new ArrayList();
+  if (singleFile != null) {
+    list.add(singleFile);
+  }
+ else {
+    for (i=0; i < fDiffs.length; i++) {
+      FileDiff diff=fDiffs[i];
+      if (isEnabled(diff)) {
+switch (diff.getDiffType(isReversed())) {
+case Differencer.CHANGE:
+          list.add(createPath(container,getPath(diff)));
+        break;
+    }
+  }
+}
+}
+if (!Utilities.validateResources(list,shell,title)) {
+return;
+}
+if (pm != null) {
+String message=PatchMessages.Patcher_Task_message;
+pm.beginTask(message,fDiffs.length * WORK_UNIT);
+}
+for (i=0; i < fDiffs.length; i++) {
+int workTicks=WORK_UNIT;
+FileDiff diff=fDiffs[i];
+if (isEnabled(diff)) {
+  IPath path=getPath(diff);
+  if (pm != null) {
+    pm.subTask(path.toString());
+  }
+  IFile file=singleFile != null ? singleFile : createPath(container,path);
+  List failed=new ArrayList();
+  int type=diff.getDiffType(isReversed());
+  workTicks=extractMethod(file,pm,failed,type,diff,WORK_UNIT,workTicks);
+  if (isGenerateRejectFile() && failed.size() > 0) {
+    IPath pp=getRejectFilePath(path);
+    file=createPath(container,pp);
+    if (file != null) {
+      store(getRejected(failed),file,pm);
+      try {
+        IMarker marker=file.createMarker(MARKER_TYPE);
+        marker.setAttribute(IMarker.MESSAGE,PatchMessages.Patcher_Marker_message);
+        marker.setAttribute(IMarker.PRIORITY,IMarker.PRIORITY_HIGH);
+      }
+ catch (      CoreException ex) {
+      }
+    }
+  }
+}
+if (pm != null) {
+  if (pm.isCanceled()) {
+    break;
+  }
+  if (workTicks > 0) {
+    pm.worked(workTicks);
+  }
+}
+}
+}
+            ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "10">
+		<src>compare</src>
+		<leftProjectName> org.eclipse.compare_v20070226 </leftProjectName>
+		<rightProjectName>org.eclipse.compare_v20070316</rightProjectName>
+		<leftClassName1>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer.ContributorInfo
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer.ContributorInfo
+		</leftClassName2>
+		<rightClassName1>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer.ContributorInfo
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer.ContributorInfo	
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</rightFilePath2>
+		<leftMethodName1>
+	elementDirtyStateChanged(Object, boolean)
+		</leftMethodName1>
+		<leftMethodName2>
+	elementDirtyStateChanged(Object, boolean)
+		</leftMethodName2>
+		<rightMethodName1>
+	elementContentReplaced(Object)
+		</rightMethodName1>
+		<rightMethodName2>
+	elementContentReplaced(Object)
+		</rightMethodName2>
+<costs>
+ 	13_6
+                </costs>
+<RetObj>
+	<![CDATA[
+public enum Flag{RETURN, FALLTHRU};
+	]]>
+</RetObj>
+<extractMethod>
+	<![CDATA[
+private Flag extractMethod(){
+  if (!checkState()) {
+    return Flag.RETURN;
+  }
+  return Flag.FALLTHRU;
+}
+	]]>
+</extractMethod>
+        <modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+public void elementContentReplaced(Object element) {
+  Flag flag=extractMethod();
+  if (flag.equals(Flag.RETURN))   return;
+  IEditorInput input=getDocumentKey();
+  if (input != null && input.equals(element)) {
+    this.fViewer.updateDirtyState(input,getDocumentProvider(),fLeg);
+  }
+}
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+public void elementDirtyStateChanged(Object element, boolean isDirty) {
+  Flag flag=extractMethod();
+  if (flag.equals(Flag.RETURN))   return;
+  IEditorInput input=getDocumentKey();
+  if (input != null && input.equals(element)) {
+    this.fViewer.updateDirtyState(input,getDocumentProvider(),fLeg);
+  }
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "11">
+		<src>compare</src>
+		<leftProjectName> org.eclipse.compare_v20070316 </leftProjectName>
+		<rightProjectName>org.eclipse.compare_v20070416</rightProjectName>
+		<leftClassName1>
+	org.eclipse.compare.internal.CompareOutlinePage
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.compare.internal.CompareOutlinePage
+		</leftClassName2>
+		<rightClassName1>
+	org.eclipse.compare.internal.CompareOutlinePage
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.compare.internal.CompareOutlinePage	
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/compare/internal/CompareOutlinePage
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/compare/internal/CompareOutlinePage
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/compare/internal/CompareOutlinePage
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/compare/internal/CompareOutlinePage
+		</rightFilePath2>
+		<leftMethodName1>
+	addSelectionChangedListener(ISelectionChangedListener)
+		</leftMethodName1>
+		<leftMethodName2>
+	addSelectionChangedListener(ISelectionChangedListener)
+		</leftMethodName2>
+		<rightMethodName1>
+	removeSelectionChangedListener(ISelectionChangedListener)
+		</rightMethodName1>
+		<rightMethodName2>
+	removeSelectionChangedListener(ISelectionChangedListener)
+		</rightMethodName2>
+<costs>
+ 	16_10
+                </costs>
+<extractMethod>
+	<![CDATA[
+public abstract class TemplateClass {
+  public void extractMethod(  ISelectionChangedListener listener,  CompareViewerSwitchingPane fStructurePane){
+    if (fStructurePane != null) {
+      m0(fStructurePane,listener);
+    }
+  }
+  public abstract void m0(  CompareViewerSwitchingPane fStructurePane,  ISelectionChangedListener listener);
+}
+public class ConcreteTemplateClass0 extends TemplateClass {
+  public void m0(  CompareViewerSwitchingPane fStructurePane,  ISelectionChangedListener listener){
+    fStructurePane.removeSelectionChangedListener(listener);
+  }
+}
+public class ConcreteTemplateClass1 extends TemplateClass {
+  public void m0(  CompareViewerSwitchingPane fStructurePane,  ISelectionChangedListener listener){
+    fStructurePane.addSelectionChangedListener(listener);
+  }
+}
+	]]>
+</extractMethod>
+        <modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+/* (non-Javadoc)
+	 * @see org.eclipse.jface.viewers.ISelectionProvider#removeSelectionChangedListener(org.eclipse.jface.viewers.ISelectionChangedListener)
+	 */
+public void removeSelectionChangedListener(ISelectionChangedListener listener) {
+  new ConcreteTemplateClass0().extractMethod(listener,fStructurePane);
+}
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+/* (non-Javadoc)
+	 * @see org.eclipse.jface.viewers.ISelectionProvider#addSelectionChangedListener(org.eclipse.jface.viewers.ISelectionChangedListener)
+	 */
+public void addSelectionChangedListener(ISelectionChangedListener listener) {
+  new ConcreteTemplateClass1().extractMethod(listener,fStructurePane);
+}                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "12">
+		<src>compare</src>
+		<leftProjectName> org.eclipse.compare_v20070316 </leftProjectName>
+		<rightProjectName>org.eclipse.compare_v20070416</rightProjectName>
+		<leftClassName1>
+	org.eclipse.compare.CompareEditorInput
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.compare.CompareEditorInput
+		</leftClassName2>
+		<rightClassName1>
+	org.eclipse.compare.CompareEditorInput
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.compare.CompareEditorInput	
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/compare/CompareEditorInput
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/compare/CompareEditorInput
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/compare/CompareEditorInput
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/compare/CompareEditorInput
+		</rightFilePath2>
+		<leftMethodName1>
+	removeCompareInputChangeListener(ICompareInput, ICompareInputChangeListener)
+		</leftMethodName1>
+		<leftMethodName2>
+	removeCompareInputChangeListener(ICompareInput, ICompareInputChangeListener)
+		</leftMethodName2>
+		<rightMethodName1>
+	addCompareInputChangeListener(ICompareInput, ICompareInputChangeListener)
+		</rightMethodName1>
+		<rightMethodName2>
+	addCompareInputChangeListener(ICompareInput, ICompareInputChangeListener)
+		</rightMethodName2>
+<costs>
+ 	18_10
+                </costs>
+<extractMethod>
+	<![CDATA[
+public abstract class TemplateClass {
+  public void extractMethod(  ICompareInputChangeListener listener,  ICompareInput input,  ICompareContainer fContainer){
+    if (fContainer == null) {
+      m0(input,listener);
+    }
+ else {
+      m1(fContainer,input,listener);
+    }
+  }
+  public abstract void m1(  ICompareContainer fContainer,  ICompareInput input,  ICompareInputChangeListener listener);
+  public abstract void m0(  ICompareInput input,  ICompareInputChangeListener listener);
+}
+public class ConcreteTemplateClass0 extends TemplateClass {
+  public void m1(  ICompareContainer fContainer,  ICompareInput input,  ICompareInputChangeListener listener){
+    fContainer.addCompareInputChangeListener(input,listener);
+  }
+  public void m0(  ICompareInput input,  ICompareInputChangeListener listener){
+    input.addCompareInputChangeListener(listener);
+  }
+}
+public class ConcreteTemplateClass1 extends TemplateClass {
+  public void m1(  ICompareContainer fContainer,  ICompareInput input,  ICompareInputChangeListener listener){
+    fContainer.removeCompareInputChangeListener(input,listener);
+  }
+  public void m0(  ICompareInput input,  ICompareInputChangeListener listener){
+    input.removeCompareInputChangeListener(listener);
+  }
+}
+	]]>
+</extractMethod>
+        <modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+/* (non-Javadoc)
+	 * @see org.eclipse.compare.ICompareContainer#addCompareInputChangeListener(org.eclipse.compare.structuremergeviewer.ICompareInput, org.eclipse.compare.structuremergeviewer.ICompareInputChangeListener)
+	 */
+public void addCompareInputChangeListener(ICompareInput input,
+			ICompareInputChangeListener listener) {
+  new ConcreteTemplateClass0().extractMethod(listener,input,fContainer);
+}
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+/* (non-Javadoc)
+	 * @see org.eclipse.compare.ICompareContainer#removeCompareInputChangeListener(org.eclipse.compare.structuremergeviewer.ICompareInput, org.eclipse.compare.structuremergeviewer.ICompareInputChangeListener)
+	 */
+public void removeCompareInputChangeListener(ICompareInput input,
+			ICompareInputChangeListener listener) {
+  new ConcreteTemplateClass1().extractMethod(listener,input,fContainer);
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "13">
+		<src>compare</src>
+		<leftProjectName> org.eclipse.compare_v20070416 </leftProjectName>
+		<rightProjectName>org.eclipse.compare_v20070430</rightProjectName>
+		<leftClassName1>
+	org.eclipse.compare.internal.MergeSourceViewer
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.compare.internal.MergeSourceViewer
+		</leftClassName2>
+		<rightClassName1>
+	org.eclipse.compare.internal.MergeSourceViewer
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.compare.internal.MergeSourceViewer	
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/compare/internal/MergeSourceViewer
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/compare/internal/MergeSourceViewer
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/compare/internal/MergeSourceViewer
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/compare/internal/MergeSourceViewer
+		</rightFilePath2>
+		<leftMethodName1>
+	textChanged(TextEvent)
+		</leftMethodName1>
+		<leftMethodName2>
+	textChanged(TextEvent)
+		</leftMethodName2>
+		<rightMethodName1>
+	selectionChanged(SelectionChangedEvent)
+		</rightMethodName1>
+		<rightMethodName2>
+	selectionChanged(SelectionChangedEvent)
+		</rightMethodName2>
+<costs>
+ 	26_12
+                </costs>
+<extractMethod>
+	<![CDATA[
+public abstract class TemplateClass {
+  public void extractMethod(  Iterator e){
+    while (e.hasNext()) {
+      Object next=e.next();
+      if (next instanceof MergeViewerAction) {
+        MergeViewerAction action=(MergeViewerAction)next;
+        if (m0(action)) {
+          action.update();
+        }
+      }
+    }
+  }
+  public abstract boolean m0(  MergeViewerAction action);
+}
+public class ConcreteTemplateClass0 extends TemplateClass {
+  public boolean m0(  MergeViewerAction action){
+    return action.isSelectionDependent();
+  }
+}
+public class ConcreteTemplateClass1 extends TemplateClass {
+  public boolean m0(  MergeViewerAction action){
+    return action.isContentDependent();
+  }
+}
+	]]>
+</extractMethod>
+        <modifiedMethods>
+            <modifiedMethod id = "1">
+		<![CDATA[
+public void selectionChanged(SelectionChangedEvent event) {
+  Iterator e=fActions.values().iterator();
+  new ConcreteTemplateClass0().extractMethod(e);
+}
+		]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+public void textChanged(TextEvent event) {
+  Iterator e=fActions.values().iterator();
+  new ConcreteTemplateClass1().extractMethod(e);
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "14">
+		<src>compare</src>
+		<leftProjectName> org.eclipse.compare_v20070416 </leftProjectName>
+		<rightProjectName>org.eclipse.compare_v20070430</rightProjectName>
+		<leftClassName1>
+	org.eclipse.compare.CompareEditorInput
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.compare.CompareEditorInput
+		</leftClassName2>
+		<rightClassName1>
+	org.eclipse.compare.CompareEditorInput
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.compare.CompareEditorInput	
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/compare/CompareEditorInput
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/compare/CompareEditorInput
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/compare/CompareEditorInput
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/compare/CompareEditorInput
+		</rightFilePath2>
+		<leftMethodName1>
+	runAsynchronously(IRunnableWithProgress)
+		</leftMethodName1>
+		<leftMethodName2>
+	runAsynchronously(IRunnableWithProgress)
+		</leftMethodName2>
+		<rightMethodName1>
+	run(boolean, boolean, IRunnableWithProgress)
+		</rightMethodName1>
+		<rightMethodName2>
+	run(boolean, boolean, IRunnableWithProgress)
+		</rightMethodName2>
+<costs>
+ 	36_18
+                </costs>
+        <modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+public void run(boolean fork,boolean cancelable,IRunnableWithProgress runnable) throws InvocationTargetException, InterruptedException {
+  if (fContainer != null) {
+    fContainer.run(fork,cancelable,runnable);
+  }
+}
+                ]]>
+            </modifiedMethod>
+	<modifiedMethod id = "2">
+                <![CDATA[
+public void registerContextMenu(MenuManager menu,ISelectionProvider selectionProvider){
+  if (fContainer != null) {
+    fContainer.registerContextMenu(menu,selectionProvider);
+  }
+}
+                ]]>
+            </modifiedMethod>
+<modifiedMethod id = "3">
+                <![CDATA[
+public void setStatusMessage(String message){
+  if (fContainer != null) {
+    fContainer.setStatusMessage(message);
+  }
+  if (!fContainerProvided) {
+    IActionBars actionBars=getActionBars();
+    if (actionBars != null) {
+      IStatusLineManager slm=actionBars.getStatusLineManager();
+      if (slm != null) {
+        slm.setMessage(message);
+      }
+    }
+  }
+ else {
+  }
+}
+                ]]>
+            </modifiedMethod>
+<modifiedMethod id = "4">
+                <![CDATA[
+public void addCompareInputChangeListener(ICompareInput input,ICompareInputChangeListener listener){
+  if (fContainer != null) {
+    fContainer.addCompareInputChangeListener(input,listener);
+  }
+  if (fContainer == null) {
+    input.addCompareInputChangeListener(listener);
+  }
+ else {
+  }
+}
+                ]]>
+            </modifiedMethod>
+<modifiedMethod id = "5">
+                <![CDATA[
+public void removeCompareInputChangeListener(ICompareInput input,ICompareInputChangeListener listener){
+  if (fContainer != null) {
+    fContainer.removeCompareInputChangeListener(input,listener);
+  }
+  if (fContainer == null) {
+    input.removeCompareInputChangeListener(listener);
+  }
+ else {
+  }
+}
+                ]]>
+            </modifiedMethod>
+<modifiedMethod id = "6">
+                <![CDATA[
+public void runAsynchronously(IRunnableWithProgress runnable){
+  if (fContainer != null) {
+    fContainer.runAsynchronously(runnable);
+  }
+}
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+public void runAsynchronously(IRunnableWithProgress runnable){
+  if (fContainer != null) {
+    fContainer.runAsynchronously(runnable);
+  }
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "15">
+		<src>compare</src>
+		<leftProjectName> org.eclipse.compare_v20070914 </leftProjectName>
+		<rightProjectName>org.eclipse.compare_v20070924</rightProjectName>
+		<leftClassName1>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</leftClassName2>
+		<rightClassName1>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer	
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</rightFilePath2>
+		<leftMethodName1>
+	getStrokeColor(Diff)
+		</leftMethodName1>
+		<leftMethodName2>
+	getStrokeColor(Diff)
+		</leftMethodName2>
+		<rightMethodName1>
+	getFillColor(Diff)
+		</rightMethodName1>
+		<rightMethodName2>
+	getFillColor(Diff)
+		</rightMethodName2>
+        <modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+private RGB getFillColor(Diff diff){
+  boolean selected=fCurrentDiff != null && fCurrentDiff.getParent() == diff;
+  RGB selected_fill=getBackground(null);
+  if (isThreeWay() && !isIgnoreAncestor()) {
+switch (diff.getKind()) {
+case RangeDifference.RIGHT:
+      if (fLeftIsLocal) {
+        return selected ? selected_fill : INCOMING_FILL;
+      }
+    return selected ? selected_fill : OUTGOING_FILL;
+case RangeDifference.ANCESTOR:
+  return selected ? selected_fill : CONFLICT_FILL;
+case RangeDifference.LEFT:
+if (fLeftIsLocal) {
+  return selected ? selected_fill : OUTGOING_FILL;
+}
+return selected ? selected_fill : INCOMING_FILL;
+case RangeDifference.CONFLICT:
+return selected ? selected_fill : CONFLICT_FILL;
+}
+return null;
+}
+return selected ? selected_fill : OUTGOING_FILL;
+}
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+private RGB getStrokeColor(Diff diff){
+  boolean selected=fCurrentDiff != null && fCurrentDiff.getParent() == diff;
+  if (isThreeWay() && !isIgnoreAncestor()) {
+switch (diff.getKind()) {
+case RangeDifference.RIGHT:
+      if (fLeftIsLocal) {
+        return selected ? SELECTED_INCOMING : INCOMING;
+      }
+    return selected ? SELECTED_OUTGOING : OUTGOING;
+case RangeDifference.ANCESTOR:
+  return selected ? SELECTED_CONFLICT : CONFLICT;
+case RangeDifference.LEFT:
+if (fLeftIsLocal) {
+  return selected ? SELECTED_OUTGOING : OUTGOING;
+}
+return selected ? SELECTED_INCOMING : INCOMING;
+case RangeDifference.CONFLICT:
+return selected ? SELECTED_CONFLICT : CONFLICT;
+}
+return null;
+}
+return selected ? SELECTED_OUTGOING : OUTGOING;
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "16">
+		<src>src</src>
+		<leftProjectName> jEdit-3802 </leftProjectName>
+		<rightProjectName>jEdit-4822</rightProjectName>
+		<leftClassName1>
+	bsh.BSHLHSPrimarySuffix
+		</leftClassName1>
+		<leftClassName2>
+	bsh.BSHLHSPrimarySuffix
+		</leftClassName2>
+		<rightClassName1>
+	bsh.BSHPrimarySuffix
+		</rightClassName1>
+		<rightClassName2>
+	bsh.BSHPrimarySuffix	
+		</rightClassName2>
+		<leftFilePath1>
+	bsh/BSHLHSPrimarySuffix
+		</leftFilePath1>
+		<leftFilePath2>
+	bsh/BSHLHSPrimarySuffix
+		</leftFilePath2>
+		<rightFilePath1>
+	bsh/BSHPrimarySuffix	
+		</rightFilePath1>
+		<rightFilePath2>
+	bsh/BSHPrimarySuffix	
+		</rightFilePath2>
+		<leftMethodName1>
+	doLHSSuffix(Object, CallStack, Interpreter)
+		</leftMethodName1>
+		<leftMethodName2>
+	doLHSSuffix(Object, CallStack, Interpreter)
+		</leftMethodName2>
+		<rightMethodName1>
+	doSuffix(Object, CallStack, Interpreter)
+		</rightMethodName1>
+		<rightMethodName2>
+	doSuffix(Object, CallStack, Interpreter)
+		</rightMethodName2>
+<costs>
+ 	48_4
+                </costs>
+<RetObj>
+	<![CDATA[
+public enum Flag{RETURN, FALLTHRU};
+public class RetObj {
+  public Flag flag;
+  public Object ret;
+  public RetObj(Flag flag,Object ret){
+    this.flag = flag;
+    this.ret = ret;
+  }
+}
+	]]>
+</RetObj>
+	<extractMethod>
+protected RetObj extractMethod(Object obj,Interpreter interpreter,CallStack callstack) throws bsh.EvalError, bsh.InterpreterError{
+  try {
+switch (operation) {
+case INDEX:
+      return new RetObj(Flag.RETURN,doIndex(obj,callstack,interpreter));
+case NAME:
+    return new RetObj(Flag.RETURN,doName(obj,callstack,interpreter));
+case PROPERTY:
+  return new RetObj(Flag.RETURN,doProperty(obj,callstack,interpreter));
+default :
+throw new InterpreterError("LHS suffix");
+}
+}
+ catch (ReflectError e) {
+throw new EvalError("reflection error: " + e,this,callstack);
+}
+catch (InvocationTargetException e) {
+throw new TargetError("target exception",e.getTargetException(),this,callstack,true);
+}
+return new RetObj(Flag.FALLTHRU,null);
+}
+	</extractMethod>
+        <modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+/*
+		Perform a suffix operation on the given object and return the 
+		new value.
+
+		obj will be a Node when suffix evaluation begins, allowing us to
+		interpret it contextually. (e.g. for .class) Thereafter it will be 
+		a normal object.
+	*/
+public Object doSuffix(
+		Object obj, CallStack callstack, Interpreter interpreter) 
+		throws EvalError
+	{
+  if (operation == CLASS) {
+    if (obj instanceof BSHType) {
+      NameSpace namespace=callstack.top();
+      return ((BSHType)obj).getType(callstack,interpreter);
+    }
+ else {
+      throw new EvalError("Attempt to use .class suffix on non class.",this,callstack);
+    }
+  }
+  if (obj instanceof SimpleNode) {
+    if (obj instanceof BSHAmbiguousName) {
+      obj=((BSHAmbiguousName)obj).toObject(callstack,interpreter);
+    }
+ else {
+      obj=((SimpleNode)obj).eval(callstack,interpreter);
+    }
+  }
+  RetObj retObj=extractMethod(obj,interpreter,callstack);
+  if (retObj.flag.equals(Flag.RETURN))   return retObj.retVal;
+  return null;
+}
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+public LHS doLHSSuffix(
+		Object obj, CallStack callstack, Interpreter interpreter) 
+		throws EvalError
+	{
+  RetObj retObj=extractMethod(obj,interpreter,callstack);
+  if (retObj.flag.equals(Flag.RETURN))   return retObj.retVal;
+  return null;
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "17">
+		<src>src</src>
+		<leftProjectName> jEdit-3992 </leftProjectName>
+		<rightProjectName>jEdit-4050</rightProjectName>
+		<leftClassName1>
+	org.gjt.sp.jedit.buffer.UndoManager
+		</leftClassName1>
+		<leftClassName2>
+	org.gjt.sp.jedit.buffer.UndoManager
+		</leftClassName2>
+		<rightClassName1>
+	org.gjt.sp.jedit.buffer.UndoManager
+		</rightClassName1>
+		<rightClassName2>
+	org.gjt.sp.jedit.buffer.UndoManager	
+		</rightClassName2>
+		<leftFilePath1>
+	org/gjt/sp/jedit/buffer/UndoManager	
+		</leftFilePath1>
+		<leftFilePath2>
+	org/gjt/sp/jedit/buffer/UndoManager	
+		</leftFilePath2>
+		<rightFilePath1>
+	org/gjt/sp/jedit/buffer/UndoManager	
+		</rightFilePath1>
+		<rightFilePath2>
+	org/gjt/sp/jedit/buffer/UndoManager	
+		</rightFilePath2>
+		<leftMethodName1>
+	contentInserted(int, int, String, boolean)
+		</leftMethodName1>
+		<leftMethodName2>
+	contentInserted(int, int, String, boolean)
+		</leftMethodName2>
+		<rightMethodName1>
+	contentRemoved(int, int, String, boolean)
+		</rightMethodName1>
+		<rightMethodName2>
+	contentRemoved(int, int, String, boolean)
+		</rightMethodName2>
+        <modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+public void contentInserted(int offset,int length,String text,boolean clearDirty){
+  Edit toMerge=null;
+  if (compoundEdit != null) {
+    int size=compoundEdit.undos.size();
+    if (size != 0) {
+      toMerge=(Edit)compoundEdit.undos.get(size - 1);
+    }
+  }
+ else {
+    if (undoPos != 0) {
+      toMerge=(Edit)undos.get(undoPos - 1);
+    }
+  }
+  if (!clearDirty && toMerge instanceof Insert) {
+    Insert ins=(Insert)toMerge;
+    if (ins.offset == offset) {
+      ins.str=text.concat(ins.str);
+      ins.length+=length;
+      return;
+    }
+ else     if (ins.offset + ins.length == offset) {
+      ins.str=ins.str.concat(text);
+      ins.length+=length;
+      return;
+    }
+  }
+  Insert ins=new Insert(offset,length,text,clearDirty);
+  if (clearDirty) {
+    if (clearDirtyEdit != null) {
+      clearDirtyEdit.clearDirty=false;
+    }
+    clearDirtyEdit=ins;
+  }
+  if (compoundEdit != null) {
+    compoundEdit.undos.add(ins);
+  }
+ else {
+    addEdit(ins);
+  }
+}
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+public void contentRemoved(int offset,int length,String text,boolean clearDirty){
+  Edit toMerge=null;
+  if (compoundEdit != null) {
+    int size=compoundEdit.undos.size();
+    if (size != 0) {
+      toMerge=(Edit)compoundEdit.undos.get(size - 1);
+    }
+  }
+ else {
+    if (undoPos != 0) {
+      toMerge=(Edit)undos.get(undoPos - 1);
+    }
+  }
+  if (!clearDirty && toMerge instanceof Remove) {
+    Remove rem=(Remove)toMerge;
+    if (rem.offset == offset) {
+      rem.str=rem.str.concat(text);
+      rem.length+=length;
+      return;
+    }
+ else     if (rem.offset + rem.length == offset) {
+      rem.str=text.concat(rem.str);
+      rem.length+=length;
+      return;
+    }
+  }
+  Remove rem=new Remove(offset,length,text,clearDirty);
+  if (clearDirty) {
+    if (clearDirtyEdit != null) {
+      clearDirtyEdit.clearDirty=false;
+    }
+    clearDirtyEdit=rem;
+  }
+  if (compoundEdit != null) {
+    compoundEdit.undos.add(rem);
+  }
+ else {
+    addEdit(rem);
+  }
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "18">
+		<src>src</src>
+		<leftProjectName> jEdit-7163</leftProjectName>
+		<rightProjectName>jEdit-8692</rightProjectName>
+		<leftClassName1>
+	org.gjt.sp.jedit.textarea.JEditTextArea
+		</leftClassName1>
+		<leftClassName2>
+	org.gjt.sp.jedit.textarea.JEditTextArea
+		</leftClassName2>
+		<rightClassName1>
+	org.gjt.sp.jedit.textarea.TextArea
+		</rightClassName1>
+		<rightClassName2>
+	org.gjt.sp.jedit.textarea.TextArea	
+		</rightClassName2>
+		<leftFilePath1>
+	org/gjt/sp/jedit/textarea/JEditTextArea
+		</leftFilePath1>
+		<leftFilePath2>
+	org/gjt/sp/jedit/textarea/JEditTextArea
+		</leftFilePath2>
+		<rightFilePath1>
+	org/gjt/sp/jedit/textarea/TextArea
+		</rightFilePath1>
+		<rightFilePath2>
+	org/gjt/sp/jedit/textarea/TextArea
+		</rightFilePath2>
+		<leftMethodName1>
+	userInput(char)
+		</leftMethodName1>
+		<leftMethodName2>
+	userInput(char)
+		</leftMethodName2>
+		<rightMethodName1>
+	userInput(char)
+		</rightMethodName1>
+		<rightMethodName2>
+	userInput(char)
+		</rightMethodName2>
+<costs>
+ 	7_2
+                </costs>
+<extractMethod>
+protected void extractMethod(char ch){
+  if (ch == '\t') {
+    userInputTab();
+  }
+ else {
+    boolean indent=buffer.isElectricKey(ch,caretLine);
+    String str=String.valueOf(ch);
+    if (getSelectionCount() == 0) {
+      if (!doWordWrap(ch == ' ')) {
+        insert(str,indent);
+      }
+    }
+ else {
+      replaceSelection(str);
+    }
+  }
+}
+</extractMethod>
+        <modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+/**
+	 * Handles the insertion of the specified character. It performs the
+	 * following operations above and beyond simply inserting the text:
+	 * <ul>
+	 * <li>Inserting a TAB with a selection will shift to the right
+	 * <li>Inserting a space with automatic abbrev expansion enabled will
+	 * try to expand the abbrev
+	 * <li>Inserting an indent open/close bracket will re-indent the current
+	 * line as necessary
+	 * </ul>
+	 *
+	 * @param ch The character
+	 * @see #setSelectedText(String)
+	 * @see #isOverwriteEnabled()
+	 * @since jEdit 4.3pre7
+	 */
+public void userInput(char ch)
+	{
+  if (!isEditable()) {
+    getToolkit().beep();
+    return;
+  }
+  if (hiddenCursor != null) {
+    getPainter().setCursor(hiddenCursor);
+  }
+  extractMethod(ch);
+}
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+/**
+	 * Handles the insertion of the specified character. It performs the
+	 * following operations above and beyond simply inserting the text:
+	 * <ul>
+	 * <li>Inserting a TAB with a selection will shift to the right
+	 * <li>Inserting a space with automatic abbrev expansion enabled will
+	 * try to expand the abbrev
+	 * <li>Inserting an indent open/close bracket will re-indent the current
+	 * line as necessary
+	 * </ul>
+	 *
+	 * @param ch The character
+	 * @see #setSelectedText(String)
+	 * @see #isOverwriteEnabled()
+	 * @since jEdit 2.7pre3
+	 */
+public void userInput(char ch)
+	{
+  if (!isEditable()) {
+    getToolkit().beep();
+    return;
+  }
+  if (hiddenCursor != null) {
+    getPainter().setCursor(hiddenCursor);
+  }
+  if (ch == ' ' && Abbrevs.getExpandOnInput() && Abbrevs.expandAbbrev(view,false)) {
+    return;
+  }
+  extractMethod(ch);
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "19">
+		<src>src</src>
+		<leftProjectName> jEdit-3802</leftProjectName>
+		<rightProjectName>jEdit-10791</rightProjectName>
+		<leftClassName1>
+	org.gjt.sp.jedit.gui.EnhancedCheckBoxMenuItem
+		</leftClassName1>
+		<leftClassName2>
+	org.gjt.sp.jedit.menu.EnhancedCheckBoxMenuItem	
+		</leftClassName2>
+		<rightClassName1>
+	org.gjt.sp.jedit.gui.EnhancedMenuItem
+		</rightClassName1>
+		<rightClassName2>
+	org.gjt.sp.jedit.menu.EnhancedMenuItem	
+		</rightClassName2>
+		<leftFilePath1>
+	org/gjt/sp/jedit/gui/EnhancedCheckBoxMenuItem
+		</leftFilePath1>
+		<leftFilePath2>
+	org/gjt/sp/jedit/menu/EnhancedCheckBoxMenuItem	
+		</leftFilePath2>
+		<rightFilePath1>
+	org/gjt/sp/jedit/gui/EnhancedMenuItem
+		</rightFilePath1>
+		<rightFilePath2>
+	org/gjt/sp/jedit/menu/EnhancedMenuItem	
+		</rightFilePath2>
+		<leftMethodName1>
+	getShortcut()
+		</leftMethodName1>
+		<leftMethodName2>
+	getShortcut()
+		</leftMethodName2>
+		<rightMethodName1>
+	getShortcut()
+		</rightMethodName1>
+		<rightMethodName2>
+	getShortcut()
+		</rightMethodName2>
+<costs>
+ 	21_4
+                </costs>
+<RetObj>
+public enum Flag{RETURN, FALLTHRU};
+public class RetObj {
+  public Flag flag;
+  public String ret;
+  public RetObj(Flag flag,String ret){
+    this.flag = flag;
+    this.ret = ret;
+  }
+}
+</RetObj>
+<extractMethod>
+public class TemplateClass {
+  public static RetObj extractMethod(  String action){
+    if (action == null) {
+      return new RetObj(Flag.RETURN,null);
+    }
+ else {
+      String shortcut1=jEdit.getProperty(action + ".shortcut");
+      String shortcut2=jEdit.getProperty(action + ".shortcut2");
+      if (shortcut1 == null || shortcut1.length() == 0) {
+        if (shortcut2 == null || shortcut2.length() == 0) {
+          return new RetObj(Flag.RETURN,null);
+        }
+ else {
+          return new RetObj(Flag.RETURN,shortcut2);
+        }
+      }
+ else {
+        if (shortcut2 == null || shortcut2.length() == 0) {
+          return new RetObj(Flag.RETURN,shortcut1);
+        }
+ else {
+          return new RetObj(Flag.RETURN,shortcut1 + " or " + shortcut2);
+        }
+      }
+    }
+    return new RetObj(Flag.FALLTHRU,null);
+  }
+}
+</extractMethod>
+		<modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+private String getShortcut()
+	{
+  RetObj retObj=TemplateClass.extractMethod(action);
+  if (retObj.flag.equals(Flag.RETURN))   return retObj.retVal;
+  return null;
+}
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+private String getShortcut()
+	{
+  RetObj retObj=TemplateClass.extractMethod(action);
+  if (retObj.flag.equals(Flag.RETURN))   return retObj.retVal;
+  return null;
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "20">
+		<src>src</src>
+		<leftProjectName> jEdit-3992</leftProjectName>
+		<rightProjectName>jEdit-11207</rightProjectName>
+		<leftClassName1>
+	org.gjt.sp.jedit.options.ContextOptionPane
+		</leftClassName1>
+		<leftClassName2>
+	org.gjt.sp.jedit.options.ContextOptionPane
+		</leftClassName2>
+		<rightClassName1>
+	org.gjt.sp.jedit.options.ToolBarOptionPane
+		</rightClassName1>
+		<rightClassName2>
+	org.gjt.sp.jedit.options.ToolBarOptionPane	
+		</rightClassName2>
+		<leftFilePath1>
+	org/gjt/sp/jedit/options/ContextOptionPane
+		</leftFilePath1>
+		<leftFilePath2>
+	org/gjt/sp/jedit/options/ContextOptionPane
+		</leftFilePath2>
+		<rightFilePath1>
+	org/gjt/sp/jedit/options/ToolBarOptionPane
+		</rightFilePath1>
+		<rightFilePath2>
+	org/gjt/sp/jedit/options/ToolBarOptionPane
+		</rightFilePath2>
+		<leftMethodName1>
+	_init()
+		</leftMethodName1>
+		<leftMethodName2>
+	_init()
+		</leftMethodName2>
+		<rightMethodName1>
+	_init()
+		</rightMethodName1>
+		<rightMethodName2>
+	_init()
+		</rightMethodName2>
+	<modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "21">
+		<src>src</src>
+		<leftProjectName> jEdit-4926</leftProjectName>
+		<rightProjectName>jEdit-12514</rightProjectName>
+		<leftClassName1>
+	org.gjt.sp.jedit.buffer.PositionManager
+		</leftClassName1>
+		<leftClassName2>
+	org.gjt.sp.jedit.buffer.PositionManager
+		</leftClassName2>
+		<rightClassName1>
+	org.gjt.sp.jedit.buffer.PositionManager
+		</rightClassName1>
+		<rightClassName2>
+	org.gjt.sp.jedit.buffer.PositionManager	
+		</rightClassName2>
+		<leftFilePath1>
+	org/gjt/sp/jedit/buffer/PositionManager
+		</leftFilePath1>
+		<leftFilePath2>
+	org/gjt/sp/jedit/buffer/PositionManager
+		</leftFilePath2>
+		<rightFilePath1>
+	org/gjt/sp/jedit/buffer/PositionManager
+		</rightFilePath1>
+		<rightFilePath2>
+	org/gjt/sp/jedit/buffer/PositionManager
+		</rightFilePath2>
+		<leftMethodName1>
+	contentInserted(int, int)
+		</leftMethodName1>
+		<leftMethodName2>
+	contentInserted(int, int)
+		</leftMethodName2>
+		<rightMethodName1>
+	contentRemoved(int, int)
+		</rightMethodName1>
+		<rightMethodName2>
+	contentRemoved(int, int)
+		</rightMethodName2>
+<costs>
+ 	45_8
+                </costs>
+<RetObj>
+	<![CDATA[
+public enum Flag{RETURN, FALLTHRU};
+public class RetObj {
+  public Flag flag;
+  public boolean iteration;
+  public RetObj(Flag flag,boolean iteration){
+    this.flag = flag;
+    this.iteration = iteration;
+  }
+}
+	]]>
+</RetObj>
+<extractMethod>
+	<![CDATA[
+public abstract class TemplateClass {
+  public RetObj extractMethod(  int offset,  int length,  SortedMap<PosBottomHalf,PosBottomHalf> positions){
+    if (positions.isEmpty()) {
+      return new RetObj(Flag.RETURN,null);
+    }
+    Iterator iter=positions.tailMap(new PosBottomHalf(offset)).keySet().iterator();
+    iteration=true;
+    while (iter.hasNext()) {
+      m0(iter,offset,length);
+    }
+    iteration=false;
+    return new RetObj(Flag.FALLTHRU,iteration);
+  }
+  public abstract void m0(  Iterator iter,  int offset,  int length);
+}
+public class ConcreteTemplateClass0 extends TemplateClass {
+  public void m0(  Iterator iter,  int offset,  int length){
+    ((PosBottomHalf)iter.next()).contentRemoved(offset,length);
+  }
+}
+public class ConcreteTemplateClass1 extends TemplateClass {
+  public void m0(  Iterator iter,  int offset,  int length){
+    ((PosBottomHalf)iter.next()).contentInserted(offset,length);
+  }
+}
+	]]>
+</extractMethod>
+	<modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+public synchronized void contentRemoved(int offset, int length)
+	{
+  RetObj retObj=new ConcreteTemplateClass0().extractMethod(offset,length,positions);
+  if (retObj.flag.equals(Flag.RETURN))   return;
+  iteration=retObj.iteration;
+}                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+public synchronized void contentInserted(int offset, int length)
+	{
+  RetObj retObj=new ConcreteTemplateClass1().extractMethod(offset,length,positions);
+  if (retObj.flag.equals(Flag.RETURN))   return;
+  iteration=retObj.iteration;
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "22">
+		<src>src</src>
+		<leftProjectName> jdtcore-3096</leftProjectName>
+		<rightProjectName>jdtcore-12151</rightProjectName>
+		<leftClassName1>
+	org.eclipse.jdt.internal.compiler.ast.BinaryExpression
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.jdt.internal.compiler.ast.BinaryExpression
+		</leftClassName2>
+		<rightClassName1>
+	org.eclipse.jdt.internal.compiler.ast.BinaryExpression
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.jdt.internal.compiler.ast.BinaryExpression	
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/jdt/internal/compiler/ast/BinaryExpression
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/jdt/internal/compiler/ast/BinaryExpression
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/jdt/internal/compiler/ast/BinaryExpression
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/jdt/internal/compiler/ast/BinaryExpression
+		</rightFilePath2>
+		<leftMethodName1>
+	generateOptimizedGreaterThan(BlockScope, CodeStream, Label, Label, boolean)
+		</leftMethodName1>
+		<leftMethodName2>
+	generateOptimizedGreaterThan(BlockScope, CodeStream, Label, Label, boolean)
+		</leftMethodName2>
+		<rightMethodName1>
+	generateOptimizedGreaterThanOrEqual(BlockScope, CodeStream, Label, Label, boolean)
+		</rightMethodName1>
+		<rightMethodName2>
+	generateOptimizedGreaterThanOrEqual(BlockScope, CodeStream, Label, Label, boolean)
+		</rightMethodName2>
+<costs>
+ 	287_40
+                </costs>
+<RetObj>
+	<![CDATA[
+public enum Flag{RETURN, FALLTHRU};
+	]]>
+</RetObj>
+<extractMethod>
+	<![CDATA[
+public abstract class TemplateClass {
+  public Flag extractMethod(  Label falseLabel,  CodeStream codeStream,  boolean valueRequired,  BlockScope currentScope,  Label trueLabel,  Expression left,  Expression right){
+    int promotedTypeID=(left.implicitConversion & IMPLICIT_CONVERSION_MASK) >> 4;
+    if (promotedTypeID == T_int) {
+      if ((left.constant != NotAConstant) && (left.constant.intValue() == 0)) {
+        right.generateCode(currentScope,codeStream,valueRequired);
+        if (valueRequired) {
+          if (falseLabel == null) {
+            if (trueLabel != null) {
+              m0(codeStream,trueLabel);
+            }
+          }
+ else {
+            if (trueLabel == null) {
+              m1(codeStream,falseLabel);
+            }
+ else {
+            }
+          }
+        }
+        codeStream.updateLastRecordedEndPC(currentScope,codeStream.position);
+        return Flag.RETURN;
+      }
+      if ((right.constant != NotAConstant) && (right.constant.intValue() == 0)) {
+        left.generateCode(currentScope,codeStream,valueRequired);
+        if (valueRequired) {
+          if (falseLabel == null) {
+            if (trueLabel != null) {
+              m2(codeStream,trueLabel);
+            }
+          }
+ else {
+            if (trueLabel == null) {
+              m3(codeStream,falseLabel);
+            }
+ else {
+            }
+          }
+        }
+        codeStream.updateLastRecordedEndPC(currentScope,codeStream.position);
+        return Flag.RETURN;
+      }
+    }
+    left.generateCode(currentScope,codeStream,valueRequired);
+    right.generateCode(currentScope,codeStream,valueRequired);
+    if (valueRequired) {
+      if (falseLabel == null) {
+        if (trueLabel != null) {
+switch (promotedTypeID) {
+case T_int:
+            m4(codeStream,trueLabel);
+          break;
+case T_float:
+        codeStream.fcmpl();
+      m2(codeStream,trueLabel);
+    break;
+case T_long:
+  codeStream.lcmp();
+m2(codeStream,trueLabel);
+break;
+case T_double:
+codeStream.dcmpl();
+m2(codeStream,trueLabel);
+}
+codeStream.updateLastRecordedEndPC(currentScope,codeStream.position);
+return Flag.RETURN;
+}
+}
+ else {
+if (trueLabel == null) {
+switch (promotedTypeID) {
+case T_int:
+m5(codeStream,falseLabel);
+break;
+case T_float:
+codeStream.fcmpl();
+m3(codeStream,falseLabel);
+break;
+case T_long:
+codeStream.lcmp();
+m3(codeStream,falseLabel);
+break;
+case T_double:
+codeStream.dcmpl();
+m3(codeStream,falseLabel);
+}
+codeStream.updateLastRecordedEndPC(currentScope,codeStream.position);
+return Flag.RETURN;
+}
+ else {
+}
+}
+}
+return Flag.FALLTHRU;
+}
+public abstract void m5(CodeStream codeStream,Label falseLabel);
+public abstract void m4(CodeStream codeStream,Label trueLabel);
+public abstract void m1(CodeStream codeStream,Label falseLabel);
+public abstract void m0(CodeStream codeStream,Label trueLabel);
+public abstract void m2(CodeStream codeStream,Label trueLabel);
+public abstract void m3(CodeStream codeStream,Label falseLabel);
+}
+public class ConcreteTemplateClass0 extends TemplateClass {
+  public void m5(  CodeStream codeStream,  Label falseLabel){
+    codeStream.if_icmplt(falseLabel);
+  }
+  public void m4(  CodeStream codeStream,  Label trueLabel){
+    codeStream.if_icmpge(trueLabel);
+  }
+  public void m1(  CodeStream codeStream,  Label falseLabel){
+    codeStream.ifgt(falseLabel);
+  }
+  public void m0(  CodeStream codeStream,  Label trueLabel){
+    codeStream.ifle(trueLabel);
+  }
+  public void m2(  CodeStream codeStream,  Label trueLabel){
+    codeStream.ifge(trueLabel);
+  }
+  public void m3(  CodeStream codeStream,  Label falseLabel){
+    codeStream.iflt(falseLabel);
+  }
+}
+public class ConcreteTemplateClass1 extends TemplateClass {
+  public void m5(  CodeStream codeStream,  Label falseLabel){
+    codeStream.if_icmple(falseLabel);
+  }
+  public void m4(  CodeStream codeStream,  Label trueLabel){
+    codeStream.if_icmpgt(trueLabel);
+  }
+  public void m1(  CodeStream codeStream,  Label falseLabel){
+    codeStream.ifge(falseLabel);
+  }
+  public void m0(  CodeStream codeStream,  Label trueLabel){
+    codeStream.iflt(trueLabel);
+  }
+  public void m2(  CodeStream codeStream,  Label trueLabel){
+    codeStream.ifgt(trueLabel);
+  }
+  public void m3(  CodeStream codeStream,  Label falseLabel){
+    codeStream.ifle(falseLabel);
+  }
+}
+	]]>
+</extractMethod>
+	<modifiedMethods>
+<modifiedMethod id = "1">
+                <![CDATA[
+/**
+	 * Boolean generation for >=
+	 */
+public void generateOptimizedGreaterThanOrEqual(
+		BlockScope currentScope,
+		CodeStream codeStream,
+		Label trueLabel,
+		Label falseLabel,
+		boolean valueRequired) {
+  new ConcreteTemplateClass0().extractMethod(falseLabel,codeStream,valueRequired,currentScope,trueLabel,left,right);
+}
+	        ]]>
+            </modifiedMethod>
+<modifiedMethod id = "2">
+                <![CDATA[
+/**
+	 * Boolean generation for >
+	 */
+public void generateOptimizedGreaterThan(
+		BlockScope currentScope,
+		CodeStream codeStream,
+		Label trueLabel,
+		Label falseLabel,
+		boolean valueRequired) {
+  new ConcreteTemplateClass1().extractMethod(falseLabel,codeStream,valueRequired,currentScope,trueLabel,left,right);
+}
+	        ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "3">
+                <![CDATA[
+/** 
+ * Boolean generation for >
+ */
+public void generateOptimizedGreaterThan(BlockScope currentScope,CodeStream codeStream,Label trueLabel,Label falseLabel,boolean valueRequired){
+  int promotedTypeID=(left.implicitConversion & IMPLICIT_CONVERSION_MASK) >> 4;
+  if (promotedTypeID == T_int) {
+    if ((left.constant != NotAConstant) && (left.constant.intValue() == 0)) {
+      right.generateCode(currentScope,codeStream,valueRequired);
+      codeStream.updateLastRecordedEndPC(currentScope,codeStream.position);
+      if (valueRequired) {
+        if (falseLabel == null) {
+          if (trueLabel != null) {
+            codeStream.iflt(trueLabel);
+          }
+        }
+ else {
+          if (trueLabel == null) {
+            codeStream.ifge(falseLabel);
+          }
+ else {
+          }
+        }
+      }
+      return;
+    }
+    if ((right.constant != NotAConstant) && (right.constant.intValue() == 0)) {
+      left.generateCode(currentScope,codeStream,valueRequired);
+      codeStream.updateLastRecordedEndPC(currentScope,codeStream.position);
+      if (valueRequired) {
+        if (falseLabel == null) {
+          if (trueLabel != null) {
+            codeStream.ifgt(trueLabel);
+          }
+        }
+ else {
+          if (trueLabel == null) {
+            codeStream.ifle(falseLabel);
+          }
+ else {
+          }
+        }
+      }
+      return;
+    }
+  }
+  left.generateCode(currentScope,codeStream,valueRequired);
+  right.generateCode(currentScope,codeStream,valueRequired);
+  if (valueRequired) {
+    if (falseLabel == null) {
+      if (trueLabel != null) {
+        codeStream.updateLastRecordedEndPC(currentScope,codeStream.position);
+switch (promotedTypeID) {
+case T_int:
+          codeStream.if_icmpgt(trueLabel);
+        break;
+case T_float:
+      codeStream.fcmpl();
+    codeStream.ifgt(trueLabel);
+  break;
+case T_long:
+codeStream.lcmp();
+codeStream.ifgt(trueLabel);
+break;
+case T_double:
+codeStream.dcmpl();
+codeStream.ifgt(trueLabel);
+}
+return;
+}
+}
+ else {
+if (trueLabel == null) {
+codeStream.updateLastRecordedEndPC(currentScope,codeStream.position);
+switch (promotedTypeID) {
+case T_int:
+codeStream.if_icmple(falseLabel);
+break;
+case T_float:
+codeStream.fcmpl();
+codeStream.ifle(falseLabel);
+break;
+case T_long:
+codeStream.lcmp();
+codeStream.ifle(falseLabel);
+break;
+case T_double:
+codeStream.dcmpl();
+codeStream.ifle(falseLabel);
+}
+return;
+}
+ else {
+}
+}
+}
+}
+                ]]>
+            </modifiedMethod>
+<modifiedMethod id = "4">
+                <![CDATA[
+/** 
+ * Boolean generation for <
+ */
+public void generateOptimizedLessThan(BlockScope currentScope,CodeStream codeStream,Label trueLabel,Label falseLabel,boolean valueRequired){
+  int promotedTypeID=(left.implicitConversion & IMPLICIT_CONVERSION_MASK) >> 4;
+  if (promotedTypeID == T_int) {
+    if ((left.constant != NotAConstant) && (left.constant.intValue() == 0)) {
+      right.generateCode(currentScope,codeStream,valueRequired);
+      codeStream.updateLastRecordedEndPC(currentScope,codeStream.position);
+      if (valueRequired) {
+        if (falseLabel == null) {
+          if (trueLabel != null) {
+            codeStream.ifgt(trueLabel);
+          }
+        }
+ else {
+          if (trueLabel == null) {
+            codeStream.ifle(falseLabel);
+          }
+ else {
+          }
+        }
+      }
+      return;
+    }
+    if ((right.constant != NotAConstant) && (right.constant.intValue() == 0)) {
+      left.generateCode(currentScope,codeStream,valueRequired);
+      codeStream.updateLastRecordedEndPC(currentScope,codeStream.position);
+      if (valueRequired) {
+        if (falseLabel == null) {
+          if (trueLabel != null) {
+            codeStream.iflt(trueLabel);
+          }
+        }
+ else {
+          if (trueLabel == null) {
+            codeStream.ifge(falseLabel);
+          }
+ else {
+          }
+        }
+      }
+      return;
+    }
+  }
+  left.generateCode(currentScope,codeStream,valueRequired);
+  right.generateCode(currentScope,codeStream,valueRequired);
+  if (valueRequired) {
+    if (falseLabel == null) {
+      if (trueLabel != null) {
+        codeStream.updateLastRecordedEndPC(currentScope,codeStream.position);
+switch (promotedTypeID) {
+case T_int:
+          codeStream.if_icmplt(trueLabel);
+        break;
+case T_float:
+      codeStream.fcmpg();
+    codeStream.iflt(trueLabel);
+  break;
+case T_long:
+codeStream.lcmp();
+codeStream.iflt(trueLabel);
+break;
+case T_double:
+codeStream.dcmpg();
+codeStream.iflt(trueLabel);
+}
+return;
+}
+}
+ else {
+if (trueLabel == null) {
+codeStream.updateLastRecordedEndPC(currentScope,codeStream.position);
+switch (promotedTypeID) {
+case T_int:
+codeStream.if_icmpge(falseLabel);
+break;
+case T_float:
+codeStream.fcmpg();
+codeStream.ifge(falseLabel);
+break;
+case T_long:
+codeStream.lcmp();
+codeStream.ifge(falseLabel);
+break;
+case T_double:
+codeStream.dcmpg();
+codeStream.ifge(falseLabel);
+}
+return;
+}
+ else {
+}
+}
+}
+}
+ ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "23">
+		<src>src</src>
+		<leftProjectName> jdtcore-3096</leftProjectName>
+		<rightProjectName>jdtcore-12742</rightProjectName>
+		<leftClassName1>
+	org.eclipse.jdt.internal.compiler.parser.RecoveredMethod
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.jdt.internal.compiler.parser.RecoveredMethod	
+		</leftClassName2>
+		<rightClassName1>	
+	org.eclipse.jdt.internal.compiler.parser.RecoveredInitializer
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.jdt.internal.compiler.parser.RecoveredInitializer
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/jdt/internal/compiler/parser/RecoveredMethod
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/jdt/internal/compiler/parser/RecoveredMethod
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/jdt/internal/compiler/parser/RecoveredInitializer
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/jdt/internal/compiler/parser/RecoveredInitializer
+		</rightFilePath2>
+		<leftMethodName1>
+	add(FieldDeclaration, int)
+		</leftMethodName1>
+		<leftMethodName2>
+	add(FieldDeclaration, int)
+		</leftMethodName2>
+		<rightMethodName1>
+	add(FieldDeclaration, int)
+		</rightMethodName1>
+		<rightMethodName2>
+	add(FieldDeclaration, int)
+		</rightMethodName2>
+	<modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+public RecoveredElement add(FieldDeclaration fieldDeclaration,int bracketBalance){
+  char[][] fieldTypeName;
+  if ((fieldDeclaration.modifiers & ~ClassFileConstants.AccFinal) != 0 || (fieldDeclaration.type == null) || ((fieldTypeName=fieldDeclaration.type.getTypeName()).length == 1 && CharOperation.equals(fieldTypeName[0],TypeBinding.VOID.sourceName()))) {
+    if (this.parent == null) {
+      return this;
+    }
+ else {
+      this.updateSourceEndIfNecessary(this.previousAvailableLineEnd(fieldDeclaration.declarationSourceStart - 1));
+      return this.parent.add(fieldDeclaration,bracketBalanceValue);
+    }
+  }
+  if (methodDeclaration.declarationSourceEnd > 0 && fieldDeclaration.declarationSourceStart > methodDeclaration.declarationSourceEnd) {
+    if (this.parent == null) {
+      return this;
+    }
+ else {
+      return this.parent.add(fieldDeclaration,bracketBalanceValue);
+    }
+  }
+  if (!foundOpeningBrace) {
+    foundOpeningBrace=true;
+    this.bracketBalance++;
+  }
+  return this;
+}
+
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+public RecoveredElement add(FieldDeclaration newFieldDeclaration,int bracketBalance){
+  char[][] fieldTypeName;
+  if ((newFieldDeclaration.modifiers & ~ClassFileConstants.AccFinal) != 0 || (newFieldDeclaration.type == null) || ((fieldTypeName=newFieldDeclaration.type.getTypeName()).length == 1 && CharOperation.equals(fieldTypeName[0],TypeBinding.VOID.sourceName()))) {
+    if (this.parent == null) {
+      return this;
+    }
+ else {
+      this.updateSourceEndIfNecessary(this.previousAvailableLineEnd(newFieldDeclaration.declarationSourceStart - 1));
+      return this.parent.add(newFieldDeclaration,bracketBalanceValue);
+    }
+  }
+  if (this.fieldDeclaration.declarationSourceEnd > 0 && newFieldDeclaration.declarationSourceStart > this.fieldDeclaration.declarationSourceEnd) {
+    if (this.parent == null) {
+      return this;
+    }
+ else {
+      return this.parent.add(newFieldDeclaration,bracketBalanceValue);
+    }
+  }
+  return this;
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "24">
+		<src>core</src>
+		<leftProjectName>org.eclipse.debug.core_v20061005</leftProjectName>
+		<rightProjectName>org.eclipse.debug.core_v20061106</rightProjectName>
+		<leftClassName1>
+	org.eclipse.debug.internal.core.LaunchConfigurationInfo
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.debug.internal.core.LaunchConfigurationInfo
+		</leftClassName2>
+		<rightClassName1>	
+	org.eclipse.debug.internal.core.LaunchConfigurationInfo
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.debug.internal.core.LaunchConfigurationInfo
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/debug/internal/core/LaunchConfigurationInfo
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/debug/internal/core/LaunchConfigurationInfo
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/debug/internal/core/LaunchConfigurationInfo
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/debug/internal/core/LaunchConfigurationInfo
+		</rightFilePath2>
+		<leftMethodName1>
+	setListAttribute(Element)
+		</leftMethodName1>
+		<leftMethodName2>
+	setListAttribute(Element)
+		</leftMethodName2>
+		<rightMethodName1>
+	setMapAttribute(Element)
+		</rightMethodName1>
+		<rightMethodName2>
+	setMapAttribute(Element)
+		</rightMethodName2>
+	<modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+protected void setMapAttribute(Element element) throws CoreException {
+  String mapKey=element.getAttribute(KEY);
+  NodeList nodeList=element.getChildNodes();
+  int entryCount=nodeList.getLength();
+  Node node=null;
+  Element selement=null;
+  Map map=new HashMap(entryCount);
+  for (int i=0; i < entryCount; i++) {
+    node=nodeList.item(i);
+    if (node.getNodeType() == Node.ELEMENT_NODE) {
+      selement=(Element)node;
+      String nodeName=subElement.getNodeName();
+      if (!selement.getNodeName().equalsIgnoreCase(v$_2_)) {
+        throw getInvalidFormatDebugException();
+      }
+      map.put(u$_9_ListLiteral_);
+      String key=getKeyAttribute(subElement);
+    }
+  }
+  setAttribute(mapKey,map);
+}
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+protected void setListAttribute(Element element) throws CoreException {
+  String listKey=element.getAttribute(KEY);
+  NodeList nodeList=element.getChildNodes();
+  int entryCount=nodeList.getLength();
+  Node node=null;
+  Element selement=null;
+  List list=new ArrayList(entryCount);
+  for (int i=0; i < entryCount; i++) {
+    node=nodeList.item(i);
+    if (node.getNodeType() == Node.ELEMENT_NODE) {
+      selement=(Element)node;
+      String nodeName=subElement.getNodeName();
+      if (!selement.getNodeName().equalsIgnoreCase(v$_2_)) {
+        throw getInvalidFormatDebugException();
+      }
+      list.add(u$_9_ListLiteral_);
+    }
+  }
+  setAttribute(listKey,list);
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "25">
+		<src>core</src>
+		<leftProjectName>org.eclipse.debug.core_v20061005</leftProjectName>
+		<rightProjectName>org.eclipse.debug.core_v20061106</rightProjectName>
+		<leftClassName1>
+	org.eclipse.debug.internal.core.LaunchConfigurationType
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.debug.internal.core.LaunchConfigurationType
+		</leftClassName2>
+		<rightClassName1>	
+	org.eclipse.debug.internal.core.LaunchConfigurationType
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.debug.internal.core.LaunchConfigurationType
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/debug/internal/core/LaunchConfigurationType
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/debug/internal/core/LaunchConfigurationType
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/debug/internal/core/LaunchConfigurationType
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/debug/internal/core/LaunchConfigurationType
+		</rightFilePath2>
+		<leftMethodName1>
+	migrate(ILaunchConfiguration)
+		</leftMethodName1>
+		<leftMethodName2>
+	migrate(ILaunchConfiguration)
+		</leftMethodName2>
+		<rightMethodName1>
+	isMigrationCandidate(ILaunchConfiguration)	
+		</rightMethodName1>
+		<rightMethodName2>
+	isMigrationCandidate(ILaunchConfiguration)
+		</rightMethodName2>
+	<modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+public void migrate(ILaunchConfiguration candidate) throws CoreException {
+  initializeMigrationDelegate();
+  if (fMigrationDelegate != null) {
+  }
+}
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+public boolean isMigrationCandidate(ILaunchConfiguration candidate) throws CoreException {
+  initializeMigrationDelegate();
+  if (fMigrationDelegate != null) {
+  }
+  return false;
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "26">
+		<src>core</src>
+		<leftProjectName>org.eclipse.debug.core_v20061005</leftProjectName>
+		<rightProjectName>org.eclipse.debug.core_v20061106</rightProjectName>
+		<leftClassName1>
+	org.eclipse.debug.internal.core.LaunchManager
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.debug.internal.core.LaunchManager
+		</leftClassName2>
+		<rightClassName1>	
+	org.eclipse.debug.internal.core.LaunchManager
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.debug.internal.core.LaunchManager
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/debug/internal/core/LaunchManager
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/debug/internal/core/LaunchManager
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/debug/internal/core/LaunchManager
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/debug/internal/core/LaunchManager
+		</rightFilePath2>
+		<leftMethodName1>
+	initializeComparators()
+		</leftMethodName1>
+		<leftMethodName2>
+	initializeComparators()
+		</leftMethodName2>
+		<rightMethodName1>
+	initializeSourceLocators()
+		</rightMethodName1>
+		<rightMethodName2>
+	initializeSourceLocators()
+		</rightMethodName2>
+	<modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "27">
+		<src>core</src>
+		<leftProjectName>org.eclipse.debug.core_v20080303</leftProjectName>
+		<rightProjectName>org.eclipse.debug.core_v20080407</rightProjectName>
+		<leftClassName1>
+	org.eclipse.debug.internal.core.commands.DisconnectCommand
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.debug.internal.core.commands.DisconnectCommand
+		</leftClassName2>
+		<rightClassName1>	
+	org.eclipse.debug.internal.core.commands.DropToFrameCommand
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.debug.internal.core.commands.DropToFrameCommand
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/debug/internal/core/commands/DisconnectCommand
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/debug/internal/core/commands/DisconnectCommand
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/debug/internal/core/commands/DropToFrameCommand
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/debug/internal/core/commands/DropToFrameCommand
+		</rightFilePath2>
+		<leftMethodName1>
+	getTarget(Object)
+		</leftMethodName1>
+		<leftMethodName2>
+	getTarget(Object)
+		</leftMethodName2>
+		<rightMethodName1>
+	getTarget(Object)
+		</rightMethodName1>
+		<rightMethodName2>
+	getTarget(Object)
+		</rightMethodName2>
+<costs>
+ 	53_30
+                </costs>
+	<modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+protected Object getTarget(Object element){
+  return getAdapter(element,ISuspendResume.class);
+}
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+protected Object getTarget(Object element){
+  return getAdapter(element,IStep.class);
+}
+                ]]>
+            </modifiedMethod>
+<modifiedMethod id = "3">
+                <![CDATA[
+protected Object getTarget(Object element){
+  return getAdapter(element,IDisconnect.class);
+}
+                ]]>
+            </modifiedMethod>
+<modifiedMethod id = "4">
+                <![CDATA[
+protected Object getTarget(Object element){
+  return getAdapter(element,ITerminate.class);
+}
+                ]]>
+            </modifiedMethod>
+<modifiedMethod id = "5">
+                <![CDATA[
+protected Object getTarget(Object element){
+  return getAdapter(element,IDropToFrame.class);
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "28">
+		<src>core</src>
+		<leftProjectName>org.eclipse.debug.core_v20080818</leftProjectName>
+		<rightProjectName>org.eclipse.debug.core_v20080922</rightProjectName>
+		<leftClassName1>
+	org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy
+		</leftClassName2>
+		<rightClassName1>	
+	org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/debug/internal/core/LaunchConfigurationWorkingCopy
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/debug/internal/core/LaunchConfigurationWorkingCopy
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/debug/internal/core/LaunchConfigurationWorkingCopy
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/debug/internal/core/LaunchConfigurationWorkingCopy
+		</rightFilePath2>
+		<leftMethodName1>
+	LaunchConfigurationWorkingCopy(LaunchConfiguration)
+		</leftMethodName1>
+		<leftMethodName2>
+	LaunchConfigurationWorkingCopy(LaunchConfiguration)
+		</leftMethodName2>
+		<rightMethodName1>
+	LaunchConfigurationWorkingCopy(LaunchConfiguration, String)
+		</rightMethodName1>
+		<rightMethodName2>
+	LaunchConfigurationWorkingCopy(LaunchConfiguration, String)
+		</rightMethodName2>
+<costs>
+ 	16_4
+                </costs>
+	<modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+/** 
+ * Constructs a working copy of the specified launch 
+ * configuration.
+ * @param original launch configuration to make
+ * a working copy of
+ * @exception CoreException if unable to initialize this
+ * working copy's attributes based on the original configuration
+ */
+protected LaunchConfigurationWorkingCopy(LaunchConfiguration original) throws CoreException {
+  super(original.getName(),original.getContainer());
+  copyFrom(original);
+  setOriginal(original);
+  fSuppressChange=false;
+}
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+/** 
+ * Constructs a copy of the specified launch 
+ * configuration, with the given (new) name.
+ * @param original launch configuration to make
+ * a working copy of
+ * @param name the new name for the copy of the launch
+ * configuration
+ * @exception CoreException if unable to initialize this
+ * working copy's attributes based on the original configuration
+ */
+protected LaunchConfigurationWorkingCopy(LaunchConfiguration original,String name) throws CoreException {
+  super(name,original.getContainer());
+  copyFrom(original);
+  fSuppressChange=false;
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "29">
+		<src>core</src>
+		<leftProjectName>org.eclipse.debug.core_v20090824</leftProjectName>
+		<rightProjectName>org.eclipse.debug.core_v20090911</rightProjectName>
+		<leftClassName1>
+	org.eclipse.debug.core.sourcelookup.containers.CompositeSourceContainer
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.debug.core.sourcelookup.containers.CompositeSourceContainer
+		</leftClassName2>
+		<rightClassName1>	
+	org.eclipse.debug.core.sourcelookup.AbstractSourceLookupParticipant
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.debug.core.sourcelookup.AbstractSourceLookupParticipant
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/debug/core/sourcelookup/containers/CompositeSourceContainer
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/debug/core/sourcelookup/containers/CompositeSourceContainer
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/debug/core/sourcelookup/AbstractSourceLookupParticipant
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/debug/core/sourcelookup/AbstractSourceLookupParticipant
+		</rightFilePath2>
+		<leftMethodName1>
+	findSourceElements(String, ISourceContainer[])
+		</leftMethodName1>
+		<leftMethodName2>
+	findSourceElements(String, ISourceContainer[])
+		</leftMethodName2>
+		<rightMethodName1>
+	findSourceElements(Object)
+		</rightMethodName1>
+		<rightMethodName2>
+	findSourceElements(Object)
+		</rightMethodName2>
+<costs>
+ 	7_2
+                </costs>
+<RetObj>
+	<![CDATA[
+public enum Flag{RETURN, FALLTHRU};
+public class RetObj {
+  public Flag flag;
+  public Object[] ret;
+  public RetObj(Flag flag,Object[] ret){
+    this.flag = flag;
+    this.ret = ret;
+  }
+}
+	]]>
+</RetObj>
+<extractMethod>
+	<![CDATA[
+public class TemplateClass {
+  public static RetObj extractMethod(  Object[] objects,  List results){
+    if (objects.length > 0) {
+      if (results != null) {
+        for (int j=0; j < objects.length; j++) {
+          results.add(objects[j]);
+        }
+      }
+ else {
+        if (objects.length == 1) {
+          return new RetObj(Flag.RETURN,objects);
+        }
+        return new RetObj(Flag.RETURN,new Object[]{objects[0]});
+      }
+    }
+    return new RetObj(Flag.FALLTHRU,null);
+  }
+}
+	]]>
+</extractMethod>
+	<modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+/* (non-Javadoc)
+	 * @see org.eclipse.debug.core.sourcelookup.ISourceLookupParticipant#findSourceElements(java.lang.Object)
+	 */
+public Object[] findSourceElements(Object object) throws CoreException {
+  List results=null;
+  CoreException single=null;
+  MultiStatus multiStatus=null;
+  if (isFindDuplicates()) {
+    results=new ArrayList();
+  }
+  String name=getSourceName(object);
+  if (name != null) {
+    ISourceContainer[] containers=getSourceContainers();
+    for (int i=0; i < containers.length; i++) {
+      try {
+        ISourceContainer container=getDelegateContainer(containers[i]);
+        if (container != null) {
+          Object[] objects=container.findSourceElements(name);
+          RetObj retObj=TemplateClass.extractMethod(objects,results);
+          if (retObj.flag.equals(Flag.RETURN))           return retObj.retVal;
+        }
+      }
+ catch (      CoreException e) {
+        if (single == null) {
+          single=e;
+        }
+ else         if (multiStatus == null) {
+          multiStatus=new MultiStatus(DebugPlugin.getUniqueIdentifier(),DebugPlugin.ERROR,new IStatus[]{single.getStatus()},SourceLookupMessages.Source_Lookup_Error,null);
+          multiStatus.add(e.getStatus());
+        }
+ else {
+          multiStatus.add(e.getStatus());
+        }
+      }
+    }
+  }
+  if (results == null) {
+    if (multiStatus != null) {
+      throw new CoreException(multiStatus);
+    }
+ else     if (single != null) {
+      throw single;
+    }
+    return EMPTY;
+  }
+  return results.toArray();
+}
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+/**
+	 * Returns a collection of source elements in the given containers corresponding to
+	 * the given name. Returns an empty collection if no source elements are found.
+	 * This source container's source lookup director specifies if duplicate
+	 * source elements should be searched for, via <code>isFindDuplicates()</code>.
+	 * When <code>false</code> the returned collection should contain at most one
+	 * source element. If this is a composite container, the containers contained
+	 * by this container are also searched.
+	 * <p>
+	 * The format of the given name is implementation specific but generally conforms
+	 * to the format of a file name. If a source container does not recognize the
+	 * name format provided, an empty collection should be returned. A source container
+	 * may or may not require names to be fully qualified (i.e. be qualified with directory
+	 * names).
+	 * </p>
+	 * @param name the name of the source element to search for
+	 * @param containers the containers to search
+	 * @return a collection of source elements corresponding to the given name
+	 * @exception CoreException if an exception occurs while searching for source elements
+	 */
+protected Object[] findSourceElements(String name, ISourceContainer[] containers) throws CoreException {
+  List results=null;
+  CoreException single=null;
+  MultiStatus multiStatus=null;
+  if (isFindDuplicates()) {
+    results=new ArrayList();
+  }
+  for (int i=0; i < containers.length; i++) {
+    ISourceContainer container=containers[i];
+    try {
+      Object[] objects=container.findSourceElements(name);
+      RetObj retObj=TemplateClass.extractMethod(objects,results);
+      if (retObj.flag.equals(Flag.RETURN))       return retObj.retVal;
+    }
+ catch (    CoreException e) {
+      if (single == null) {
+        single=e;
+      }
+ else       if (multiStatus == null) {
+        multiStatus=new MultiStatus(DebugPlugin.getUniqueIdentifier(),DebugPlugin.ERROR,new IStatus[]{single.getStatus()},SourceLookupMessages.Source_Lookup_Error,null);
+        multiStatus.add(e.getStatus());
+      }
+ else {
+        multiStatus.add(e.getStatus());
+      }
+    }
+  }
+  if (results == null) {
+    if (multiStatus != null) {
+      throw new CoreException(multiStatus);
+    }
+ else     if (single != null) {
+      throw single;
+    }
+    return EMPTY;
+  }
+  return results.toArray();
+}
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "30">
+		<src>
+		compare
+		</src>
+		<leftProjectName>
+		org.eclipse.compare_v20060605
+		</leftProjectName>
+		<rightProjectName>
+		org.eclipse.compare_v20060714
+		</rightProjectName>
+		<leftClassName1>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</leftClassName1>
+		<leftClassName2>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</leftClassName2>
+		<rightClassName1>
+		org.eclipse.compare.contentmergeviewer.ContentMergeViewer
+		</rightClassName1>
+		<rightClassName2>
+		org.eclipse.compare.contentmergeviewer.ContentMergeViewer
+		</rightClassName2>
+		<leftFilePath1>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</leftFilePath1>
+		<leftFilePath2>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</leftFilePath2>
+		<rightFilePath1>
+		org/eclipse/compare/contentmergeviewer/ContentMergeViewer
+		</rightFilePath1>
+		<rightFilePath2>
+		org/eclipse/compare/contentmergeviewer/ContentMergeViewer
+		</rightFilePath2>
+		<leftMethodName1>
+		handleDispose(DisposeEvent)
+		</leftMethodName1>
+		<leftMethodName2>
+		handleDispose(DisposeEvent)
+		</leftMethodName2>
+		<rightMethodName1>
+		handleDispose(DisposeEvent)
+		</rightMethodName1>
+		<rightMethodName2>
+		handleDispose(DisposeEvent)
+		</rightMethodName2>
+<modifiedMethods>
+            <modifiedMethod id = "1">
+                <![CDATA[
+                ]]>
+            </modifiedMethod>
+            <modifiedMethod id = "2">
+                <![CDATA[
+                ]]>
+            </modifiedMethod>
+		</modifiedMethods>
+	</projectPair>
+	<projectPair id = "31">
+		<src>
+		compare
+		</src>
+		<leftProjectName>
+		org.eclipse.compare_v20060605
+		</leftProjectName>
+		<rightProjectName>
+		org.eclipse.compare_v20060714
+		</rightProjectName>
+		<leftClassName1>
+		org.eclipse.compare.contentmergeviewer.ContentMergeViewer
+		</leftClassName1>
+		<leftClassName2>
+		org.eclipse.compare.contentmergeviewer.ContentMergeViewer
+		</leftClassName2>
+		<rightClassName1>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</rightClassName1>
+		<rightClassName2>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</rightClassName2>
+		<leftFilePath1>
+		org/eclipse/compare/contentmergeviewer/ContentMergeViewer
+		</leftFilePath1>
+		<leftFilePath2>
+		org/eclipse/compare/contentmergeviewer/ContentMergeViewer
+		</leftFilePath2>
+		<rightFilePath1>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</rightFilePath1>
+		<rightFilePath2>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</rightFilePath2>
+		<leftMethodName1>
+		buildControl(Composite)
+		</leftMethodName1>
+		<leftMethodName2>
+		buildControl(Composite)
+		</leftMethodName2>
+		<rightMethodName1>
+		createToolItems(ToolBarManager)
+		</rightMethodName1>
+		<rightMethodName2>
+		createToolItems(ToolBarManager)
+		</rightMethodName2>
+	<modifiedMethods>
+		<modifiedMethod id = "1">
+		<![CDATA[
+		]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+                <![CDATA[
+		]]>
+                </modifiedMethod>
+	</modifiedMethods>
+	</projectPair>
+<!--	
+	<projectPair id = "31">
+		<src>
+		compare
+		</src>
+		<leftProjectName>
+		org.eclipse.compare_v20060714
+		</leftProjectName>
+		<rightProjectName>
+		org.eclipse.compare_v20060917
+		</rightProjectName>
+		<leftClassName1>
+		org.eclipse.compare.internal.SimpleTextViewer
+		</leftClassName1>
+		<leftClassName2>
+		org.eclipse.compare.internal.SimpleTextViewer
+		</leftClassName2>
+		<rightClassName1>
+		org.eclipse.compare.EditionSelectionDialog.Pair
+		</rightClassName1>
+		<rightClassName2>
+		org.eclipse.compare.EditionSelectionDialog.Pair
+		</rightClassName2>
+		<leftFilePath1>
+		org/eclipse/compare/internal/SimpleTextViewer
+		</leftFilePath1>
+		<leftFilePath2>
+		org/eclipse/compare/internal/SimpleTextViewer
+		</leftFilePath2>
+		<rightFilePath1>
+		org/eclipse/compare/EditionSelectionDialog
+		</rightFilePath1>
+		<rightFilePath2>
+		org/eclipse/compare/EditionSelectionDialog
+		</rightFilePath2>
+		<leftMethodName1>
+		getString(Object)
+		</leftMethodName1>
+		<leftMethodName2>
+		getString(Object)
+		</leftMethodName2>
+		<rightMethodName1>
+		getContent()
+		</rightMethodName1>
+		<rightMethodName2>
+		getContent()
+		</rightMethodName2>
+	<modifiedMethods>
+		<modifiedMethod id = "1">
+		<![CDATA[
+
+		]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+                <![CDATA[
+
+		]]>
+                </modifiedMethod>
+	</modifiedMethods>
+
+	</projectPair>
+-->	
+	<projectPair id = "32">
+		<src>
+		compare
+		</src>
+		<leftProjectName>
+		org.eclipse.compare_v20060714
+		</leftProjectName>
+		<rightProjectName>
+		org.eclipse.compare_v20060917
+		</rightProjectName>
+		<leftClassName1>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</leftClassName1>
+		<leftClassName2>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</leftClassName2>
+		<rightClassName1>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</rightClassName1>
+		<rightClassName2>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</rightClassName2>
+		<leftFilePath1>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</leftFilePath1>
+		<leftFilePath2>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</leftFilePath2>
+		<rightFilePath1>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</rightFilePath1>
+		<rightFilePath2>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</rightFilePath2>
+		<leftMethodName1>
+		paintSides(GC, MergeSourceViewer, Canvas, boolean)
+		</leftMethodName1>
+		<leftMethodName2>
+		paintSides(GC, MergeSourceViewer, Canvas, boolean)
+		</leftMethodName2>
+		<rightMethodName1>
+		paintCenter(Canvas, GC)
+		</rightMethodName1>
+		<rightMethodName2>
+		paintCenter(Canvas, GC)
+		</rightMethodName2>
+<costs>
+ 	6_2
+                </costs>
+<extractMethod>
+	<![CDATA[
+private void extractMethod(GC g){
+  g.setLineWidth(0);
+}
+	]]>
+</extractMethod>
+	<modifiedMethods>
+		<modifiedMethod id = "1">
+		<![CDATA[
+private void paintCenter(Canvas canvas, GC g) {
+  Display display=canvas.getDisplay();
+  checkForColorUpdate(display);
+  if (!fSynchronizedScrolling) {
+    return;
+  }
+  int lineHeight=fLeft.getTextWidget().getLineHeight();
+  int visibleHeight=fRight.getViewportHeight();
+  Point size=canvas.getSize();
+  int x=0;
+  int w=size.x;
+  g.setBackground(canvas.getBackground());
+  g.fillRectangle(x + 1,0,w - 2,size.y);
+  if (!fIsMotif) {
+    g.setBackground(display.getSystemColor(SWT.COLOR_WIDGET_NORMAL_SHADOW));
+    g.fillRectangle(0,0,1,size.y);
+    g.fillRectangle(w - 1,0,1,size.y);
+  }
+  if (!fHighlightRanges) {
+    return;
+  }
+  boolean showResolveUI=showResolveUI();
+  if (fChangeDiffs != null) {
+    int lshift=fLeft.getVerticalScrollOffset();
+    int rshift=fRight.getVerticalScrollOffset();
+    Point region=new Point(0,0);
+    Iterator e=fChangeDiffs.iterator();
+    while (e.hasNext()) {
+      Diff diff=(Diff)e.next();
+      if (diff.isDeleted()) {
+        continue;
+      }
+      if (fShowCurrentOnly2 && !isCurrentDiff(diff)) {
+        continue;
+      }
+      fLeft.getLineRange(diff.fLeftPos,region);
+      int ly=(region.x * lineHeight) + lshift;
+      int lh=region.y * lineHeight;
+      fRight.getLineRange(diff.fRightPos,region);
+      int ry=(region.x * lineHeight) + rshift;
+      int rh=region.y * lineHeight;
+      if (Math.max(ly + lh,ry + rh) < 0) {
+        continue;
+      }
+      if (Math.min(ly,ry) >= visibleHeight) {
+        break;
+      }
+      fPts[0]=x;
+      fPts[1]=ly;
+      fPts[2]=w;
+      fPts[3]=ry;
+      fPts[6]=x;
+      fPts[7]=ly + lh;
+      fPts[4]=w;
+      fPts[5]=ry + rh;
+      Color fillColor=getColor(display,getFillColor(diff));
+      Color strokeColor=getColor(display,getStrokeColor(diff));
+      if (fUseSingleLine) {
+        int w2=3;
+        g.setBackground(fillColor);
+        g.fillRectangle(0,ly,w2,lh);
+        g.fillRectangle(w - w2,ry,w2,rh);
+        g.setLineWidth(0);
+        g.setForeground(strokeColor);
+        g.drawRectangle(0 - 1,ly,w2,lh);
+        g.drawRectangle(w - w2,ry,w2,rh);
+        if (fUseSplines) {
+          int[] points=getCenterCurvePoints(w2,ly + lh / 2,w - w2,ry + rh / 2);
+          for (int i=1; i < points.length; i++) {
+            g.drawLine(w2 + i - 1,points[i - 1],w2 + i,points[i]);
+          }
+        }
+ else {
+          g.drawLine(w2,ly + lh / 2,w - w2,ry + rh / 2);
+        }
+      }
+ else {
+        if (fUseSplines) {
+          g.setBackground(fillColor);
+          g.setLineWidth(0);
+          g.setForeground(strokeColor);
+          int[] topPoints=getCenterCurvePoints(fPts[0],fPts[1],fPts[2],fPts[3]);
+          int[] bottomPoints=getCenterCurvePoints(fPts[6],fPts[7],fPts[4],fPts[5]);
+          g.setForeground(fillColor);
+          g.drawLine(0,bottomPoints[0],0,topPoints[0]);
+          for (int i=1; i < bottomPoints.length; i++) {
+            g.setForeground(fillColor);
+            g.drawLine(i,bottomPoints[i],i,topPoints[i]);
+            g.setForeground(strokeColor);
+            g.drawLine(i - 1,topPoints[i - 1],i,topPoints[i]);
+            g.drawLine(i - 1,bottomPoints[i - 1],i,bottomPoints[i]);
+          }
+        }
+ else {
+          g.setBackground(fillColor);
+          g.fillPolygon(fPts);
+          extractMethod(g);
+          g.setForeground(strokeColor);
+          g.drawLine(fPts[0],fPts[1],fPts[2],fPts[3]);
+          g.drawLine(fPts[6],fPts[7],fPts[4],fPts[5]);
+        }
+      }
+      if (fUseSingleLine && showResolveUI && diff.isUnresolvedIncomingOrConflicting()) {
+        int cx=(w - RESOLVE_SIZE) / 2;
+        int cy=((ly + lh / 2) + (ry + rh / 2) - RESOLVE_SIZE) / 2;
+        g.setBackground(fillColor);
+        g.fillRectangle(cx,cy,RESOLVE_SIZE,RESOLVE_SIZE);
+        g.setForeground(strokeColor);
+        g.drawRectangle(cx,cy,RESOLVE_SIZE,RESOLVE_SIZE);
+      }
+    }
+  }
+}
+		]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+                <![CDATA[
+private void paintSides(GC g, MergeSourceViewer tp, Canvas canvas, boolean right) {
+  Display display=canvas.getDisplay();
+  int lineHeight=tp.getTextWidget().getLineHeight();
+  int visibleHeight=tp.getViewportHeight();
+  Point size=canvas.getSize();
+  int x=0;
+  int w=fMarginWidth;
+  int w2=w / 2;
+  g.setBackground(canvas.getBackground());
+  g.fillRectangle(x,0,w,size.y);
+  if (!fIsMotif) {
+    g.setBackground(display.getSystemColor(SWT.COLOR_WIDGET_NORMAL_SHADOW));
+    if (right) {
+      g.fillRectangle(0,0,1,size.y);
+    }
+ else {
+      g.fillRectangle(size.x - 1,0,1,size.y);
+    }
+  }
+  if (!fHighlightRanges) {
+    return;
+  }
+  if (fChangeDiffs != null) {
+    int shift=tp.getVerticalScrollOffset() + (2 - LW);
+    Point region=new Point(0,0);
+    Iterator e=fChangeDiffs.iterator();
+    while (e.hasNext()) {
+      Diff diff=(Diff)e.next();
+      if (diff.isDeleted()) {
+        continue;
+      }
+      if (fShowCurrentOnly2 && !isCurrentDiff(diff)) {
+        continue;
+      }
+      tp.getLineRange(diff.getPosition(tp),region);
+      int y=(region.x * lineHeight) + shift;
+      int h=region.y * lineHeight;
+      if (y + h < 0) {
+        continue;
+      }
+      if (y >= visibleHeight) {
+        break;
+      }
+      g.setBackground(getColor(display,getFillColor(diff)));
+      if (right) {
+        g.fillRectangle(x,y,w2,h);
+      }
+ else {
+        g.fillRectangle(x + w2,y,w2,h);
+      }
+      extractMethod(g);
+      g.setForeground(getColor(display,getStrokeColor(diff)));
+      if (right) {
+        g.drawRectangle(x - 1,y - 1,w2,h);
+      }
+ else {
+        g.drawRectangle(x + w2,y - 1,w2,h);
+      }
+    }
+  }
+}
+		]]>
+                </modifiedMethod>
+	</modifiedMethods>
+
+	</projectPair>
+	<projectPair id = "33">
+		<src>
+		compare
+		</src>
+		<leftProjectName>
+		org.eclipse.compare_v20060714
+		</leftProjectName>
+		<rightProjectName>
+		org.eclipse.compare_v20060917
+		</rightProjectName>
+		<leftClassName1>
+		org.eclipse.compare.CompareEditorInput
+		</leftClassName1>
+		<leftClassName2>
+		org.eclipse.compare.CompareEditorInput
+		</leftClassName2>
+		<rightClassName1>
+		org.eclipse.compare.CompareEditorInput
+		</rightClassName1>
+		<rightClassName2>
+		org.eclipse.compare.CompareEditorInput
+		</rightClassName2>
+		<leftFilePath1>
+		org/eclipse/compare/CompareEditorInput
+		</leftFilePath1>
+		<leftFilePath2>
+		org/eclipse/compare/CompareEditorInput
+		</leftFilePath2>
+		<rightFilePath1>
+		org/eclipse/compare/CompareEditorInput
+		</rightFilePath1>
+		<rightFilePath2>
+		org/eclipse/compare/CompareEditorInput
+		</rightFilePath2>
+		<leftMethodName1>
+		saveChanges(IProgressMonitor)
+		</leftMethodName1>
+		<leftMethodName2>
+		saveChanges(IProgressMonitor)
+		</leftMethodName2>
+		<rightMethodName1>
+		getAdapter(Class)
+		</rightMethodName1>
+		<rightMethodName2>
+		getAdapter(Class)
+		</rightMethodName2>
+	<modifiedMethods>
+		<modifiedMethod id = "1">
+		<![CDATA[
+public Object getAdapter(Class adapter){
+  if (ICompareNavigator.class.equals(adapter) || CompareNavigator.class.equals(adapter)) {
+    if (fNavigator == null) {
+      fNavigator=new CompareNavigator(new CompareViewerSwitchingPane[]{fStructureInputPane,fStructurePane1,fStructurePane2,fContentInputPane});
+    }
+    return fNavigator;
+  }
+  if (IFile.class.equals(adapter)) {
+    IProgressMonitor pm=new NullProgressMonitor();
+    try {
+      flushViewer(fStructurePane1,pm);
+    }
+ catch (    CoreException e) {
+      CompareUIPlugin.log(e);
+    }
+    IFile[] files=(IFile[])getAdapter(IFile[].class);
+    if (files != null && files.length > 0) {
+      return files[0];
+    }
+    return null;
+  }
+  return null;
+}
+		]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+                <![CDATA[
+/** 
+ * Save any unsaved changes.
+ * Subclasses must override to save any changes.
+ * This implementation tries to flush changes in all viewers by
+ * calling <code>ISavable.save</code> on them.
+ * @param pm an <code>IProgressMonitor</code> that the implementation of save may use to show progress
+ * @throws CoreException
+ * @since 2.0
+ */
+public void saveChanges(IProgressMonitor pm) throws CoreException {
+  flushViewer(fStructurePane1,pm);
+  save(pm);
+}
+		]]>
+                </modifiedMethod>
+	</modifiedMethods>
+
+	</projectPair>
+	<projectPair id = "34">
+		<src>
+		compare
+		</src>
+		<leftProjectName>
+		org.eclipse.compare_v20061016
+		</leftProjectName>
+		<rightProjectName>
+		org.eclipse.compare_v20061030
+		</rightProjectName>
+		<leftClassName1>
+		org.eclipse.compare.EditionSelectionDialog
+		</leftClassName1>
+		<leftClassName2>
+		org.eclipse.compare.EditionSelectionDialog
+		</leftClassName2>
+		<rightClassName1>
+		org.eclipse.compare.internal.CompareDialog
+		</rightClassName1>
+		<rightClassName2>
+		org.eclipse.compare.internal.CompareDialog
+		</rightClassName2>
+		<leftFilePath1>
+		org/eclipse/compare/EditionSelectionDialog
+		</leftFilePath1>
+		<leftFilePath2>
+		org/eclipse/compare/EditionSelectionDialog
+		</leftFilePath2>
+		<rightFilePath1>
+		org/eclipse/compare/internal/CompareDialog
+		</rightFilePath1>
+		<rightFilePath2>
+		org/eclipse/compare/internal/CompareDialog
+		</rightFilePath2>
+		<leftMethodName1>
+		createDialogArea(Composite)
+		</leftMethodName1>
+		<leftMethodName2>
+		createDialogArea(Composite)
+		</leftMethodName2>
+		<rightMethodName1>
+		createDialogArea(Composite)
+		</rightMethodName1>
+		<rightMethodName2>
+		createDialogArea(Composite)
+		</rightMethodName2>
+<costs>
+ 	22_24
+                </costs>
+<extractMethod>
+protected void extractMethod(Composite parent,CompareConfiguration u3){
+  IPreferenceStore store=u3.getPreferenceStore();
+  if (store != null) {
+    if (store.getBoolean(ComparePreferencePage.SHOW_MORE_INFO)) {
+      statusLabel=new Label(parent,SWT.NONE);
+      statusLabel.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+    }
+  }
+}
+</extractMethod>
+	<modifiedMethods>
+		<modifiedMethod id = "1">
+		<![CDATA[
+/* (non-Javadoc)
+	 * @see org.eclipse.jface.dialogs.Dialog#createDialogArea(org.eclipse.swt.widgets.Composite)
+	 */
+protected Control createDialogArea(Composite parent2) {
+  Composite parent=(Composite)super.createDialogArea(parent2);
+  Control c=fCompareEditorInput.createContents(parent);
+  c.setLayoutData(new GridData(GridData.FILL_BOTH));
+  extractMethod(parent,fCompareEditorInput.getCompareConfiguration());
+  Shell shell=c.getShell();
+  shell.setText(fCompareEditorInput.getTitle());
+  shell.setImage(fCompareEditorInput.getTitleImage());
+  applyDialogFont(parent);
+  return parent;
+}
+		]]>
+		</modifiedMethod>
+                <modifiedMethod id = "2">
+                <![CDATA[
+/* (non Javadoc)
+ 	 * Creates SWT control tree.
+ 	 */
+protected synchronized Control createDialogArea(Composite parent2) {
+  Composite parent=(Composite)super.createDialogArea(parent2);
+  getShell().setText(Utilities.getString(fBundle,"title"));
+  Splitter vsplitter=new Splitter(parent,SWT.VERTICAL);
+  vsplitter.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL | GridData.GRAB_HORIZONTAL | GridData.VERTICAL_ALIGN_FILL| GridData.GRAB_VERTICAL));
+  vsplitter.addDisposeListener(new DisposeListener(){
+    public void widgetDisposed(    DisposeEvent e){
+      if (fCompareConfiguration != null) {
+        fCompareConfiguration.dispose();
+        fCompareConfiguration=null;
+      }
+      if (fDateImage != null) {
+        fDateImage.dispose();
+        fDateImage=null;
+      }
+      if (fTimeImage != null) {
+        fTimeImage.dispose();
+        fTimeImage=null;
+      }
+    }
+  }
+);
+  if (fAddMode) {
+    Splitter hsplitter=new Splitter(vsplitter,SWT.HORIZONTAL);
+    fMemberPane=new CompareViewerPane(hsplitter,SWT.BORDER | SWT.FLAT);
+    fMemberPane.setText(Utilities.getString(fBundle,"memberPaneTitle"));
+    int flags=SWT.H_SCROLL | SWT.V_SCROLL;
+    if (fMultiSelect) {
+      flags|=SWT.CHECK;
+    }
+    fMemberTable=new Table(fMemberPane,flags);
+    fMemberTable.addSelectionListener(new SelectionAdapter(){
+      public void widgetSelected(      SelectionEvent e){
+        if (e.detail == SWT.CHECK) {
+          if (e.item instanceof TableItem) {
+            TableItem ti=(TableItem)e.item;
+            Object data=ti.getData();
+            if (ti.getChecked()) {
+              fArrayList.add(data);
+            }
+ else {
+              fArrayList.remove(data);
+            }
+            if (fCommitButton != null) {
+              fCommitButton.setEnabled(fArrayList.size() > 0);
+            }
+            fMemberTable.setSelection(new TableItem[]{ti});
+          }
+        }
+        handleMemberSelect(e.item);
+      }
+    }
+);
+    fMemberPane.setContent(fMemberTable);
+    fMemberTable.setFocus();
+    fEditionPane=new CompareViewerPane(hsplitter,SWT.BORDER | SWT.FLAT);
+  }
+ else {
+    if (fStructureCompare) {
+      Splitter hsplitter=new Splitter(vsplitter,SWT.HORIZONTAL);
+      fEditionPane=new CompareViewerPane(hsplitter,SWT.BORDER | SWT.FLAT);
+      fStructuredComparePane=new CompareViewerSwitchingPane(hsplitter,SWT.BORDER | SWT.FLAT,true){
+        protected Viewer getViewer(        Viewer oldViewer,        Object input){
+          if (input instanceof ICompareInput) {
+            return CompareUI.findStructureViewer(oldViewer,(ICompareInput)input,this,getCompareConfiguration());
+          }
+          return null;
+        }
+      }
+;
+      fStructuredComparePane.addSelectionChangedListener(new ISelectionChangedListener(){
+        public void selectionChanged(        SelectionChangedEvent e){
+          feedInput2(e.getSelection());
+        }
+      }
+);
+    }
+ else {
+      fEditionPane=new CompareViewerPane(vsplitter,SWT.BORDER | SWT.FLAT);
+    }
+    if (fTitleArg == null) {
+      fTitleArg=fTargetPair.getItem().getName();
+    }
+    String titleFormat=Utilities.getString(fBundle,"treeTitleFormat");
+    String title=MessageFormat.format(titleFormat,new String[]{fTitleArg});
+    fEditionPane.setText(title);
+    if (fTitleImage != null) {
+      fEditionPane.setImage(fTitleImage);
+    }
+  }
+  fEditionTree=new Tree(fEditionPane,SWT.H_SCROLL | SWT.V_SCROLL);
+  fEditionTree.addSelectionListener(new SelectionAdapter(){
+    public void widgetSelected(    SelectionEvent e){
+      feedInput(e.item);
+    }
+  }
+);
+  fEditionPane.setContent(fEditionTree);
+  if (fThread != null) {
+    fThread.start();
+    fThread=null;
+  }
+  fContentPane=new CompareViewerSwitchingPane(vsplitter,SWT.BORDER | SWT.FLAT){
+    protected Viewer getViewer(    Viewer oldViewer,    Object input){
+      return CompareUI.findContentViewer(oldViewer,input,this,getCompareConfiguration());
+    }
+  }
+;
+  vsplitter.setWeights(new int[]{30,70});
+  extractMethod(parent,getCompareConfiguration());
+  applyDialogFont(parent);
+  return parent;
+}
+		]]>
+		</modifiedMethod>
+<modifiedMethod id = "3">
+/* (non Javadoc)
+ 	 * Creates SWT control tree.
+ 	 */
+protected synchronized Control createDialogArea(Composite parent2) {
+  Composite parent=(Composite)super.createDialogArea(parent2);
+  getShell().setText(Utilities.getString(fBundle,"title"));
+  Splitter vsplitter=new Splitter(parent,SWT.VERTICAL);
+  vsplitter.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL | GridData.GRAB_HORIZONTAL | GridData.VERTICAL_ALIGN_FILL| GridData.GRAB_VERTICAL));
+  vsplitter.addDisposeListener(new DisposeListener(){
+    public void widgetDisposed(    DisposeEvent e){
+      if (fCompareConfiguration != null) {
+        fCompareConfiguration.dispose();
+        fCompareConfiguration=null;
+      }
+      if (fDateImage != null) {
+        fDateImage.dispose();
+        fDateImage=null;
+      }
+      if (fTimeImage != null) {
+        fTimeImage.dispose();
+        fTimeImage=null;
+      }
+    }
+  }
+);
+  if (fAddMode) {
+    Splitter hsplitter=new Splitter(vsplitter,SWT.HORIZONTAL);
+    fMemberPane=new CompareViewerPane(hsplitter,SWT.BORDER | SWT.FLAT);
+    fMemberPane.setText(Utilities.getString(fBundle,"memberPaneTitle"));
+    int flags=SWT.H_SCROLL | SWT.V_SCROLL;
+    if (fMultiSelect) {
+      flags|=SWT.CHECK;
+    }
+    fMemberTable=new Table(fMemberPane,flags);
+    fMemberTable.addSelectionListener(new SelectionAdapter(){
+      public void widgetSelected(      SelectionEvent e){
+        if (e.detail == SWT.CHECK) {
+          if (e.item instanceof TableItem) {
+            TableItem ti=(TableItem)e.item;
+            Object data=ti.getData();
+            if (ti.getChecked()) {
+              fArrayList.add(data);
+            }
+ else {
+              fArrayList.remove(data);
+            }
+            if (fCommitButton != null) {
+              fCommitButton.setEnabled(fArrayList.size() > 0);
+            }
+            fMemberTable.setSelection(new TableItem[]{ti});
+          }
+        }
+        handleMemberSelect(e.item);
+      }
+    }
+);
+    fMemberPane.setContent(fMemberTable);
+    fMemberTable.setFocus();
+    fEditionPane=new CompareViewerPane(hsplitter,SWT.BORDER | SWT.FLAT);
+  }
+ else {
+    if (fStructureCompare) {
+      Splitter hsplitter=new Splitter(vsplitter,SWT.HORIZONTAL);
+      fEditionPane=new CompareViewerPane(hsplitter,SWT.BORDER | SWT.FLAT);
+      fStructuredComparePane=new CompareViewerSwitchingPane(hsplitter,SWT.BORDER | SWT.FLAT,true){
+        protected Viewer getViewer(        Viewer oldViewer,        Object input){
+          if (input instanceof ICompareInput) {
+            return CompareUI.findStructureViewer(oldViewer,(ICompareInput)input,this,getCompareConfiguration());
+          }
+          return null;
+        }
+      }
+;
+      fStructuredComparePane.addSelectionChangedListener(new ISelectionChangedListener(){
+        public void selectionChanged(        SelectionChangedEvent e){
+          feedInput2(e.getSelection());
+        }
+      }
+);
+    }
+ else {
+      fEditionPane=new CompareViewerPane(vsplitter,SWT.BORDER | SWT.FLAT);
+    }
+    if (fTitleArg == null) {
+      fTitleArg=fTargetPair.getItem().getName();
+    }
+    String titleFormat=Utilities.getString(fBundle,"treeTitleFormat");
+    String title=MessageFormat.format(titleFormat,new String[]{fTitleArg});
+    fEditionPane.setText(title);
+    if (fTitleImage != null) {
+      fEditionPane.setImage(fTitleImage);
+    }
+  }
+  fEditionTree=new Tree(fEditionPane,SWT.H_SCROLL | SWT.V_SCROLL);
+  fEditionTree.addSelectionListener(new SelectionAdapter(){
+    public void widgetSelected(    SelectionEvent e){
+      feedInput(e.item);
+    }
+  }
+);
+  fEditionPane.setContent(fEditionTree);
+  if (fThread != null) {
+    fThread.start();
+    fThread=null;
+  }
+  fContentPane=new CompareViewerSwitchingPane(vsplitter,SWT.BORDER | SWT.FLAT){
+    protected Viewer getViewer(    Viewer oldViewer,    Object input){
+      return CompareUI.findContentViewer(oldViewer,input,this,getCompareConfiguration());
+    }
+  }
+;
+  vsplitter.setWeights(new int[]{30,70});
+  extractMethod(parent,getCompareConfiguration());
+  applyDialogFont(parent);
+  return parent;
+}
+</modifiedMethod>
+	</modifiedMethods>
+
+	</projectPair>
+	<projectPair id = "35">
+		<src>
+		compare
+		</src>
+		<leftProjectName>
+		org.eclipse.compare_v20061016
+		</leftProjectName>
+		<rightProjectName>
+		org.eclipse.compare_v20061030
+		</rightProjectName>
+		<leftClassName1>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</leftClassName1>
+		<leftClassName2>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</leftClassName2>
+		<rightClassName1>
+		org.eclipse.compare.contentmergeviewer.ContentMergeViewer
+		</rightClassName1>
+		<rightClassName2>
+		org.eclipse.compare.contentmergeviewer.ContentMergeViewer
+		</rightClassName2>
+		<leftFilePath1>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</leftFilePath1>
+		<leftFilePath2>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</leftFilePath2>
+		<rightFilePath1>
+		org/eclipse/compare/contentmergeviewer/ContentMergeViewer
+		</rightFilePath1>
+		<rightFilePath2>
+		org/eclipse/compare/contentmergeviewer/ContentMergeViewer
+		</rightFilePath2>
+		<leftMethodName1>
+		createToolItems(ToolBarManager)
+		</leftMethodName1>
+		<leftMethodName2>
+		createToolItems(ToolBarManager)
+		</leftMethodName2>
+		<rightMethodName1>
+		buildControl(Composite)
+		</rightMethodName1>
+		<rightMethodName2>
+		buildControl(Composite)
+		</rightMethodName2>
+<costs>
+ 	9_6
+                </costs>
+        <extractMethod>
+protected void extractMethod(){
+  IServiceLocator locator=getCompareConfiguration().getContainer().getServiceLocator();
+  fHandlerService=locator != null ? (IHandlerService)locator.getService(IHandlerService.class) : null;
+}
+        </extractMethod>
+	<modifiedMethods>
+		<modifiedMethod id = "1">
+		<![CDATA[
+/**
+	 * Builds the SWT controls for the three areas of a compare/merge viewer.
+	 * <p>
+	 * Calls the hooks <code>createControls</code> and <code>createToolItems</code>
+	 * to let subclasses build the specific content areas and to add items to
+	 * an enclosing toolbar.
+	 * <p>
+	 * This method must only be called in the constructor of subclasses.
+	 *
+	 * @param parent the parent control
+	 * @return the new control
+	 */
+protected final Control buildControl(Composite parent) {
+  fComposite=new Composite(parent,fStyles | SWT.LEFT_TO_RIGHT){
+    public boolean setFocus(){
+      return ContentMergeViewer.this.handleSetFocus();
+    }
+  }
+;
+  fComposite.setData(CompareUI.COMPARE_VIEWER_TITLE,getTitle());
+  hookControl(fComposite);
+  fComposite.setLayout(new ContentMergeViewerLayout());
+  int style=SWT.SHADOW_OUT;
+  fAncestorLabel=new CLabel(fComposite,style);
+  fLeftLabel=new CLabel(fComposite,style);
+  new Resizer(fLeftLabel,VERTICAL);
+  fDirectionLabel=new CLabel(fComposite,style);
+  fDirectionLabel.setAlignment(SWT.CENTER);
+  new Resizer(fDirectionLabel,HORIZONTAL | VERTICAL);
+  fRightLabel=new CLabel(fComposite,style);
+  new Resizer(fRightLabel,VERTICAL);
+  if (fCenter == null || fCenter.isDisposed()) {
+    fCenter=createCenterControl(fComposite);
+  }
+  createControls(fComposite);
+  extractMethod();
+  initializeToolbars(parent);
+  return fComposite;
+}
+		]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+                <![CDATA[
+/*
+	 * Creates the two items for copying a difference range from one side to the other 
+	 * and adds them to the given toolbar manager.
+	 */
+protected void createToolItems(ToolBarManager tbm) {
+  extractMethod();
+  final String ignoreAncestorActionKey="action.IgnoreAncestor.";
+  Action ignoreAncestorAction=new Action(){
+    public void run(){
+      if (!isIgnoreAncestor()) {
+        getCompareConfiguration().setProperty(ICompareUIConstants.PROP_ANCESTOR_VISIBLE,Boolean.FALSE);
+      }
+      getCompareConfiguration().setProperty(ICompareUIConstants.PROP_IGNORE_ANCESTOR,Boolean.valueOf(!isIgnoreAncestor()));
+      Utilities.initToggleAction(this,getResourceBundle(),ignoreAncestorActionKey,isIgnoreAncestor());
+    }
+  }
+;
+  ignoreAncestorAction.setChecked(isIgnoreAncestor());
+  Utilities.initAction(ignoreAncestorAction,getResourceBundle(),ignoreAncestorActionKey);
+  Utilities.initToggleAction(ignoreAncestorAction,getResourceBundle(),ignoreAncestorActionKey,isIgnoreAncestor());
+  fIgnoreAncestorItem=new ActionContributionItem(ignoreAncestorAction);
+  fIgnoreAncestorItem.setVisible(false);
+  tbm.appendToGroup("modes",fIgnoreAncestorItem);
+  tbm.add(new Separator());
+  Action a=new Action(){
+    public void run(){
+      navigate(true,true,isStepIntoEnabled());
+    }
+  }
+;
+  Utilities.initAction(a,getResourceBundle(),"action.NextDiff.");
+  fNextItem=new ActionContributionItem(a);
+  tbm.appendToGroup("navigation",fNextItem);
+  Utilities.registerAction(fHandlerService,a,"org.eclipse.compare.selectNextChange",fActivations);
+  a=new Action(){
+    public void run(){
+      navigate(false,true,isStepIntoEnabled());
+    }
+  }
+;
+  Utilities.initAction(a,getResourceBundle(),"action.PrevDiff.");
+  fPreviousItem=new ActionContributionItem(a);
+  tbm.appendToGroup("navigation",fPreviousItem);
+  Utilities.registerAction(fHandlerService,a,"org.eclipse.compare.selectPreviousChange",fActivations);
+  a=new ChangePropertyAction(getResourceBundle(),getCompareConfiguration(),"action.StepInto.",STEP_INTO_PROPERTY);
+  fStepIntoItem=new ActionContributionItem(a);
+  tbm.appendToGroup("navigation",fStepIntoItem);
+  CompareConfiguration cc=getCompareConfiguration();
+  if (cc.isRightEditable()) {
+    a=new Action(){
+      public void run(){
+        copyDiffLeftToRight();
+      }
+    }
+;
+    Utilities.initAction(a,getResourceBundle(),"action.CopyDiffLeftToRight.");
+    fCopyDiffLeftToRightItem=new ActionContributionItem(a);
+    fCopyDiffLeftToRightItem.setVisible(true);
+    tbm.appendToGroup("merge",fCopyDiffLeftToRightItem);
+    Utilities.registerAction(fHandlerService,a,"org.eclipse.compare.copyLeftToRight",fActivations);
+  }
+  if (cc.isLeftEditable()) {
+    a=new Action(){
+      public void run(){
+        copyDiffRightToLeft();
+      }
+    }
+;
+    Utilities.initAction(a,getResourceBundle(),"action.CopyDiffRightToLeft.");
+    fCopyDiffRightToLeftItem=new ActionContributionItem(a);
+    fCopyDiffRightToLeftItem.setVisible(true);
+    tbm.appendToGroup("merge",fCopyDiffRightToLeftItem);
+    Utilities.registerAction(fHandlerService,a,"org.eclipse.compare.copyRightToLeft",fActivations);
+  }
+}
+		]]>
+                </modifiedMethod>
+	</modifiedMethods>
+
+	</projectPair>
+	<projectPair id = "36">
+		<src>
+		compare
+		</src>
+		<leftProjectName>
+		org.eclipse.compare_v20061016
+		</leftProjectName>
+		<rightProjectName>
+		org.eclipse.compare_v20061030
+		</rightProjectName>
+		<leftClassName1>
+		org.eclipse.compare.internal.patch.PatcherCompareEditorInput
+		</leftClassName1>
+		<leftClassName2>
+		org.eclipse.compare.internal.patch.PatcherCompareEditorInput
+		</leftClassName2>
+		<rightClassName1>
+		org.eclipse.compare.internal.patch.HunkMergePageInput
+		</rightClassName1>
+		<rightClassName2>
+		org.eclipse.compare.internal.patch.HunkMergePageInput
+		</rightClassName2>
+		<leftFilePath1>
+		org/eclipse/compare/internal/patch/PatcherCompareEditorInput
+		</leftFilePath1>
+		<leftFilePath2>
+		org/eclipse/compare/internal/patch/PatcherCompareEditorInput
+		</leftFilePath2>
+		<rightFilePath1>
+		org/eclipse/compare/internal/patch/HunkMergePageInput
+		</rightFilePath1>
+		<rightFilePath2>
+		org/eclipse/compare/internal/patch/HunkMergePageInput
+		</rightFilePath2>
+		<leftMethodName1>
+		initLabels()
+		</leftMethodName1>
+		<leftMethodName2>
+		initLabels()
+		</leftMethodName2>
+		<rightMethodName1>
+		initLabels()
+		</rightMethodName1>
+		<rightMethodName2>
+		initLabels()
+		</rightMethodName2>
+<costs>
+ 	22_22
+                </costs>
+        <extractMethod>
+protected void extractMethod(CompareConfiguration cc,String v0,String v1){
+  if (config != null) {
+    cc.setLeftLabel(config.getLeftLabel(config));
+    cc.setLeftImage(config.getLeftImage(config));
+    cc.setRightLabel(config.getRightLabel(config));
+    cc.setRightImage(config.getRightImage(config));
+  }
+ else {
+    String leftLabel=v0;
+    cc.setLeftLabel(leftLabel);
+    String rightLabel=v1;
+    cc.setRightLabel(rightLabel);
+  }
+}
+        </extractMethod>
+	<modifiedMethods>
+		<modifiedMethod id = "1">
+		<![CDATA[
+private void initLabels() {
+  CompareConfiguration cc=getCompareConfiguration();
+  cc.setCalculateDiffs(false);
+  cc.setLeftEditable(true);
+  cc.setRightEditable(false);
+  cc.setProperty(CompareEditor.CONFIRM_SAVE_PROPERTY,new Boolean(false));
+  extractMethod(cc,PatchMessages.HunkMergePageInput_WorkspaceCopy,PatchMessages.HunkMergePageInput_OrphanedHunk);
+}
+		]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+                <![CDATA[
+private void initLabels() {
+  CompareConfiguration cc=getCompareConfiguration();
+  cc.setLeftEditable(false);
+  cc.setRightEditable(false);
+  extractMethod(cc,PatchMessages.PatcherCompareEditorInput_LocalCopy,PatchMessages.PatcherCompareEditorInput_AfterPatch);
+}
+		]]>
+                </modifiedMethod>
+	</modifiedMethods>
+
+	</projectPair>
+	<projectPair id = "37">
+		<src>
+		compare
+		</src>
+		<leftProjectName>
+		org.eclipse.compare_v20060714
+		</leftProjectName>
+		<rightProjectName>
+		org.eclipse.compare_v20060917
+		</rightProjectName>
+		<leftClassName1>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</leftClassName1>
+		<leftClassName2>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</leftClassName2>
+		<rightClassName1>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</rightClassName1>
+		<rightClassName2>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</rightClassName2>
+		<leftFilePath1>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</leftFilePath1>
+		<leftFilePath2>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</leftFilePath2>
+		<rightFilePath1>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</rightFilePath1>
+		<rightFilePath2>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</rightFilePath2>
+		<leftMethodName1>
+		addNewRange(char, Object, Position)
+		</leftMethodName1>
+		<leftMethodName2>
+		addNewRange(char, Object, Position)
+		</leftMethodName2>
+		<rightMethodName1>
+		setError(char, String)
+		</rightMethodName1>
+		<rightMethodName2>
+		setError(char, String)
+		</rightMethodName2>
+	<modifiedMethods>
+		<modifiedMethod id = "1">
+		<![CDATA[
+ITypedElement getLeg(char type,Object input){
+  if (input instanceof ICompareInput) {
+switch (type) {
+case ANCESTOR_CONTRIBUTOR:
+      return ((ICompareInput)input).getAncestor();
+case LEFT_CONTRIBUTOR:
+    return ((ICompareInput)input).getLeft();
+case RIGHT_CONTRIBUTOR:
+  return ((ICompareInput)input).getRight();
+}
+}
+return null;
+}
+		]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+                <![CDATA[
+private Position getNewRange(char type,Object input){
+switch (type) {
+case ANCESTOR_CONTRIBUTOR:
+    return (Position)fNewAncestorRanges.get(input);
+case LEFT_CONTRIBUTOR:
+  return (Position)fNewLeftRanges.get(input);
+case RIGHT_CONTRIBUTOR:
+return (Position)fNewRightRanges.get(input);
+}
+return null;
+}
+		]]>
+                </modifiedMethod>
+<modifiedMethod id = "3">
+protected int findInsertionPosition(char type,ICompareInput input){
+  ITypedElement other=null;
+  char otherType=0;
+switch (type) {
+case ANCESTOR_CONTRIBUTOR:
+    other=input.getLeft();
+  otherType='L';
+if (other == null) {
+  other=input.getRight();
+  otherType='R';
+}
+break;
+case LEFT_CONTRIBUTOR:
+other=input.getRight();
+otherType='R';
+if (other == null) {
+other=input.getAncestor();
+otherType='A';
+}
+break;
+case RIGHT_CONTRIBUTOR:
+other=input.getLeft();
+otherType='L';
+if (other == null) {
+other=input.getAncestor();
+otherType='A';
+}
+break;
+}
+if (other instanceof IDocumentRange) {
+IDocumentRange dr=(IDocumentRange)other;
+Position p=dr.getRange();
+Diff diff=findDiff(otherType,p.offset);
+if (diff != null) {
+switch (type) {
+case 'A':
+if (diff.fAncestorPos != null) {
+return diff.fAncestorPos.offset;
+}
+break;
+case 'L':
+if (diff.fLeftPos != null) {
+return diff.fLeftPos.offset;
+}
+break;
+case 'R':
+if (diff.fRightPos != null) {
+return diff.fRightPos.offset;
+}
+break;
+}
+}
+}
+return 0;
+}
+</modifiedMethod>
+<modifiedMethod id = "4">
+private void addNewRange(char type,Object input,Position range){
+switch (type) {
+case ANCESTOR_CONTRIBUTOR:
+    fNewAncestorRanges.put(input,range);
+  break;
+case LEFT_CONTRIBUTOR:
+fNewLeftRanges.put(input,range);
+break;
+case RIGHT_CONTRIBUTOR:
+fNewRightRanges.put(input,range);
+break;
+}
+}
+</modifiedMethod>
+<modifiedMethod id = "5">
+private void setError(char type,String message){
+  IMergeViewerContentProvider cp=getMergeContentProvider();
+  if (cp instanceof MergeViewerContentProvider) {
+    MergeViewerContentProvider mcp=(MergeViewerContentProvider)cp;
+switch (type) {
+case ANCESTOR_CONTRIBUTOR:
+      mcp.setAncestorError(message);
+    break;
+case LEFT_CONTRIBUTOR:
+  mcp.setLeftError(message);
+break;
+case RIGHT_CONTRIBUTOR:
+mcp.setRightError(message);
+break;
+}
+}
+fHasErrors=true;
+}
+</modifiedMethod>
+<modifiedMethod id = "6">
+Position getPosition(char type){
+switch (type) {
+case ANCESTOR_CONTRIBUTOR:
+    return fAncestorPos;
+case LEFT_CONTRIBUTOR:
+  return fLeftPos;
+case RIGHT_CONTRIBUTOR:
+return fRightPos;
+}
+return null;
+}
+</modifiedMethod>
+	</modifiedMethods>
+
+	</projectPair>
+	<projectPair id = "38">
+		<src>
+		compare
+		</src>
+		<leftProjectName>
+		org.eclipse.compare_v20070416
+		</leftProjectName>
+		<rightProjectName>
+		org.eclipse.compare_v20070430
+		</rightProjectName>
+		<leftClassName1>
+		org.eclipse.compare.contentmergeviewer.ContentMergeViewer
+		</leftClassName1>
+		<leftClassName2>
+		org.eclipse.compare.contentmergeviewer.ContentMergeViewer
+		</leftClassName2>
+		<rightClassName1>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</rightClassName1>
+		<rightClassName2>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</rightClassName2>
+		<leftFilePath1>
+		org/eclipse/compare/contentmergeviewer/ContentMergeViewer
+		</leftFilePath1>
+		<leftFilePath2>
+		org/eclipse/compare/contentmergeviewer/ContentMergeViewer
+		</leftFilePath2>
+		<rightFilePath1>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</rightFilePath1>
+		<rightFilePath2>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</rightFilePath2>
+		<leftMethodName1>
+		handleDispose(DisposeEvent)
+		</leftMethodName1>
+		<leftMethodName2>
+		handleDispose(DisposeEvent)
+		</leftMethodName2>
+		<rightMethodName1>
+		handleDispose(DisposeEvent)
+		</rightMethodName1>
+		<rightMethodName2>
+		handleDispose(DisposeEvent)
+		</rightMethodName2>
+<costs>
+ 	10_6
+                </costs>
+        <extractMethod>
+protected void extractMethod(){
+  if (fHandlerService != null) {
+    fHandlerService.dispose();
+  }
+}
+        </extractMethod>
+	<modifiedMethods>
+		<modifiedMethod id = "1">
+		<![CDATA[
+/**
+	 * Called on the viewer disposal.
+	 * Unregisters from the compare configuration.
+	 * Clients may extend if they have to do additional cleanup.
+	 * @param event
+	 */
+protected void handleDispose(DisposeEvent event) {
+  extractMethod();
+  Object input=getInput();
+  removeFromDocumentManager(ANCESTOR_CONTRIBUTOR,input);
+  removeFromDocumentManager(LEFT_CONTRIBUTOR,input);
+  removeFromDocumentManager(RIGHT_CONTRIBUTOR,input);
+  if (DEBUG) {
+    DocumentManager.dump();
+  }
+  if (fPreferenceChangeListener != null) {
+    JFaceResources.getFontRegistry().removeListener(fPreferenceChangeListener);
+    JFaceResources.getColorRegistry().removeListener(fPreferenceChangeListener);
+    if (fPreferenceStore != null) {
+      fPreferenceStore.removePropertyChangeListener(fPreferenceChangeListener);
+    }
+    fPreferenceChangeListener=null;
+  }
+  fLeftCanvas=null;
+  fRightCanvas=null;
+  fVScrollBar=null;
+  fBirdsEyeCanvas=null;
+  fSummaryHeader=null;
+  fAncestorContributor.unsetDocument(fAncestor);
+  fLeftContributor.unsetDocument(fLeft);
+  fRightContributor.unsetDocument(fRight);
+  disconnect(fLeftContributor);
+  disconnect(fRightContributor);
+  disconnect(fAncestorContributor);
+  if (fColors != null) {
+    Iterator i=fColors.values().iterator();
+    while (i.hasNext()) {
+      Color color=(Color)i.next();
+      if (!color.isDisposed()) {
+        color.dispose();
+      }
+    }
+    fColors=null;
+  }
+  if (fBirdsEyeCursor != null) {
+    fBirdsEyeCursor.dispose();
+    fBirdsEyeCursor=null;
+  }
+  if (showWhitespaceAction != null) {
+    showWhitespaceAction.dispose();
+  }
+  if (toggleLineNumbersAction != null) {
+    toggleLineNumbersAction.dispose();
+  }
+  if (fIgnoreWhitespace != null) {
+    fIgnoreWhitespace.dispose();
+  }
+  super.handleDispose(event);
+}
+		]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+                <![CDATA[
+/**
+	 * Called on the viewer disposal.
+	 * Unregisters from the compare configuration.
+	 * Clients may extend if they have to do additional cleanup.
+	 * @see org.eclipse.jface.viewers.ContentViewer#handleDispose(org.eclipse.swt.events.DisposeEvent)
+	 */
+protected void handleDispose(DisposeEvent event) {
+  extractMethod();
+  Object input=getInput();
+  if (input instanceof ICompareInput) {
+    ICompareContainer container=getCompareConfiguration().getContainer();
+    container.removeCompareInputChangeListener((ICompareInput)input,fCompareInputChangeListener);
+  }
+  if (input != null) {
+    ICompareInputLabelProvider lp=getCompareConfiguration().getLabelProvider();
+    if (lp != null) {
+      lp.removeListener(labelChangeListener);
+    }
+  }
+  if (fPropertyChangeListener != null) {
+    fCompareConfiguration.removePropertyChangeListener(fPropertyChangeListener);
+    fPropertyChangeListener=null;
+  }
+  fAncestorLabel=null;
+  fLeftLabel=null;
+  fDirectionLabel=null;
+  fRightLabel=null;
+  fCenter=null;
+  if (fRightArrow != null) {
+    fRightArrow.dispose();
+    fRightArrow=null;
+  }
+  if (fLeftArrow != null) {
+    fLeftArrow.dispose();
+    fLeftArrow=null;
+  }
+  if (fBothArrow != null) {
+    fBothArrow.dispose();
+    fBothArrow=null;
+  }
+  if (fNormalCursor != null) {
+    fNormalCursor.dispose();
+    fNormalCursor=null;
+  }
+  if (fHSashCursor != null) {
+    fHSashCursor.dispose();
+    fHSashCursor=null;
+  }
+  if (fVSashCursor != null) {
+    fVSashCursor.dispose();
+    fVSashCursor=null;
+  }
+  if (fHVSashCursor != null) {
+    fHVSashCursor.dispose();
+    fHVSashCursor=null;
+  }
+  super.handleDispose(event);
+}
+		]]>
+                </modifiedMethod>
+	</modifiedMethods>
+
+	</projectPair>
+	<projectPair id = "39">
+		<src>
+		compare
+		</src>
+		<leftProjectName>
+		org.eclipse.compare_v20070914
+		</leftProjectName>
+		<rightProjectName>
+		org.eclipse.compare_v20070924
+		</rightProjectName>
+		<leftClassName1>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</leftClassName1>
+		<leftClassName2>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</leftClassName2>
+		<rightClassName1>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</rightClassName1>
+		<rightClassName2>
+		org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</rightClassName2>
+		<leftFilePath1>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</leftFilePath1>
+		<leftFilePath2>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</leftFilePath2>
+		<rightFilePath1>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</rightFilePath1>
+		<rightFilePath2>
+		org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</rightFilePath2>
+		<leftMethodName1>
+		paintSides(GC, MergeSourceViewer, Canvas, boolean)
+		</leftMethodName1>
+		<leftMethodName2>
+		paintSides(GC, MergeSourceViewer, Canvas, boolean)
+		</leftMethodName2>
+		<rightMethodName1>
+		handleMouseInSides(Canvas, MergeSourceViewer, int)
+		</rightMethodName1>
+		<rightMethodName2>
+		handleMouseInSides(Canvas, MergeSourceViewer, int)
+		</rightMethodName2>
+	<modifiedMethods>
+		<modifiedMethod id = "1">
+		<![CDATA[
+private void paintSides(GC g,MergeSourceViewer tp,Canvas canvas,boolean right){
+  Display display=canvas.getDisplay();
+  int lineHeight=tp.getTextWidget().getLineHeight();
+  int visibleHeight=tp.getViewportHeight();
+  Point size=canvas.getSize();
+  int x=0;
+  int w=fMarginWidth;
+  int w2=w / 2;
+  g.setBackground(canvas.getBackground());
+  g.fillRectangle(x,0,w,size.y);
+  if (!fIsMotif) {
+    g.setBackground(display.getSystemColor(SWT.COLOR_WIDGET_NORMAL_SHADOW));
+    if (right) {
+      g.fillRectangle(0,0,1,size.y);
+    }
+ else {
+      g.fillRectangle(size.x - 1,0,1,size.y);
+    }
+  }
+  if (!fHighlightRanges) {
+    return;
+  }
+  if (fMerger.hasChanges()) {
+    int shift=tp.getVerticalScrollOffset() + (2 - LW);
+    Point region=new Point(0,0);
+    char leg=getLeg(tp);
+    for (Iterator iterator=fMerger.changesIterator(); iterator.hasNext(); ) {
+      Diff diff=(Diff)iterator.next();
+      if (diff.isDeleted()) {
+        continue;
+      }
+      if (fShowCurrentOnly2 && !isCurrentDiff(diff)) {
+        continue;
+      }
+      tp.getLineRange(diff.getPosition(leg),region);
+      int y=(region.x * lineHeight) + shift;
+      int h=region.y * lineHeight;
+      if (y + h < 0) {
+        continue;
+      }
+      if (y >= visibleHeight) {
+        break;
+      }
+      g.setBackground(getColor(display,getFillColor(diff)));
+      if (right) {
+        g.fillRectangle(x,y,w2,h);
+      }
+ else {
+        g.fillRectangle(x + w2,y,w2,h);
+      }
+      g.setLineWidth(0);
+      g.setForeground(getColor(display,getStrokeColor(diff)));
+      if (right) {
+        g.drawRectangle(x - 1,y - 1,w2,h);
+      }
+ else {
+        g.drawRectangle(x + w2,y - 1,w2,h);
+      }
+    }
+  }
+}		]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+                <![CDATA[
+private Diff handleMouseInSides(Canvas canvas,MergeSourceViewer tp,int my){
+  int lineHeight=tp.getTextWidget().getLineHeight();
+  int visibleHeight=tp.getViewportHeight();
+  if (!fHighlightRanges) {
+    return null;
+  }
+  if (fMerger.hasChanges()) {
+    int shift=tp.getVerticalScrollOffset() + (2 - LW);
+    Point region=new Point(0,0);
+    char leg=getLeg(tp);
+    for (Iterator iterator=fMerger.changesIterator(); iterator.hasNext(); ) {
+      Diff diff=(Diff)iterator.next();
+      if (diff.isDeleted()) {
+        continue;
+      }
+      if (fShowCurrentOnly2 && !isCurrentDiff(diff)) {
+        continue;
+      }
+      tp.getLineRange(diff.getPosition(leg),region);
+      int y=(region.x * lineHeight) + shift;
+      int h=region.y * lineHeight;
+      if (y + h < 0) {
+        continue;
+      }
+      if (y >= visibleHeight) {
+        break;
+      }
+      if (my >= y && my < y + h) {
+        return diff;
+      }
+    }
+  }
+  return null;
+}
+		]]>
+                </modifiedMethod>
+	</modifiedMethods>
+
+	</projectPair>
+	<projectPair id = "40">
+		<src>
+		src
+		</src>
+		<leftProjectName>
+		org.eclipse.core.runtime_v20060317
+		</leftProjectName>
+		<rightProjectName>
+		org.eclipse.core.runtime_v20060411
+		</rightProjectName>
+		<leftClassName1>
+		org.eclipse.core.internal.runtime.InternalPlatform
+		</leftClassName1>
+		<leftClassName2>
+		org.eclipse.core.internal.runtime.InternalPlatform
+		</leftClassName2>
+		<rightClassName1>
+		org.eclipse.core.internal.runtime.InternalPlatform
+		</rightClassName1>
+		<rightClassName2>
+		org.eclipse.core.internal.runtime.InternalPlatform
+		</rightClassName2>
+		<leftFilePath1>
+		org/eclipse/core/internal/runtime/InternalPlatform
+		</leftFilePath1>
+		<leftFilePath2>
+		org/eclipse/core/internal/runtime/InternalPlatform
+		</leftFilePath2>
+		<rightFilePath1>
+		org/eclipse/core/internal/runtime/InternalPlatform
+		</rightFilePath1>
+		<rightFilePath2>
+		org/eclipse/core/internal/runtime/InternalPlatform
+		</rightFilePath2>
+		<leftMethodName1>
+		getPreferencesService()
+		</leftMethodName1>
+		<leftMethodName2>
+		getPreferencesService()
+		</leftMethodName2>
+		<rightMethodName1>
+		getContentTypeManager()
+		</rightMethodName1>
+		<rightMethodName2>
+		getContentTypeManager()
+		</rightMethodName2>
+<costs>
+ 	366_177
+                </costs>
+<RetObj>
+	<![CDATA[
+public enum Flag{RETURN, FALLTHRU};
+	]]>
+</RetObj>
+<extractMethod>
+	<![CDATA[
+private Flag extractMethod(){
+  if (context == null) {
+    return Flag.RETURN;
+  }
+  return Flag.FALLTHRU;
+}
+	]]>
+</extractMethod>
+	<modifiedMethods>
+		<modifiedMethod id = "1">
+		<![CDATA[
+/**
+	 * Lazy initialize ContentTypeManager - it can only be used after the registry is up and running
+	 */
+public IContentTypeManager getContentTypeManager() {
+  if (contentTracker == null) {
+    Flag flag=extractMethod();
+    if (flag.equals(Flag.RETURN))     return null;
+    contentTracker=new ServiceTracker(context,IContentTypeManager.class.getName(),null);
+    contentTracker.open();
+  }
+  return (IContentTypeManager)contentTracker.getService();
+}
+		]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+		<![CDATA[
+/**
+	 * 
+	 */
+public IPreferencesService getPreferencesService() {
+  if (preferencesTracker == null) {
+    Flag flag=extractMethod();
+    if (flag.equals(Flag.RETURN))     return null;
+    preferencesTracker=new ServiceTracker(context,IPreferencesService.class.getName(),null);
+    preferencesTracker.open();
+  }
+  return (IPreferencesService)preferencesTracker.getService();
+}
+		]]>
+		</modifiedMethod>
+	</modifiedMethods>
+
+	</projectPair>
+	<projectPair id = "41">
+		<src>
+		src
+		</src>
+		<leftProjectName>
+		jdtcore-3096
+		</leftProjectName>
+		<rightProjectName>
+		jdtcore-5044
+		</rightProjectName>
+		<leftClassName1>
+		org.eclipse.jdt.core.dom.ASTConverter
+		</leftClassName1>
+		<leftClassName2>
+		org.eclipse.jdt.core.dom.ASTConverter
+		</leftClassName2>
+		<rightClassName1>
+		org.eclipse.jdt.core.dom.ASTConverter
+		</rightClassName1>
+		<rightClassName2>
+		org.eclipse.jdt.core.dom.ASTConverter
+		</rightClassName2>
+		<leftFilePath1>
+		org/eclipse/jdt/core/dom/ASTConverter
+		</leftFilePath1>
+		<leftFilePath2>
+		org/eclipse/jdt/core/dom/ASTConverter
+		</leftFilePath2>
+		<rightFilePath1>
+		org/eclipse/jdt/core/dom/ASTConverter
+		</rightFilePath1>
+		<rightFilePath2>
+		org/eclipse/jdt/core/dom/ASTConverter
+		</rightFilePath2>
+		<leftMethodName1>
+		convert(Break)
+		</leftMethodName1>
+		<leftMethodName2>
+		convert(Break)
+		</leftMethodName2>
+		<rightMethodName1>
+		convert(Continue)
+		</rightMethodName1>
+		<rightMethodName2>
+		convert(Continue)
+		</rightMethodName2>
+<costs>
+ 	7_2
+                </costs>
+	<modifiedMethods>
+		<modifiedMethod id = "1">
+		<![CDATA[
+public ContinueStatement convert(Continue statement){
+  ContinueStatement continueStatement=this.ast.newContinueStatement();
+  continueStatement.setSourceRange(statement.sourceStart,statement.sourceEnd - statement.sourceStart + 1);
+  if (statement.label != null) {
+    SimpleName name=this.ast.newSimpleName(new String(statement.label));
+    retrieveIdentifierAndSetPositions(statement.sourceStart,statement.sourceEnd,name);
+    continueStatement.setLabel(name);
+  }
+  retrieveSemiColonPosition(continueStatement);
+  return continueStatement;
+}
+		]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+                <![CDATA[
+public BreakStatement convert(Break statement){
+  BreakStatement breakStatement=this.ast.newBreakStatement();
+  breakStatement.setSourceRange(statement.sourceStart,statement.sourceEnd - statement.sourceStart + 1);
+  if (statement.label != null) {
+    SimpleName name=this.ast.newSimpleName(new String(statement.label));
+    retrieveIdentifierAndSetPositions(statement.sourceStart,statement.sourceEnd,name);
+    breakStatement.setLabel(name);
+  }
+  retrieveSemiColonPosition(breakStatement);
+  return breakStatement;
+}
+		]]>
+                </modifiedMethod>
+	</modifiedMethods>
+
+	</projectPair>
+	<projectPair id = "42">
+		<src>
+		src
+		</src>
+		<leftProjectName>
+		jdtcore-3096
+		</leftProjectName>
+		<rightProjectName>
+		jdtcore-5044
+		</rightProjectName>
+		<leftClassName1>
+		org.eclipse.jdt.internal.compiler.ast.BinaryExpression
+		</leftClassName1>
+		<leftClassName2>
+		org.eclipse.jdt.internal.compiler.ast.BinaryExpression
+		</leftClassName2>
+		<rightClassName1>
+		org.eclipse.jdt.internal.compiler.ast.UnaryExpression
+		</rightClassName1>
+		<rightClassName2>
+		org.eclipse.jdt.internal.compiler.ast.UnaryExpression
+		</rightClassName2>
+		<leftFilePath1>
+		org/eclipse/jdt/internal/compiler/ast/BinaryExpression
+		</leftFilePath1>
+		<leftFilePath2>
+		org/eclipse/jdt/internal/compiler/ast/BinaryExpression
+		</leftFilePath2>
+		<rightFilePath1>
+		org/eclipse/jdt/internal/compiler/ast/UnaryExpression
+		</rightFilePath1>
+		<rightFilePath2>
+		org/eclipse/jdt/internal/compiler/ast/UnaryExpression
+		</rightFilePath2>
+		<leftMethodName1>
+		resolveType(BlockScope)
+		</leftMethodName1>
+		<leftMethodName2>
+		resolveType(BlockScope)
+		</leftMethodName2>
+		<rightMethodName1>
+		resolveType(BlockScope)
+		</rightMethodName1>
+		<rightMethodName2>
+		resolveType(BlockScope)
+		</rightMethodName2>
+	<modifiedMethods>
+		<modifiedMethod id = "1">
+		<![CDATA[
+public TypeBinding resolveType(BlockScope scope){
+  TypeBinding expressionTb=expression.resolveType(scope);
+  if (expressionTb == null) {
+    constant=NotAConstant;
+    return null;
+  }
+  int expressionId=expressionTb.id;
+  if (expressionId > 15) {
+    constant=NotAConstant;
+    scope.problemReporter().invalidOperator(this,expressionTb);
+    return null;
+  }
+  int tableId;
+switch ((bits & OperatorMASK) >> OperatorSHIFT) {
+case NOT:
+    tableId=AND_AND;
+  break;
+case TWIDDLE:
+tableId=LEFT_SHIFT;
+break;
+default :
+tableId=MINUS;
+}
+int result=ResolveTypeTables[tableId][(expressionId << 4) + expressionId];
+expression.implicitConversion=result >>> 12;
+bits|=result & 0xF;
+switch (result & 0xF) {
+case T_boolean:
+this.resolvedType=BooleanBinding;
+break;
+case T_byte:
+this.resolvedType=ByteBinding;
+break;
+case T_char:
+this.resolvedType=CharBinding;
+break;
+case T_double:
+this.resolvedType=DoubleBinding;
+break;
+case T_float:
+this.resolvedType=FloatBinding;
+break;
+case T_int:
+this.resolvedType=IntBinding;
+break;
+case T_long:
+this.resolvedType=LongBinding;
+break;
+default :
+constant=Constant.NotAConstant;
+if (expressionId != T_undefined) {
+scope.problemReporter().invalidOperator(this,expressionTb);
+}
+return null;
+}
+if (expression.constant != Constant.NotAConstant) {
+constant=Constant.computeConstantOperation(expression.constant,expressionId,(bits & OperatorMASK) >> OperatorSHIFT);
+}
+ else {
+constant=Constant.NotAConstant;
+if (((bits & OperatorMASK) >> OperatorSHIFT) == NOT) {
+Constant cst=expression.conditionalConstant();
+if (cst.typeID() == T_boolean) {
+optimizedBooleanConstant=Constant.fromValue(!cst.booleanValue());
+}
+}
+}
+return this.resolvedType;
+}
+		]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+                <![CDATA[
+public TypeBinding resolveType(BlockScope scope){
+  TypeBinding leftTb=left.resolveType(scope);
+  TypeBinding rightTb=right.resolveType(scope);
+  if (leftTb == null || rightTb == null) {
+    constant=Constant.NotAConstant;
+    return null;
+  }
+  int leftId=leftTb.id;
+  int rightId=rightTb.id;
+  if (leftId > 15 || rightId > 15) {
+    if (leftId == T_String) {
+      rightId=T_Object;
+    }
+ else     if (rightId == T_String) {
+      leftId=T_Object;
+    }
+ else {
+      constant=Constant.NotAConstant;
+      scope.problemReporter().invalidOperator(this,leftTb,rightTb);
+      return null;
+    }
+  }
+  if (((bits & OperatorMASK) >> OperatorSHIFT) == PLUS) {
+    if (leftId == T_String && rightTb.isArrayType() && ((ArrayBinding)rightTb).elementsType(scope) == CharBinding) {
+      scope.problemReporter().signalNoImplicitStringConversionForCharArrayExpression(right);
+    }
+ else     if (rightId == T_String && leftTb.isArrayType() && ((ArrayBinding)leftTb).elementsType(scope) == CharBinding) {
+      scope.problemReporter().signalNoImplicitStringConversionForCharArrayExpression(left);
+    }
+  }
+  int result=ResolveTypeTables[(bits & OperatorMASK) >> OperatorSHIFT][(leftId << 4) + rightId];
+  left.implicitConversion=result >>> 12;
+  right.implicitConversion=(result >>> 4) & 0x000FF;
+  bits|=result & 0xF;
+switch (result & 0xF) {
+case T_boolean:
+    this.resolvedType=BooleanBinding;
+  break;
+case T_byte:
+this.resolvedType=ByteBinding;
+break;
+case T_char:
+this.resolvedType=CharBinding;
+break;
+case T_double:
+this.resolvedType=DoubleBinding;
+break;
+case T_float:
+this.resolvedType=FloatBinding;
+break;
+case T_int:
+this.resolvedType=IntBinding;
+break;
+case T_long:
+this.resolvedType=LongBinding;
+break;
+case T_String:
+this.typeBinding=scope.getJavaLangString();
+break;
+default :
+constant=Constant.NotAConstant;
+scope.problemReporter().invalidOperator(this,leftTb,rightTb);
+return null;
+}
+computeConstant(scope,leftId,rightId);
+return this.resolvedType;
+}
+		]]>
+                </modifiedMethod>
+	</modifiedMethods>
+	</projectPair>
+	<projectPair id = "43">
+		<src>
+		compare
+		</src>
+		<leftProjectName>
+		org.eclipse.compare_v20060918
+		</leftProjectName>
+		<rightProjectName>
+		org.eclipse.compare_v20061016
+		</rightProjectName>
+		<leftClassName1>
+	org.eclipse.compare.internal.patch.PreviewPatchLabelDecorator
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.compare.internal.patch.PreviewPatchLabelDecorator
+		</leftClassName2>
+		<rightClassName1>
+	org.eclipse.compare.internal.patch.PatcherCompareEditorInput.PatcherCompareEditorDecorator
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.compare.internal.patch.PatcherCompareEditorInput.PatcherCompareEditorDecorator	
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/compare/internal/patch/PreviewPatchLabelDecorator
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/compare/internal/patch/PreviewPatchLabelDecorator
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/compare/internal/patch/PatcherCompareEditorInput
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/compare/internal/patch/PatcherCompareEditorInput
+		</rightFilePath2>
+		<leftMethodName1>
+	decorateImage(Image, Object)
+		</leftMethodName1>
+		<leftMethodName2>
+	decorateImage(Image, Object)
+		</leftMethodName2>
+		<rightMethodName1>
+	decorateImage(Image, Object)
+		</rightMethodName1>
+		<rightMethodName2>
+	decorateImage(Image, Object)
+		</rightMethodName2>
+<costs>
+ 	11_4
+                </costs>
+<RetObj>
+	<![CDATA[
+public enum Flag{RETURN, FALLTHRU};
+public class RetObj {
+  public Flag flag;
+  public Image ret;
+  public RetObj(Flag flag,Image ret){
+    this.flag = flag;
+    this.ret = ret;
+  }
+}
+	]]>
+</RetObj>
+	<modifiedMethods>
+<modifiedMethod id = "1">
+		<![CDATA[
+public Image decorateImage(Image image,Object element){
+  if (element instanceof Diff) {
+    Diff diff=(Diff)element;
+switch (diff.getDiffType()) {
+case Differencer.ADDITION:
+      return getImageFor(add + (diff.fMatches ? "" : error),image,diff.fMatches);
+case Differencer.DELETION:
+    return getImageFor(delete + (diff.fMatches ? "" : error),image,diff.fMatches);
+default :
+  return getImageFor(diff.fMatches ? "" : error,image,diff.fMatches);
+}
+}
+ else if (element instanceof Hunk) {
+Hunk hunk=(Hunk)element;
+return getImageFor((hunk.fMatches ? "" : error),image,hunk.fMatches);
+}
+return null;
+}
+		]]>
+		</modifiedMethod>
+<modifiedMethod id = "2">
+                <![CDATA[
+public void applyAll(IProgressMonitor pm,Shell shell,String title) throws CoreException {
+  final int WORK_UNIT=10;
+  int i;
+  IFile singleFile=null;
+  IContainer container=null;
+  if (fTarget instanceof IContainer) {
+    container=(IContainer)fTarget;
+  }
+ else   if (fTarget instanceof IFile) {
+    singleFile=(IFile)fTarget;
+    container=singleFile.getParent();
+  }
+ else {
+    Assert.isTrue(false);
+  }
+  List list=new ArrayList();
+  if (singleFile != null) {
+    list.add(singleFile);
+  }
+ else {
+    for (i=0; i < fDiffs.length; i++) {
+      Diff diff=fDiffs[i];
+      if (diff.isEnabled()) {
+switch (diff.getDiffType()) {
+case Differencer.CHANGE:
+          list.add(createPath(container,getPath(diff)));
+        break;
+    }
+  }
+}
+}
+if (!Utilities.validateResources(list,shell,title)) {
+return;
+}
+if (pm != null) {
+String message=PatchMessages.Patcher_Task_message;
+pm.beginTask(message,fDiffs.length * WORK_UNIT);
+}
+for (i=0; i < fDiffs.length; i++) {
+int workTicks=WORK_UNIT;
+Diff diff=fDiffs[i];
+if (diff.isEnabled()) {
+  IPath path=getPath(diff);
+  if (pm != null) {
+    pm.subTask(path.toString());
+  }
+  IFile file=singleFile != null ? singleFile : createPath(container,path);
+  List failed=new ArrayList();
+  List result=null;
+  int type=diff.getType();
+switch (type) {
+case Differencer.ADDITION:
+    result=apply(diff,file,true,failed);
+  store(createString(result),file,new SubProgressMonitor(pm,workTicks));
+workTicks-=WORK_UNIT;
+break;
+case Differencer.DELETION:
+file.delete(true,true,new SubProgressMonitor(pm,workTicks));
+workTicks-=WORK_UNIT;
+break;
+case Differencer.CHANGE:
+result=apply(diff,file,false,failed);
+store(createString(result),file,new SubProgressMonitor(pm,workTicks));
+workTicks-=WORK_UNIT;
+break;
+}
+if (failed.size() > 0) {
+IPath pp=null;
+if (path.segmentCount() > 1) {
+pp=path.removeLastSegments(1);
+pp=pp.append(path.lastSegment() + REJECT_FILE_EXTENSION);
+}
+ else {
+pp=new Path(path.lastSegment() + REJECT_FILE_EXTENSION);
+}
+file=createPath(container,pp);
+if (file != null) {
+store(getRejected(failed),file,pm);
+try {
+IMarker marker=file.createMarker(MARKER_TYPE);
+marker.setAttribute(IMarker.MESSAGE,PatchMessages.Patcher_Marker_message);
+marker.setAttribute(IMarker.PRIORITY,IMarker.PRIORITY_HIGH);
+}
+ catch (CoreException ex) {
+}
+}
+}
+}
+if (pm != null) {
+if (pm.isCanceled()) {
+break;
+}
+if (workTicks > 0) {
+pm.worked(workTicks);
+}
+}
+}
+}
+		]]>
+                </modifiedMethod>
+<modifiedMethod id = "3">
+<![CDATA[
+public ImageDescriptor getImageDescriptor(Object object){
+  if (object instanceof Diff) {
+    Diff diff=(Diff)object;
+switch (diff.getDiffType()) {
+case Differencer.ADDITION:
+      return addId;
+case Differencer.DELETION:
+    return delId;
+}
+}
+return null;
+}
+]]>
+</modifiedMethod>
+<modifiedMethod id = "4">
+<![CDATA[
+public Image decorateImage(Image image,Object element){
+  if (element instanceof MyDiffNode) {
+    MyDiffNode myDiffNode=(MyDiffNode)element;
+    Diff diff=myDiffNode.getDiff();
+    Hunk hunk=myDiffNode.getHunk();
+    if (diff != null) {
+switch (diff.getDiffType()) {
+case Differencer.ADDITION:
+        return getImageFor(add + (diff.fMatches ? "" : error),image,diff.fMatches);
+case Differencer.DELETION:
+      return getImageFor(delete + (diff.fMatches ? "" : error),image,diff.fMatches);
+default :
+    return getImageFor(diff.fMatches ? "" : error,image,diff.fMatches);
+}
+}
+ else if (hunk != null) {
+return getImageFor((hunk.fMatches ? "" : error),image,hunk.fMatches);
+}
+}
+return null;
+}
+]]>
+</modifiedMethod>
+	</modifiedMethods>
+
+	</projectPair>
+	<projectPair id = "44">
+		<src>
+		compare
+		</src>
+		<leftProjectName>
+		org.eclipse.compare_v20061016
+		</leftProjectName>
+		<rightProjectName>
+		org.eclipse.compare_v20061120
+		</rightProjectName>
+		<leftClassName1>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</leftClassName2>
+		<rightClassName1>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.compare.contentmergeviewer.TextMergeViewer	
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/compare/contentmergeviewer/TextMergeViewer
+		</rightFilePath2>
+		<leftMethodName1>
+	getStrokeColor(Diff)
+		</leftMethodName1>
+		<leftMethodName2>
+	getStrokeColor(Diff)
+		</leftMethodName2>
+		<rightMethodName1>
+	getFillColor(Diff)
+		</rightMethodName1>
+		<rightMethodName2>
+	getFillColor(Diff)
+		</rightMethodName2>
+<costs>
+ 	10_4
+                </costs>
+	<modifiedMethods>
+<modifiedMethod id = "1">
+		<![CDATA[
+private RGB getFillColor(Diff diff){
+  boolean selected=fCurrentDiff != null && fCurrentDiff.fParent == diff;
+  RGB selected_fill=getBackground(null);
+  if (isThreeWay() && !isIgnoreAncestor()) {
+switch (diff.fDirection) {
+case RangeDifference.RIGHT:
+      if (fLeftIsLocal) {
+        return selected ? selected_fill : INCOMING_FILL;
+      }
+    return selected ? selected_fill : OUTGOING_FILL;
+case RangeDifference.ANCESTOR:
+  return selected ? selected_fill : CONFLICT_FILL;
+case RangeDifference.LEFT:
+if (fLeftIsLocal) {
+  return selected ? selected_fill : OUTGOING_FILL;
+}
+return selected ? selected_fill : INCOMING_FILL;
+case RangeDifference.CONFLICT:
+return selected ? selected_fill : CONFLICT_FILL;
+}
+return null;
+}
+return selected ? selected_fill : OUTGOING_FILL;
+}
+		]]>
+		</modifiedMethod>
+<modifiedMethod id = "2">
+                <![CDATA[
+private void revealDiff(Diff d,boolean smart){
+  boolean ancestorIsVisible=false;
+  boolean leftIsVisible=false;
+  boolean rightIsVisible=false;
+  if (smart) {
+    Point region=new Point(0,0);
+    int ls=fLeft.getLineRange(d.fLeftPos,region).x;
+    int rs=fRight.getLineRange(d.fRightPos,region).x;
+    if (isThreeWay() && !isIgnoreAncestor()) {
+      int as=fAncestor.getLineRange(d.fAncestorPos,region).x;
+      if (as >= fAncestor.getTopIndex() && as <= fAncestor.getBottomIndex()) {
+        ancestorIsVisible=true;
+      }
+    }
+    if (ls >= fLeft.getTopIndex() && ls <= fLeft.getBottomIndex()) {
+      leftIsVisible=true;
+    }
+    if (rs >= fRight.getTopIndex() && rs <= fRight.getBottomIndex()) {
+      rightIsVisible=true;
+    }
+  }
+  if (!leftIsVisible || !rightIsVisible) {
+    int avpos=0, lvpos=0, rvpos=0;
+    MergeSourceViewer allButThis=null;
+    if (leftIsVisible) {
+      avpos=lvpos=rvpos=realToVirtualPosition(fLeft,fLeft.getTopIndex());
+      allButThis=fLeft;
+    }
+ else     if (rightIsVisible) {
+      avpos=lvpos=rvpos=realToVirtualPosition(fRight,fRight.getTopIndex());
+      allButThis=fRight;
+    }
+ else     if (ancestorIsVisible) {
+      avpos=lvpos=rvpos=realToVirtualPosition(fAncestor,fAncestor.getTopIndex());
+      allButThis=fAncestor;
+    }
+ else {
+      if (fAllDiffs != null) {
+        int vpos=0;
+        Iterator e=fAllDiffs.iterator();
+        for (int i=0; e.hasNext(); i++) {
+          Diff diff=(Diff)e.next();
+          if (diff == d) {
+            break;
+          }
+          if (fSynchronizedScrolling) {
+            vpos+=diff.getMaxDiffHeight(fShowAncestor);
+          }
+ else {
+            avpos+=diff.getAncestorHeight();
+            lvpos+=diff.getLeftHeight();
+            rvpos+=diff.getRightHeight();
+          }
+        }
+        if (fSynchronizedScrolling) {
+          avpos=lvpos=rvpos=vpos;
+        }
+      }
+      int delta=fRight.getViewportLines() / 4;
+      avpos-=delta;
+      if (avpos < 0) {
+        avpos=0;
+      }
+      lvpos-=delta;
+      if (lvpos < 0) {
+        lvpos=0;
+      }
+      rvpos-=delta;
+      if (rvpos < 0) {
+        rvpos=0;
+      }
+    }
+    scrollVertical(avpos,lvpos,rvpos,allButThis);
+    if (fVScrollBar != null) {
+      fVScrollBar.setSelection(avpos);
+    }
+  }
+  if (d.fIsToken) {
+    reveal(fAncestor,d.fAncestorPos);
+    reveal(fLeft,d.fLeftPos);
+    reveal(fRight,d.fRightPos);
+  }
+ else {
+    hscroll(fAncestor);
+    hscroll(fLeft);
+    hscroll(fRight);
+  }
+}
+		]]>
+		</modifiedMethod>
+<modifiedMethod id = "3">
+                <![CDATA[
+private void setCurrentDiff(Diff d,boolean revealAndSelect){
+  if (fCenterButton != null && !fCenterButton.isDisposed()) {
+    fCenterButton.setVisible(false);
+  }
+  fEndOfDocReached=false;
+  Diff oldDiff=fCurrentDiff;
+  if (d != null && revealAndSelect) {
+    if (isThreeWay() && !isIgnoreAncestor()) {
+      fAncestor.setSelection(d.fAncestorPos);
+    }
+    fLeft.setSelection(d.fLeftPos);
+    fRight.setSelection(d.fRightPos);
+    fCurrentDiff=d;
+    revealDiff(d,d.fIsToken);
+  }
+ else {
+    fCurrentDiff=d;
+  }
+  Diff d1=oldDiff != null ? oldDiff.fParent : null;
+  Diff d2=fCurrentDiff != null ? fCurrentDiff.fParent : null;
+  if (d1 != d2) {
+    updateDiffBackground(d1);
+    updateDiffBackground(d2);
+  }
+  updateControls();
+  invalidateLines();
+  refreshBirdsEyeView();
+}
+]]>
+</modifiedMethod>
+<modifiedMethod id = "4">
+<![CDATA[
+private RGB getStrokeColor(Diff diff){
+  boolean selected=fCurrentDiff != null && fCurrentDiff.fParent == diff;
+  if (isThreeWay() && !isIgnoreAncestor()) {
+switch (diff.fDirection) {
+case RangeDifference.RIGHT:
+      if (fLeftIsLocal) {
+        return selected ? SELECTED_INCOMING : INCOMING;
+      }
+    return selected ? SELECTED_OUTGOING : OUTGOING;
+case RangeDifference.ANCESTOR:
+  return selected ? SELECTED_CONFLICT : CONFLICT;
+case RangeDifference.LEFT:
+if (fLeftIsLocal) {
+  return selected ? SELECTED_OUTGOING : OUTGOING;
+}
+return selected ? SELECTED_INCOMING : INCOMING;
+case RangeDifference.CONFLICT:
+return selected ? SELECTED_CONFLICT : CONFLICT;
+}
+return null;
+}
+return selected ? SELECTED_OUTGOING : OUTGOING;
+}
+]]>
+</modifiedMethod>
+	</modifiedMethods>
+
+	</projectPair>
+	<projectPair id = "45">
+		<src>
+		compare
+		</src>
+		<leftProjectName>
+		org.eclipse.compare_v20061120
+		</leftProjectName>
+		<rightProjectName>
+		org.eclipse.compare_v20061218
+		</rightProjectName>
+		<leftClassName1>
+	org.eclipse.compare.structuremergeviewer.DiffTreeViewer
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.compare.structuremergeviewer.DiffTreeViewer
+		</leftClassName2>
+		<rightClassName1>
+	org.eclipse.compare.structuremergeviewer.DiffTreeViewer
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.compare.structuremergeviewer.DiffTreeViewer	
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/compare/structuremergeviewer/DiffTreeViewer	
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/compare/structuremergeviewer/DiffTreeViewer	
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/compare/structuremergeviewer/DiffTreeViewer	
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/compare/structuremergeviewer/DiffTreeViewer	
+		</rightFilePath2>
+		<leftMethodName1>
+	DiffTreeViewer(Composite, CompareConfiguration)
+		</leftMethodName1>
+		<leftMethodName2>
+	DiffTreeViewer(Composite, CompareConfiguration)
+		</leftMethodName2>
+		<rightMethodName1>
+	DiffTreeViewer(Tree, CompareConfiguration)
+		</rightMethodName1>
+		<rightMethodName2>
+	DiffTreeViewer(Tree, CompareConfiguration)
+		</rightMethodName2>
+<costs>
+ 	6_2
+                </costs>
+<extractMethod>
+private void extractMethod(CompareConfiguration configuration){
+  initialize(configuration == null ? new CompareConfiguration() : configuration);
+}
+</extractMethod>
+	<modifiedMethods>
+		<modifiedMethod id = "1">
+		<![CDATA[
+/**
+	 * Creates a new viewer for the given SWT tree control with the specified configuration.
+	 *
+	 * @param tree the tree control
+	 * @param configuration the configuration for this viewer
+	 */
+public DiffTreeViewer(Tree tree, CompareConfiguration configuration) {
+  super(tree);
+  extractMethod(configuration);
+}
+		]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+                <![CDATA[
+/**
+	 * Creates a new viewer under the given SWT parent and with the specified configuration.
+	 *
+	 * @param parent the SWT control under which to create the viewer
+	 * @param configuration the configuration for this viewer
+	 */
+public DiffTreeViewer(Composite parent, CompareConfiguration configuration) {
+  super(new Tree(parent,SWT.MULTI));
+  extractMethod(configuration);
+}
+		]]>
+                </modifiedMethod>
+	</modifiedMethods>
+
+	</projectPair>
+	<projectPair id = "46">
+		<src>
+		compare
+		</src>
+		<leftProjectName>
+		org.eclipse.compare_v20060918
+		</leftProjectName>
+		<rightProjectName>
+		org.eclipse.compare_v20061016
+		</rightProjectName>
+		<leftClassName1>
+	org.eclipse.compare.contentmergeviewer.ContentMergeViewer
+		</leftClassName1>
+		<leftClassName2>
+	org.eclipse.compare.contentmergeviewer.ContentMergeViewer
+		</leftClassName2>
+		<rightClassName1>
+	org.eclipse.compare.contentmergeviewer.ContentMergeViewer.SaveAction
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.compare.contentmergeviewer.ContentMergeViewer.SaveAction	
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/compare/contentmergeviewer/ContentMergeViewer
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/compare/contentmergeviewer/ContentMergeViewer
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/compare/contentmergeviewer/ContentMergeViewer
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/compare/contentmergeviewer/ContentMergeViewer
+		</rightFilePath2>
+		<leftMethodName1>
+	flush(IProgressMonitor)
+		</leftMethodName1>
+		<leftMethodName2>
+	flush(IProgressMonitor)
+		</leftMethodName2>
+		<rightMethodName1>
+	run()
+		</rightMethodName1>
+		<rightMethodName2>
+	run()
+		</rightMethodName2>
+<costs>
+ 	14_4
+</costs>
+<extractMethod>
+	<![CDATA[
+private void extractMethod(null u1){
+  flushContent(getInput(),u1);
+}
+	]]>
+</extractMethod>
+	<modifiedMethods>
+		<modifiedMethod id = "1">
+		<![CDATA[
+public void run() {
+  extractMethod(null);
+}
+		]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+                <![CDATA[
+/* (non-Javadoc)
+	 * @see org.eclipse.compare.contentmergeviewer.IFlushable#flush(org.eclipse.core.runtime.IProgressMonitor)
+	 */
+public void flush(IProgressMonitor monitor) {
+  extractMethod(monitor);
+}
+		]]>
+                </modifiedMethod>
+	</modifiedMethods>
+	</projectPair>
+	<projectPair id = "47">
+		<src>src</src>
+		<leftProjectName>org.eclipse.core.runtime_v20060317</leftProjectName>
+		<rightProjectName>org.eclipse.core.runtime_v20060411</rightProjectName>
+		<leftClassName1>org.eclipse.core.internal.runtime.InternalPlatform</leftClassName1>
+		<leftClassName2>org.eclipse.core.internal.runtime.InternalPlatform</leftClassName2>
+		<rightClassName1>
+	org.eclipse.core.internal.runtime.InternalPlatform
+		</rightClassName1>
+		<rightClassName2>
+	org.eclipse.core.internal.runtime.InternalPlatform
+		</rightClassName2>
+		<leftFilePath1>
+	org/eclipse/core/internal/runtime/InternalPlatform
+		</leftFilePath1>
+		<leftFilePath2>
+	org/eclipse/core/internal/runtime/InternalPlatform
+		</leftFilePath2>
+		<rightFilePath1>
+	org/eclipse/core/internal/runtime/InternalPlatform
+		</rightFilePath1>
+		<rightFilePath2>
+	org/eclipse/core/internal/runtime/InternalPlatform
+		</rightFilePath2>
+		<leftMethodName1>
+	getBundleAdmin()
+		</leftMethodName1>
+		<leftMethodName2>
+	getBundleAdmin()
+		</leftMethodName2>
+		<rightMethodName1>
+	getContentTypeManager()
+		</rightMethodName1>
+		<rightMethodName2>
+	getContentTypeManager()
+		</rightMethodName2>
+<costs>
+ 	366_177
+</costs>
+<RetObj>
+	<![CDATA[
+public enum Flag{RETURN, FALLTHRU};
+	]]>
+</RetObj>
+<extractMethod>
+	<![CDATA[
+private Flag extractMethod(){
+  if (context == null) {
+    return Flag.RETURN;
+  }
+  return Flag.FALLTHRU;
+}
+	]]>
+</extractMethod>
+	<modifiedMethods>
+		<modifiedMethod id = "1">
+		<![CDATA[
+/**
+	 * Lazy initialize ContentTypeManager - it can only be used after the registry is up and running
+	 */
+public IContentTypeManager getContentTypeManager() {
+  if (contentTracker == null) {
+    Flag flag=extractMethod();
+    if (flag.equals(Flag.RETURN))     return null;
+    contentTracker=new ServiceTracker(context,IContentTypeManager.class.getName(),null);
+    contentTracker.open();
+  }
+  return (IContentTypeManager)contentTracker.getService();
+}
+		]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+                <![CDATA[
+private PackageAdmin getBundleAdmin() {
+  if (bundleTracker == null) {
+    Flag flag=extractMethod();
+    if (flag.equals(Flag.RETURN))     return null;
+    bundleTracker=new ServiceTracker(context,PackageAdmin.class.getName(),null);
+    bundleTracker.open();
+  }
+  return (PackageAdmin)bundleTracker.getService();
+}
+		]]>
+                </modifiedMethod>
+	</modifiedMethods>
+
+	</projectPair>
+	<projectPair id = "48">
+		<src>src</src>
+		<leftProjectName>examples</leftProjectName>
+		<rightProjectName>examples2</rightProjectName>
+		<leftClassName1>A</leftClassName1>
+		<leftClassName2>A</leftClassName2>
+		<rightClassName1>
+	B
+		</rightClassName1>
+		<rightClassName2>
+	B
+		</rightClassName2>
+		<leftFilePath1>
+	A
+		</leftFilePath1>
+		<leftFilePath2>
+	A
+		</leftFilePath2>
+		<rightFilePath1>
+	B
+		</rightFilePath1>
+		<rightFilePath2>
+	B
+		</rightFilePath2>
+		<leftMethodName1>
+	m1()
+		</leftMethodName1>
+		<leftMethodName2>
+	m1()
+		</leftMethodName2>
+		<rightMethodName1>
+	m1()
+		</rightMethodName1>
+		<rightMethodName2>
+	m1()
+		</rightMethodName2>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+	<![CDATA[
+public void m5(){
+  if (isDownDirty() && !isUpDirty()) {
+    System.out.println("Boy");
+  }
+}
+	]]>
+        </modifiedMethod>
+	<modifiedMethod id = "2">
+	<![CDATA[
+public void m1(){
+  if (isRightDirty() && !isLeftDirty()) {
+    System.out.println("Left");
+  }
+}
+	]]>
+        </modifiedMethod>
+	<modifiedMethod id = "3">
+	<![CDATA[
+public void m5(){
+  if (isRightDirty() && !isLeftDirty()) {
+    System.out.println("Boy");
+  }
+}
+	]]>
+	</modifiedMethod>
+	<modifiedMethod id = "4">
+	<![CDATA[
+public void m1(){
+  if (isDownDirty() && !isUpDirty()) {
+    System.out.println("Left");
+  }
+}
+	]]>
+	</modifiedMethod>
+</modifiedMethods>
+	</projectPair>
+	<projectPair id = "49">
+		<src>src</src>
+		<leftProjectName>examples</leftProjectName>
+		<rightProjectName>examples2</rightProjectName>
+		<leftClassName1>A</leftClassName1>
+		<leftClassName2>A</leftClassName2>
+		<rightClassName1>
+	B
+		</rightClassName1>
+		<rightClassName2>
+	B
+		</rightClassName2>
+		<leftFilePath1>
+	A
+		</leftFilePath1>
+		<leftFilePath2>
+	A
+		</leftFilePath2>
+		<rightFilePath1>
+	B
+		</rightFilePath1>
+		<rightFilePath2>
+	B
+		</rightFilePath2>
+		<leftMethodName1>
+	m2()
+		</leftMethodName1>
+		<leftMethodName2>
+	m2()
+		</leftMethodName2>
+		<rightMethodName1>
+	m2()
+		</rightMethodName1>
+		<rightMethodName2>
+	m2()
+		</rightMethodName2>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+	<![CDATA[
+public void m2(){
+  if (!isRightDirty() && isLeftDirty()) {
+    System.out.println("Right");
+  }
+}
+	]]>
+        </modifiedMethod>
+	<modifiedMethod id = "2">
+	<![CDATA[
+public void m2(){
+  if (!isDownDirty() && isUpDirty()) {
+    System.out.println("Right");
+  }
+}
+	]]>
+        </modifiedMethod>
+</modifiedMethods>
+	</projectPair>
+	<projectPair id = "50">
+		<src>src</src>
+		<leftProjectName>examples</leftProjectName>
+		<rightProjectName>examples2</rightProjectName>
+		<leftClassName1>A</leftClassName1>
+		<leftClassName2>A</leftClassName2>
+		<rightClassName1>
+	B
+		</rightClassName1>
+		<rightClassName2>
+	B
+		</rightClassName2>
+		<leftFilePath1>
+	A
+		</leftFilePath1>
+		<leftFilePath2>
+	A
+		</leftFilePath2>
+		<rightFilePath1>
+	B
+		</rightFilePath1>
+		<rightFilePath2>
+	B
+		</rightFilePath2>
+		<leftMethodName1>
+	m3()
+		</leftMethodName1>
+		<leftMethodName2>
+	m3()
+		</leftMethodName2>
+		<rightMethodName1>
+	m3()
+		</rightMethodName1>
+		<rightMethodName2>
+	m3()
+		</rightMethodName2>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+	<![CDATA[
+public void m3(){
+  if (!isRightDirty() && !isLeftDirty()) {
+    System.out.println("None");
+  }
+}
+	]]>
+        </modifiedMethod>
+	<modifiedMethod id = "2">
+	<![CDATA[
+public void m3(){
+  if (!isDownDirty() && !isUpDirty()) {
+    System.out.println("None");
+  }
+}
+	]]>
+        </modifiedMethod>
+</modifiedMethods>
+	</projectPair>
+	<projectPair id = "51">
+		<src>src</src>
+		<leftProjectName>examples</leftProjectName>
+		<rightProjectName>examples2</rightProjectName>
+		<leftClassName1>A</leftClassName1>
+		<leftClassName2>A</leftClassName2>
+		<rightClassName1>
+	B
+		</rightClassName1>
+		<rightClassName2>
+	B
+		</rightClassName2>
+		<leftFilePath1>
+	A
+		</leftFilePath1>
+		<leftFilePath2>
+	A
+		</leftFilePath2>
+		<rightFilePath1>
+	B
+		</rightFilePath1>
+		<rightFilePath2>
+	B
+		</rightFilePath2>
+		<leftMethodName1>
+	m4()
+		</leftMethodName1>
+		<leftMethodName2>
+	m4()
+		</leftMethodName2>
+		<rightMethodName1>
+	m4()
+		</rightMethodName1>
+		<rightMethodName2>
+	m4()
+		</rightMethodName2>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+	<![CDATA[
+public void m4(){
+  if (isRightDirty() && isLeftDirty()) {
+    System.out.println("Both");
+  }
+}
+	]]>
+        </modifiedMethod>
+	<modifiedMethod id = "2">
+	<![CDATA[
+public void m4(){
+  if (isDownDirty() && isUpDirty()) {
+    System.out.println("Both");
+  }
+}
+	]]>
+        </modifiedMethod>
+</modifiedMethods>
+	</projectPair>
+	<projectPair id = "52">
+		<src>src</src>
+		<leftProjectName>examples</leftProjectName>
+		<rightProjectName>examples2</rightProjectName>
+		<leftClassName1>A</leftClassName1>
+		<leftClassName2>A</leftClassName2>
+		<rightClassName1>
+	B
+		</rightClassName1>
+		<rightClassName2>
+	B
+		</rightClassName2>
+		<leftFilePath1>
+	A
+		</leftFilePath1>
+		<leftFilePath2>
+	A
+		</leftFilePath2>
+		<rightFilePath1>
+	B
+		</rightFilePath1>
+		<rightFilePath2>
+	B
+		</rightFilePath2>
+		<leftMethodName1>
+	m5()
+		</leftMethodName1>
+		<leftMethodName2>
+	m5()
+		</leftMethodName2>
+		<rightMethodName1>
+	m5()
+		</rightMethodName1>
+		<rightMethodName2>
+	m5()
+		</rightMethodName2>
+<modifiedMethods>
+	<modifiedMethod id = "1">
+	<![CDATA[
+public void m5(){
+  if (isDownDirty() && !isUpDirty()) {
+    System.out.println("Boy");
+  }
+}
+	]]>
+        </modifiedMethod>
+	<modifiedMethod id = "2">
+	<![CDATA[
+public void m1(){
+  if (isRightDirty() && !isLeftDirty()) {
+    System.out.println("Left");
+  }
+}
+	]]>
+        </modifiedMethod>
+	<modifiedMethod id = "3">
+	<![CDATA[
+public void m5(){
+  if (isRightDirty() && !isLeftDirty()) {
+    System.out.println("Boy");
+  }
+}
+	]]>
+        </modifiedMethod>
+	<modifiedMethod id = "4">
+	<![CDATA[
+public void m1(){
+  if (isDownDirty() && !isUpDirty()) {
+    System.out.println("Left");
+  }
+}
+	]]>
+        </modifiedMethod>
+</modifiedMethods>
+	</projectPair>
+	<projectPair id = "53">
+		<src>src</src>
+		<leftProjectName>examples</leftProjectName>
+		<rightProjectName>examples2</rightProjectName>
+		<leftClassName1>A</leftClassName1>
+		<leftClassName2>A</leftClassName2>
+		<rightClassName1>
+	A
+		</rightClassName1>
+		<rightClassName2>
+	A
+		</rightClassName2>
+		<leftFilePath1>
+	A
+		</leftFilePath1>
+		<leftFilePath2>
+	A
+		</leftFilePath2>
+		<rightFilePath1>
+	A
+		</rightFilePath1>
+		<rightFilePath2>
+	A
+		</rightFilePath2>
+		<leftMethodName1>
+	m6()
+		</leftMethodName1>
+		<leftMethodName2>
+	m6()
+		</leftMethodName2>
+		<rightMethodName1>
+	m7()
+		</rightMethodName1>
+		<rightMethodName2>
+	m7()
+		</rightMethodName2>
+<costs>
+ 	69_24
+</costs>
+<extractMethod>
+	 <![CDATA[
+public abstract class TemplateClass {
+  public boolean extractMethod(  B fContainer,  boolean fContainerProvided){
+    boolean v0=m0(fContainer);
+    if (v0 == false && !fContainerProvided) {
+      return m2();
+    }
+    return v0;
+  }
+  public abstract boolean m0(  B fContainer);
+  public abstract boolean m2();
+}
+public class ConcreteTemplateClass0 extends TemplateClass {
+  public boolean m0(  B fContainer){
+    return fContainer.getServiceLocator();
+  }
+  public boolean m2(){
+    return C.findServiceLocator();
+  }
+}
+public class ConcreteTemplateClass1 extends TemplateClass {
+  public boolean m0(  B fContainer){
+    return fContainer.isLeftDirty();
+  }
+  public boolean m2(){
+    return C.findActionBars();
+  }
+}
+	]]>
+</extractMethod>
+        <modifiedMethods>
+<modifiedMethod id = "1">
+		<![CDATA[
+public Boolean m7(){
+  return new ConcreteTemplateClass0().extractMethod(fContainer,fContainerProvided);
+}
+		]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+                <![CDATA[
+public Boolean m6(){
+  return new ConcreteTemplateClass1().extractMethod(fContainer,fContainerProvided);
+}
+		]]>
+                </modifiedMethod>
+<modifiedMethod id = "3">
+<![CDATA[
+public Boolean m9(){
+  boolean v$_0_=fContainer.getServiceLocator3();
+  if (v$_0_ == false && !fContainerProvided) {
+    return C.findServiceLocator3();
+  }
+  return v$_0_;
+}
+]]>
+</modifiedMethod>
+<modifiedMethod id = "4">
+<![CDATA[
+public Boolean m11(){
+  boolean v$_0_=fContainer.getServiceLocator5();
+  if (v$_0_ == false && !fContainerProvided) {
+    return C.findServiceLocator5();
+  }
+  return v$_0_;
+}
+]]>
+</modifiedMethod>
+<modifiedMethod id = "5">
+<![CDATA[
+public Boolean m7(){
+  boolean v$_0_=fContainer.getServiceLocator();
+  if (v$_0_ == false && !fContainerProvided) {
+    return C.findServiceLocator();
+  }
+  return v$_0_;
+}
+]]>
+</modifiedMethod>
+<modifiedMethod id = "6">
+<![CDATA[
+public Boolean m10(){
+  boolean v$_0_=fContainer.getServiceLocator4();
+  if (v$_0_ == false && !fContainerProvided) {
+    return C.findServiceLocator4();
+  }
+  return v$_0_;
+}
+]]>
+</modifiedMethod>
+        </modifiedMethods>
+	</projectPair>
+	<projectPair id = "54">
+		<src>src</src>
+		<leftProjectName>examples</leftProjectName>
+		<rightProjectName>examples2</rightProjectName>
+		<leftClassName1>A</leftClassName1>
+		<leftClassName2>A</leftClassName2>
+		<rightClassName1>
+	A
+		</rightClassName1>
+		<rightClassName2>
+	A
+		</rightClassName2>
+		<leftFilePath1>
+	A
+		</leftFilePath1>
+		<leftFilePath2>
+	A
+		</leftFilePath2>
+		<rightFilePath1>
+	A
+		</rightFilePath1>
+		<rightFilePath2>
+	A
+		</rightFilePath2>
+		<leftMethodName1>
+	m6()
+		</leftMethodName1>
+		<leftMethodName2>
+	m6()
+		</leftMethodName2>
+		<rightMethodName1>
+	m8()
+		</rightMethodName1>
+		<rightMethodName2>
+	m8()
+		</rightMethodName2>
+<costs>
+ 	69_24
+</costs>
+<extractMethod>
+	<![CDATA[
+public abstract class TemplateClass {
+  public boolean extractMethod(  B fContainer,  boolean fContainerProvided){
+    boolean v0=m0(fContainer);
+    if (v0 == false && !fContainerProvided) {
+      return m2();
+    }
+    return v0;
+  }
+  public abstract boolean m0(  B fContainer);
+  public abstract boolean m2();
+}
+public class ConcreteTemplateClass0 extends TemplateClass {
+  public boolean m0(  B fContainer){
+    return fContainer.getServiceLocator2();
+  }
+  public boolean m2(){
+    return C.findServiceLocator2();
+  }
+}
+public class ConcreteTemplateClass1 extends TemplateClass {
+  public boolean m0(  B fContainer){
+    return fContainer.isLeftDirty();
+  }
+  public boolean m2(){
+    return C.findActionBars();
+  }
+}
+	]]>
+</extractMethod>
+<modifiedMethods>
+<modifiedMethod id = "1">
+		<![CDATA[
+public Boolean m8(){
+  return new ConcreteTemplateClass0().extractMethod(fContainer,fContainerProvided);
+}
+		]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+                <![CDATA[
+public Boolean m6(){
+  return new ConcreteTemplateClass1().extractMethod(fContainer,fContainerProvided);
+}
+		]]>
+                </modifiedMethod>
+<modifiedMethod id = "3">
+<![CDATA[
+public Boolean m9(){
+  boolean v$_0_=fContainer.getServiceLocator3();
+  if (v$_0_ == false && !fContainerProvided) {
+    return C.findServiceLocator3();
+  }
+  return v$_0_;
+}
+]]>
+</modifiedMethod>
+<modifiedMethod id = "4">
+<![CDATA[
+public Boolean m11(){
+  boolean v$_0_=fContainer.getServiceLocator5();
+  if (v$_0_ == false && !fContainerProvided) {
+    return C.findServiceLocator5();
+  }
+  return v$_0_;
+}
+]]>
+</modifiedMethod>
+<modifiedMethod id = "5">
+<![CDATA[
+public Boolean m7(){
+  boolean v$_0_=fContainer.getServiceLocator();
+  if (v$_0_ == false && !fContainerProvided) {
+    return C.findServiceLocator();
+  }
+  return v$_0_;
+}
+]]>
+</modifiedMethod>
+<modifiedMethod id = "6">
+<![CDATA[
+public Boolean m10(){
+  boolean v$_0_=fContainer.getServiceLocator4();
+  if (v$_0_ == false && !fContainerProvided) {
+    return C.findServiceLocator4();
+  }
+  return v$_0_;
+}
+]]>
+</modifiedMethod>
+        </modifiedMethods>
+	</projectPair>
+	<projectPair id = "55">
+		<src>src</src>
+		<leftProjectName>examples</leftProjectName>
+		<rightProjectName>examples2</rightProjectName>
+		<leftClassName1>A</leftClassName1>
+		<leftClassName2>A</leftClassName2>
+		<rightClassName1>
+	A
+		</rightClassName1>
+		<rightClassName2>
+	A
+		</rightClassName2>
+		<leftFilePath1>
+	A
+		</leftFilePath1>
+		<leftFilePath2>
+	A
+		</leftFilePath2>
+		<rightFilePath1>
+	A
+		</rightFilePath1>
+		<rightFilePath2>
+	A
+		</rightFilePath2>
+		<leftMethodName1>
+	m6()
+		</leftMethodName1>
+		<leftMethodName2>
+	m6()
+		</leftMethodName2>
+		<rightMethodName1>
+	m9()
+		</rightMethodName1>
+		<rightMethodName2>
+	m9()
+		</rightMethodName2>
+<costs>
+ 	69_24
+</costs>
+<extractMethod>
+	<![CDATA[
+public abstract class TemplateClass {
+  public boolean extractMethod(  B fContainer,  boolean fContainerProvided){
+    boolean v0=m0(fContainer);
+    if (v0 == false && !fContainerProvided) {
+      return m2();
+    }
+    return v0;
+  }
+  public abstract boolean m0(  B fContainer);
+  public abstract boolean m2();
+}
+public class ConcreteTemplateClass0 extends TemplateClass {
+  public boolean m0(  B fContainer){
+    return fContainer.getServiceLocator3();
+  }
+  public boolean m2(){
+    return C.findServiceLocator3();
+  }
+}
+public class ConcreteTemplateClass1 extends TemplateClass {
+  public boolean m0(  B fContainer){
+    return fContainer.isLeftDirty();
+  }
+  public boolean m2(){
+    return C.findActionBars();
+  }
+}
+	]]>
+</extractMethod>
+<modifiedMethods>
+<modifiedMethod id = "1">
+		<![CDATA[
+public Boolean m9(){
+  return new ConcreteTemplateClass0().extractMethod(fContainer,fContainerProvided);
+}
+		]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+                <![CDATA[
+public Boolean m6(){
+  return new ConcreteTemplateClass1().extractMethod(fContainer,fContainerProvided);
+}
+		]]>
+                </modifiedMethod>
+<modifiedMethod id = "3">
+<![CDATA[
+public Boolean m9(){
+  boolean v$_0_=fContainer.getServiceLocator3();
+  if (v$_0_ == false && !fContainerProvided) {
+    return C.findServiceLocator3();
+  }
+  return v$_0_;
+}
+]]>
+</modifiedMethod>
+<modifiedMethod id = "4">
+<![CDATA[
+public Boolean m11(){
+  boolean v$_0_=fContainer.getServiceLocator5();
+  if (v$_0_ == false && !fContainerProvided) {
+    return C.findServiceLocator5();
+  }
+  return v$_0_;
+}
+]]>
+</modifiedMethod>
+<modifiedMethod id = "5">
+<![CDATA[
+public Boolean m7(){
+  boolean v$_0_=fContainer.getServiceLocator();
+  if (v$_0_ == false && !fContainerProvided) {
+    return C.findServiceLocator();
+  }
+  return v$_0_;
+}
+]]>
+</modifiedMethod>
+<modifiedMethod id = "6">
+<![CDATA[
+public Boolean m10(){
+  boolean v$_0_=fContainer.getServiceLocator4();
+  if (v$_0_ == false && !fContainerProvided) {
+    return C.findServiceLocator4();
+  }
+  return v$_0_;
+}
+]]>
+</modifiedMethod>
+        </modifiedMethods>
+	</projectPair>
+	<projectPair id = "56">
+		<src>src</src>
+		<leftProjectName>examples</leftProjectName>
+		<rightProjectName>examples2</rightProjectName>
+		<leftClassName1>A</leftClassName1>
+		<leftClassName2>A</leftClassName2>
+		<rightClassName1>
+	A
+		</rightClassName1>
+		<rightClassName2>
+	A
+		</rightClassName2>
+		<leftFilePath1>
+	A
+		</leftFilePath1>
+		<leftFilePath2>
+	A
+		</leftFilePath2>
+		<rightFilePath1>
+	A
+		</rightFilePath1>
+		<rightFilePath2>
+	A
+		</rightFilePath2>
+		<leftMethodName1>
+	m6()
+		</leftMethodName1>
+		<leftMethodName2>
+	m6()
+		</leftMethodName2>
+		<rightMethodName1>
+	m10()
+		</rightMethodName1>
+		<rightMethodName2>
+	m10()
+		</rightMethodName2>
+<costs>
+ 	69_24
+</costs>
+<extractMethod>	
+	<![CDATA[
+public abstract class TemplateClass {
+  public boolean extractMethod(  B fContainer,  boolean fContainerProvided){
+    boolean v0=m0(fContainer);
+    if (v0 == false && !fContainerProvided) {
+      return m2();
+    }
+    return v0;
+  }
+  public abstract boolean m0(  B fContainer);
+  public abstract boolean m2();
+}
+public class ConcreteTemplateClass0 extends TemplateClass {
+  public boolean m0(  B fContainer){
+    return fContainer.getServiceLocator4();
+  }
+  public boolean m2(){
+    return C.findServiceLocator4();
+  }
+}
+public class ConcreteTemplateClass1 extends TemplateClass {
+  public boolean m0(  B fContainer){
+    return fContainer.isLeftDirty();
+  }
+  public boolean m2(){
+    return C.findActionBars();
+  }
+}
+	]]>
+</extractMethod>
+<modifiedMethods>
+<modifiedMethod id = "1">
+		<![CDATA[
+public boolean m10(){
+  return new ConcreteTemplateClass0().extractMethod(fContainer,fContainerProvided);
+}
+		]]>
+		</modifiedMethod>
+		<modifiedMethod id = "2">
+                <![CDATA[
+public Boolean m6(){
+  return new ConcreteTemplateClass1().extractMethod(fContainer,fContainerProvided);
+}
+		]]>
+                </modifiedMethod>
+<modifiedMethod id = "3">
+<![CDATA[
+public Boolean m9(){
+  boolean v$_0_=fContainer.getServiceLocator3();
+  if (v$_0_ == false && !fContainerProvided) {
+    return C.findServiceLocator3();
+  }
+  return v$_0_;
+}
+]]>
+</modifiedMethod>
+<modifiedMethod id = "4">
+<![CDATA[
+public Boolean m11(){
+  boolean v$_0_=fContainer.getServiceLocator5();
+  if (v$_0_ == false && !fContainerProvided) {
+    return C.findServiceLocator5();
+  }
+  return v$_0_;
+}
+]]>
+</modifiedMethod>
+<modifiedMethod id = "5">
+<![CDATA[
+public Boolean m7(){
+  boolean v$_0_=fContainer.getServiceLocator();
+  if (v$_0_ == false && !fContainerProvided) {
+    return C.findServiceLocator();
+  }
+  return v$_0_;
+}
+]]>
+</modifiedMethod>
+<modifiedMethod id = "6">
+<![CDATA[
+public Boolean m10(){
+  boolean v$_0_=fContainer.getServiceLocator4();
+  if (v$_0_ == false && !fContainerProvided) {
+    return C.findServiceLocator4();
+  }
+  return v$_0_;
+}
+]]>
+</modifiedMethod>
+        </modifiedMethods>
+	</projectPair>
+</list>
+<!-- New document created with EditiX at Sun Oct 31 12:17:07 CDT 2010 -->
+
+

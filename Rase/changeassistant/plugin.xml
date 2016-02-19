@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<!-- 
+	<extension id = "Change Assistant"
+		point = "org.eclipse.core.runtime.applications">
+		<application
+			cardinality = "singleton-global"
+			thread = "main"
+			visible = "true">
+				<run class = "changeassistant.main.Application">
+				<parameter name = "optimize" value = "true"/>
+			</run>	
+		</application>
+	</extension>		
+ -->		
+<!--
+   <extension 
+   		point = "edu.cmu.cs.crystal.CrystalAnalysis">
+   	  <analysis
+   	  		class = "changeassistant.crystal.analysis.def.DefUseAnalysis"
+   	  		name = "Def Use Analysis">		   	  
+      </analysis>
+      <analysis
+      		class = "changeassistant.crystal.analysis.postdominate.PostDominateAnalysis"
+      		name = "Post Domination Analysis">
+      </analysis>
+   </extension>   
+  --> 
+
+	<extension id = "Change Assistant"
+         point="org.eclipse.ui.popupMenus">
+<!--         
+         <objectContribution
+      		objectClass = "org.eclipse.jdt.core.IJavaProject"
+      		id = "changeassistant.contribution">		
+  -->   
+		<objectContribution
+      		objectClass = "org.eclipse.core.resources.IProject"
+      		id = "changeassistant.contribution">
+      		
+      	<menu
+      		label = "Sydit"
+      		path = "additions"
+      		id = "changeassistant.menu1">
+      	  <separator
+      	  		name = "group1">
+      	  </separator>
+      	</menu>
+        <action
+        	label = "Change Assistant"
+        	class = "changeassistant.popup.actions.NewAction"
+        	menubarPath = "changeassistant.menu1/group1"
+        	enablesFor = "multiple"
+        	id = "changeassistant.newAction">        
+        </action>
+      </objectContribution>
+   </extension>
+</plugin>
+
+			

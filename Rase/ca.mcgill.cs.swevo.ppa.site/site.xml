@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/ca.mcgill.cs.swevo.ppa.feature_1.2.0.201006291424.jar" id="ca.mcgill.cs.swevo.ppa.feature" version="1.2.0.201006291424">
+      <category name="PPA"/>
+   </feature>
+   <category-def name="PPA" label="PPA"/>
+</site>
