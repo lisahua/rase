@@ -1,5 +1,7 @@
 # RASE
 
+Does Automated Refactoring Obviate Systematic Editing? Na Meng, Lisa Hua, Miryung Kim, Kathryn S. McKinley. ICSE 2015
+
 When developers add features and fix bugs, they often make systematic edits—similar edits to multiple locations. Systematic edits may indicate that developers should instead refactor to eliminate redundancy. This paper explores this question by designing and implementing a fully automated refactoring tool called RASE, which performs clone removal. 
 
 RASE (1) extracts common code guided by a systematic edit; (2) creates new types and methods as needed; (3) parameterizes differences in types, methods, variables, and expressions; and (4) inserts return objects and exit labels based on control and data flow. To our knowledge, this functionality makes RASE the most advanced refactoring tool for automated clone removal.
